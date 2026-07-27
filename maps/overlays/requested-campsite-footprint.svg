@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1050" height="760" viewBox="0 0 1050 760" role="img" aria-labelledby="title desc">
   <title id="title">Requested campsite footprint template</title>
-  <desc id="desc">Scale-controlled plan template showing a 31 foot 6 inch by 14 foot 3 inch RV zone and a 15 by 10 foot canopy on the west side. Total stepped area is approximately 598.9 square feet.</desc>
+  <desc id="desc">Scale-controlled plan template showing a verified WCP29MK camper model with an unverified 31 foot 6 inch by 14 foot 3 inch working RV zone and a 15 by 10 foot canopy on the west side. Total stepped area is approximately 598.9 square feet.</desc>
   <defs>
     <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
       <path d="M25 0H0V25" fill="none" stroke="#d9ded8" stroke-width="1"/>
@@ -16,12 +16,13 @@
 
   <rect x="165" y="220" width="787.5" height="356.25" fill="#d9e8f7" stroke="#264f73" stroke-width="4"/>
   <rect x="165" y="294" width="787.5" height="208.33" rx="8" fill="#f0f2f4" stroke="#303941" stroke-width="4"/>
-  <text x="559" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700">2012 Forest River Wildcat 293MK</text>
-  <text x="559" y="424" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">Camper body: 31 ft 6 in x 8 ft 4 in</text>
-  <text x="559" y="261" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">Deployed RV zone: 31 ft 6 in x 14 ft 3 in</text>
+  <text x="559" y="372" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700">2012 Forest River Wildcat 29MK</text>
+  <text x="559" y="404" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">Manufacturer model code verified: WCP29MK</text>
+  <text x="559" y="435" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">Working body template: 31 ft 6 in × 8 ft 4 in</text>
+  <text x="559" y="261" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">Working deployed RV zone: 31 ft 6 in × 14 ft 3 in</text>
 
   <rect x="55" y="294" width="250" height="375" fill="#ffe3a8" fill-opacity=".9" stroke="#a56200" stroke-width="4"/>
-  <text x="180" y="458" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" font-weight="700">10 x 15 ft</text>
+  <text x="180" y="458" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" font-weight="700">10 × 15 ft</text>
   <text x="180" y="489" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22">CANOPY</text>
   <text x="180" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">WEST / AWAY FROM ROAD</text>
 
@@ -39,5 +40,5 @@
 
   <text x="480" y="630" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Calculated stepped area: 598.9 sq ft</text>
   <text x="480" y="655" font-family="system-ui, sans-serif" font-size="15">RV zone 448.9 sq ft + canopy 150.0 sq ft. The unused overlap/bounding rectangle is not requested.</text>
-  <text x="55" y="748" font-family="system-ui, sans-serif" font-size="13">Planning template only. Verify slide-out geometry, hitch/overhang, steps, road setback, trees, grade, and exact site anchor before final placement.</text>
+  <text x="55" y="748" font-family="system-ui, sans-serif" font-size="13">Planning template only. Model WCP29MK is verified; measure body, slides, hitch, steps, road setback, trees, grade, and site anchor before final placement.</text>
 </svg>
