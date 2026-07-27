@@ -13,7 +13,7 @@ This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel pr
 5. Review `reference/official/2026-campground-map.html` for roads, numbered campground areas, gates, services, and emergency exits.
 6. Use `overlays/requested-campsite-footprint.svg` as the original dimensioned, scale-controlled RV and canopy footprint template.
 7. Review the static files in `generated/` after the map-build workflow runs.
-8. Open `viewer/pass-layout.html` to drag, rotate, and rearrange the ten individual 600 sq ft pass drawings in `overlays/passes/` on a freeform (non-georeferenced) canvas, with a live USGS NAIP aerial backdrop for context.
+8. Open `viewer/pass-layout.html` to drag, rotate, and rearrange the ten individual 600 sq ft pass drawings in `overlays/passes/` on a freeform (non-georeferenced) canvas, with a live Texas NAIP 2022 (60 cm) aerial backdrop, fetched at the canvas's full on-screen resolution, for ground context.
 
 `viewer/group-site-v0.1.html` no longer exists as a separate page — its geojson layer, legend, and metrics were folded into `viewer/index.html` as a toggleable "Group site v0.1" overlay, to stop maintaining two near-identical Leaflet viewers.
 

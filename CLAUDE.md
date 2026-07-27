@@ -30,7 +30,7 @@ The viewers `fetch()` sibling GeoJSON, so `file://` will not work. Serve the rep
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/maps/viewer/index.html` (or `provisional-site.html`, `pass-layout.html`, or `maps/all-maps.html`, the map-pack hub page). `index.html` is the merged viewer — parcels/streets/flood/wetlands/drawing tools plus the "Group site v0.1" pass-polygon overlay (there is no separate `group-site-v0.1.html` anymore). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` fetches its own aerial backdrop from the same live NAIP service, so it also needs network access despite having no CDN script dependencies.
+Then open `http://localhost:8000/maps/viewer/index.html` (or `provisional-site.html`, `pass-layout.html`, or `maps/all-maps.html`, the map-pack hub page). `index.html` is the merged viewer — parcels/streets/flood/wetlands/drawing tools plus the "Group site v0.1" pass-polygon overlay (there is no separate `group-site-v0.1.html` anymore). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` fetches its own aerial backdrop (Texas NAIP 2022, 60 cm/px) from a live ArcGIS ImageServer, so it also needs network access despite having no CDN script dependencies.
 
 Per-pass SVGs and their manifest (no network, no CDN deps):
 
