@@ -4,6 +4,12 @@ Last reviewed: **2026-07-27**
 
 This is a working extraction of official TRF sources, not a substitute for written approval from TRF. Direct links are maintained in [`source-index.md`](source-index.md).
 
+## Project planning convention
+
+For this repository, use **600 sq ft per qualifying pass** for every working layout, individual unit, and combined group-area calculation. Do not produce or maintain a parallel 525 sq ft planning layout unless Jason explicitly changes this convention.
+
+This convention controls planning work. It does not overwrite or misrepresent the official-source conflict documented below, and the final field setup must follow the dimensions and conditions TRF actually approves.
+
 ## Key dates
 
 | Item | Date or window |
@@ -32,13 +38,15 @@ The 2026 individual form calls for a submission that includes:
 
 The final drawing should therefore include every object that affects area, access, sight lines, emergency egress, or safety—not only the camper body.
 
-## Area-limit conflict requiring written resolution
+## Official-source area conflict
 
 The 2026 individual request form indicates that an individual may request **up to 600 sq ft per qualifying season-pass holder** when the pass is purchased by the September 7 deadline, while later submissions are described as limited to **525 sq ft**. The current guild/land-request webpage separately states **up to 525 sq ft per season pass**.
 
-Do not assume that 600 sq ft is approved. Ask TRF to confirm in writing:
+The repository's active planning baseline remains **600 sq ft per pass**. Written clarification from TRF should still be retained with the approval record, but this conflict does not require a second 525 sq ft design.
 
-1. Whether the 600 sq ft early-submission allowance applies to this individual request.
+Ask TRF to confirm in writing:
+
+1. That the submitted 600 sq ft per-pass layouts are accepted for these requests.
 2. Whether camper slides, stairs, awnings, guy lines, fencing, generators, fuel, and vehicles must all remain inside that area.
 3. How irregular plot shapes are measured.
 4. Whether required road setbacks are excluded from or included in the assigned dimensions.
@@ -75,7 +83,7 @@ Current campground materials include these planning constraints:
 
 The submission layout should show and dimension:
 
-- requested plot perimeter and total calculated area;
+- requested plot perimeter and total calculated area, using **600 sq ft per qualifying pass**;
 - road edge and 10-ft setback line;
 - north arrow and drawing scale;
 - camper body, hitch/nose, all three slides, stairs, door swing, awning, stabilizers, and utility connections;
@@ -92,7 +100,7 @@ The submission layout should show and dimension:
 
 Send the following as one concise written request after the approximate plot is selected:
 
-1. Is this request eligible for 600 sq ft, or is the current maximum 525 sq ft?
+1. Please confirm acceptance of the submitted **600 sq ft per qualifying pass** layouts.
 2. What objects count toward the assigned square footage?
 3. Is a freestanding, temporary, visually opaque generator screen allowed, and what anchoring is permitted?
 4. Must the screen be 4 ft or taller under the boundary rule?
