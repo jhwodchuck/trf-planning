@@ -13,6 +13,9 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ## Group allocation
 
 - [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, major support equipment, disconnected-allocation rules, and links to every household record
+- [Interactive group site map v0.1](maps/viewer/group-site-v0.1.html) — aerial overlay with ten 600 sq ft pass polygons, known structures, placeholders, road, and setbacks
+- [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — printable scale drawing of the current provisional arrangement
+- [Group site map assumptions](planning/group-site-map-v0.1.md) — status, known dimensions, strategy, and limitations
 
 ## Current concept
 
@@ -39,8 +42,8 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ### Group and household units
 
 - [Household roster and allocations](planning/group-pass-allocation.md) — authoritative pass count, 600 sq ft-per-pass totals, major equipment, and non-contiguous planning rules
-- [Chris and Sallie](planning/households/chris-and-sallie.md) — tent and canopy, one pass, 600 sq ft
-- [Birdie and Gustav](planning/households/birdie-and-gustav.md) — two tents, two passes, 1,200 sq ft
+- [Chris and Sallie](planning/households/chris-and-sallie.md) — confirmed 16 × 20 ft tent, canopy TBD, one pass, 600 sq ft
+- [Birdie and Gustav](planning/households/birdie-and-gustav.md) — 13 × 26 ft primary tent and approximate 10 × 20 ft closet tent, two passes, 1,200 sq ft
 - [Amanda](planning/amanda-site-notes.md) — confirmed 10 × 20 ft sleeping tent and 10 × 17 ft Yoga Tent, one pass, 600 sq ft
 - [MC and Elizabeth](planning/households/mc-and-elizabeth.md) — camper, two passes, 1,200 sq ft
 - [Shane and Sabrina](planning/households/shane-and-sabrina.md) — KZ Connect SE C312BHKSE camper working reference plus 16 ft flatbed shower trailer, two passes, 1,200 sq ft
@@ -70,5 +73,6 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 3. Exact canopy and screening dimensions/anchoring approval.
 4. A generator operating location that satisfies manual and CO/fire safety guidance.
 5. Shower-trailer width, overall length, enclosure, water, greywater, utility, privacy, and access measurements.
+6. Remaining unknown tent, canopy, camper, and household adjacency details.
 
 Do not label a layout final until those blockers and the applicable TRF approval conditions are resolved.
