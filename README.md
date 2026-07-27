@@ -33,6 +33,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ### Group and household units
 
 - [Amanda site planning notes](planning/amanda-site-notes.md) — confirmed 10 × 20 ft sleeping tent, 10 × 17 ft Yoga Tent, 600 sq ft planning unit, placement intent, and remaining measurements
+- [Shane and Sabrina camper floor plan](equipment/shane-sabrina-kz-connect-se-c312bhkse.md) — KZ Connect SE C312BHKSE working identification, manufacturer floor plan, published dimensions, and measurements needed for site placement
 
 ### Rules and submission
 
