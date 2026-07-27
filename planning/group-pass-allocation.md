@@ -13,16 +13,16 @@ Last updated: **2026-07-27**
 
 ## Household roster
 
-| Household | Primary shelter plan | Passes | Planning allocation | Household notes |
+| Household | Primary shelter and major support equipment | Passes | Planning allocation | Household notes |
 |---|---|---:|---:|---|
 | Chris and Sallie | Tent and canopy | 1 | **600 sq ft** | [Planning notes](households/chris-and-sallie.md) |
 | Birdie and Gustav | Two tents | 2 | **1,200 sq ft** | [Planning notes](households/birdie-and-gustav.md) |
 | Amanda | Sleeping tent and Yoga Tent canopy | 1 | **600 sq ft** | [Planning notes](amanda-site-notes.md) |
 | MC and Elizabeth | Camper | 2 | **1,200 sq ft** | [Planning notes](households/mc-and-elizabeth.md) |
-| Shane and Sabrina | Camper | 2 | **1,200 sq ft** | [Planning notes](households/shane-and-sabrina.md) |
+| Shane and Sabrina | Camper and 16 ft flatbed shower trailer | 2 | **1,200 sq ft** | [Planning notes](households/shane-and-sabrina.md) |
 | Jason and Catrina | Camper | 1 | **600 sq ft** | [Planning notes](households/jason-and-catrina.md) |
 | Stephane and True | Tent | 1 | **600 sq ft** | [Planning notes](households/stephane-and-true.md) |
-| **Total** | 3 camper households and 4 tent-based households | **10** | **6,000 sq ft** |  |
+| **Total** | 3 camper households, 4 tent-based households, and 1 shower trailer | **10** | **6,000 sq ft** |  |
 
 ## Allocation summary
 
@@ -32,6 +32,7 @@ Last updated: **2026-07-27**
 - **Tent-based households:** Chris and Sallie; Birdie and Gustav; Amanda; Stephane and True.
 - **Tent-household passes:** 5.
 - **Tent-household planning area:** 3,000 sq ft.
+- **Shared-support equipment currently identified:** Shane and Sabrina's 16 ft flatbed shower trailer.
 - **Total households:** 7.
 - **Total passes:** 10.
 - **Total planning area:** 6,000 sq ft.
@@ -53,10 +54,11 @@ A layout is preferable when it:
 1. Draw every pass allocation as one or more labeled polygons, with the area of each component and the combined pass total shown.
 2. For two-pass households, test both contiguous and disconnected arrangements. Prefer whichever provides more useful claimed space and better equipment placement.
 3. A two-pass household may use two separate **600 sq ft** polygons, one **1,200 sq ft** polygon, or multiple irregular components totaling **1,200 sq ft**.
-4. Show every camper, tent, canopy, slide-out, stair, awning, guy line, anchor, vehicle, generator, fence, and major path that affects usable area.
+4. Show every camper, trailer, tent, canopy, slide-out, stair, awning, guy line, anchor, vehicle, generator, fence, tank, hose, cord, utility system, and major path that affects usable area.
 5. Do not count shared roads, required setbacks, intentional gaps, or unapproved outside space toward a household's allocation.
 6. Keep required circulation and emergency access, but do not treat general layout efficiency as a design objective.
 7. Treat equipment dimensions as unknown until recorded in the household note or another verified equipment file.
+8. For Shane and Sabrina, test using one 600 sq ft polygon primarily for the camper and the second primarily for the shower trailer, while also testing irregular combined arrangements.
 
 ## Current confirmation status
 
@@ -65,4 +67,9 @@ Amanda currently has the most complete tent-based equipment record:
 - Sleeping Tent: **10 × 20 ft**.
 - Yoga Tent: **10 × 17 ft** COVERPRO canopy.
 
-Jason and Catrina's camper has a separate equipment and site-planning record. The other households currently have shelter type and pass count recorded, but still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.
+Shane and Sabrina currently have:
+
+- KZ Connect SE C312BHKSE camper as the working identification; exact year and deployed dimensions still require verification.
+- **16 ft flatbed trailer** confirmed for use as a shower facility; width, overall length, enclosure, tanks, steps, plumbing, and utility clearances still require measurement.
+
+Jason and Catrina's camper has a separate equipment and site-planning record. The remaining households currently have shelter type and pass count recorded, but still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.
