@@ -1,78 +1,97 @@
-# TRF Submission Checklist
+# TRF Site-Plan Submission Checklist
+
+Use this checklist before sending an individual land request or treating a layout as final.
 
 ## Administrative
 
-- [ ] Current 2026 form downloaded.
-- [ ] Season pass and deadline requirements satisfied.
-- [ ] Requested area limit confirmed in writing.
-- [ ] Location marked on the official campground map.
+- [ ] Correct 2026 individual land-request form downloaded.
+- [ ] Qualifying season pass purchased by the applicable deadline.
+- [ ] Applicant name, contact information, and pass information completed.
+- [ ] Requested campground location marked on the current official map.
+- [ ] Requested square footage confirmed with TRF in writing.
 - [ ] Submission/payment deadline reconfirmed.
-- [ ] Submitted package and approval saved.
+- [ ] Copies of the submitted package and approval response stored in the repository.
 
-## Plot
+## Plot evidence
 
-- [ ] Exact requested/assigned boundary identified.
-- [ ] Road edge and north direction verified.
-- [ ] Every side and useful diagonal measured.
-- [ ] Total area calculated and checked.
+- [ ] Plot coordinates or a precise marked location recorded.
+- [ ] Road edge identified.
+- [ ] North direction verified.
+- [ ] Plot sides measured, including diagonals for irregular shapes.
+- [ ] Total area calculated and independently checked.
 - [ ] 10-ft roadway setback drawn.
-- [ ] Trees, roots, branches, ditches, slopes, drainage, utilities, and neighboring access mapped.
-- [ ] Photographs taken from each corner and toward the road.
+- [ ] Trees, roots, stumps, ditches, low areas, slopes, and drainage paths mapped.
+- [ ] Neighboring occupied areas and access routes noted.
+- [ ] Site photographs captured from each corner and toward the road.
 
 ## Camper
 
-- [ ] VIN/data plate and exact model photographed.
-- [ ] Resolve `29MK` versus `293MK` and current template dimension differences.
-- [ ] Overall body length/width measured.
-- [ ] All three slide lengths and projections measured.
-- [ ] Entry stairs and landing measured.
-- [ ] Awning and support/guy-line footprint measured.
-- [ ] Stabilizers/landing gear mapped.
-- [ ] Doors, windows, vents, appliance exhausts, emergency exit, propane, and utilities mapped.
+- [ ] VIN/data plate photographed.
+- [ ] Exact model designation confirmed: `29MK` versus `293MK`.
+- [ ] Overall body length measured, including hitch/nose and rear extremity.
+- [ ] Body width measured.
+- [ ] Main living slide length and projection measured.
+- [ ] Bedroom slide length and projection measured.
+- [ ] Rear recliner slide width and projection measured.
+- [ ] Entry stairs measured fully deployed.
+- [ ] Awning projection and support/guy-line footprint measured.
+- [ ] Stabilizer/landing-gear footprint recorded.
+- [ ] Door, windows, roof vents, furnace/water-heater exhausts, refrigerator vents, and emergency exits mapped.
+- [ ] Shore-power, water, sewer, and exterior utility connections mapped.
 
 ## Tow vehicle
 
-- [ ] F-250 cab configuration confirmed.
-- [ ] Actual length, width with mirrors, and hitch projection measured.
-- [ ] TRF truck-parking requirement confirmed.
-- [ ] Backing, front swing, tail swing, unhitching, parking, and exit path tested.
+- [ ] 2018 F-250 cab configuration confirmed.
+- [ ] Actual bumper-to-bumper length measured.
+- [ ] Maximum operating width with mirrors measured.
+- [ ] Hitch and tailgate operating clearance recorded.
+- [ ] Truck parking requirement confirmed with TRF.
+- [ ] Backing path, swing, and unhitching sequence tested against the site.
 
 ## Canopy and screening
 
-- [ ] Product/model recorded.
-- [ ] Roof, legs, feet, guy lines, stakes, or ballast measured.
-- [ ] Fence panels, height, feet/posts, gate, and anchoring measured.
-- [ ] Written TRF approval obtained.
-- [ ] Emergency egress and generator ventilation remain unobstructed.
+- [ ] Canopy manufacturer/model recorded.
+- [ ] Roof dimensions recorded.
+- [ ] Leg spacing and base/foot dimensions recorded.
+- [ ] Guy lines, stakes, or ballast footprint recorded.
+- [ ] Canopy height and camper-clearance needs recorded.
+- [ ] Fence/screen panel lengths, height, feet/posts, gate, and anchoring method recorded.
+- [ ] TRF written approval obtained for temporary boundary/screening concept.
+- [ ] Fence configuration leaves emergency egress and generator ventilation unobstructed.
 
-## Generators and fuel
+## Generators, fuel, and electrical
 
-- [ ] Two P4500i bodies shown separately.
-- [ ] Exhaust direction and manufacturer clearances shown.
-- [ ] Distance to every door, window, vent, and neighboring occupied area shown.
-- [ ] CDC/CPSC outdoor-placement guidance addressed.
-- [ ] Screen proven not to form an enclosure or recirculate exhaust.
-- [ ] Parallel kit, cords, adapters, overcurrent protection, and routes documented.
-- [ ] Fuel quantity/location and extinguisher shown.
-- [ ] Quiet-hours/noise plan documented.
-- [ ] Camper CO alarms tested.
+- [ ] Two P4500i generator dimensions shown individually.
+- [ ] Exhaust direction shown.
+- [ ] Manufacturer combustible clearances shown.
+- [ ] Distance to every camper/neighbor door, window, and vent shown.
+- [ ] CDC/CPSC outdoor placement guidance addressed.
+- [ ] Fence/screen proven not to form an enclosure or recirculate exhaust.
+- [ ] Parallel kit, cords, adapters, overcurrent protection, and cable routes documented.
+- [ ] Fuel-container type, quantity, location, and separation documented.
+- [ ] Fire extinguisher location shown.
+- [ ] Generator noise and quiet-hours operating plan documented.
+- [ ] Carbon-monoxide alarms in the camper tested and dated.
 
-## Drawing quality
+## Final drawing quality
 
-- [ ] Numerical scale and scale bar.
-- [ ] North arrow and revision date.
-- [ ] Plot perimeter and calculated area.
+- [ ] Scale stated numerically.
+- [ ] Scale bar included.
+- [ ] North arrow included.
+- [ ] Revision/date included.
+- [ ] Plot perimeter and area included.
 - [ ] Every large object named and dimensioned.
-- [ ] Safety clearances dimensioned.
-- [ ] Verified measurements distinguished from assumptions.
-- [ ] Emergency route shown.
-- [ ] Setup-access and deployed-operating drawings included.
-- [ ] Legible at intended print size.
+- [ ] All critical clearances dimensioned.
+- [ ] Verified measurements visually distinguished from estimates.
+- [ ] Emergency exit route highlighted.
+- [ ] Setup drawing and deployed/operating drawing both included if footprints differ.
+- [ ] Drawing legible when printed on the intended paper size.
 
 ## Final validation
 
-- [ ] Geometry remains inside the approved area and setback.
-- [ ] Camper can enter, level, deploy, reconnect, and leave.
-- [ ] Generator safety is resolved before visual-screen preferences.
-- [ ] Approval conditions copied into the setup checklist.
-- [ ] Field setup measured against the approved drawing before operation.
+- [ ] Sum/geometry check confirms the plan stays within the approved area.
+- [ ] Camper can physically enter, turn, level, deploy, and leave.
+- [ ] No item crosses the plot boundary or road setback.
+- [ ] Generator plan is safe before visual-screen preferences are considered.
+- [ ] TRF approval conditions are transcribed into the field setup checklist.
+- [ ] Field setup is measured against the approved drawing before operation.
