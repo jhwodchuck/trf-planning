@@ -24,6 +24,10 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [Known and missing site data](planning/known-and-missing-data.md) — assumptions, dimensional conflicts, and final-plan gates
 - [Field site survey checklist](planning/site-survey-checklist.md) — boundary, terrain, access, camper, generator, and photo measurements
 
+### Group and household units
+
+- [Amanda site planning notes](planning/amanda-site-notes.md) — confirmed 10 × 20 ft tent footprint, earlier 600 sq ft draft allocation, remaining unknowns, and drawing rules
+
 ### Rules and submission
 
 - [Authoritative source index](docs/source-index.md) — TRF, manufacturer, and government references
