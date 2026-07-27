@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-07-27T13:29:21.737029+00:00",
+  "aoi_bbox_wgs84": [
+    -95.865,
+    30.243,
+    -95.823,
+    30.286
+  ],
+  "output": "10-nrcs-soil-map.png",
+  "status": "ok",
+  "warning": "Planning-grade soil-unit context; not a site-specific engineering or drainage determination.",
+  "nrcs_endpoint": "https://SDMDataAccess.sc.egov.usda.gov/Spatial/SDM.wms",
+  "size_bytes": 11702114
+}
