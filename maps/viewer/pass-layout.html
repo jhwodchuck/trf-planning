@@ -63,9 +63,17 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 
 <div class="controls">
 <button id="resetBtn">Reset to saved camp start</button>
-<button id="saveBtn">Save layout (.json)</button>
-<label class="file">Load layout <input id="loadInput" type="file" accept="application/json,.json"></label>
+<button id="saveBtn">Download layout (.json)</button>
+<label class="file">Load from file <input id="loadInput" type="file" accept="application/json,.json"></label>
 </div>
+
+<fieldset>
+<legend>Your presets (this browser)</legend>
+<div class="row"><input id="presetNameIn" type="text" placeholder="e.g. King George — camper near road" style="flex:1"><button id="presetSaveBtn">Save</button></div>
+<div id="presetList" style="margin-top:.4rem"></div>
+<div class="row"><button id="shareBtn">Copy share link</button></div>
+<p style="font-size:.78rem;color:#555;margin:.3rem 0 0">Presets save to this browser only. "Copy share link" puts the current arrangement in the URL itself — paste it to anyone and opening it loads that exact layout, no file needed.</p>
+</fieldset>
 <div class="controls">
 <button id="aerialBtn">Toggle aerial</button>
 <button id="gridBtn">Toggle grid</button>
@@ -101,7 +109,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <li>Drag a pass by clicking and dragging its shape.</li>
 <li>Click a pass (on the canvas or in the list) to select it, then fine-tune with the X/Y/rotation fields.</li>
 <li>Positions are the pass SVG's own top-left corner (each file has a small margin around its true 600 sq ft boundary — see <code>maps/overlays/passes/passes-manifest.json</code>).</li>
-<li>Layout autosaves to this browser's local storage. Use Save/Load to keep a portable copy in the repo or share it.</li>
+<li>The current arrangement autosaves to this browser's local storage as you drag. Use <strong>Your presets</strong> to save multiple named arrangements in this browser and switch between them. Use <strong>Copy share link</strong> to send an exact arrangement to someone else — no file, no repo commit, they just open the link. Use <strong>Download layout (.json)</strong> / <strong>Load from file</strong> for a portable backup, or to propose a new committed starting point (see below).</li>
 <li>Each pass file under <code>maps/overlays/passes/</code> can be edited independently, then regenerate with <code>python scripts/build_pass_svgs.py</code> (or hand-edit the SVGs directly) — reload this page to pick up changes.</li>
 <li>The muted aerial backdrop is a committed local copy of Texas NAIP 2022 (60 cm) imagery, so the layout tool no longer waits on a live GIS service. Its roughly 700 × 450 ft extent provides surrounding road, clearing, and tree context while the editable planning coordinates remain the same 230 × 200 ft area. The image is affine-warped in the browser using the same local-foot/WGS84 transform as <code>group-site-v0.1.geojson</code>, correcting the former ~1.68° rotation and the resulting southern-road drift. This is still planning imagery, not a survey.</li>
 <li>The cyan line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W is a <strong>hard western limit</strong>. Passes are automatically kept east of its extrapolated alignment, including when rotated or loaded from an older saved layout.</li>
@@ -281,7 +289,10 @@ function offsetCurve(points, distanceFt) {
     const dx = points[i + 1][0] - points[i][0];
     const dy = points[i + 1][1] - points[i][1];
     const length = Math.hypot(dx, dy);
-    normals.push([-dy / length, dx / length]);
+    // Local y increases south/down, so the campsite-side normal is the
+    // right-hand normal: north of the eastbound leg and west of the
+    // northbound leg.
+    normals.push([dy / length, -dx / length]);
   }
   return points.map((point, i) => {
     let nx, ny;
@@ -364,6 +375,88 @@ function loadFromStorage() {
 
 function saveToStorage() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({ saved_at_local: new Date().toString(), passes: layout }));
+}
+
+// --- Named local presets (per-browser) --------------------------------
+const PRESETS_KEY = 'trf-pass-presets-v1';
+
+function loadPresets() {
+  try { return JSON.parse(localStorage.getItem(PRESETS_KEY) || '{}'); } catch (e) { return {}; }
+}
+function savePresets(presets) {
+  localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
+}
+function renderPresetList() {
+  const presets = loadPresets();
+  const names = Object.keys(presets).sort();
+  const container = document.getElementById('presetList');
+  container.innerHTML = '';
+  if (!names.length) {
+    container.innerHTML = '<p style="font-size:.82rem;color:#777;margin:.2rem 0">No saved presets yet in this browser.</p>';
+    return;
+  }
+  names.forEach(name => {
+    const row = document.createElement('div');
+    row.className = 'row';
+    const label = document.createElement('span');
+    label.textContent = name;
+    label.style.flex = '1';
+    label.style.overflow = 'hidden';
+    label.style.textOverflow = 'ellipsis';
+    label.style.whiteSpace = 'nowrap';
+    const loadBtn = document.createElement('button');
+    loadBtn.textContent = 'Load';
+    loadBtn.addEventListener('click', () => {
+      layout = { ...defaultLayout(), ...presets[name].passes };
+      manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
+      saveToStorage();
+      renderTokens();
+      renderRoster();
+      setStatus('Loaded preset "' + name + '". ' + totalAreaLabel());
+    });
+    const delBtn = document.createElement('button');
+    delBtn.textContent = 'Delete';
+    delBtn.className = 'danger';
+    delBtn.addEventListener('click', () => {
+      if (!confirm('Delete preset "' + name + '"? This only removes it from this browser.')) return;
+      const p = loadPresets();
+      delete p[name];
+      savePresets(p);
+      renderPresetList();
+    });
+    row.append(label, loadBtn, delBtn);
+    container.appendChild(row);
+  });
+}
+
+// --- Shareable URL (compact, no file needed) ---------------------------
+// Encodes x_ft,y_ft,rotation_deg for every pass, in manifest order, as a
+// flat comma-separated list in the URL hash. ~150-250 chars for 10 passes
+// -- short enough for texting, chat, or email without a link shortener.
+function encodeLayoutForUrl() {
+  return manifest.passes
+    .map(p => {
+      const pos = layout[p.id] || {};
+      return [pos.x_ft || 0, pos.y_ft || 0, pos.rotation_deg || 0]
+        .map(n => Math.round(n * 100) / 100);
+    })
+    .flat()
+    .join(',');
+}
+function decodeLayoutFromUrl(str) {
+  const nums = str.split(',').map(Number);
+  if (nums.some(n => Number.isNaN(n)) || nums.length !== manifest.passes.length * 3) return null;
+  const out = {};
+  manifest.passes.forEach((p, i) => {
+    const [x, y, rot] = nums.slice(i * 3, i * 3 + 3);
+    out[p.id] = { x_ft: x, y_ft: y, rotation_deg: rot, z: i + 1 };
+  });
+  return out;
+}
+function getUrlPresetLayout() {
+  const match = location.hash.match(/preset=([^&]+)/);
+  if (!match) return null;
+  return decodeLayoutFromUrl(decodeURIComponent(match[1]));
 }
 
 function buildCanvasBackground() {
@@ -554,18 +647,26 @@ function init(manifestData, savedLayout, committedLayout) {
   manifest = manifestData;
   startingLayout = committedLayout;
   const base = defaultLayout();
+  const urlLayout = getUrlPresetLayout();
+  const source = urlLayout || savedLayout;
   layout = {};
   manifest.passes.forEach(p => {
-    const saved = savedLayout && savedLayout[p.id];
+    const saved = source && source[p.id];
     layout[p.id] = saved ? { ...base[p.id], ...saved } : base[p.id];
     constrainToWestLimit(p, layout[p.id]);
   });
   buildCanvasBackground();
   applyZoom(zoom, false);
   renderRoster();
+  renderPresetList();
   renderTokens();
   centerOnPlan();
-  setStatus(totalAreaLabel());
+  if (urlLayout) {
+    saveToStorage();
+    setStatus('Loaded a shared layout from the URL link. ' + totalAreaLabel() + ' Save it under "Your presets" to keep a copy in this browser.');
+  } else {
+    setStatus(totalAreaLabel());
+  }
 }
 
 document.getElementById('resetBtn').addEventListener('click', () => {
@@ -595,6 +696,31 @@ document.getElementById('saveBtn').addEventListener('click', () => {
   a.download = 'pass-layout.json';
   a.click();
   setStatus('Downloaded pass-layout.json. Commit it under maps/overlays/passes/ to keep this arrangement in the repo.');
+});
+
+document.getElementById('presetSaveBtn').addEventListener('click', () => {
+  const nameInput = document.getElementById('presetNameIn');
+  const name = nameInput.value.trim();
+  if (!name) { setStatus('Enter a name before saving a preset.'); return; }
+  const presets = loadPresets();
+  presets[name] = { saved_at_local: new Date().toString(), passes: layout };
+  savePresets(presets);
+  nameInput.value = '';
+  renderPresetList();
+  setStatus('Saved preset "' + name + '" in this browser.');
+});
+
+document.getElementById('shareBtn').addEventListener('click', () => {
+  const url = new URL(location.href);
+  url.hash = 'preset=' + encodeURIComponent(encodeLayoutForUrl());
+  const text = url.toString();
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => setStatus('Share link copied to clipboard (' + text.length + ' chars). Paste it to anyone — opening it loads this exact arrangement.'))
+      .catch(() => setStatus('Could not copy automatically. Share link: ' + text));
+  } else {
+    setStatus('Share link: ' + text);
+  }
 });
 
 document.getElementById('loadInput').addEventListener('change', (ev) => {
