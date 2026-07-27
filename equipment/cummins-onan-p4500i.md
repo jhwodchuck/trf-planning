@@ -34,22 +34,51 @@ _Last reviewed: July 27, 2026_
 
 ## Capacity with both generators
 
-The two generator nameplates add up to:
+The two nameplates add up to:
 
 - **7,400 W running capacity**
 - **9,000 W peak/startup capacity**
 
-These totals describe the two engines and inverters together; they do not guarantee that the full sum is available through a single receptacle. Cummins states that two P4500-series inverter generators can be connected with a compatible parallel kit to provide a **50 A RV connection**. The actual usable limit must follow the ratings of the specific parallel kit, receptacle, cable and camper connection.
+These totals do not guarantee that the full sum is available through one receptacle. Cummins states that two P4500-series inverter generators can use a compatible parallel kit with a **50 A RV connection**. Usable output must follow the ratings of the kit, receptacle, cable, adapter, and camper connection.
 
-Without a parallel kit, the generators remain two separate 120 V power sources. A practical arrangement is one generator for each camper air conditioner, while keeping each generator's other loads within its own 3,700 W continuous rating.
+Without a parallel kit, the units remain separate 120 V sources. One generator per camper A/C may be practical if each unit's total continuous load remains within 3,700 W. Verify hard-start devices and test all real loads.
+
+## Physical footprint
+
+One body occupies approximately:
+
+- `24.5 × 18.25 = 447.1 sq in`
+- `447.1 / 144 = 3.11 sq ft`
+
+Two generator bodies occupy about **6.2 sq ft** before spacing, cooling airflow, exhaust, fueling/service access, cords, fuel containers, fire protection, or separation from occupied structures. The body footprint is not the operating footprint.
+
+## CO and fire constraints
+
+Follow the manual revision for the actual units and any stricter TRF requirement. CDC/CPSC guidance generally calls for portable generators to operate outdoors at least **20 ft from doors, windows, and vents**, with exhaust directed away from occupied structures. Current Cummins guidance should also be checked for combustible-material and airflow clearance; a **5-ft combustible clearance** is reported in current manual guidance.
+
+A 20-ft opening separation may be difficult or impossible inside a compact 525–600-sq-ft plot. Do not reduce a safety clearance to make the drawing fit. Determine whether TRF offers a shared/designated generator location, approves a different plot shape/location, or requires a different power strategy.
+
+## Screening rule
+
+The requested fence is visual screening, not an acoustic/weather enclosure. It must not:
+
+- tightly surround the generators;
+- trap or redirect exhaust toward the camper, canopy, road, or neighbors;
+- block intake/discharge airflow;
+- place combustible material inside required clearance;
+- restrict fueling, shutdown, inspection, or firefighting access;
+- create cord or foot/post trip hazards.
+
+A staggered open screen outside all clearances is more plausible than a wraparound fence. Written TRF approval is required.
 
 ## TRF planning notes
 
-- Plan space for **two 98 lb generators**, fuel, cords and required operating clearance.
-- Do not place an operating generator inside the camper, canopy, tent, fenced enclosure or any other confined or partly enclosed area.
-- Direct exhaust away from the camper and neighboring campsites, and follow the operator manual's carbon-monoxide and fire-clearance instructions.
-- Generator output decreases with heat and altitude. The operator manual states that maximum power decreases by about **3.5% per 1,000 ft above sea level** and about **1% per 10°F above 60°F**.
-- Record each unit's serial number, purchase date and service hours below before the trip.
+- Plan space for two 98-lb generators, fuel, cords, and the full operating zone.
+- Never operate a generator inside the camper, canopy, tent, fenced enclosure, or partly enclosed space.
+- Direct exhaust away from the camper and neighboring occupied areas.
+- Output decreases with heat and altitude. The manual reports about 3.5% loss per 1,000 ft elevation and about 1% per 10°F above 60°F.
+- Map every camper and neighbor door, window, and vent.
+- Show exhaust arrows, fuel, extinguisher, cable route, shutdown access, and screen position on the plan.
 
 ## Unit records
 
@@ -60,19 +89,24 @@ Without a parallel kit, the generators remain two separate 120 V power sources. 
 
 ## Accessories and supplies checklist
 
-- [ ] Compatible parallel kit, if the camper will use a combined connection
+- [ ] Compatible parallel kit, if using a combined connection
 - [ ] Remote-start fobs
-- [ ] Correct RV power cable/adapters
-- [ ] Heavy-duty extension cords appropriate for the load
+- [ ] Correct RV cable/adapters
+- [ ] Load-rated outdoor extension cords
 - [ ] Fresh SAE 10W-30 oil
-- [ ] Fuel cans and funnels
-- [ ] Spare spark plug and basic service tools
-- [ ] Carbon-monoxide alarms verified in the camper
+- [ ] Approved fuel cans and funnels
+- [ ] Spare spark plug and service tools
+- [ ] Camper CO alarms tested
 - [ ] Fire extinguisher
+- [ ] Actual manual revision and clearance requirements recorded
+- [ ] Loaded two-A/C test documented
 
 ## Sources
 
 - [Cummins: Onan P4500i inverter portable generator](https://www.cummins.com/en-ame/generators/products/onan-p4500i-inverter-portable-generator)
-- Cummins Onan P4500i Operator Manual, model specifications and safety instructions, available from the official product page above.
+- [Cummins P4500i specification sheet](https://mart.cummins.com/imagelibrary/data/assetfiles/0059500.pdf)
+- [Cummins P4500i owner's manual](https://www.cummins.com/sites/default/files/2025-04/p4500i-owners-manual.pdf)
+- [CDC carbon-monoxide guidance](https://www.cdc.gov/carbon-monoxide/about/index.html)
+- [CPSC generator safety guidance](https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Warns-of-Generator-Carbon-Monoxide-and-Fire-Hazards-Ahead-of-Hurricane-Season)
 
-Specifications should be checked against the labels and manuals for the two actual generators before relying on them for final load calculations.
+Verify specifications against the labels and manuals for the two actual generators before final load or site calculations.
