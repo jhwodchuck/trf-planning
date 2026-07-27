@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRF Group Site Map v0.1</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{display:grid;grid-template-columns:360px 1fr;background:#111}
+aside{overflow:auto;padding:16px;background:#f7f5ef;color:#1b1b1b;box-shadow:2px 0 8px #0004;z-index:1000}
+#map{height:100vh;min-height:650px}
+h1{font-size:1.35rem;margin:0 0 .4rem}h2{font-size:1rem;margin:1.1rem 0 .35rem}
+p,li{font-size:.9rem;line-height:1.35}.warning{background:#fff1bf;border-left:5px solid #b97b00;padding:.65rem}
+.metric{display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;font-size:.9rem}
+.label-pass{background:#fffE;border:1px solid #222;color:#111;font-weight:700;box-shadow:0 1px 4px #0004;padding:2px 5px}
+.label-small{background:#111D;border:1px solid #fff;color:#fff;box-shadow:none;padding:1px 4px;font-size:11px}
+.legend{display:grid;grid-template-columns:24px 1fr;gap:6px 8px;align-items:center;font-size:.85rem}
+.sw{height:13px;border:2px solid #333}.ln{height:0;border-top:4px solid}.dash{border-top-style:dashed}
+@media(max-width:800px){body{display:block}aside{max-height:45vh}#map{height:55vh;min-height:420px}}
+</style>
+</head>
+<body>
+<aside>
+<h1>TRF Group Site Map v0.1</h1>
+<p class="warning"><strong>Provisional planning layout.</strong> Only Jason and Catrina's site is tied to the supplied road controls. Every other household position is conceptual and may move.</p>
+<div class="metric">
+<span>Households</span><strong>7</strong>
+<span>Passes</span><strong>10</strong>
+<span>Area per pass</span><strong>600 sq ft</strong>
+<span>Total planning area</span><strong>6,000 sq ft</strong>
+</div>
+<h2>Planning rules</h2>
+<ul>
+<li>Disconnected pass polygons are intentional.</li>
+<li>Compactness and land-use efficiency are not goals.</li>
+<li>Known structures are drawn to scale.</li>
+<li>Dashed placeholders still need dimensions.</li>
+<li>Road setbacks, drainage, access, and TRF approval still control final placement.</li>
+</ul>
+<h2>Known structures</h2>
+<ul>
+<li>Amanda: 10 × 20 sleeping tent and 10 × 17 Yoga Tent.</li>
+<li>Chris and Sallie: 16 × 20 tent; canopy still unknown.</li>
+<li>Birdie and Gustav: 13 × 26 primary tent and approximate 10 × 20 closet tent.</li>
+<li>Shane and Sabrina: camper plus 16 ft shower trailer; trailer width still unknown.</li>
+<li>Jason and Catrina: current Wildcat deployed zone and 15 × 10 canopy.</li>
+</ul>
+<h2>Legend</h2>
+<div class="legend">
+<span class="sw" style="background:#e6913860"></span><span>Pass polygon</span>
+<span class="sw" style="background:#3d85c680"></span><span>Known equipment</span>
+<span class="sw" style="background:#aaa3;border-style:dashed"></span><span>Placeholder / dimensions TBD</span>
+<span class="ln" style="border-color:#f5d000"></span><span>Road edge reference</span>
+<span class="ln dash" style="border-color:#d7263d"></span><span>10 ft minimum setback</span>
+<span class="ln dash" style="border-color:#f28c28"></span><span>14 ft preferred setback</span>
+</div>
+</aside>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.15/dist/esri-leaflet.js"></script>
+<script>
+const map=L.map('map',{preferCanvas:true});
+const usgs=L.esri.imageMapLayer({url:'https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer',opacity:1,attribution:'USGS / USDA NAIP'}).addTo(map);
+const tx=L.esri.imageMapLayer({url:'https://imagery.geographic.texas.gov/server/rest/services/NAIP/NAIP22_NCCIR_60cm/ImageServer',opacity:1,attribution:'Texas GIO / USDA NAIP 2022'});
+const topo=L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,attribution:'USGS The National Map'});
+const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:20,attribution:'&copy; OpenStreetMap contributors'});
+const householdColors={
+'jason_catrina':'#e69138','shane_camper':'#6aa84f','shane_shower':'#6aa84f',
+'mc_camper':'#3d85c6','mc_support':'#3d85c6','amanda':'#45818e',
+'chris_sallie':'#d6b656','birdie_primary':'#a64d79','birdie_closet':'#a64d79',
+'stephane_true':'#8e7cc3'
+};
+function styleFeature(f){
+ const p=f.properties||{},r=p.role,id=p.id;
+ if(r==='pass')return{color:'#222',weight:3,fillColor:householdColors[id]||'#888',fillOpacity:.26};
+ if(r==='road_edge')return{color:'#f5d000',weight:7};
+ if(r==='setback_10')return{color:'#d7263d',weight:4,dashArray:'10 7'};
+ if(r==='setback_14')return{color:'#f28c28',weight:4,dashArray:'10 7'};
+ if(r==='trailer_length')return{color:'#245b24',weight:9};
+ if(r&&r.includes('placeholder'))return{color:'#444',weight:3,dashArray:'8 6',fillColor:'#aaa',fillOpacity:.17};
+ if(r==='tent_estimate')return{color:'#6b2850',weight:3,dashArray:'8 5',fillColor:'#c27ba0',fillOpacity:.38};
+ if(r==='rv')return{color:'#0d47a1',weight:3,fillColor:'#3d85c6',fillOpacity:.42};
+ if(r==='canopy')return{color:'#8c5200',weight:3,fillColor:'#f6b26b',fillOpacity:.45};
+ if(r==='tent')return{color:'#294f55',weight:3,fillColor:'#76a5af',fillOpacity:.45};
+ return{color:'#222',weight:2,fillOpacity:.15};
+}
+fetch('../data/group-site-v0.1.geojson').then(r=>r.json()).then(data=>{
+ const layer=L.geoJSON(data,{style:styleFeature,onEachFeature:(f,l)=>{
+   const p=f.properties||{};
+   let text='<strong>'+String(p.name||p.id)+'</strong>';
+   if(p.area_sqft)text+='<br>'+p.area_sqft+' sq ft';
+   if(p.dimensions_ft)text+='<br>'+p.dimensions_ft+' ft';
+   if(p.length_ft)text+='<br>'+p.length_ft+' ft long';
+   if(p.status)text+='<br>'+p.status;
+   if(p.note)text+='<br>'+p.note;
+   l.bindPopup(text);
+   if(p.role==='pass')l.bindTooltip(p.name,{permanent:true,direction:'center',className:'label-pass'});
+   if(['road_edge','setback_10','setback_14'].includes(p.role))l.bindTooltip(p.name,{permanent:true,direction:'right',className:'label-small'});
+ }}).addTo(map);
+ map.fitBounds(layer.getBounds(),{padding:[40,40],maxZoom:20});
+ L.control.layers({'USGS NAIP':usgs,'Texas NAIP 2022':tx,'USGS imagery + topo':topo,'OpenStreetMap':osm},{'Group site v0.1':layer},{collapsed:false}).addTo(map);
+ L.control.scale({imperial:true,metric:false,maxWidth:180}).addTo(map);
+});
+</script>
+</body></html>
