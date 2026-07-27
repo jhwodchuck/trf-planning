@@ -6,23 +6,43 @@ Last updated: **2026-07-27**
 
 - Qualifying passes: **1**.
 - Planning area: **600 sq ft**.
-- Shelter plan: **one tent and one canopy**.
+- Shelter plan: **one 16 × 20 ft tent and one canopy**.
 
-## Known requirements
+## Confirmed equipment
 
-The tent and canopy must both fit within the 600 sq ft household allocation along with entrances, guy lines, stakes or ballast, drainage gaps, and required paths.
+| Item | Dimensions | Nominal footprint | Status | Source |
+|---|---:|---:|---|---|
+| Tent | **16 ft × 20 ft** | **320 sq ft** | Confirmed | Chris and Sallie, relayed by Jason on 2026-07-27 |
+| Canopy | Unknown | Unknown | Not yet confirmed |  |
+
+Use the **16 × 20 ft** tent dimensions in future layouts. Do not retain the previous generic tent placeholder.
+
+The 320 sq ft value is the nominal rectangular footprint. The final operational footprint may be larger if the rainfly, guy lines, stakes, vestibules, or entrances extend beyond those dimensions.
+
+## Remaining planning area
+
+Within the 600 sq ft pass allocation:
+
+- Confirmed nominal tent footprint: **320 sq ft**.
+- Remaining before adding the canopy, guy lines, entrances, paths, drainage gaps, storage, or other equipment: **280 sq ft**.
+
+The tent and canopy must both fit within the 600 sq ft household allocation along with entrances, anchoring, drainage gaps, and required paths.
 
 ## Information still needed
 
-1. Tent manufacturer/model and nominal dimensions.
-2. Rainfly and guy-line footprint.
-3. Tent-door location and preferred orientation.
-4. Canopy manufacturer/model and dimensions.
-5. Canopy leg spacing, anchors, ropes, or ballast footprint.
-6. Preferred relationship between tent and canopy.
-7. Vehicle, generator, cooking, storage, fencing, and utility needs.
-8. Preferred position within the group camp.
+1. Tent manufacturer and model.
+2. Whether 16 × 20 ft describes the floor, rainfly, or complete staked footprint.
+3. Rainfly, vestibule, and guy-line projections.
+4. Tent-door location and preferred orientation.
+5. Canopy manufacturer, model, and dimensions.
+6. Canopy leg spacing, anchors, ropes, or ballast footprint.
+7. Preferred relationship between the tent and canopy.
+8. Vehicle, generator, cooking, storage, fencing, and utility needs.
+9. Preferred position within the group camp.
 
-## Drawing rule
+## Drawing rules
 
-Until dimensions are confirmed, label both structures as `DIMENSIONS REQUIRED` and do not infer that either is 10 × 10 ft.
+- Draw the tent as a **16 × 20 ft rectangle** labeled `CHRIS + SALLIE TENT — CONFIRMED 16 × 20 FT`.
+- Add a surrounding dashed zone for unverified rainfly, vestibule, guy-line, and stake projections.
+- Keep the canopy labeled `DIMENSIONS REQUIRED` until confirmed.
+- Do not infer that the canopy is 10 × 10 ft.
