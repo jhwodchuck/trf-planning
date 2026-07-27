@@ -2,6 +2,10 @@
 
 Last updated: **2026-07-27**
 
+## Planning area baseline
+
+Use **600 sq ft per qualifying pass** for all planning layouts and calculations. Amanda's working unit is therefore treated as a **600 sq ft site**.
+
 ## Confirmed equipment
 
 | Site-plan label | Actual item | Dimensions | Nominal footprint | Status | Source |
@@ -32,7 +36,7 @@ The exact compass edge remains to be assigned when Amanda's unit is placed on th
 
 ## Current planning allocation
 
-The earlier group draft assigned Amanda one pass-unit with a provisional **20 × 30 ft / 600 sq ft** boundary.
+Amanda's pass-unit is planned as **600 sq ft**. A convenient starting shape is **20 × 30 ft**, but the final boundary may be another shape totaling 600 sq ft.
 
 Confirmed nominal equipment area:
 
@@ -42,10 +46,7 @@ Confirmed nominal equipment area:
 | Yoga Tent | 170 sq ft |
 | **Combined nominal footprint** | **370 sq ft** |
 
-Space remaining before guy lines, anchors, walkways, entrances, drainage gaps, storage, or other equipment:
-
-- Inside a **600 sq ft** unit: **230 sq ft**.
-- Inside a **525 sq ft** unit: **155 sq ft**.
+Space remaining inside the 600 sq ft unit before guy lines, anchors, walkways, entrances, drainage gaps, storage, or other equipment: **230 sq ft**.
 
 The two structures should not automatically be drawn tight against each other or against the unit boundary. The final layout must account for:
 
@@ -68,13 +69,13 @@ Before Amanda's individual site plan is final, record:
 5. Measured Yoga Tent rope, stake, frame-foot, or ballast projection.
 6. Preferred spacing and path between the sleeping tent and Yoga Tent.
 7. Vehicle, generator, cooking, storage, fencing, and utility requirements.
-8. Whether her approved allocation is 600 sq ft or 525 sq ft.
-9. Which compass boundary is the far/outer edge after Amanda's unit is placed on the master map.
+8. Which compass boundary is the far/outer edge after Amanda's unit is placed on the master map.
 
 ## Drawing rules
 
+- Represent Amanda's complete pass boundary as exactly **600 sq ft**.
 - Represent the sleeping tent as a **10 × 20 ft rectangle** labeled `SLEEPING TENT — CONFIRMED 10 × 20 FT`.
 - Represent the canopy as a **10 × 17 ft rectangle** labeled `YOGA TENT — COVERPRO 10 × 17 FT`.
 - Place the Yoga Tent against the far/outer portion of Amanda's site while retaining all required clearances.
 - Add a surrounding dashed zone for unverified ropes, anchors, rainfly, frame feet, or ballast.
-- Do not retain the old 10 × 10 ft tent or unknown-canopy symbols in revised maps.
+- Do not retain the old 10 × 10 ft tent, unknown-canopy, or 525 sq ft planning alternatives in revised maps.
