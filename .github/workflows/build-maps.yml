@@ -1,0 +1,60 @@
+name: Build TRF planning maps
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_map_pack.py"
+      - "requirements-map.txt"
+      - "maps/data/map-sources.json"
+      - ".github/workflows/build-maps.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trf-map-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-map.txt
+
+      - name: Install map dependencies
+        run: python -m pip install --upgrade pip -r requirements-map.txt
+
+      - name: Build map pack
+        run: python scripts/build_map_pack.py
+
+      - name: Upload generated maps as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trf-planning-map-pack
+          path: |
+            maps/generated/
+            maps/data/*.geojson
+          if-no-files-found: warn
+
+      - name: Commit refreshed map outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add maps/generated maps/data/*.geojson
+          if git diff --cached --quiet; then
+            echo "No generated map changes to commit."
+          else
+            git commit -m "Refresh generated TRF planning maps [skip ci]"
+            git push
+          fi
