@@ -2,98 +2,109 @@
 
 Last reviewed: **2026-07-27**
 
-Working extraction of official TRF sources. Direct sources are listed in [`source-index.md`](source-index.md).
+This is a working extraction of official TRF sources, not a substitute for written approval from TRF. Direct links are maintained in [`source-index.md`](source-index.md).
 
-## Dates
+## Key dates
 
-| Item | Date/window |
+| Item | Date or window |
 |---|---|
-| Individual/communal land request and payment due | **September 7, 2026** |
-| Early move-in | **September 26–October 6, 2026**, 9 a.m.–4 p.m. |
-| Public season | **October 8–November 29, 2026** |
+| Individual/communal land-request forms and payments due | **September 7, 2026** |
+| Early move-in | **September 26–October 6, 2026**, 9:00 a.m.–4:00 p.m. |
+| 2026 public season | **October 8–November 29, 2026** |
 | Move-out | **November 30–December 6, 2026** |
-| Final move-out hours | **December 6**, 9 a.m.–noon |
+| Final move-out day | **December 6, 2026**, 9:00 a.m.–noon |
 
-Reconfirm these dates before relying on them.
+Confirm all dates directly with TRF before relying on them operationally.
 
-## Individual request package
+## Individual land-request package
 
-The 2026 form calls for:
+The 2026 individual form calls for a submission that includes:
 
-- requested location marked on the provided map;
+- requested location marked on the provided campground map;
 - a detailed proposed layout with dimensions;
-- RVs and their lengths;
+- all RVs and their lengths;
 - vehicles and vehicle types;
-- tents and sizes;
+- tents and their dimensions;
 - trailers;
-- temporary construction, boundaries, screening, or other large items;
-- qualifying pass information and payment.
+- temporary construction, boundaries, screening, or similar large items;
+- all other information requested on the form;
+- required payment and qualifying season-pass information.
 
-The drawing must therefore include every object affecting area, access, emergency egress, or safety—not only the camper body.
+The final drawing should therefore include every object that affects area, access, sight lines, emergency egress, or safety—not only the camper body.
 
-## Area-limit conflict
+## Area-limit conflict requiring written resolution
 
-The 2026 individual form describes **up to 600 sq ft per qualifying season-pass holder** when purchased/submitted by the deadline, and **525 sq ft** for later submissions. The current guild/land-request webpage separately states **up to 525 sq ft per season pass**.
+The 2026 individual request form indicates that an individual may request **up to 600 sq ft per qualifying season-pass holder** when the pass is purchased by the September 7 deadline, while later submissions are described as limited to **525 sq ft**. The current guild/land-request webpage separately states **up to 525 sq ft per season pass**.
 
-Obtain written confirmation of:
+Do not assume that 600 sq ft is approved. Ask TRF to confirm in writing:
 
-1. Whether this request may use 600 sq ft.
-2. Whether slides, stairs, awning, guy lines, screening, generators, fuel, and vehicles count inside the area.
-3. How irregular shapes are measured.
-4. Whether roadway setbacks reduce the usable assigned area.
+1. Whether the 600 sq ft early-submission allowance applies to this individual request.
+2. Whether camper slides, stairs, awnings, guy lines, fencing, generators, fuel, and vehicles must all remain inside that area.
+3. How irregular plot shapes are measured.
+4. Whether required road setbacks are excluded from or included in the assigned dimensions.
 
-## Design-affecting rules
+## Temporary-site rules affecting the design
 
-Current official materials indicate:
+Based on current official materials:
 
-- all campsite structures and boundaries must be temporary and preapproved;
-- permanent landscape changes are prohibited;
-- temporary boundaries/structures must be removed after the season;
-- boundaries must remain at least **10 ft from roadways**;
-- boundary structures are described as at least **4 ft tall**;
-- no digging or attaching hardware to trees/natural features;
-- an emergency exit route must remain available;
-- TRF may inspect or require removal of noncompliant structures;
-- household furniture is prohibited in the camping area;
-- the site must remain clean and trash must be dumpstered or packed out;
-- ground fires are prohibited; permitted off-ground fire pits are limited to **36 in diameter**;
-- the campground vehicle speed limit is **5 mph**;
-- general camping does not automatically allow roping/building a private boundary—the approved land-request process is required.
+- The campsite must remain temporary; permanent structures and permanent landscape changes are prohibited.
+- Site boundaries, construction, and similar installations require preapproval.
+- Approved boundaries/structures must be removed at the end of the season.
+- Boundaries must remain at least **10 ft from roadways**.
+- Boundary structures are described as needing to be at least **4 ft tall**.
+- Do not dig or attach hardware to trees or natural features.
+- Maintain an emergency exit route.
+- TRF may inspect campsite structures and remove or require removal of noncompliant work.
+- Household furniture is prohibited in the camping area under the season-pass standards.
+- The site must be kept clean, with trash placed in designated dumpsters or packed out.
+- Ground fires are prohibited; where permitted, off-ground fire pits are limited to **36 in diameter**.
 
-Verify the treatment of freestanding visual screening, stakes, ballast, fuel, and generators in the written approval.
+These points must be checked against the final approval response because the exact treatment of freestanding visual screening, stakes, ballast, and generator placement may depend on TRF's interpretation.
 
-## Required drawing content
+## Roads, access, and operating rules
 
-Show and dimension:
+Current campground materials include these planning constraints:
 
-- requested perimeter, side lengths, diagonals where useful, and calculated area;
-- road edge and 10-ft setback;
-- north arrow, scale, scale bar, revision, and source date;
-- camper body, hitch, all slides, stairs, awning, stabilizers, openings, exhausts, and utility connections;
-- truck, if it remains onsite;
+- Maintain the required roadway setback.
+- Do not block roadways, emergency access, or neighboring plots.
+- Campground speed is limited to **5 mph**.
+- Account for quiet hours and generator-noise effects on neighbors.
+- General dispersed camping rules do not automatically permit roping off land or building site boundaries; a reserved/approved land-request process is required for the proposed screened campsite.
+
+## Required drawing content for this project
+
+The submission layout should show and dimension:
+
+- requested plot perimeter and total calculated area;
+- road edge and 10-ft setback line;
+- north arrow and drawing scale;
+- camper body, hitch/nose, all three slides, stairs, door swing, awning, stabilizers, and utility connections;
+- F-250 location, if it remains onsite;
 - canopy roof, legs, guy lines, stakes, or ballast;
-- fence/screen panels, feet/posts, gate, and height;
-- both generators, exhaust direction, clearances, cords, fuel, and extinguisher;
-- walking and emergency exit routes;
-- trees, roots, branches, ditches, slopes, drainage, and fixed obstacles;
-- utility and wastewater routing;
-- clearances to neighboring occupied areas.
+- fence/screen panels, posts/feet, gate, and height;
+- both generators, exhaust direction, operating clearances, cords, fuel, and fire extinguisher;
+- walking route and emergency exit route;
+- trees, roots, low limbs, drainage paths, ditches, slopes, and other fixed obstacles;
+- distance from generator exhaust to all camper doors, windows, vents, awnings, neighboring occupied areas, and combustible materials;
+- wastewater, water, electrical, and fuel routing.
 
-## Questions to send TRF
+## Questions for TRF
 
-1. Is this request eligible for 600 sq ft or capped at 525 sq ft?
-2. Which deployed objects count toward that area?
-3. Is a freestanding opaque generator screen allowed, and what anchoring is permitted?
-4. Does the 4-ft boundary-height rule apply to that screen?
-5. May generators sit outside the visual boundary but inside the approved plot?
-6. Are there TRF-specific generator distances beyond manufacturer/government guidance?
-7. Are fuel quantity, extinguisher, quiet-hours shutoff, or enclosure rules imposed?
-8. Must the F-250 fit inside the plot after setup?
-9. Is a minimum clearance required between slides/awnings and neighboring plots?
-10. What drawing scale/detail is expected?
+Send the following as one concise written request after the approximate plot is selected:
+
+1. Is this request eligible for 600 sq ft, or is the current maximum 525 sq ft?
+2. What objects count toward the assigned square footage?
+3. Is a freestanding, temporary, visually opaque generator screen allowed, and what anchoring is permitted?
+4. Must the screen be 4 ft or taller under the boundary rule?
+5. May generator equipment sit outside the visual boundary but inside the approved plot?
+6. Are portable generators subject to a TRF-specific distance from RV openings or neighboring camps beyond manufacturer/government guidance?
+7. Does TRF require a fire extinguisher, fuel-container separation, quiet-hours shutoff, or approved generator enclosure?
+8. Does the truck have to fit within the individual plot, or may it be parked elsewhere after setup?
+9. Are slide-outs and awnings permitted to approach a plot edge, and is a minimum neighbor clearance required?
+10. What level of detail and scale is expected for approval drawings?
 
 ## Contact record
 
-| Date | Contact | Question | Response/source | Added to plan? |
+| Date | Contact | Question | Response/source | Incorporated into plan? |
 |---|---|---|---|---|
 |  | `camping@texrenfest.com` |  |  |  |
