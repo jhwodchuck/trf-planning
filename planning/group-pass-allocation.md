@@ -5,7 +5,10 @@ Last updated: **2026-07-27**
 ## Planning baseline
 
 - Use **600 sq ft per qualifying pass** for all working layouts.
-- Adjacent pass areas may be planned together for a household, but each pass still contributes a separate 600 sq ft allocation.
+- Each pass contributes its own 600 sq ft allocation, and those allocations do **not** need to form one compact or contiguous household polygon.
+- Compactness, neat rectangles, and land-use efficiency are **not planning goals**.
+- Prefer disconnected, stepped, narrow, or irregular polygons when they claim more practical usable area around roads, trees, drainage, neighboring camps, or other constraints.
+- Gaps between claimed polygons may remain unallocated; do not shrink the requested pass areas merely to eliminate gaps.
 - Final placement must retain roadway setbacks, access, drainage, emergency egress, and any conditions imposed by TRF.
 
 ## Household roster
@@ -33,14 +36,27 @@ Last updated: **2026-07-27**
 - **Total passes:** 10.
 - **Total planning area:** 6,000 sq ft.
 
+## Master-layout objective
+
+The optimization target is **maximum practical claimed area and useful placement**, not minimum perimeter, compactness, symmetry, or visual neatness.
+
+A layout is preferable when it:
+
+1. preserves the full 600 sq ft contribution from each pass;
+2. uses disconnected boxes or polygons when that avoids wasting claimable ground;
+3. wraps around trees, drainage channels, road setbacks, or existing camp features without reducing the total claimed area;
+4. places household equipment where it works best even when a household's pass polygons are separated; and
+5. leaves unavoidable gaps outside the requested polygons rather than absorbing those gaps into an inefficient compact boundary.
+
 ## Master-layout rules
 
-1. Draw every household allocation as a labeled polygon with its calculated area.
-2. For two-pass households, begin with a combined **1,200 sq ft** envelope rather than forcing two disconnected 600 sq ft plots.
-3. Show every camper, tent, canopy, slide-out, stair, awning, guy line, anchor, vehicle, generator, fence, and major path that affects usable area.
-4. Do not count shared roads, required setbacks, or unapproved outside space toward a household's usable allocation.
-5. Keep a shared central circulation and emergency route through the group camp.
-6. Treat equipment dimensions as unknown until recorded in the household note or another verified equipment file.
+1. Draw every pass allocation as one or more labeled polygons, with the area of each component and the combined pass total shown.
+2. For two-pass households, test both contiguous and disconnected arrangements. Prefer whichever provides more useful claimed space and better equipment placement.
+3. A two-pass household may use two separate **600 sq ft** polygons, one **1,200 sq ft** polygon, or multiple irregular components totaling **1,200 sq ft**.
+4. Show every camper, tent, canopy, slide-out, stair, awning, guy line, anchor, vehicle, generator, fence, and major path that affects usable area.
+5. Do not count shared roads, required setbacks, intentional gaps, or unapproved outside space toward a household's allocation.
+6. Keep required circulation and emergency access, but do not treat general layout efficiency as a design objective.
+7. Treat equipment dimensions as unknown until recorded in the household note or another verified equipment file.
 
 ## Current confirmation status
 
