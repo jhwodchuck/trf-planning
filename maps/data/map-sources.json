@@ -1,5 +1,6 @@
 {
   "checked_on": "2026-07-27",
+  "builder_version": 1,
   "area_of_interest": {
     "description": "Approximate Texas Renaissance Festival campground and festival envelope; not a property or campsite boundary.",
     "bbox_wgs84": [-95.865, 30.243, -95.823, 30.286]
