@@ -13,7 +13,8 @@ This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel pr
 5. Review `reference/official/2026-campground-map.html` for roads, numbered campground areas, gates, services, and emergency exits.
 6. Use `overlays/requested-campsite-footprint.svg` as the original dimensioned, scale-controlled RV and canopy footprint template.
 7. Review the static files in `generated/` after the map-build workflow runs.
-8. Open `viewer/pass-layout.html` to drag, rotate, and rearrange the ten individual 600 sq ft pass drawings in `overlays/passes/` on a freeform (non-georeferenced) canvas, with a live Texas NAIP 2022 (60 cm) aerial backdrop, fetched at the canvas's full on-screen resolution, for ground context.
+8. Open `viewer/pass-layout.html` to drag, rotate, and rearrange the ten individual 600 sq ft pass drawings in `overlays/passes/` on a planning-grade local-foot canvas, with zoom controls and an affine-aligned local Texas NAIP 2022 (60 cm) backdrop covering roughly 700 × 450 ft of surrounding context.
+9. Open the linked 2025-10-20 Google Earth scene from `all-maps.html`, then import `overlays/group-site-v0.1.kml` locally to compare the occupied 2025 clearings and roads with the 2026 candidate plan.
 
 `viewer/group-site-v0.1.html` no longer exists as a separate page — its geojson layer, legend, and metrics were folded into `viewer/index.html` as a toggleable "Group site v0.1" overlay, to stop maintaining two near-identical Leaflet viewers.
 
@@ -23,6 +24,7 @@ This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel pr
 |---|---|---|
 | Provisional site-specific aerial overlay | Shows the current 598.9 sq ft stepped boundary, RV zone, canopy, road line, and setbacks at the supplied coordinates | Added; field verification required |
 | Per-pass SVGs and drag-layout tool | Ten standalone 600 sq ft pass drawings (`overlays/passes/`) that can be independently refined and freely repositioned on `viewer/pass-layout.html` | Added; freeform, not georeferenced |
+| 2025 occupied-camp imagery reference + KML | Dated prior-season clearing, equipment, canopy, and road context compared with the 2026 candidate polygons | Linked Google Earth reference; imagery not rehosted; household identification and field control still required |
 | Official 2026 Season Pass Plotting Map v3.2 | Broad season-pass camping, parking, and restricted-area context | Live official reference |
 | Official 2026 campground map | Camp roads, numbered campground areas, gates, emergency exits, water, showers, cabins, first aid, restrooms, and landmarks | Live official reference |
 | NAIP aerial imagery | Trees, clearings, roads, drainage traces, and current ground context | In viewers and generated maps |

@@ -6,7 +6,7 @@ This is a working extraction of official TRF sources, not a substitute for writt
 
 ## Project planning convention
 
-For this repository, use **600 sq ft per qualifying pass** for every working layout, individual unit, and combined group-area calculation. Do not produce or maintain a parallel 525 sq ft planning layout unless Jason explicitly changes this convention.
+For this repository, use **600 sq ft per qualifying pass** for every working layout, individual unit, and combined group-area calculation. Do not produce or maintain a parallel 525 sq ft planning layout unless J. explicitly changes this convention.
 
 This convention controls planning work. It does not overwrite or misrepresent the official-source conflict documented below, and the final field setup must follow the dimensions and conditions TRF actually approves.
 

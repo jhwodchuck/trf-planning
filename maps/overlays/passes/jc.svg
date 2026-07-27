@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="484" height="520" viewBox="0 0 484 520" role="img" aria-labelledby="title desc">
+<title id="title">J. + C. — 600 sq ft pass</title>
+<desc id="desc">Standalone provisional pass drawing, decomposed from the public group-site planning overlay.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+</style></defs>
+<polygon points="476.0,512.0 476.0,8.0 248.0,8.0 248.0,350.7 8.0,350.7 8.0,512.0" class="pass" fill="#e69138"/>
+<polygon points="248.0,8.0 476.0,8.0 476.0,512.0 248.0,512.0" class="eq" fill="#3d85c6"/>
+<text x="362.0" y="255.0" text-anchor="middle" class="tiny">Wildcat deployed zone</text>
+<text x="362.0" y="268.0" text-anchor="middle" class="tiny">31.5 x 14.25 ft</text>
+<polygon points="8.0,350.7 248.0,350.7 248.0,510.7 8.0,510.7" class="eq" fill="#f6b26b"/>
+<text x="128.0" y="425.7" text-anchor="middle" class="tiny">Canopy</text>
+<text x="128.0" y="438.7" text-anchor="middle" class="tiny">15 x 10 ft</text>
+<text x="248.8" y="276.1" text-anchor="middle" class="label">J. + C.</text>
+<text x="248.8" y="294.1" text-anchor="middle" class="small">600 sq ft</text>
+<text x="248.8" y="306.1" text-anchor="middle" class="tiny">598.875 sq ft RV + canopy equipment footprint, plus 1.125 sq ft boundary buffer</text>
+</svg>

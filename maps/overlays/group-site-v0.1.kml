@@ -1,0 +1,3081 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>TRF 2026 group site plan v0.1</name>
+    <description>Provisional planning geometry only. Compare locally with the dated 2025-10-20 Google Earth view; do not treat these polygons as surveyed or approved campsite boundaries.</description>
+    <Style id="role-clearance_placeholder">
+      <LineStyle>
+        <color>ff777777</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>33777777</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-equipment_line_placeholder">
+      <LineStyle>
+        <color>ff777777</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>33777777</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-equipment_placeholder">
+      <LineStyle>
+        <color>ff777777</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>33777777</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-known_equipment">
+      <LineStyle>
+        <color>ff777777</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>33777777</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-pass">
+      <LineStyle>
+        <color>ff3869e6</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>553869e6</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-road_edge">
+      <LineStyle>
+        <color>ff00d0f5</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>00000000</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-setback_10">
+      <LineStyle>
+        <color>ff3d26d7</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>00000000</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-setback_14">
+      <LineStyle>
+        <color>ff288cf2</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>00000000</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="role-west_limit">
+      <LineStyle>
+        <color>ffd4bc00</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>00000000</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
+    <Placemark>
+      <name>J. + C.</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: jc
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note: 598.875 sq ft RV + canopy equipment footprint, plus 1.125 sq ft boundary buffer
+color: #e69138
+source: planning/households/jc.md
+saved_x_ft: 141
+saved_y_ft: 76.75
+rotation_deg: 0
+z: 53</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc</value>
+        </Data>
+        <Data name="name">
+          <value>J. + C.</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>598.875 sq ft RV + canopy equipment footprint, plus 1.125 sq ft boundary buffer</value>
+        </Data>
+        <Data name="color">
+          <value>#e69138</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/jc.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>141</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>76.75</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>0</value>
+        </Data>
+        <Data name="z">
+          <value>53</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846177971,30.255794677,0 -95.846175050,30.255880889,0 -95.846220201,30.255882031,0 -95.846222187,30.255823415,0 -95.846269715,30.255824617,0 -95.846270650,30.255797020,0 -95.846177971,30.255794677,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Wildcat deployed zone</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: jc_rv
+role: known_equipment
+status: working measurement; camper model/data-plate not yet confirmed
+dimensions_ft: 31.5 x 14.25 ft
+color: #3d85c6
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_rv</value>
+        </Data>
+        <Data name="name">
+          <value>Wildcat deployed zone</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>working measurement; camper model/data-plate not yet confirmed</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>31.5 x 14.25 ft</value>
+        </Data>
+        <Data name="color">
+          <value>#3d85c6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846220201,30.255882031,0 -95.846175050,30.255880889,0 -95.846177971,30.255794677,0 -95.846223122,30.255795818,0 -95.846220201,30.255882031,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Canopy</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: jc_canopy
+role: known_equipment
+status: working template; dimensions must be verified
+dimensions_ft: 15 x 10 ft
+color: #f6b26b
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_canopy</value>
+        </Data>
+        <Data name="name">
+          <value>Canopy</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>working template; dimensions must be verified</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>15 x 10 ft</value>
+        </Data>
+        <Data name="color">
+          <value>#f6b26b</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846269715,30.255824617,0 -95.846222187,30.255823415,0 -95.846223115,30.255796046,0 -95.846270642,30.255797248,0 -95.846269715,30.255824617,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>S. + S. — Camper</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: ss_camper
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note:
+color: #93c47d
+source: equipment/ss-kz-connect-se-c312bhkse.md
+saved_x_ft: 79.5
+saved_y_ft: 164.75
+rotation_deg: -2
+z: 52</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_camper</value>
+        </Data>
+        <Data name="name">
+          <value>S. + S. — Camper</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#93c47d</value>
+        </Data>
+        <Data name="source">
+          <value>equipment/ss-kz-connect-se-c312bhkse.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>79.5</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>164.75</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>-2</value>
+        </Data>
+        <Data name="z">
+          <value>52</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846472978,30.255646379,0 -95.846434940,30.255646565,0 -95.846434869,30.255635612,0 -95.846425360,30.255635659,0 -95.846425216,30.255613755,0 -95.846434726,30.255613708,0 -95.846434628,30.255598649,0 -95.846409269,30.255598773,0 -95.846409055,30.255565916,0 -95.846434413,30.255565793,0 -95.846434225,30.255537043,0 -95.846472263,30.255536858,0 -95.846472978,30.255646379,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Camper body</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: ss_camper_body
+role: known_equipment
+status: published manufacturer dimensions; model year/VIN not yet confirmed
+dimensions_ft: 36 ft 9 in x 8 ft (rear bumper to coupler)
+color: #3d85c6
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_camper_body</value>
+        </Data>
+        <Data name="name">
+          <value>Camper body</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>published manufacturer dimensions; model year/VIN not yet confirmed</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>36 ft 9 in x 8 ft (rear bumper to coupler)</value>
+        </Data>
+        <Data name="color">
+          <value>#3d85c6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846461221,30.255641987,0 -95.846435862,30.255642111,0 -95.846435205,30.255541488,0 -95.846460563,30.255541364,0 -95.846461221,30.255641987,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Rear bunkhouse slide</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_camper_slide_bunk
+role: equipment_placeholder
+status: scale-derived from floorplan artwork; not measured on this unit; unsuitable for approval
+dimensions_ft: ~3 ft 1 in projection (estimate)
+color: #a9c9e8
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_camper_slide_bunk</value>
+        </Data>
+        <Data name="name">
+          <value>Rear bunkhouse slide</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>scale-derived from floorplan artwork; not measured on this unit; unsuitable for approval</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>~3 ft 1 in projection (estimate)</value>
+        </Data>
+        <Data name="color">
+          <value>#a9c9e8</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846471033,30.255639817,0 -95.846461207,30.255639865,0 -95.846461066,30.255618235,0 -95.846470892,30.255618187,0 -95.846471033,30.255639817,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Main living slide</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_camper_slide_main
+role: equipment_placeholder
+status: scale-derived from floorplan artwork; not measured on this unit; unsuitable for approval
+dimensions_ft: ~3 ft 9 in projection (estimate)
+color: #a9c9e8
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_camper_slide_main</value>
+        </Data>
+        <Data name="name">
+          <value>Main living slide</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>scale-derived from floorplan artwork; not measured on this unit; unsuitable for approval</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>~3 ft 9 in projection (estimate)</value>
+        </Data>
+        <Data name="color">
+          <value>#a9c9e8</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846472760,30.255612975,0 -95.846461032,30.255613032,0 -95.846460756,30.255570867,0 -95.846472484,30.255570810,0 -95.846472760,30.255612975,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Rear service bay</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_rear_service_zone
+role: equipment_placeholder
+status: provisional 3 x 8 ft service bay; appliance doors, griddle, and step projections require measurement
+dimensions_ft: 3 x 8 ft provisional
+color: #f6b26b
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_rear_service_zone</value>
+        </Data>
+        <Data name="name">
+          <value>Rear service bay</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional 3 x 8 ft service bay; appliance doors, griddle, and step projections require measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>3 x 8 ft provisional</value>
+        </Data>
+        <Data name="color">
+          <value>#f6b26b</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846434869,30.255635612,0 -95.846425360,30.255635659,0 -95.846425216,30.255613755,0 -95.846434726,30.255613708,0 -95.846434869,30.255635612,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Rug zone</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_rug_zone
+role: equipment_placeholder
+status: working assumption; confirm actual rug dimensions and placement
+dimensions_ft: 8 x 12 ft provisional
+color: #d9b38c
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_rug_zone</value>
+        </Data>
+        <Data name="name">
+          <value>Rug zone</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>working assumption; confirm actual rug dimensions and placement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>8 x 12 ft provisional</value>
+        </Data>
+        <Data name="color">
+          <value>#d9b38c</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846434628,30.255598649,0 -95.846409269,30.255598773,0 -95.846409055,30.255565916,0 -95.846434413,30.255565793,0 -95.846434628,30.255598649,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Rear steps</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_rear_steps
+role: equipment_placeholder
+status: floorplan-derived location; projection requires measurement
+dimensions_ft: projection TBD
+color: #c58b55
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_rear_steps</value>
+        </Data>
+        <Data name="name">
+          <value>Rear steps</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived location; projection requires measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>projection TBD</value>
+        </Data>
+        <Data name="color">
+          <value>#c58b55</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846435722,30.255620549,0 -95.846425261,30.255620600,0 -95.846425225,30.255615124,0 -95.846435686,30.255615073,0 -95.846435722,30.255620549,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Main steps</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_main_steps
+role: equipment_placeholder
+status: floorplan-derived location; projection requires measurement
+dimensions_ft: projection TBD
+color: #c58b55
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_main_steps</value>
+        </Data>
+        <Data name="name">
+          <value>Main steps</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived location; projection requires measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>projection TBD</value>
+        </Data>
+        <Data name="color">
+          <value>#c58b55</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846435400,30.255571264,0 -95.846424939,30.255571315,0 -95.846424903,30.255565839,0 -95.846435364,30.255565788,0 -95.846435400,30.255571264,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>18 ft awning</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: ss_awning
+role: equipment_line_placeholder
+status: published length; projection and support locations require measurement
+dimensions_ft: projection TBD
+color: #2e7d32
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_awning</value>
+        </Data>
+        <Data name="name">
+          <value>18 ft awning</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>published length; projection and support locations require measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>projection TBD</value>
+        </Data>
+        <Data name="color">
+          <value>#2e7d32</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846434735,30.255615077,0 -95.846434413,30.255565793,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Rear door</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: ss_rear_door
+role: equipment_line_placeholder
+status: floorplan-derived location; verify on actual unit
+dimensions_ft:
+color: #a56200
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_rear_door</value>
+        </Data>
+        <Data name="name">
+          <value>Rear door</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived location; verify on actual unit</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#a56200</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846435718,30.255620001,0 -95.846435693,30.255616168,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Main door</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: ss_main_door
+role: equipment_line_placeholder
+status: floorplan-derived location; verify on actual unit
+dimensions_ft:
+color: #a56200
+source_pass_id: ss_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_main_door</value>
+        </Data>
+        <Data name="name">
+          <value>Main door</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived location; verify on actual unit</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#a56200</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_camper</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846435392,30.255570169,0 -95.846435367,30.255566336,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>S. + S. — Pass B / Shower</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: ss_shower
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note: 432 + 66 + 102 = 600 sq ft
+color: #93c47d
+source: equipment/ss-16ft-shower-trailer.md
+saved_x_ft: 91.5
+saved_y_ft: 117.75
+rotation_deg: -104
+z: 58</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_shower</value>
+        </Data>
+        <Data name="name">
+          <value>S. + S. — Pass B / Shower</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>432 + 66 + 102 = 600 sq ft</value>
+        </Data>
+        <Data name="color">
+          <value>#93c47d</value>
+        </Data>
+        <Data name="source">
+          <value>equipment/ss-16ft-shower-trailer.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>91.5</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>117.75</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>-104</value>
+        </Data>
+        <Data name="z">
+          <value>58</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846461970,30.255658892,0 -95.846478207,30.255723092,0 -95.846422464,30.255733610,0 -95.846415361,30.255705523,0 -95.846347231,30.255718379,0 -95.846349666,30.255728009,0 -95.846318698,30.255733853,0 -95.846311797,30.255706568,0 -95.846342766,30.255700725,0 -95.846345201,30.255710354,0 -95.846413331,30.255697498,0 -95.846406227,30.255669411,0 -95.846461970,30.255658892,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Assumed utility-trailer deck</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_shower_trailer
+role: equipment_placeholder
+status: 16 ft stated deck length with 7 ft planning width; actual deck and maximum fender width require measurement
+dimensions_ft: 16 x 7 ft planning assumption
+color: #245b24
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_shower_trailer</value>
+        </Data>
+        <Data name="name">
+          <value>Assumed utility-trailer deck</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>16 ft stated deck length with 7 ft planning width; actual deck and maximum fender width require measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>16 x 7 ft planning assumption</value>
+        </Data>
+        <Data name="color">
+          <value>#245b24</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846464676,30.255669592,0 -95.846475501,30.255712392,0 -95.846453823,30.255716482,0 -95.846442998,30.255673683,0 -95.846464676,30.255669592,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Full-width rear ramp</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_shower_ramp
+role: equipment_placeholder
+status: full-width fold-down ramp confirmed; 4 ft deployed depth is a planning assumption requiring measurement
+dimensions_ft: 7 x 4 ft assumed deployed
+color: #f6b26b
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_shower_ramp</value>
+        </Data>
+        <Data name="name">
+          <value>Full-width rear ramp</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>full-width fold-down ramp confirmed; 4 ft deployed depth is a planning assumption requiring measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>7 x 4 ft assumed deployed</value>
+        </Data>
+        <Data name="color">
+          <value>#f6b26b</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846475501,30.255712392,0 -95.846478207,30.255723092,0 -95.846456529,30.255727182,0 -95.846453823,30.255716482,0 -95.846475501,30.255712392,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Tongue / jack allowance</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: ss_shower_tongue
+role: equipment_line_placeholder
+status: provisional 4 ft centerline allowance; actual coupler, A-frame, jack, and tow-clearance geometry unknown
+dimensions_ft: 4 ft assumed
+color: #555555
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_shower_tongue</value>
+        </Data>
+        <Data name="name">
+          <value>Tongue / jack allowance</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional 4 ft centerline allowance; actual coupler, A-frame, jack, and tow-clearance geometry unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>4 ft assumed</value>
+        </Data>
+        <Data name="color">
+          <value>#555555</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846448034,30.255661522,0 -95.846450740,30.255672222,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Wheel/fender allowance</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_shower_left_wheel
+role: equipment_placeholder
+status: provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement
+dimensions_ft:
+color: #555555
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_shower_left_wheel</value>
+        </Data>
+        <Data name="name">
+          <value>Wheel/fender allowance</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#555555</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846468735,30.255685642,0 -95.846471441,30.255696342,0 -95.846468345,30.255696926,0 -95.846465638,30.255686226,0 -95.846468735,30.255685642,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Wheel/fender allowance</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_shower_right_wheel
+role: equipment_placeholder
+status: provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement
+dimensions_ft:
+color: #555555
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_shower_right_wheel</value>
+        </Data>
+        <Data name="name">
+          <value>Wheel/fender allowance</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#555555</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846450154,30.255689148,0 -95.846452860,30.255699848,0 -95.846449764,30.255700432,0 -95.846447058,30.255689732,0 -95.846450154,30.255689148,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>IBC water trailer</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_water_trailer
+role: equipment_placeholder
+status: provisional 5 x 8 ft deck assumption for the stated small 8 ft trailer; actual deck, fenders, axle, load rating, and overall length TBD
+dimensions_ft: assumed 5 x 8 ft deck
+color: #6fa8dc
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_water_trailer</value>
+        </Data>
+        <Data name="name">
+          <value>IBC water trailer</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional 5 x 8 ft deck assumption for the stated small 8 ft trailer; actual deck, fenders, axle, load rating, and overall length TBD</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>assumed 5 x 8 ft deck</value>
+        </Data>
+        <Data name="color">
+          <value>#6fa8dc</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846446719,30.255688395,0 -95.846450102,30.255701770,0 -95.846425327,30.255706445,0 -95.846421945,30.255693070,0 -95.846446719,30.255688395,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>IBC water tote</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_water_tote
+role: equipment_placeholder
+status: provisional 4 x 4 ft planning footprint on the water trailer; actual tote dimensions, capacity, restraint, fill, vent, valve, and loaded weight TBD
+dimensions_ft: assumed 4 x 4 ft
+color: #3d85c6
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_water_tote</value>
+        </Data>
+        <Data name="name">
+          <value>IBC water tote</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional 4 x 4 ft planning footprint on the water trailer; actual tote dimensions, capacity, restraint, fill, vent, valve, and loaded weight TBD</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>assumed 4 x 4 ft</value>
+        </Data>
+        <Data name="color">
+          <value>#3d85c6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846440864,30.255690901,0 -95.846443570,30.255701601,0 -95.846431183,30.255703939,0 -95.846428477,30.255693239,0 -95.846440864,30.255690901,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Water-trailer tongue</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: ss_water_trailer_tongue
+role: equipment_line_placeholder
+status: provisional 3 ft centerline allowance; actual coupler, A-frame, jack, and tow-clearance geometry unknown
+dimensions_ft: 3 ft assumed
+color: #555555
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_water_trailer_tongue</value>
+        </Data>
+        <Data name="name">
+          <value>Water-trailer tongue</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional 3 ft centerline allowance; actual coupler, A-frame, jack, and tow-clearance geometry unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>3 ft assumed</value>
+        </Data>
+        <Data name="color">
+          <value>#555555</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846423636,30.255699757,0 -95.846414346,30.255701511,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Water-trailer wheel/fender</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_water_trailer_left_wheel
+role: equipment_placeholder
+status: provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement
+dimensions_ft:
+color: #555555
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_water_trailer_left_wheel</value>
+        </Data>
+        <Data name="name">
+          <value>Water-trailer wheel/fender</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#555555</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846436752,30.255687473,0 -95.846437429,30.255690148,0 -95.846431235,30.255691317,0 -95.846430559,30.255688642,0 -95.846436752,30.255687473,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Water-trailer wheel/fender</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_water_trailer_right_wheel
+role: equipment_placeholder
+status: provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement
+dimensions_ft:
+color: #555555
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_water_trailer_right_wheel</value>
+        </Data>
+        <Data name="name">
+          <value>Water-trailer wheel/fender</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#555555</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846440812,30.255703523,0 -95.846441488,30.255706198,0 -95.846435294,30.255707367,0 -95.846434618,30.255704692,0 -95.846440812,30.255703523,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Fire pit</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_fire_pit
+role: equipment_placeholder
+status: provisional 3 x 3 ft fire-pit footprint inside a 10.2 x 10 ft end zone; actual pit, spark, fuel, extinguisher, and combustible clearances plus festival approval TBD
+dimensions_ft: 3 x 3 ft assumed
+color: #cc4125
+source_pass_id: ss_shower</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_fire_pit</value>
+        </Data>
+        <Data name="name">
+          <value>Fire pit</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional 3 x 3 ft fire-pit footprint inside a 10.2 x 10 ft end zone; actual pit, spark, fuel, extinguisher, and combustible clearances plus festival approval TBD</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>3 x 3 ft assumed</value>
+        </Data>
+        <Data name="color">
+          <value>#cc4125</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_shower</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846334362,30.255712400,0 -95.846336392,30.255720425,0 -95.846327101,30.255722178,0 -95.846325072,30.255714153,0 -95.846334362,30.255712400,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>M. + E. — Mirrored Camper</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: me_camper
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note:
+color: #6fa8dc
+source: planning/households/me.md
+saved_x_ft: 157.25
+saved_y_ft: 187.75
+rotation_deg: 10
+z: 50</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_camper</value>
+        </Data>
+        <Data name="name">
+          <value>M. + E. — Mirrored Camper</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#6fa8dc</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/me.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>157.25</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>187.75</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>10</value>
+        </Data>
+        <Data name="z">
+          <value>50</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846152832,30.255570682,0 -95.846190083,30.255577332,0 -95.846192649,30.255566606,0 -95.846201962,30.255568269,0 -95.846207094,30.255546817,0 -95.846197782,30.255545155,0 -95.846201310,30.255530407,0 -95.846226144,30.255534840,0 -95.846233843,30.255502664,0 -95.846209009,30.255498230,0 -95.846215745,30.255470075,0 -95.846178494,30.255463426,0 -95.846152832,30.255570682,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored reference body</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: me_camper_placeholder
+role: equipment_placeholder
+status: temporary mirror of S./S. reference only; not evidence of M./E. camper dimensions
+dimensions_ft: 36.75 x 8 ft placeholder
+color: #3d85c6
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_camper_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored reference body</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirror of S./S. reference only; not evidence of M./E. camper dimensions</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>36.75 x 8 ft placeholder</value>
+        </Data>
+        <Data name="color">
+          <value>#3d85c6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846190194,30.255572808,0 -95.846165360,30.255568375,0 -95.846188937,30.255469833,0 -95.846213771,30.255474267,0 -95.846190194,30.255572808,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored bunk slide</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: me_slide_bunk_placeholder
+role: equipment_placeholder
+status: temporary mirrored estimate only; actual slide count, side, length, and projection unknown
+dimensions_ft: reference only
+color: #a9c9e8
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_slide_bunk_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored bunk slide</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirrored estimate only; actual slide count, side, length, and projection unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>reference only</value>
+        </Data>
+        <Data name="color">
+          <value>#a9c9e8</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846165858,30.255566297,0 -95.846156234,30.255564579,0 -95.846161303,30.255543396,0 -95.846170926,30.255545114,0 -95.846165858,30.255566297,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored main slide</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: me_slide_main_placeholder
+role: equipment_placeholder
+status: temporary mirrored estimate only; actual slide count, side, length, and projection unknown
+dimensions_ft: reference only
+color: #a9c9e8
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_slide_main_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored main slide</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirrored estimate only; actual slide count, side, length, and projection unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>reference only</value>
+        </Data>
+        <Data name="color">
+          <value>#a9c9e8</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846172145,30.255540019,0 -95.846160659,30.255537969,0 -95.846170539,30.255496675,0 -95.846182025,30.255498725,0 -95.846172145,30.255540019,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored service bay</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: me_rear_service_placeholder
+role: equipment_placeholder
+status: temporary mirror only; actual doors, kitchen, appliances, and steps unknown
+dimensions_ft: 3 x 8 ft reference
+color: #f6b26b
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_rear_service_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored service bay</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirror only; actual doors, kitchen, appliances, and steps unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>3 x 8 ft reference</value>
+        </Data>
+        <Data name="color">
+          <value>#f6b26b</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846201962,30.255568269,0 -95.846192649,30.255566606,0 -95.846197782,30.255545155,0 -95.846207094,30.255546817,0 -95.846201962,30.255568269,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored rug bay</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: me_rug_placeholder
+role: equipment_placeholder
+status: temporary 8 x 12 ft mirrored planning zone; actual need and dimensions unknown
+dimensions_ft: 8 x 12 ft reference
+color: #d9b38c
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_rug_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored rug bay</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary 8 x 12 ft mirrored planning zone; actual need and dimensions unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>8 x 12 ft reference</value>
+        </Data>
+        <Data name="color">
+          <value>#d9b38c</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846226144,30.255534840,0 -95.846201310,30.255530407,0 -95.846209009,30.255498230,0 -95.846233843,30.255502664,0 -95.846226144,30.255534840,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored rear steps</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: me_rear_steps_placeholder
+role: equipment_placeholder
+status: temporary mirror only; actual door and step geometry unknown
+dimensions_ft:
+color: #c58b55
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_rear_steps_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored rear steps</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirror only; actual door and step geometry unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#c58b55</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846205491,30.255553521,0 -95.846195247,30.255551692,0 -95.846196530,30.255546329,0 -95.846206774,30.255548158,0 -95.846205491,30.255553521,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored main steps</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: me_main_steps_placeholder
+role: equipment_placeholder
+status: temporary mirror only; actual door and step geometry unknown
+dimensions_ft:
+color: #c58b55
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_main_steps_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored main steps</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirror only; actual door and step geometry unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#c58b55</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846217038,30.255505256,0 -95.846206794,30.255503427,0 -95.846208077,30.255498064,0 -95.846218321,30.255499893,0 -95.846217038,30.255505256,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored awning</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: me_awning_placeholder
+role: equipment_line_placeholder
+status: temporary 18 ft mirrored reference only; actual awning unknown
+dimensions_ft: reference only
+color: #2e7d32
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_awning_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored awning</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary 18 ft mirrored reference only; actual awning unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>reference only</value>
+        </Data>
+        <Data name="color">
+          <value>#2e7d32</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846197461,30.255546496,0 -95.846209009,30.255498230,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored rear door</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: me_rear_door_placeholder
+role: equipment_line_placeholder
+status: temporary mirror only; actual doors unknown
+dimensions_ft:
+color: #a56200
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_rear_door_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored rear door</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirror only; actual doors unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#a56200</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846195375,30.255551156,0 -95.846196273,30.255547402,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Mirrored main door</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: me_main_door_placeholder
+role: equipment_line_placeholder
+status: temporary mirror only; actual doors unknown
+dimensions_ft:
+color: #a56200
+source_pass_id: me_camper</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_main_door_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Mirrored main door</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>temporary mirror only; actual doors unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#a56200</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>me_camper</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846207051,30.255502354,0 -95.846207949,30.255498600,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>M. + E. — Pass B / Support</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: me_support
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note:
+color: #6fa8dc
+source: planning/households/me.md
+saved_x_ft: 136.75
+saved_y_ft: 116.25
+rotation_deg: 0
+z: 52</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>me_support</value>
+        </Data>
+        <Data name="name">
+          <value>M. + E. — Pass B / Support</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#6fa8dc</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/me.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>136.75</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>116.25</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>0</value>
+        </Data>
+        <Data name="z">
+          <value>52</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846284858,30.255775465,0 -95.846221488,30.255773863,0 -95.846224271,30.255691756,0 -95.846287640,30.255693358,0 -95.846284858,30.255775465,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>A.</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: a
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note:
+color: #76a5af
+source: planning/a-site-notes.md
+saved_x_ft: 94.25
+saved_y_ft: 202
+rotation_deg: 103
+z: 57</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>a</value>
+        </Data>
+        <Data name="name">
+          <value>A.</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#76a5af</value>
+        </Data>
+        <Data name="source">
+          <value>planning/a-site-notes.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>94.25</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>202</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>103</value>
+        </Data>
+        <Data name="z">
+          <value>57</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846322814,30.255512822,0 -95.846342892,30.255446604,0 -95.846379689,30.255454928,0 -95.846374469,30.255472145,0 -95.846451129,30.255489489,0 -95.846441492,30.255521273,0 -95.846364831,30.255503930,0 -95.846359611,30.255521147,0 -95.846322814,30.255512822,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Sleeping tent provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: a_sleep_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: a</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>a_sleep_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Sleeping tent provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>a</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846325953,30.255507871,0 -95.846342819,30.255452248,0 -95.846376550,30.255459879,0 -95.846359684,30.255515502,0 -95.846325953,30.255507871,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Sleeping tent</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: a_sleep
+role: known_equipment
+status: confirmed
+dimensions_ft: 20 x 10 ft (rotated)
+color: #76a5af
+source_pass_id: a</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>a_sleep</value>
+        </Data>
+        <Data name="name">
+          <value>Sleeping tent</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>confirmed</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>20 x 10 ft (rotated)</value>
+        </Data>
+        <Data name="color">
+          <value>#76a5af</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>a</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846327888,30.255506894,0 -95.846343951,30.255453919,0 -95.846374615,30.255460857,0 -95.846358552,30.255513831,0 -95.846327888,30.255506894,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Yoga Tent (COVERPRO canopy) provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: a_yoga_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: a</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>a_yoga_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Yoga Tent (COVERPRO canopy) provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>a</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846386698,30.255507462,0 -95.846395532,30.255478326,0 -95.846450728,30.255490813,0 -95.846441893,30.255519949,0 -95.846386698,30.255507462,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Yoga Tent (COVERPRO canopy)</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: a_yoga
+role: known_equipment
+status: confirmed; bottom-aligned in T stem with 8.5 ft nominal separation
+dimensions_ft: 10 x 17 ft
+color: #3d85c6
+source_pass_id: a</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>a_yoga</value>
+        </Data>
+        <Data name="name">
+          <value>Yoga Tent (COVERPRO canopy)</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>confirmed; bottom-aligned in T stem with 8.5 ft nominal separation</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>10 x 17 ft</value>
+        </Data>
+        <Data name="color">
+          <value>#3d85c6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>a</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846388633,30.255506484,0 -95.846396664,30.255479997,0 -95.846448793,30.255491790,0 -95.846440762,30.255518278,0 -95.846388633,30.255506484,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>C. + S.</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: cs
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note: 40 x 15 = 600 sq ft; equipment = 386 sq ft
+color: #ffd966
+source: planning/households/cs.md
+saved_x_ft: 121.25
+saved_y_ft: 178.25
+rotation_deg: 133
+z: 55</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs</value>
+        </Data>
+        <Data name="name">
+          <value>C. + S.</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>40 x 15 = 600 sq ft; equipment = 386 sq ft</value>
+        </Data>
+        <Data name="color">
+          <value>#ffd966</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/cs.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>121.25</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>178.25</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>133</value>
+        </Data>
+        <Data name="z">
+          <value>55</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846215566,30.255609392,0 -95.846304715,30.255531511,0 -95.846338526,30.255560389,0 -95.846249376,30.255638269,0 -95.846215566,30.255609392,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Equipment-row border</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: cs_row_border
+role: known_equipment
+status: continuous planning border around the complete canopy, tent, and add-on row
+dimensions_ft:
+color: none
+source_pass_id: cs</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs_row_border</value>
+        </Data>
+        <Data name="name">
+          <value>Equipment-row border</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>continuous planning border around the complete canopy, tent, and add-on row</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>none</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>cs</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846217820,30.255611317,0 -95.846304741,30.255535384,0 -95.846334043,30.255560411,0 -95.846247122,30.255636344,0 -95.846217820,30.255611317,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Planning canopy provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: cs_canopy_placeholder_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: cs</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs_canopy_placeholder_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Planning canopy provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>cs</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846220074,30.255613242,0 -95.846251276,30.255585984,0 -95.846276071,30.255607161,0 -95.846244868,30.255634419,0 -95.846220074,30.255613242,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Planning canopy</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: cs_canopy_placeholder
+role: equipment_placeholder
+status: 10 x 13 ft user-reported planning size; manufacturer/model, leg spacing, anchors, ropes, ballast, and exact relationship to tent require confirmation
+dimensions_ft: 10 x 13 ft reported
+color: #f1c232
+source_pass_id: cs</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs_canopy_placeholder</value>
+        </Data>
+        <Data name="name">
+          <value>Planning canopy</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>10 x 13 ft user-reported planning size; manufacturer/model, leg spacing, anchors, ropes, ballast, and exact relationship to tent require confirmation</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>10 x 13 ft reported</value>
+        </Data>
+        <Data name="color">
+          <value>#f1c232</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>cs</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846222315,30.255613231,0 -95.846251289,30.255587920,0 -95.846273829,30.255607171,0 -95.846244856,30.255632482,0 -95.846222315,30.255613231,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Main tent provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: cs_tent_main_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: cs</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs_tent_main_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Main tent provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>cs</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846249022,30.255584059,0 -95.846286911,30.255550960,0 -95.846316213,30.255575987,0 -95.846278325,30.255609086,0 -95.846249022,30.255584059,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Main tent</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: cs_tent_main
+role: known_equipment
+status: 12 x 16 ft user-reported planning size; exact deployed footprint requires measurement
+dimensions_ft: 12 x 16 ft reported
+color: #e6b800
+source_pass_id: cs</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs_tent_main</value>
+        </Data>
+        <Data name="name">
+          <value>Main tent</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>12 x 16 ft user-reported planning size; exact deployed footprint requires measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>12 x 16 ft reported</value>
+        </Data>
+        <Data name="color">
+          <value>#e6b800</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>cs</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846251264,30.255584048,0 -95.846286923,30.255552896,0 -95.846313972,30.255575998,0 -95.846278312,30.255607150,0 -95.846251264,30.255584048,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Add-on room provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: cs_tent_addon_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: cs</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs_tent_addon_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Add-on room provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>cs</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846289190,30.255556757,0 -95.846309249,30.255539234,0 -95.846329535,30.255556560,0 -95.846309476,30.255574083,0 -95.846289190,30.255556757,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Add-on room</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: cs_tent_addon
+role: known_equipment
+status: 8 x 8 ft user-reported size attached to one end; centered alignment is a planning assumption
+dimensions_ft: 8 x 8 ft reported
+color: #d9a900
+source_pass_id: cs</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>cs_tent_addon</value>
+        </Data>
+        <Data name="name">
+          <value>Add-on room</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>8 x 8 ft user-reported size attached to one end; centered alignment is a planning assumption</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>8 x 8 ft reported</value>
+        </Data>
+        <Data name="color">
+          <value>#d9a900</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>cs</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846291431,30.255556746,0 -95.846309261,30.255541170,0 -95.846327294,30.255556571,0 -95.846309464,30.255572147,0 -95.846291431,30.255556746,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>B. + G. — Pass A / Two Tents</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: bg_primary
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note: 538 sq ft nominal tents; only 62 sq ft remains for all clearance and access
+color: #c27ba0
+source: planning/households/bg.md
+saved_x_ft: 130.75
+saved_y_ft: 153.75
+rotation_deg: 0
+z: 50</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_primary</value>
+        </Data>
+        <Data name="name">
+          <value>B. + G. — Pass A / Two Tents</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>538 sq ft nominal tents; only 62 sq ft remains for all clearance and access</value>
+        </Data>
+        <Data name="color">
+          <value>#c27ba0</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/bg.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>130.75</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>153.75</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>0</value>
+        </Data>
+        <Data name="z">
+          <value>50</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846307347,30.255673312,0 -95.846221798,30.255671149,0 -95.846223560,30.255619148,0 -95.846166527,30.255617706,0 -95.846167547,30.255587600,0 -95.846234086,30.255589282,0 -95.846232509,30.255635810,0 -95.846308553,30.255637732,0 -95.846307347,30.255673312,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Primary tent provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: bg_primary_tent_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: bg_primary</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_primary_tent_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Primary tent provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_primary</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846307301,30.255674681,0 -95.846221751,30.255672517,0 -95.846223050,30.255634201,0 -95.846308599,30.255636364,0 -95.846307301,30.255674681,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Primary tent</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: bg_primary_tent
+role: known_equipment
+status: confirmed for planning
+dimensions_ft: 26 x 13 ft (rotated)
+color: #a64d79
+source_pass_id: bg_primary</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_primary_tent</value>
+        </Data>
+        <Data name="name">
+          <value>Primary tent</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>confirmed for planning</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>26 x 13 ft (rotated)</value>
+        </Data>
+        <Data name="color">
+          <value>#a64d79</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_primary</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846305763,30.255673272,0 -95.846223382,30.255671189,0 -95.846224588,30.255635609,0 -95.846306968,30.255637692,0 -95.846305763,30.255673272,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Closet tent provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: bg_community_tent_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: bg_primary</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_community_tent_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Closet tent provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_primary</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846233065,30.255619388,0 -95.846166527,30.255617706,0 -95.846167547,30.255587600,0 -95.846234086,30.255589282,0 -95.846233065,30.255619388,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Closet tent</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: bg_community_tent
+role: equipment_placeholder
+status: estimate; replacement model TBD
+dimensions_ft: approx. 20 x 10 ft (rotated)
+color: #c27ba0
+source_pass_id: bg_primary</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_community_tent</value>
+        </Data>
+        <Data name="name">
+          <value>Closet tent</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>estimate; replacement model TBD</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>approx. 20 x 10 ft (rotated)</value>
+        </Data>
+        <Data name="color">
+          <value>#c27ba0</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_primary</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846231528,30.255617980,0 -95.846168158,30.255616377,0 -95.846169085,30.255589008,0 -95.846232455,30.255590611,0 -95.846231528,30.255617980,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>G1</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: bg_generator_1
+role: equipment_placeholder
+status: generic 2 x 2 ft space reservation; B./G. generator model, dimensions, fuel, exhaust, and operating clearances unknown
+dimensions_ft:
+color: #cc0000
+source_pass_id: bg_primary</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_generator_1</value>
+        </Data>
+        <Data name="name">
+          <value>G1</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>generic 2 x 2 ft space reservation; B./G. generator model, dimensions, fuel, exhaust, and operating clearances unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#cc0000</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_primary</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846230971,30.255634401,0 -95.846224634,30.255634241,0 -95.846224820,30.255628767,0 -95.846231157,30.255628927,0 -95.846230971,30.255634401,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>G2</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: bg_generator_2
+role: equipment_placeholder
+status: generic 2 x 2 ft space reservation; B./G. generator model, dimensions, fuel, exhaust, and operating clearances unknown
+dimensions_ft:
+color: #cc0000
+source_pass_id: bg_primary</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_generator_2</value>
+        </Data>
+        <Data name="name">
+          <value>G2</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>generic 2 x 2 ft space reservation; B./G. generator model, dimensions, fuel, exhaust, and operating clearances unknown</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#cc0000</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_primary</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846231249,30.255626190,0 -95.846224912,30.255626030,0 -95.846225098,30.255620556,0 -95.846231435,30.255620717,0 -95.846231249,30.255626190,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>B. + G. — Pass B / Community Tent</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: bg_community
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note: 20 x 30 ft tent fills the nominal pass; operational clearance remains unresolved
+color: #c27ba0
+source: planning/households/bg.md
+saved_x_ft: 83.5
+saved_y_ft: 105.75
+rotation_deg: -85
+z: 60</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_community</value>
+        </Data>
+        <Data name="name">
+          <value>B. + G. — Pass B / Community Tent</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>20 x 30 ft tent fills the nominal pass; operational clearance remains unresolved</value>
+        </Data>
+        <Data name="color">
+          <value>#c27ba0</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/bg.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>83.5</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>105.75</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>-85</value>
+        </Data>
+        <Data name="z">
+          <value>60</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846473223,30.255744194,0 -95.846465852,30.255798584,0 -95.846371402,30.255789034,0 -95.846378773,30.255734644,0 -95.846473223,30.255744194,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Community tent provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: bg_community_tent_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: bg_community</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_community_tent_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Community tent provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_community</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846474982,30.255742994,0 -95.846467242,30.255800103,0 -95.846369643,30.255790235,0 -95.846377383,30.255733125,0 -95.846474982,30.255742994,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Community tent</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: bg_community_tent
+role: equipment_placeholder
+status: 20 x 30 ft specified by user; rainfly, stakes, guy lines, and entrances unverified
+dimensions_ft: 20 x 30 ft
+color: #8e5f83
+source_pass_id: bg_community</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>bg_community_tent</value>
+        </Data>
+        <Data name="name">
+          <value>Community tent</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>20 x 30 ft specified by user; rainfly, stakes, guy lines, and entrances unverified</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>20 x 30 ft</value>
+        </Data>
+        <Data name="color">
+          <value>#8e5f83</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>bg_community</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846473223,30.255744194,0 -95.846465852,30.255798584,0 -95.846371402,30.255789034,0 -95.846378773,30.255734644,0 -95.846473223,30.255744194,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>S. + T.</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: st
+role: pass
+area_sqft: 600
+status: Saved freeform layout; planning-grade georeferencing, not a survey.
+layout_note: 264 + 120 + 216 = 600 sq ft
+color: #b4a7d6
+source: planning/households/st.md
+saved_x_ft: 177.5
+saved_y_ft: 121
+rotation_deg: 158
+z: 49</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>st</value>
+        </Data>
+        <Data name="name">
+          <value>S. + T.</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>600</value>
+        </Data>
+        <Data name="status">
+          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>264 + 120 + 216 = 600 sq ft</value>
+        </Data>
+        <Data name="color">
+          <value>#b4a7d6</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/st.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>177.5</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>121</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>158</value>
+        </Data>
+        <Data name="z">
+          <value>49</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846084050,30.255578767,0 -95.846119720,30.255567355,0 -95.846143941,30.255623843,0 -95.846132051,30.255627647,0 -95.846165079,30.255704676,0 -95.846176969,30.255700872,0 -95.846196786,30.255747089,0 -95.846161116,30.255758501,0 -95.846141299,30.255712283,0 -95.846153189,30.255708480,0 -95.846120160,30.255631451,0 -95.846108270,30.255635255,0 -95.846084050,30.255578767,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Primary tent provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: st_tent_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: st</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>st_tent_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Primary tent provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>st</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846086086,30.255579575,0 -95.846118784,30.255569115,0 -95.846141904,30.255623035,0 -95.846109206,30.255633496,0 -95.846086086,30.255579575,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Primary tent</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: st_tent
+role: known_equipment
+status: assumed 10 x 20 ft tent inside a 12 x 22 ft tent end
+dimensions_ft: 10 x 20 ft
+color: #8e7cc3
+source_pass_id: st</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>st_tent</value>
+        </Data>
+        <Data name="name">
+          <value>Primary tent</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>assumed 10 x 20 ft tent inside a 12 x 22 ft tent end</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>10 x 20 ft</value>
+        </Data>
+        <Data name="color">
+          <value>#8e7cc3</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>st</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846088123,30.255580384,0 -95.846117848,30.255570874,0 -95.846139867,30.255622226,0 -95.846110142,30.255631736,0 -95.846088123,30.255580384,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Handicap Portapotty provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: st_portapotty_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: st</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>st_portapotty_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Handicap Portapotty provisional clearance</value>
+        </Data>
+        <Data name="role">
+          <value>clearance_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>Planning buffer only; verify actual operating clearance.</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>st</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846159189,30.255734298,0 -95.846179997,30.255727642,0 -95.846187703,30.255745615,0 -95.846166895,30.255752272,0 -95.846159189,30.255734298,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Handicap Portapotty</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: st_portapotty
+role: known_equipment
+status: assumed 6 x 6 ft ADA unit inside a 12 x 18 ft potty end; door direction and accessible approach remain unverified
+dimensions_ft: 6 x 6 ft ADA
+color: #674ea7
+source_pass_id: st</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>st_portapotty</value>
+        </Data>
+        <Data name="name">
+          <value>Handicap Portapotty</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>assumed 6 x 6 ft ADA unit inside a 12 x 18 ft potty end; door direction and accessible approach remain unverified</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>6 x 6 ft ADA</value>
+        </Data>
+        <Data name="color">
+          <value>#674ea7</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>st</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846161226,30.255735107,0 -95.846179061,30.255729401,0 -95.846185666,30.255744807,0 -95.846167831,30.255750512,0 -95.846161226,30.255735107,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>User-traced campsite-side road edge</name>
+      <styleUrl>#role-road_edge</styleUrl>
+      <description>id: road_edge
+role: road_edge
+status: planning-grade coordinate trace from current satellite view
+source: 25 user-supplied WGS84 road-edge coordinates, 2026-07-27
+warning: Not field surveyed; verify the physical west road edge and curvature before placement.
+south_extent_local_y_ft: 343.161
+extension_status: full curve replaced by 25 user-supplied road-edge coordinates
+southern_extension_source: User trace from current Google Maps satellite view, 2026-07-27
+trace_point_count: 25</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>road_edge</value>
+        </Data>
+        <Data name="name">
+          <value>User-traced campsite-side road edge</value>
+        </Data>
+        <Data name="role">
+          <value>road_edge</value>
+        </Data>
+        <Data name="status">
+          <value>planning-grade coordinate trace from current satellite view</value>
+        </Data>
+        <Data name="source">
+          <value>25 user-supplied WGS84 road-edge coordinates, 2026-07-27</value>
+        </Data>
+        <Data name="warning">
+          <value>Not field surveyed; verify the physical west road edge and curvature before placement.</value>
+        </Data>
+        <Data name="south_extent_local_y_ft">
+          <value>343.161</value>
+        </Data>
+        <Data name="extension_status">
+          <value>full curve replaced by 25 user-supplied road-edge coordinates</value>
+        </Data>
+        <Data name="southern_extension_source">
+          <value>User trace from current Google Maps satellite view, 2026-07-27</value>
+        </Data>
+        <Data name="trace_point_count">
+          <value>25</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846850748,30.255345019,0 -95.846544976,30.255348494,0 -95.846469874,30.255339227,0 -95.846416230,30.255316058,0 -95.846369291,30.255278988,0 -95.846229816,30.255153878,0 -95.846209700,30.255155036,0 -95.846181537,30.255172413,0 -95.846150691,30.255250028,0 -95.846115823,30.255311424,0 -95.846079613,30.255371663,0 -95.846055473,30.255433060,0 -95.846062178,30.255492139,0 -95.846094365,30.255624200,0 -95.846118505,30.255705290,0 -95.846122528,30.255788697,0 -95.846122528,30.255872103,0 -95.846102412,30.255925391,0 -95.846109117,30.255958985,0 -95.846122528,30.255967094,0 -95.846194948,30.256004164,0 -95.846255297,30.256040075,0 -95.846290166,30.256070194,0 -95.846323694,30.256120006,0 -95.846347834,30.256173293,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>10 ft minimum curved-road setback</name>
+      <styleUrl>#role-setback_10</styleUrl>
+      <description>id: setback_10
+role: setback_10
+offset_ft: 10
+status: approximate perpendicular offset from user-traced road edge; not surveyed
+south_extent_local_y_ft: 343.161
+extension_status: full curve replaced by 25 user-supplied road-edge coordinates
+southern_extension_source: User trace from current Google Maps satellite view, 2026-07-27
+trace_point_count: 25</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>setback_10</value>
+        </Data>
+        <Data name="name">
+          <value>10 ft minimum curved-road setback</value>
+        </Data>
+        <Data name="role">
+          <value>setback_10</value>
+        </Data>
+        <Data name="offset_ft">
+          <value>10</value>
+        </Data>
+        <Data name="status">
+          <value>approximate perpendicular offset from user-traced road edge; not surveyed</value>
+        </Data>
+        <Data name="south_extent_local_y_ft">
+          <value>343.161</value>
+        </Data>
+        <Data name="extension_status">
+          <value>full curve replaced by 25 user-supplied road-edge coordinates</value>
+        </Data>
+        <Data name="southern_extension_source">
+          <value>User trace from current Google Maps satellite view, 2026-07-27</value>
+        </Data>
+        <Data name="trace_point_count">
+          <value>25</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846850331,30.255317641,0 -95.846547015,30.255321170,0 -95.846479326,30.255313091,0 -95.846434185,30.255293493,0 -95.846391414,30.255259378,0 -95.846241245,30.255128338,0 -95.846199027,30.255129254,0 -95.846156123,30.255156048,0 -95.846121414,30.255239532,0 -95.846087525,30.255299085,0 -95.846050456,30.255360921,0 -95.846023983,30.255429922,0 -95.846030848,30.255496302,0 -95.846063498,30.255630432,0 -95.846087147,30.255709292,0 -95.846090837,30.255789267,0 -95.846091223,30.255867806,0 -95.846070796,30.255923415,0 -95.846082352,30.255973655,0 -95.846105347,30.255990104,0 -95.846177867,30.256027229,0 -95.846235015,30.256061117,0 -95.846265047,30.256086895,0 -95.846295148,30.256131911,0 -95.846318315,30.256183271,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>14 ft preferred curved-road setback</name>
+      <styleUrl>#role-setback_14</styleUrl>
+      <description>id: setback_14
+role: setback_14
+offset_ft: 14
+status: approximate perpendicular offset from user-traced road edge; not surveyed
+south_extent_local_y_ft: 343.161
+extension_status: full curve replaced by 25 user-supplied road-edge coordinates
+southern_extension_source: User trace from current Google Maps satellite view, 2026-07-27
+trace_point_count: 25</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>setback_14</value>
+        </Data>
+        <Data name="name">
+          <value>14 ft preferred curved-road setback</value>
+        </Data>
+        <Data name="role">
+          <value>setback_14</value>
+        </Data>
+        <Data name="offset_ft">
+          <value>14</value>
+        </Data>
+        <Data name="status">
+          <value>approximate perpendicular offset from user-traced road edge; not surveyed</value>
+        </Data>
+        <Data name="south_extent_local_y_ft">
+          <value>343.161</value>
+        </Data>
+        <Data name="extension_status">
+          <value>full curve replaced by 25 user-supplied road-edge coordinates</value>
+        </Data>
+        <Data name="southern_extension_source">
+          <value>User trace from current Google Maps satellite view, 2026-07-27</value>
+        </Data>
+        <Data name="trace_point_count">
+          <value>25</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846850164,30.255306689,0 -95.846547831,30.255310241,0 -95.846483106,30.255302637,0 -95.846441366,30.255284467,0 -95.846400263,30.255251534,0 -95.846245817,30.255118123,0 -95.846194758,30.255118941,0 -95.846145958,30.255149501,0 -95.846109703,30.255235334,0 -95.846076206,30.255294150,0 -95.846038793,30.255356624,0 -95.846011387,30.255428667,0 -95.846018316,30.255497967,0 -95.846051152,30.255632924,0 -95.846074603,30.255710892,0 -95.846078160,30.255789495,0 -95.846078700,30.255866087,0 -95.846058149,30.255922624,0 -95.846071646,30.255979522,0 -95.846098474,30.255999308,0 -95.846171034,30.256036455,0 -95.846226902,30.256069534,0 -95.846255000,30.256093576,0 -95.846283730,30.256136673,0 -95.846306507,30.256187262,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Hard western limit</name>
+      <styleUrl>#role-west_limit</styleUrl>
+      <description>id: west_limit
+role: west_limit
+status: no planned pass or equipment may lie west
+source: 30°15'20.86"N 95°50'47.36"W to 30°15'19.63"N 95°50'47.44"W
+note: The planning constraint uses the infinite alignment through these endpoints.</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>west_limit</value>
+        </Data>
+        <Data name="name">
+          <value>Hard western limit</value>
+        </Data>
+        <Data name="role">
+          <value>west_limit</value>
+        </Data>
+        <Data name="status">
+          <value>no planned pass or equipment may lie west</value>
+        </Data>
+        <Data name="source">
+          <value>30°15'20.86"N 95°50'47.36"W to 30°15'19.63"N 95°50'47.44"W</value>
+        </Data>
+        <Data name="note">
+          <value>The planning constraint uses the infinite alignment through these endpoints.</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846488889,30.255794444,0 -95.846511111,30.255452778,0</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

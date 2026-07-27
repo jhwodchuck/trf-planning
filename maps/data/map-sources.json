@@ -36,6 +36,24 @@
       "limitations": "2022 acquisition; conditions may have changed."
     },
     {
+      "id": "google-earth-2025-camp-layout",
+      "title": "Google Earth historical imagery - TRF/Havok camp area - 2025-10-20",
+      "authority": "Google Earth and its imagery providers",
+      "type": "linked historical aerial-imagery view",
+      "url": "https://earth.google.com/web/search/Texas+Renaissance+Festival,+Farm+to+Market+1774,+Todd+Mission,+TX/@30.25558346,-95.84613627,88.15913334a,308.11765186d,35y,22.45688014h,0t,0r/data=Cj4iJgokCU3ZYms4NTRAEUvZYms4NTTAGWN4zTN8PUlAIcWIBmBynUnAKhAIARIKMjAyNS0xMC0yMBgAQgIIAToDCgEwQgIIAEoNCP___________wEQAA?authuser=0",
+      "use": "Visual comparison with the occupied 2025 camp: prior equipment footprints, irregular clearings, tree canopy, and the curved internal road pattern.",
+      "limitations": "Linked for viewing only; imagery is not copied or rehosted. The link center is about 82 ft from P1_USER_SW. Visible roofs are not household-identified, and the image is not a survey, approved boundary, or source of exact measurements."
+    },
+    {
+      "id": "google-maps-current-havok-road-trace",
+      "title": "Google Maps satellite view - HAVOK campground road",
+      "authority": "Google Maps and its imagery providers",
+      "type": "linked current satellite-imagery view and user coordinate trace",
+      "url": "https://www.google.com/maps/place/HAVOK/@30.255418,-95.8468655,232m/data=!3m1!1e3!4m10!1m2!2m1!1shavok!3m6!1s0x8646dbf639e0677b:0x8fc6845bcb38336a!8m2!3d30.2556124!4d-95.846332!15sCgVoYXZva5IBCmNhbXBncm91bmTgAQA!16s%2Fg%2F11v5t7gd11?entry=ttu",
+      "use": "Current visual reference used by the user to supply a 25-point WGS84 trace of the campsite-side road edge.",
+      "limitations": "Linked for viewing only; imagery is not copied or rehosted. The supplied coordinates are planning-grade and must be checked against the physical road edge before placement."
+    },
+    {
       "id": "usgs-topo",
       "title": "USGS Topographic Map",
       "authority": "U.S. Geological Survey",

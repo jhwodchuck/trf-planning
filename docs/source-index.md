@@ -14,16 +14,17 @@ Use sources in this order:
 
 | Source | Authority | Use |
 |---|---|---|
+| [Local TRF Website Corpus](trf-corpus/README.md) | Official TRF Website Mirror | Full local Markdown archive of texrenfest.com pages, rules, & downloads |
 | [Fields of New Market campground map](https://www.texrenfest.com/p/camping-and-more/camping/campground-map) | Official TRF | General orientation, roads, regions, and landmarks |
 | [Camping overview](https://www.texrenfest.com/p/camping-and-more/camping) | Official TRF | Current camping program overview and contacts |
 | [2026 campground rules and FAQs](https://www.texrenfest.com/p/camping-and-more/campground-rules--faqs) | Official TRF | Operating and safety rules |
 | [Guilds and land-request forms](https://www.texrenfest.com/p/camping-and-more/guilds) | Official TRF | Current land-request process and downloads |
-| [2026 General Campground Rules PDF](https://cdn.saffire.com/files.ashx?cb=db741534&f=2026_General_Campground_Rules.pdf&rid=TexasRenaissanceFval&t=fg) | Official TRF | Detailed campground rules |
-| [2026 Season Pass Standards PDF](https://cdn.saffire.com/files.ashx?cb=0cf1e817&f=2026_Season_Pass_Standards.pdf&rid=TexasRenaissanceFval&t=fg) | Official TRF | Standards applying to season-pass campsites |
-| [2026 Individual Land Request Form PDF](https://cdn.saffire.com/files.ashx?cb=acb34c98&f=2026_Individual_Land_Request_Form.pdf&rid=TexasRenaissanceFval&t=fg) | Official TRF | Submission requirements and individual-plot area limits |
-| [2026 Communal Plot Request Form PDF](https://cdn.saffire.com/files.ashx?cb=e160fc01&f=2026_Communal_Plot_Request_Form.pdf&rid=TexasRenaissanceFval&t=fg) | Official TRF | Alternative communal/guild process |
+| [2026 General Campground Rules PDF](https://cdn.saffire.com/files.ashx?cb=db741534&f=2026_General_Campground_Rules.pdf&rid=TexasRenaissanceFval&t=fg) ([local record](trf-corpus/downloads/2026-general-campground-rules.md)) | Official TRF | Detailed campground rules |
+| [2026 Season Pass Standards PDF](https://cdn.saffire.com/files.ashx?cb=0cf1e817&f=2026_Season_Pass_Standards.pdf&rid=TexasRenaissanceFval&t=fg) ([local record](trf-corpus/downloads/2026-season-pass-standards.md)) | Official TRF | Standards applying to season-pass campsites |
+| [2026 Individual Land Request Form PDF](https://cdn.saffire.com/files.ashx?cb=acb34c98&f=2026_Individual_Land_Request_Form.pdf&rid=TexasRenaissanceFval&t=fg) ([local record](trf-corpus/downloads/2026-individual-land-request-form.md)) | Official TRF | Submission requirements and individual-plot area limits |
+| [2026 Communal Plot Request Form PDF](https://cdn.saffire.com/files.ashx?cb=e160fc01&f=2026_Communal_Plot_Request_Form.pdf&rid=TexasRenaissanceFval&t=fg) ([local record](trf-corpus/downloads/2026-communal-plot-request-form.md)) | Official TRF | Alternative communal/guild process |
 | [Participant handbook page](https://www.texrenfest.com/p/join-us/for-our-vendors) | Official TRF | Participant handbook and operational references |
-| [2025 Participant Handbook PDF](https://cdn.saffire.com/files.ashx?cb=33687d15&f=2025_Participant_Handbook.pdf&rid=TexasRenaissanceFval&t=fg) | Official TRF, prior year | Supporting requirements until a 2026 handbook is published |
+| [2025 Participant Handbook PDF](https://cdn.saffire.com/files.ashx?cb=33687d15&f=2025_Participant_Handbook.pdf&rid=TexasRenaissanceFval&t=fg) ([local record](trf-corpus/downloads/2025-participant-handbook-summary.md)) | Official TRF, prior year | Supporting requirements until a 2026 handbook is published |
 
 ### TRF contact points
 
@@ -76,6 +77,15 @@ The repository's `maps/` workspace already records and automates several of thes
 | [USFWS Wetlands Mapper](https://www.fws.gov/program/national-wetlands-inventory/wetlands-mapper) | U.S. government | Wetland and low-area screening |
 
 Regional data does not replace field measurements of road edges, ditches, roots, ruts, local ponding, or the exact approved boundary.
+
+## Historical site configuration
+
+| Source | Authority | Use |
+|---|---|---|
+| [Google Earth historical imagery, TRF/Havok area, 2025-10-20](https://earth.google.com/web/search/Texas+Renaissance+Festival,+Farm+to+Market+1774,+Todd+Mission,+TX/@30.25558346,-95.84613627,88.15913334a,308.11765186d,35y,22.45688014h,0t,0r/data=Cj4iJgokCU3ZYms4NTRAEUvZYms4NTTAGWN4zTN8PUlAIcWIBmBynUnAKhAIARIKMjAyNS0xMC0yMBgAQgIIAToDCgEwQgIIAEoNCP___________wEQAA?authuser=0) ([planning record](../planning/2025-camp-layout-reference.md)) | Google Earth and imagery providers | Prior-season occupied footprints, irregular clearings, tree canopy, and curved internal-road context; linked for viewing, not copied or rehosted |
+
+Use the generated `maps/overlays/group-site-v0.1.kml` as a local Google Earth
+overlay. Do not infer exact boundaries or measurements from imagery alone.
 
 ## Evidence-handling rule
 

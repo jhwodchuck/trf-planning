@@ -4,7 +4,7 @@ Last updated: **2026-07-27**
 
 ## Planning baseline
 
-Use **600 sq ft per qualifying pass** for all working layouts, area calculations, and group-site arrangements. Do not maintain a parallel 525 sq ft planning version unless Jason explicitly changes this assumption.
+Use **600 sq ft per qualifying pass** for all working layouts, area calculations, and group-site arrangements. Do not maintain a parallel 525 sq ft planning version unless J. explicitly changes this assumption.
 
 This is a planning convention. Final field setup must still follow the dimensions and conditions TRF actually approves.
 

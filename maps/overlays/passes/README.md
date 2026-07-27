@@ -4,7 +4,7 @@ Ten standalone SVG files, one per 600 sq ft pass, decomposed from `maps/overlays
 
 ## Files
 
-- `<pass-id>.svg` — one self-contained drawing per pass (boundary, known equipment to scale, dashed placeholders for unknown items, and a source citation). Each file uses its own local coordinate system with a small margin around the true 600 sq ft boundary — see `viewbox_width_ft`/`viewbox_height_ft` in the manifest.
+- `<pass-id>.svg` — one self-contained public drawing per pass (boundary, known equipment to scale, and dashed placeholders for unknown items). Each file uses its own local coordinate system with a small margin around the true 600 sq ft boundary — see `viewbox_width_ft`/`viewbox_height_ft` in the manifest.
 - `passes-manifest.json` — machine-readable index of every pass file: id, name, household color, footprint size, viewBox size, and a default position that reproduces the arrangement already committed in `group-site-v0.1.svg`.
 
 ## Regenerating
@@ -17,8 +17,24 @@ python scripts/build_pass_svgs.py
 
 To change a pass's shape, equipment, or dimensions, edit the `PASSES` list in that script (not the generated `.svg`/`.json` files directly) and rerun it, so the manifest and drawing stay in sync. If a household record or equipment file changes, mirror the update here the same way it must be mirrored into `group-site-v0.1.svg` and the geojson.
 
+After accepting a new `saved-camp-v0.1.json` arrangement, regenerate the
+georeferenced group viewer and KML from that same layout:
+
+```bash
+python scripts/build_group_site_from_saved_layout.py
+python scripts/build_group_site_kml.py
+```
+
+This keeps `viewer/index.html` and `viewer/pass-layout.html` on the same pass
+positions and rotations while preserving the road, setback, and west-limit
+reference layers.
+
 ## Interactive master map
 
-Open [`maps/viewer/pass-layout.html`](../../viewer/pass-layout.html) (served over http, not `file://`) to drag, rotate, and rearrange these ten pass drawings on one freeform canvas, independent of the georeferenced viewer. It reads `passes-manifest.json` and each pass SVG directly — no build step. Save/load buttons export or import a layout JSON; a "Reset to v0.1 default" button restores the arrangement shown here. A live Texas NAIP 2022 (60 cm/px) aerial image is drawn behind the canvas for ground context, requested at the canvas's actual on-screen pixel size to avoid a browser-side upscale on top of the service's own resampling. Its bounding box is computed from the same local-ft-to-lat/lon transform used to georeference `group-site-v0.1.geojson`, but it is not corrected for the ~1.68° road-bearing rotation, so treat alignment as approximate.
+Open [`maps/viewer/pass-layout.html`](../../viewer/pass-layout.html) (served over http, not `file://`) to drag, rotate, and rearrange these ten pass drawings on one local-foot canvas. It reads `passes-manifest.json` and each pass SVG directly — no build step. Save/load buttons export or import a layout JSON; a "Reset to saved camp start" button restores the committed arrangement. Zoom controls include separate **Fit plan** and **Fit aerial context** actions. A muted, committed local copy of Texas NAIP 2022 (60 cm/px) imagery covers roughly 700 × 450 ft around the unchanged 230 × 200 ft editable coordinate area, removing the viewer's former runtime dependency on the Texas GIS service. The viewer affine-warps that WGS84 image into the same local coordinate transform used by `group-site-v0.1.geojson`, correcting the former ~1.68° rotation/skew mismatch.
 
-This tool and these files are **not georeferenced** (positions stay local-ft only; the aerial backdrop is a visual approximation, not a coordinate system). Use `maps/viewer/index.html` (the "Group site v0.1" layer) and `maps/data/group-site-v0.1.geojson` for the version tied to the supplied site anchor and road-control points.
+This tool remains **planning-grade, not survey-grade**. Positions stay in local feet, while the aerial and supplied road coordinates share the same affine WGS84 alignment. Its displayed road is the 25-point user-supplied coordinate trace; the 10 ft and 14 ft lines are approximate perpendicular offsets. Use `maps/viewer/index.html` (the "Group site v0.1" layer) and `maps/data/group-site-v0.1.geojson` for the geographic-coordinate version.
+
+The cyan hard-west-limit line comes from the two user-supplied WGS84 coordinates recorded in `planning/site-control-road-setback.md`. The viewer extrapolates that alignment across the canvas and clamps each pass's rotated view box to its east side.
+
+`saved-camp-v0.1.json` is the starting arrangement used on first load and by **Reset to saved camp start**. It preserves the user-supplied July 27 layout, with the documented 1.5 ft eastward adjustment required to keep B. and G.'s rotated community-tent pass inside the hard western limit. S. and T.'s revised 70 ft two-ended pass is rotated horizontally and staged in the open northern strip so its longer connector does not overlap the other saved pass positions; that household placement remains conceptual.

@@ -37,7 +37,7 @@
 <aside>
   <h1>TRF Site-Planning Viewer</h1>
   <p><a href="all-maps.html">&larr; All maps &amp; tools</a> &middot; <a href="pass-layout.html">Pass layout tool &rarr;</a></p>
-  <p class="warning"><strong>Provisional planning layout.</strong> Only Jason and Catrina's site is tied to the supplied road controls. Every other household position is conceptual and may move. The approximate AOI and orientation markers below are not campsite, parcel, approval, or survey boundaries.</p>
+  <p class="warning"><strong>Provisional planning layout.</strong> Only J. and C.'s site is tied to the supplied road controls. Every other household position is conceptual and may move. The approximate AOI and orientation markers below are not campsite, parcel, approval, or survey boundaries.</p>
 
   <h2>Group site map v0.1</h2>
   <div class="metric">
@@ -59,11 +59,12 @@
   <details>
     <summary>Known structures</summary>
     <ul>
-      <li>Amanda: 10 &times; 20 sleeping tent and 10 &times; 17 Yoga Tent.</li>
-      <li>Chris and Sallie: 16 &times; 20 tent; canopy still unknown.</li>
-      <li>Birdie and Gustav: 13 &times; 26 primary tent and approximate 10 &times; 20 closet tent.</li>
-      <li>Shane and Sabrina: KZ Connect SE floorplan-informed camper body plus 16 ft shower trailer; slide projections scale-derived, trailer width still unknown.</li>
-      <li>Jason and Catrina: current Wildcat deployed zone and 15 &times; 10 canopy.</li>
+      <li>A.: 10 &times; 20 sleeping tent and 10 &times; 17 Yoga Tent.</li>
+      <li>C. and S.: exact 600 sq ft T-shaped pass with the reported approximately 20 &times; 20 ft tent-plus-add-on in the top and reported 10 &times; 13 ft canopy in the stem; buffered zones nearly fill the pass.</li>
+      <li>B. and G.: primary and estimated closet tents in an offset two-lobe pass, with two generic 2 &times; 2 ft generator placeholders between them; these are not J. and C.'s P4500i units and are not approved to operate there.</li>
+      <li>S. and S.: KZ Connect SE camper pass plus an elongated shower pass with the 16 &times; 7 ft shower trailer sideways, the 5 &times; 8 ft IBC trailer T'd into it, and a 22 ft leg to a provisional fire-pit end.</li>
+      <li>M. and E.: temporary horizontal mirror of S. and S.'s camper-pass concept; every camper feature remains unverified.</li>
+      <li>J. and C.: current Wildcat deployed zone and 15 &times; 10 canopy.</li>
     </ul>
   </details>
   <div class="legend">
@@ -83,7 +84,9 @@
   <label class="file-button">Import GeoJSON <input id="import" type="file" accept=".json,.geojson,application/geo+json" hidden></label>
 
   <h2>Current working site reference</h2>
-  <p>North/northeast of the Havok camp, beside the adjacent access road. The exact geographic point has not yet been established beyond Jason and Catrina's supplied anchor.</p>
+  <p>North/northeast of the Havok camp, beside the adjacent access road. The exact geographic point has not yet been established beyond J. and C.'s supplied anchor.</p>
+  <p><a href="https://earth.google.com/web/search/Texas+Renaissance+Festival,+Farm+to+Market+1774,+Todd+Mission,+TX/@30.25558346,-95.84613627,88.15913334a,308.11765186d,35y,22.45688014h,0t,0r/data=Cj4iJgokCU3ZYms4NTRAEUvZYms4NTTAGWN4zTN8PUlAIcWIBmBynUnAKhAIARIKMjAyNS0xMC0yMBgAQgIIAToDCgEwQgIIAEoNCP___________wEQAA?authuser=0">Open the dated 2025 camp imagery in Google Earth</a></p>
+  <p><a href="../overlays/group-site-v0.1.kml" download>Download this 2026 candidate plan as local KML</a> and import it into Google Earth for visual comparison. The link center is about 82 ft south-southeast of the supplied site anchor, so do not substitute it for the control point.</p>
 
   <h2>Official campground map</h2>
   <a href="../reference/official/2026-campground-map.html">
@@ -170,18 +173,18 @@
   reference.addTo(map);
 
   // Group site v0.1 — the ten 600 sq ft pass polygons and known equipment.
-  const householdColors = {
-    'jason_catrina': '#e69138', 'shane_camper': '#6aa84f', 'shane_shower': '#6aa84f',
-    'mc_camper': '#3d85c6', 'mc_support': '#3d85c6', 'amanda': '#45818e',
-    'chris_sallie': '#d6b656', 'birdie_primary': '#a64d79', 'birdie_closet': '#a64d79',
-    'stephane_true': '#8e7cc3'
-  };
   function styleGroupSiteFeature(f) {
     const p = f.properties || {}, r = p.role, id = p.id;
-    if (r === 'pass') return { color: '#222', weight: 3, fillColor: householdColors[id] || '#888', fillOpacity: .26 };
+    if (r === 'pass') return { color: '#222', weight: 3, fillColor: p.color || '#888', fillOpacity: .26 };
     if (r === 'road_edge') return { color: '#f5d000', weight: 7 };
+    if (r === 'west_limit') return { color: '#00bcd4', weight: 5, dashArray: '12 8' };
     if (r === 'setback_10') return { color: '#d7263d', weight: 4, dashArray: '10 7' };
     if (r === 'setback_14') return { color: '#f28c28', weight: 4, dashArray: '10 7' };
+    if (r === 'known_equipment') return { color: '#333', weight: 3, fillColor: p.color || '#76a5af', fillOpacity: .45 };
+    if (r === 'equipment_placeholder') return { color: '#444', weight: 3, dashArray: '8 6', fillColor: p.color || '#aaa', fillOpacity: .28 };
+    if (r === 'clearance_placeholder') return { color: '#555', weight: 2, dashArray: '6 5', fillOpacity: 0 };
+    if (r === 'equipment_line') return { color: p.color || '#333', weight: 6 };
+    if (r === 'equipment_line_placeholder') return { color: p.color || '#555', weight: 5, dashArray: '6 4' };
     if (r === 'trailer_length') return { color: '#245b24', weight: 9 };
     if (r && r.includes('placeholder')) return { color: '#444', weight: 3, dashArray: '8 6', fillColor: '#aaa', fillOpacity: .17 };
     if (r === 'tent_estimate') return { color: '#6b2850', weight: 3, dashArray: '8 5', fillColor: '#c27ba0', fillOpacity: .38 };
@@ -205,7 +208,7 @@
         if (p.note) text += '<br>' + p.note;
         l.bindPopup(text);
         if (p.role === 'pass') l.bindTooltip(p.name, { permanent: true, direction: 'center', className: 'label-pass' });
-        if (['road_edge', 'setback_10', 'setback_14'].includes(p.role)) l.bindTooltip(p.name, { permanent: true, direction: 'right', className: 'label-small' });
+        if (['road_edge', 'setback_10', 'setback_14', 'west_limit'].includes(p.role)) l.bindTooltip(p.name, { permanent: true, direction: 'right', className: 'label-small' });
       }
     });
     groupSite.addLayer(layer);

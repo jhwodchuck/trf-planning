@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="816" viewBox="0 0 400 816" role="img" aria-labelledby="title desc">
+<title id="title">S. + S. — Pass B / Shower — 600 sq ft pass</title>
+<desc id="desc">Standalone provisional pass drawing, decomposed from the public group-site planning overlay.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+</style></defs>
+<polygon points="8.0,8.0 392.0,8.0 392.0,296.0 224.0,296.0 224.0,648.0 281.6,648.0 281.6,808.0 118.4,808.0 118.4,648.0 176.0,648.0 176.0,296.0 8.0,296.0" class="pass" fill="#93c47d"/>
+<polygon points="72.0,8.0 328.0,8.0 328.0,120.0 72.0,120.0" class="placeholder" fill="#245b24"/>
+<text x="200.0" y="59.0" text-anchor="middle" class="tiny">Assumed utility-trailer deck</text>
+<text x="200.0" y="72.0" text-anchor="middle" class="tiny">16 x 7 ft planning assumption</text>
+<polygon points="328.0,8.0 392.0,8.0 392.0,120.0 328.0,120.0" class="placeholder" fill="#f6b26b"/>
+<text x="360.0" y="59.0" text-anchor="middle" class="tiny" transform="rotate(90 360.0 64.0)">Full-width rear ramp</text>
+<text x="360.0" y="72.0" text-anchor="middle" class="tiny" transform="rotate(90 360.0 64.0)">7 x 4 ft assumed deployed</text>
+<line x1="8.0" y1="80.0" x2="72.0" y2="80.0" stroke="#555555" stroke-width="6" stroke-linecap="round"/>
+<text x="40.0" y="61.0" class="tiny">Tongue / jack allowance</text>
+<text x="40.0" y="73.0" class="tiny">4 ft assumed</text>
+<polygon points="168.0,8.0 232.0,8.0 232.0,24.0 168.0,24.0" class="placeholder" fill="#555555"/>
+<polygon points="168.0,104.0 232.0,104.0 232.0,120.0 168.0,120.0" class="placeholder" fill="#555555"/>
+<polygon points="160.0,120.0 240.0,120.0 240.0,248.0 160.0,248.0" class="placeholder" fill="#6fa8dc"/>
+<polygon points="168.0,152.0 232.0,152.0 232.0,216.0 168.0,216.0" class="placeholder" fill="#3d85c6"/>
+<text x="200.0" y="179.0" text-anchor="middle" class="tiny" transform="rotate(90 200.0 184.0)">IBC water tote</text>
+<text x="200.0" y="192.0" text-anchor="middle" class="tiny" transform="rotate(90 200.0 184.0)">assumed 4 x 4 ft</text>
+<line x1="200.0" y1="248.0" x2="200.0" y2="296.0" stroke="#555555" stroke-width="6" stroke-linecap="round"/>
+<polygon points="144.0,168.0 160.0,168.0 160.0,200.0 144.0,200.0" class="placeholder" fill="#555555"/>
+<polygon points="240.0,168.0 256.0,168.0 256.0,200.0 240.0,200.0" class="placeholder" fill="#555555"/>
+<polygon points="176.0,704.0 224.0,704.0 224.0,752.0 176.0,752.0" class="placeholder" fill="#cc4125"/>
+<text x="200.0" y="723.0" text-anchor="middle" class="tiny">Fire pit</text>
+<text x="200.0" y="736.0" text-anchor="middle" class="tiny">3 x 3 ft assumed</text>
+<text x="200.0" y="139.2" text-anchor="middle" class="tiny">Water trailer T'd into shower trailer</text>
+<text x="200.0" y="472.0" text-anchor="middle" class="tiny">22 ft connector leg</text>
+<text x="200.0" y="672.0" text-anchor="middle" class="tiny">10.2 x 10 ft fire-pit end zone</text>
+<text x="200.0" y="253.2" text-anchor="middle" class="label">S. + S. — Pass B / Shower</text>
+<text x="200.0" y="271.2" text-anchor="middle" class="small">600 sq ft</text>
+<text x="200.0" y="283.2" text-anchor="middle" class="tiny">432 + 66 + 102 = 600 sq ft</text>
+</svg>

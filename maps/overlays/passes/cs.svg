@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="656" height="256" viewBox="0 0 656 256" role="img" aria-labelledby="title desc">
+<title id="title">C. + S. — 600 sq ft pass</title>
+<desc id="desc">Standalone provisional pass drawing, decomposed from the public group-site planning overlay.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+</style></defs>
+<polygon points="8.0,8.0 648.0,8.0 648.0,248.0 8.0,248.0" class="pass" fill="#ffd966"/>
+<polygon points="8.0,24.0 632.0,24.0 632.0,232.0 8.0,232.0" class="eq" fill="none"/>
+<polygon points="8.0,40.0 232.0,40.0 232.0,216.0 8.0,216.0" class="clearance" aria-label="Planning canopy provisional clearance zone"/>
+<polygon points="16.0,48.0 224.0,48.0 224.0,208.0 16.0,208.0" class="placeholder" fill="#f1c232"/>
+<text x="120.0" y="123.0" text-anchor="middle" class="tiny">Planning canopy</text>
+<text x="120.0" y="136.0" text-anchor="middle" class="tiny">10 x 13 ft reported</text>
+<polygon points="232.0,24.0 504.0,24.0 504.0,232.0 232.0,232.0" class="clearance" aria-label="Main tent provisional clearance zone"/>
+<polygon points="240.0,32.0 496.0,32.0 496.0,224.0 240.0,224.0" class="eq" fill="#e6b800"/>
+<text x="368.0" y="123.0" text-anchor="middle" class="tiny">Main tent</text>
+<text x="368.0" y="136.0" text-anchor="middle" class="tiny">12 x 16 ft reported</text>
+<polygon points="488.0,56.0 632.0,56.0 632.0,200.0 488.0,200.0" class="clearance" aria-label="Add-on room provisional clearance zone"/>
+<polygon points="496.0,64.0 624.0,64.0 624.0,192.0 496.0,192.0" class="eq" fill="#d9a900"/>
+<text x="560.0" y="123.0" text-anchor="middle" class="tiny">Add-on room</text>
+<text x="560.0" y="136.0" text-anchor="middle" class="tiny">8 x 8 ft reported</text>
+<text x="368.0" y="240.8" text-anchor="middle" class="tiny">Tent doors / vestibules TBD</text>
+<text x="328.0" y="19.2" text-anchor="middle" class="small">C. + S. — 600 sq ft — 40 x 15 ft pass</text>
+</svg>

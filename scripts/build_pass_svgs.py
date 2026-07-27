@@ -50,6 +50,9 @@ class Equipment:
     # Optional planning buffer around nominal equipment geometry. Used to
     # show unverified rainfly, rope, anchor, foot, or ballast clearance.
     buffer_ft: float = 0.0
+    label_anchor: tuple[float, float] | None = None
+    label_rotation: float = 0.0
+    show_label: bool = True
 
 
 @dataclass
@@ -69,8 +72,12 @@ class Pass:
     # Anchor point (relative to the bbox origin) for the household name/area
     # labels. Defaults to the bbox center, which is always inside a rect
     # boundary but can fall in the notch of a non-rectangular polygon, so
-    # notched passes (e.g. jason_catrina) must set this explicitly.
+    # notched passes (e.g. jc) must set this explicitly.
     label_anchor: tuple[float, float] | None = None
+    label_rotation: float = 0.0
+    # Optional one-line boundary label for shallow/wide pass drawings where
+    # the standard three-line household/area/note block would cover equipment.
+    compact_label: str = ""
     # Where this pass's bounding-box top-left sits in the original
     # group-site-v0.1.svg local layout (feet). Used only as the manifest's
     # default position so the master tool opens matching the current README
@@ -88,12 +95,12 @@ class Pass:
 
 PASSES: list[Pass] = [
     Pass(
-        id="jason_catrina",
-        name="Jason + Catrina",
+        id="jc",
+        name="J. + C.",
         color="#e69138",
         area_sqft=600,
         area_note="598.875 sq ft RV + canopy equipment footprint, plus 1.125 sq ft boundary buffer",
-        source="planning/households/jason-and-catrina.md",
+        source="planning/households/jc.md",
         polygon=[
             (29.25, 31.5),
             (29.25, 0),
@@ -106,7 +113,7 @@ PASSES: list[Pass] = [
         label_anchor=(15.05, 17.63),
         equipment=[
             Equipment(
-                id="jason_rv",
+                id="jc_rv",
                 label="Wildcat deployed zone",
                 role="eq",
                 status="working measurement; camper model/data-plate not yet confirmed",
@@ -115,7 +122,7 @@ PASSES: list[Pass] = [
                 dims_label="31.5 x 14.25 ft",
             ),
             Equipment(
-                id="jason_canopy",
+                id="jc_canopy",
                 label="Canopy",
                 role="eq",
                 status="working template; dimensions must be verified",
@@ -126,100 +133,412 @@ PASSES: list[Pass] = [
         ],
     ),
     Pass(
-        id="shane_camper",
-        name="Shane + Sabrina — Pass A / Camper",
+        id="ss_camper",
+        name="S. + S. — Camper",
         color="#93c47d",
         area_sqft=600,
-        area_note="KZ Connect SE C312BHKSE floorplan-informed footprint; body published, slides scale-derived",
-        source="equipment/shane-sabrina-kz-connect-se-c312bhkse.md",
-        rect=(15, 40),
-        default_bbox_origin=(110, 40),
+        source="equipment/ss-kz-connect-se-c312bhkse.md",
+        polygon=[
+            (0, 0),
+            (12, 0),
+            (12, 4),
+            (15, 4),
+            (15, 12),
+            (12, 12),
+            (12, 17.5),
+            (20, 17.5),
+            (20, 29.5),
+            (12, 29.5),
+            (12, 40),
+            (0, 40),
+        ],
+        default_bbox_origin=(105, 40),
+        label_anchor=(7.7, 33.5),
         equipment=[
             Equipment(
-                id="shane_camper_body",
+                id="ss_camper_body",
                 label="Camper body",
                 role="eq",
                 status="published manufacturer dimensions; model year/VIN not yet confirmed",
-                rect=(0.5, 1.5, 8, 36.75),
+                rect=(3.7, 1.625, 8, 36.75),
                 fill="#3d85c6",
                 dims_label="36 ft 9 in x 8 ft (rear bumper to coupler)",
+                label_anchor=(7.7, 20),
+                label_rotation=90,
             ),
             Equipment(
-                id="shane_camper_slide_bunk",
+                id="ss_camper_slide_bunk",
                 label="Rear bunkhouse slide",
                 role="placeholder",
                 status="scale-derived from floorplan artwork; not measured on this unit; unsuitable for approval",
-                rect=(8.5, 2.4, 3.1, 7.9),
+                rect=(0.6, 2.4, 3.1, 7.9),
                 fill="#a9c9e8",
                 dims_label="~3 ft 1 in projection (estimate)",
+                label_rotation=90,
             ),
             Equipment(
-                id="shane_camper_slide_main",
+                id="ss_camper_slide_main",
                 label="Main living slide",
                 role="placeholder",
                 status="scale-derived from floorplan artwork; not measured on this unit; unsuitable for approval",
-                rect=(8.5, 12.2, 3.7, 15.4),
+                rect=(0, 12.2, 3.7, 15.4),
                 fill="#a9c9e8",
                 dims_label="~3 ft 9 in projection (estimate)",
+                label_rotation=90,
+            ),
+            Equipment(
+                id="ss_rear_service_zone",
+                label="Rear service bay",
+                role="placeholder",
+                status="provisional 3 x 8 ft service bay; appliance doors, griddle, and step projections require measurement",
+                rect=(12, 4, 3, 8),
+                fill="#f6b26b",
+                dims_label="3 x 8 ft provisional",
+                label_rotation=90,
+            ),
+            Equipment(
+                id="ss_rug_zone",
+                label="Rug zone",
+                role="placeholder",
+                status="working assumption; confirm actual rug dimensions and placement",
+                rect=(12, 17.5, 8, 12),
+                fill="#d9b38c",
+                dims_label="8 x 12 ft provisional",
+                label_anchor=(16, 22),
+            ),
+            Equipment(
+                id="ss_rear_steps",
+                label="Rear steps",
+                role="placeholder",
+                status="floorplan-derived location; projection requires measurement",
+                rect=(11.7, 9.5, 3.3, 2),
+                fill="#c58b55",
+                dims_label="projection TBD",
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_main_steps",
+                label="Main steps",
+                role="placeholder",
+                status="floorplan-derived location; projection requires measurement",
+                rect=(11.7, 27.5, 3.3, 2),
+                fill="#c58b55",
+                dims_label="projection TBD",
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_awning",
+                label="18 ft awning",
+                role="placeholder",
+                status="published length; projection and support locations require measurement",
+                line=(12, 11.5, 12, 29.5),
+                fill="#2e7d32",
+                dims_label="projection TBD",
+                label_anchor=(12.6, 20.5),
+                label_rotation=90,
+            ),
+            Equipment(
+                id="ss_rear_door",
+                label="Rear door",
+                role="placeholder",
+                status="floorplan-derived location; verify on actual unit",
+                line=(11.7, 9.7, 11.7, 11.1),
+                fill="#a56200",
+                label_anchor=(14, 10.4),
+                label_rotation=90,
+            ),
+            Equipment(
+                id="ss_main_door",
+                label="Main door",
+                role="placeholder",
+                status="floorplan-derived location; verify on actual unit",
+                line=(11.7, 27.9, 11.7, 29.3),
+                fill="#a56200",
+                label_anchor=(14, 28.6),
+                label_rotation=90,
             ),
         ],
     ),
     Pass(
-        id="shane_shower",
-        name="Shane + Sabrina — Pass B / Shower",
+        id="ss_shower",
+        name="S. + S. — Pass B / Shower",
         color="#93c47d",
         area_sqft=600,
-        source="equipment/shane-sabrina-16ft-shower-trailer.md",
-        rect=(20, 30),
-        default_bbox_origin=(85, 30),
+        source="equipment/ss-16ft-shower-trailer.md",
+        polygon=[
+            (0, 0),
+            (24, 0),
+            (24, 18),
+            (13.5, 18),
+            (13.5, 40),
+            (17.1, 40),
+            (17.1, 50),
+            (6.9, 50),
+            (6.9, 40),
+            (10.5, 40),
+            (10.5, 18),
+            (0, 18),
+        ],
+        area_note="432 + 66 + 102 = 600 sq ft",
+        default_bbox_origin=(125, 150),
+        label_anchor=(12, 16.2),
         equipment=[
             Equipment(
-                id="shane_shower_trailer",
-                label="16 ft flatbed shower trailer",
+                id="ss_shower_trailer",
+                label="Assumed utility-trailer deck",
                 role="placeholder",
-                status="length confirmed; width and overall coupler length TBD",
-                line=(10, 7, 10, 23),
+                status="16 ft stated deck length with 7 ft planning width; actual deck and maximum fender width require measurement",
+                rect=(4, 0, 16, 7),
                 fill="#245b24",
-                dims_label="16 ft long; width TBD",
+                dims_label="16 x 7 ft planning assumption",
+                label_anchor=(12, 3.5),
             ),
+            Equipment(
+                id="ss_shower_ramp",
+                label="Full-width rear ramp",
+                role="placeholder",
+                status="full-width fold-down ramp confirmed; 4 ft deployed depth is a planning assumption requiring measurement",
+                rect=(20, 0, 4, 7),
+                fill="#f6b26b",
+                dims_label="7 x 4 ft assumed deployed",
+                label_anchor=(22, 3.5),
+                label_rotation=90,
+            ),
+            Equipment(
+                id="ss_shower_tongue",
+                label="Tongue / jack allowance",
+                role="placeholder",
+                status="provisional 4 ft centerline allowance; actual coupler, A-frame, jack, and tow-clearance geometry unknown",
+                line=(0, 4.5, 4, 4.5),
+                fill="#555555",
+                dims_label="4 ft assumed",
+                label_anchor=(2, 3.5),
+            ),
+            Equipment(
+                id="ss_shower_left_wheel",
+                label="Wheel/fender allowance",
+                role="placeholder",
+                status="provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement",
+                rect=(10, 0, 4, 1),
+                fill="#555555",
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_shower_right_wheel",
+                label="Wheel/fender allowance",
+                role="placeholder",
+                status="provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement",
+                rect=(10, 6, 4, 1),
+                fill="#555555",
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_water_trailer",
+                label="IBC water trailer",
+                role="placeholder",
+                status="provisional 5 x 8 ft deck assumption for the stated small 8 ft trailer; actual deck, fenders, axle, load rating, and overall length TBD",
+                rect=(9.5, 7, 5, 8),
+                fill="#6fa8dc",
+                dims_label="assumed 5 x 8 ft deck",
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_water_tote",
+                label="IBC water tote",
+                role="placeholder",
+                status="provisional 4 x 4 ft planning footprint on the water trailer; actual tote dimensions, capacity, restraint, fill, vent, valve, and loaded weight TBD",
+                rect=(10, 9, 4, 4),
+                fill="#3d85c6",
+                dims_label="assumed 4 x 4 ft",
+                label_anchor=(12, 11),
+                label_rotation=90,
+            ),
+            Equipment(
+                id="ss_water_trailer_tongue",
+                label="Water-trailer tongue",
+                role="placeholder",
+                status="provisional 3 ft centerline allowance; actual coupler, A-frame, jack, and tow-clearance geometry unknown",
+                line=(12, 15, 12, 18),
+                fill="#555555",
+                dims_label="3 ft assumed",
+                label_anchor=(12, 17),
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_water_trailer_left_wheel",
+                label="Water-trailer wheel/fender",
+                role="placeholder",
+                status="provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement",
+                rect=(8.5, 10, 1, 2),
+                fill="#555555",
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_water_trailer_right_wheel",
+                label="Water-trailer wheel/fender",
+                role="placeholder",
+                status="provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement",
+                rect=(14.5, 10, 1, 2),
+                fill="#555555",
+                show_label=False,
+            ),
+            Equipment(
+                id="ss_fire_pit",
+                label="Fire pit",
+                role="placeholder",
+                status="provisional 3 x 3 ft fire-pit footprint inside a 10.2 x 10 ft end zone; actual pit, spark, fuel, extinguisher, and combustible clearances plus festival approval TBD",
+                rect=(10.5, 43.5, 3, 3),
+                fill="#cc4125",
+                dims_label="3 x 3 ft assumed",
+            ),
+        ],
+        annotations=[
+            (12, 8.2, "Water trailer T'd into shower trailer"),
+            (12, 29, "22 ft connector leg"),
+            (12, 41.5, "10.2 x 10 ft fire-pit end zone"),
         ],
     ),
     Pass(
-        id="mc_camper",
-        name="MC + Elizabeth — Pass A / Camper",
+        id="me_camper",
+        name="M. + E. — Mirrored Camper",
         color="#6fa8dc",
         area_sqft=600,
-        source="planning/households/mc-and-elizabeth.md",
-        rect=(20, 30),
+        source="planning/households/me.md",
+        polygon=[
+            (20, 0),
+            (8, 0),
+            (8, 4),
+            (5, 4),
+            (5, 12),
+            (8, 12),
+            (8, 17.5),
+            (0, 17.5),
+            (0, 29.5),
+            (8, 29.5),
+            (8, 40),
+            (20, 40),
+        ],
         default_bbox_origin=(55, 50),
+        label_anchor=(12.3, 33.5),
         equipment=[
             Equipment(
-                id="mc_camper_placeholder",
-                label="Camper",
+                id="me_camper_placeholder",
+                label="Mirrored reference body",
                 role="placeholder",
-                status="not to scale; actual deployed dimensions required",
-                rect=(3, 4, 14, 22),
+                status="temporary mirror of S./S. reference only; not evidence of M./E. camper dimensions",
+                rect=(8.3, 1.625, 8, 36.75),
                 fill="#3d85c6",
-                dims_label="dimensions required",
+                dims_label="36.75 x 8 ft placeholder",
+                label_anchor=(12.3, 20),
+                label_rotation=90,
+            ),
+            Equipment(
+                id="me_slide_bunk_placeholder",
+                label="Mirrored bunk slide",
+                role="placeholder",
+                status="temporary mirrored estimate only; actual slide count, side, length, and projection unknown",
+                rect=(16.3, 2.4, 3.1, 7.9),
+                fill="#a9c9e8",
+                dims_label="reference only",
+                label_rotation=90,
+            ),
+            Equipment(
+                id="me_slide_main_placeholder",
+                label="Mirrored main slide",
+                role="placeholder",
+                status="temporary mirrored estimate only; actual slide count, side, length, and projection unknown",
+                rect=(16.3, 12.2, 3.7, 15.4),
+                fill="#a9c9e8",
+                dims_label="reference only",
+                label_rotation=90,
+            ),
+            Equipment(
+                id="me_rear_service_placeholder",
+                label="Mirrored service bay",
+                role="placeholder",
+                status="temporary mirror only; actual doors, kitchen, appliances, and steps unknown",
+                rect=(5, 4, 3, 8),
+                fill="#f6b26b",
+                dims_label="3 x 8 ft reference",
+                label_rotation=90,
+            ),
+            Equipment(
+                id="me_rug_placeholder",
+                label="Mirrored rug bay",
+                role="placeholder",
+                status="temporary 8 x 12 ft mirrored planning zone; actual need and dimensions unknown",
+                rect=(0, 17.5, 8, 12),
+                fill="#d9b38c",
+                dims_label="8 x 12 ft reference",
+                label_anchor=(4, 22),
+            ),
+            Equipment(
+                id="me_rear_steps_placeholder",
+                label="Mirrored rear steps",
+                role="placeholder",
+                status="temporary mirror only; actual door and step geometry unknown",
+                rect=(5, 9.5, 3.3, 2),
+                fill="#c58b55",
+                show_label=False,
+            ),
+            Equipment(
+                id="me_main_steps_placeholder",
+                label="Mirrored main steps",
+                role="placeholder",
+                status="temporary mirror only; actual door and step geometry unknown",
+                rect=(5, 27.5, 3.3, 2),
+                fill="#c58b55",
+                show_label=False,
+            ),
+            Equipment(
+                id="me_awning_placeholder",
+                label="Mirrored awning",
+                role="placeholder",
+                status="temporary 18 ft mirrored reference only; actual awning unknown",
+                line=(8, 11.5, 8, 29.5),
+                fill="#2e7d32",
+                dims_label="reference only",
+                label_anchor=(7.4, 20.5),
+                label_rotation=-90,
+            ),
+            Equipment(
+                id="me_rear_door_placeholder",
+                label="Mirrored rear door",
+                role="placeholder",
+                status="temporary mirror only; actual doors unknown",
+                line=(8.3, 9.7, 8.3, 11.1),
+                fill="#a56200",
+                label_anchor=(6, 10.4),
+                label_rotation=-90,
+            ),
+            Equipment(
+                id="me_main_door_placeholder",
+                label="Mirrored main door",
+                role="placeholder",
+                status="temporary mirror only; actual doors unknown",
+                line=(8.3, 27.9, 8.3, 29.3),
+                fill="#a56200",
+                label_anchor=(6, 28.6),
+                label_rotation=-90,
             ),
         ],
     ),
     Pass(
-        id="mc_support",
-        name="MC + Elizabeth — Pass B / Support",
+        id="me_support",
+        name="M. + E. — Pass B / Support",
         color="#6fa8dc",
         area_sqft=600,
-        source="planning/households/mc-and-elizabeth.md",
+        source="planning/households/me.md",
         rect=(20, 30),
-        default_bbox_origin=(30, 40),
+        default_bbox_origin=(101, 85),
         equipment=[],
     ),
     Pass(
-        id="amanda",
-        name="Amanda",
+        id="a",
+        name="A.",
         color="#76a5af",
         area_sqft=600,
-        source="planning/amanda-site-notes.md",
+        source="planning/a-site-notes.md",
         polygon=[
             (0, 0),
             (25, 0),
@@ -235,7 +554,7 @@ PASSES: list[Pass] = [
         annotations=[(12.5, 17.2, "8.5 ft nominal aisle")],
         equipment=[
             Equipment(
-                id="amanda_sleep",
+                id="a_sleep",
                 label="Sleeping tent",
                 role="eq",
                 status="confirmed",
@@ -245,7 +564,7 @@ PASSES: list[Pass] = [
                 buffer_ft=0.5,
             ),
             Equipment(
-                id="amanda_yoga",
+                id="a_yoga",
                 label="Yoga Tent (COVERPRO canopy)",
                 role="eq",
                 status="confirmed; bottom-aligned in T stem with 8.5 ft nominal separation",
@@ -257,91 +576,188 @@ PASSES: list[Pass] = [
         ],
     ),
     Pass(
-        id="chris_sallie",
-        name="Chris + Sallie",
+        id="cs",
+        name="C. + S.",
         color="#ffd966",
         area_sqft=600,
-        source="planning/households/chris-and-sallie.md",
-        rect=(20, 30),
+        source="planning/households/cs.md",
+        rect=(40, 15),
+        area_note="40 x 15 = 600 sq ft; equipment = 386 sq ft",
         default_bbox_origin=(75, 115),
+        label_anchor=(20, 0.7),
+        compact_label="C. + S. — 600 sq ft — 40 x 15 ft pass",
+        annotations=[
+            (22.5, 14.55, "Tent doors / vestibules TBD"),
+        ],
         equipment=[
             Equipment(
-                id="chris_tent",
-                label="Tent",
+                id="cs_row_border",
+                label="Equipment-row border",
                 role="eq",
-                status="confirmed",
-                rect=(2, 8, 16, 20),
-                fill="#e6b800",
-                dims_label="16 x 20 ft",
+                status="continuous planning border around the complete canopy, tent, and add-on row",
+                rect=(0, 1, 39, 13),
+                fill="none",
+                show_label=False,
             ),
             Equipment(
-                id="chris_canopy_placeholder",
-                label="Canopy",
+                id="cs_canopy_placeholder",
+                label="Planning canopy",
                 role="placeholder",
-                status="not to scale; dimensions required — do not infer 10x10",
-                rect=(0, 0, 20, 6),
+                status="10 x 13 ft user-reported planning size; manufacturer/model, leg spacing, anchors, ropes, ballast, and exact relationship to tent require confirmation",
+                rect=(0.5, 2.5, 13, 10),
                 fill="#f1c232",
-                dims_label="dimensions required",
+                dims_label="10 x 13 ft reported",
+                buffer_ft=0.5,
+            ),
+            Equipment(
+                id="cs_tent_main",
+                label="Main tent",
+                role="eq",
+                status="12 x 16 ft user-reported planning size; exact deployed footprint requires measurement",
+                rect=(14.5, 1.5, 16, 12),
+                fill="#e6b800",
+                dims_label="12 x 16 ft reported",
+                buffer_ft=0.5,
+                label_anchor=(22.5, 7.5),
+            ),
+            Equipment(
+                id="cs_tent_addon",
+                label="Add-on room",
+                role="eq",
+                status="8 x 8 ft user-reported size attached to one end; centered alignment is a planning assumption",
+                rect=(30.5, 3.5, 8, 8),
+                fill="#d9a900",
+                dims_label="8 x 8 ft reported",
+                buffer_ft=0.5,
             ),
         ],
     ),
     Pass(
-        id="birdie_primary",
-        name="Birdie + Gustav — Pass A / Primary Tent",
+        id="bg_primary",
+        name="B. + G. — Pass A / Two Tents",
         color="#c27ba0",
         area_sqft=600,
-        source="planning/households/birdie-and-gustav.md",
-        rect=(20, 30),
-        default_bbox_origin=(45, 120),
+        area_note="538 sq ft nominal tents; only 62 sq ft remains for all clearance and access",
+        source="planning/households/bg.md",
+        polygon=[
+            (0, 0),
+            (27, 0),
+            (27, 19),
+            (45, 19),
+            (45, 30),
+            (24, 30),
+            (24, 13),
+            (0, 13),
+        ],
+        default_bbox_origin=(75, 160),
+        label_anchor=(13.5, 11.5),
         equipment=[
             Equipment(
-                id="birdie_primary_tent",
+                id="bg_primary_tent",
                 label="Primary tent",
                 role="eq",
                 status="confirmed for planning",
-                rect=(3.5, 2, 13, 26),
+                rect=(0.5, 0, 26, 13),
                 fill="#a64d79",
-                dims_label="13 x 26 ft",
+                dims_label="26 x 13 ft (rotated)",
+                buffer_ft=0.5,
             ),
-        ],
-    ),
-    Pass(
-        id="birdie_closet",
-        name="Birdie + Gustav — Pass B / Closet Tent",
-        color="#c27ba0",
-        area_sqft=600,
-        source="planning/households/birdie-and-gustav.md",
-        rect=(20, 30),
-        default_bbox_origin=(20, 110),
-        equipment=[
             Equipment(
-                id="birdie_closet_tent",
+                id="bg_community_tent",
                 label="Closet tent",
                 role="placeholder",
                 status="estimate; replacement model TBD",
-                rect=(5, 5, 10, 20),
+                rect=(24.5, 19.5, 20, 10),
                 fill="#c27ba0",
-                dims_label="approx. 10 x 20 ft",
+                dims_label="approx. 20 x 10 ft (rotated)",
+                buffer_ft=0.5,
+            ),
+            Equipment(
+                id="bg_generator_1",
+                label="G1",
+                role="placeholder",
+                status="generic 2 x 2 ft space reservation; B./G. generator model, dimensions, fuel, exhaust, and operating clearances unknown",
+                rect=(24.5, 13.5, 2, 2),
+                fill="#cc0000",
+                dims_label="",
+            ),
+            Equipment(
+                id="bg_generator_2",
+                label="G2",
+                role="placeholder",
+                status="generic 2 x 2 ft space reservation; B./G. generator model, dimensions, fuel, exhaust, and operating clearances unknown",
+                rect=(24.5, 16.5, 2, 2),
+                fill="#cc0000",
+                dims_label="",
             ),
         ],
     ),
     Pass(
-        id="stephane_true",
-        name="Stephane + True",
-        color="#b4a7d6",
+        id="bg_community",
+        name="B. + G. — Pass B / Community Tent",
+        color="#c27ba0",
         area_sqft=600,
-        source="planning/households/stephane-and-true.md",
+        area_note="20 x 30 ft tent fills the nominal pass; operational clearance remains unresolved",
+        source="planning/households/bg.md",
         rect=(20, 30),
-        default_bbox_origin=(130, 120),
+        default_bbox_origin=(77, 0),
         equipment=[
             Equipment(
-                id="stephane_tent_placeholder",
-                label="Tent",
+                id="bg_community_tent",
+                label="Community tent",
                 role="placeholder",
-                status="not to scale; dimensions required",
-                rect=(5, 6, 10, 18),
+                status="20 x 30 ft specified by user; rainfly, stakes, guy lines, and entrances unverified",
+                rect=(0, 0, 20, 30),
+                fill="#8e5f83",
+                dims_label="20 x 30 ft",
+                buffer_ft=0.5,
+            ),
+        ],
+    ),
+    Pass(
+        id="st",
+        name="S. + T.",
+        color="#b4a7d6",
+        area_sqft=600,
+        area_note="264 + 120 + 216 = 600 sq ft",
+        source="planning/households/st.md",
+        polygon=[
+            (0, 0),
+            (12, 0),
+            (12, 22),
+            (8, 22),
+            (8, 52),
+            (12, 52),
+            (12, 70),
+            (0, 70),
+            (0, 52),
+            (4, 52),
+            (4, 22),
+            (0, 22),
+        ],
+        default_bbox_origin=(130, 120),
+        label_anchor=(6, 54.5),
+        annotations=[(6, 37, "4 x 30 ft connector path")],
+        equipment=[
+            Equipment(
+                id="st_tent",
+                label="Primary tent",
+                role="eq",
+                status="assumed 10 x 20 ft tent inside a 12 x 22 ft tent end",
+                rect=(1, 1, 10, 20),
                 fill="#8e7cc3",
-                dims_label="dimensions required",
+                dims_label="10 x 20 ft",
+                buffer_ft=0.5,
+            ),
+            Equipment(
+                id="st_portapotty",
+                label="Handicap Portapotty",
+                role="eq",
+                status="assumed 6 x 6 ft ADA unit inside a 12 x 18 ft potty end; door direction and accessible approach remain unverified",
+                rect=(3, 62, 6, 6),
+                fill="#674ea7",
+                dims_label="6 x 6 ft ADA",
+                buffer_ft=0.5,
             ),
         ],
     ),
@@ -387,12 +803,10 @@ def render_pass(p: Pass) -> str:
     )
     parts.append(f'<title id="title">{esc(p.name)} — 600 sq ft pass</title>')
     parts.append(
-        f'<desc id="desc">Standalone provisional pass drawing, decomposed from '
-        f"maps/overlays/group-site-v0.1.svg. Source record: {esc(p.source)}.</desc>"
+        '<desc id="desc">Standalone provisional pass drawing, decomposed from '
+        "the public group-site planning overlay.</desc>"
     )
     parts.append(f"<defs><style>{STYLE}</style></defs>")
-    parts.append(f'<rect width="{px_w}" height="{px_h}" fill="#f6f5f0"/>')
-
     # Boundary
     if p.polygon is not None:
         pts = " ".join(f"{X(x)},{Y(y)}" for x, y in p.polygon)
@@ -425,24 +839,38 @@ def render_pass(p: Pass) -> str:
                 (x, y), (x + w, y), (x + w, y + h), (x, y + h)
             ])
             parts.append(f'<polygon points="{pts}" class="{cls}" fill="{eq.fill}"/>')
-            lx, ly = X(x + w / 2), Y(y + h / 2)
-            parts.append(
-                f'<text x="{lx}" y="{ly - 5}" text-anchor="middle" class="tiny">{esc(eq.label)}</text>'
+            anchor_x, anchor_y = eq.label_anchor if eq.label_anchor is not None else (x + w / 2, y + h / 2)
+            lx, ly = X(anchor_x), Y(anchor_y)
+            transform = (
+                f' transform="rotate({eq.label_rotation:g} {lx} {ly})"'
+                if eq.label_rotation
+                else ""
             )
-            if eq.dims_label:
+            if eq.show_label:
                 parts.append(
-                    f'<text x="{lx}" y="{ly + 8}" text-anchor="middle" class="tiny">{esc(eq.dims_label)}</text>'
+                    f'<text x="{lx}" y="{ly - 5}" text-anchor="middle" class="tiny"{transform}>{esc(eq.label)}</text>'
                 )
+                if eq.dims_label:
+                    parts.append(
+                        f'<text x="{lx}" y="{ly + 8}" text-anchor="middle" class="tiny"{transform}>{esc(eq.dims_label)}</text>'
+                    )
         elif eq.line is not None:
             x1, y1, x2, y2 = eq.line
             parts.append(
                 f'<line x1="{X(x1)}" y1="{Y(y1)}" x2="{X(x2)}" y2="{Y(y2)}" '
                 f'stroke="{eq.fill}" stroke-width="6" stroke-linecap="round"/>'
             )
-            lx, ly = X(max(x1, x2) + 1), Y((y1 + y2) / 2)
-            parts.append(f'<text x="{lx}" y="{ly - 3}" class="tiny">{esc(eq.label)}</text>')
-            if eq.dims_label:
-                parts.append(f'<text x="{lx}" y="{ly + 9}" class="tiny">{esc(eq.dims_label)}</text>')
+            anchor_x, anchor_y = eq.label_anchor if eq.label_anchor is not None else (max(x1, x2) + 1, (y1 + y2) / 2)
+            lx, ly = X(anchor_x), Y(anchor_y)
+            transform = (
+                f' transform="rotate({eq.label_rotation:g} {lx} {ly})"'
+                if eq.label_rotation
+                else ""
+            )
+            if eq.show_label:
+                parts.append(f'<text x="{lx}" y="{ly - 3}" class="tiny"{transform}>{esc(eq.label)}</text>')
+                if eq.dims_label:
+                    parts.append(f'<text x="{lx}" y="{ly + 9}" class="tiny"{transform}>{esc(eq.dims_label)}</text>')
 
     for x, y, label in p.annotations:
         parts.append(
@@ -453,24 +881,37 @@ def render_pass(p: Pass) -> str:
     # Boundary labels
     anchor_x, anchor_y = p.label_anchor if p.label_anchor is not None else (bbox_w / 2, bbox_h / 2)
     label_x = X(anchor_x)
+    label_x_name = label_x - 10 if p.label_rotation else label_x
+    label_x_area = label_x + 10 if p.label_rotation else label_x
     label_y_name = Y(anchor_y) - 14
     label_y_area = Y(anchor_y) + 4
-    parts.append(
-        f'<text x="{label_x}" y="{label_y_name}" text-anchor="middle" class="label">{esc(p.name)}</text>'
+    name_transform = (
+        f' transform="rotate({p.label_rotation:g} {label_x_name} {label_y_name})"'
+        if p.label_rotation
+        else ""
     )
-    parts.append(
-        f'<text x="{label_x}" y="{label_y_area}" text-anchor="middle" class="small">{p.area_sqft:g} sq ft'
-        f'{" pass" if not p.area_note else ""}</text>'
+    area_transform = (
+        f' transform="rotate({p.label_rotation:g} {label_x_area} {label_y_area})"'
+        if p.label_rotation
+        else ""
     )
-    if p.area_note:
+    if p.compact_label:
         parts.append(
-            f'<text x="{label_x}" y="{label_y_area + 12}" text-anchor="middle" class="tiny">{esc(p.area_note)}</text>'
+            f'<text x="{label_x}" y="{Y(anchor_y)}" text-anchor="middle" '
+            f'class="small">{esc(p.compact_label)}</text>'
         )
-
-    # Footer / provenance
-    parts.append(
-        f'<text x="{X(0)}" y="{px_h - 6}" class="tiny">Source: {esc(p.source)} — generated by scripts/build_pass_svgs.py</text>'
-    )
+    else:
+        parts.append(
+            f'<text x="{label_x_name}" y="{label_y_name}" text-anchor="middle" class="label"{name_transform}>{esc(p.name)}</text>'
+        )
+        parts.append(
+            f'<text x="{label_x_area}" y="{label_y_area}" text-anchor="middle" class="small"{area_transform}>{p.area_sqft:g} sq ft'
+            f'{" pass" if not p.area_note else ""}</text>'
+        )
+        if p.area_note:
+            parts.append(
+                f'<text x="{label_x}" y="{label_y_area + 12}" text-anchor="middle" class="tiny">{esc(p.area_note)}</text>'
+            )
 
     parts.append("</svg>")
     return "\n".join(parts)
@@ -515,7 +956,6 @@ def main() -> int:
                 "viewbox_height_ft": view_h,
                 "default_x_ft": round(ox - MARGIN_FT, 4),
                 "default_y_ft": round(oy - MARGIN_FT, 4),
-                "source": p.source,
             }
         )
 

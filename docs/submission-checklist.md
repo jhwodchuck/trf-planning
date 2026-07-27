@@ -6,7 +6,7 @@ Use this checklist before sending an individual land request or treating a layou
 
 - [ ] Every qualifying pass is represented as a **600 sq ft planning unit**.
 - [ ] Combined group area equals `number of qualifying passes × 600 sq ft`.
-- [ ] No separate 525 sq ft planning layout is being maintained unless Jason explicitly changes the baseline.
+- [ ] No separate 525 sq ft planning layout is being maintained unless J. explicitly changes the baseline.
 - [ ] Final approval conditions will be applied before field setup.
 
 ## Administrative

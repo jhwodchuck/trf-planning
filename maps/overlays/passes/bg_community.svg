@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="336" height="496" viewBox="0 0 336 496" role="img" aria-labelledby="title desc">
+<title id="title">B. + G. — Pass B / Community Tent — 600 sq ft pass</title>
+<desc id="desc">Standalone provisional pass drawing, decomposed from the public group-site planning overlay.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+</style></defs>
+<polygon points="8.0,8.0 328.0,8.0 328.0,488.0 8.0,488.0" class="pass" fill="#c27ba0"/>
+<polygon points="0.0,0.0 336.0,0.0 336.0,496.0 0.0,496.0" class="clearance" aria-label="Community tent provisional clearance zone"/>
+<polygon points="8.0,8.0 328.0,8.0 328.0,488.0 8.0,488.0" class="placeholder" fill="#8e5f83"/>
+<text x="168.0" y="243.0" text-anchor="middle" class="tiny">Community tent</text>
+<text x="168.0" y="256.0" text-anchor="middle" class="tiny">20 x 30 ft</text>
+<text x="168.0" y="234.0" text-anchor="middle" class="label">B. + G. — Pass B / Community Tent</text>
+<text x="168.0" y="252.0" text-anchor="middle" class="small">600 sq ft</text>
+<text x="168.0" y="264.0" text-anchor="middle" class="tiny">20 x 30 ft tent fills the nominal pass; operational clearance remains unresolved</text>
+</svg>

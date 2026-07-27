@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="336" height="656" viewBox="0 0 336 656" role="img" aria-labelledby="title desc">
+<title id="title">S. + S. — Camper — 600 sq ft pass</title>
+<desc id="desc">Standalone provisional pass drawing, decomposed from the public group-site planning overlay.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+</style></defs>
+<polygon points="8.0,8.0 200.0,8.0 200.0,72.0 248.0,72.0 248.0,200.0 200.0,200.0 200.0,288.0 328.0,288.0 328.0,480.0 200.0,480.0 200.0,648.0 8.0,648.0" class="pass" fill="#93c47d"/>
+<polygon points="67.2,34.0 195.2,34.0 195.2,622.0 67.2,622.0" class="eq" fill="#3d85c6"/>
+<text x="131.2" y="323.0" text-anchor="middle" class="tiny" transform="rotate(90 131.2 328.0)">Camper body</text>
+<text x="131.2" y="336.0" text-anchor="middle" class="tiny" transform="rotate(90 131.2 328.0)">36 ft 9 in x 8 ft (rear bumper to coupler)</text>
+<polygon points="17.6,46.4 67.2,46.4 67.2,172.8 17.6,172.8" class="placeholder" fill="#a9c9e8"/>
+<text x="42.4" y="104.6" text-anchor="middle" class="tiny" transform="rotate(90 42.4 109.6)">Rear bunkhouse slide</text>
+<text x="42.4" y="117.6" text-anchor="middle" class="tiny" transform="rotate(90 42.4 109.6)">~3 ft 1 in projection (estimate)</text>
+<polygon points="8.0,203.2 67.2,203.2 67.2,449.6 8.0,449.6" class="placeholder" fill="#a9c9e8"/>
+<text x="37.6" y="321.4" text-anchor="middle" class="tiny" transform="rotate(90 37.6 326.4)">Main living slide</text>
+<text x="37.6" y="334.4" text-anchor="middle" class="tiny" transform="rotate(90 37.6 326.4)">~3 ft 9 in projection (estimate)</text>
+<polygon points="200.0,72.0 248.0,72.0 248.0,200.0 200.0,200.0" class="placeholder" fill="#f6b26b"/>
+<text x="224.0" y="131.0" text-anchor="middle" class="tiny" transform="rotate(90 224.0 136.0)">Rear service bay</text>
+<text x="224.0" y="144.0" text-anchor="middle" class="tiny" transform="rotate(90 224.0 136.0)">3 x 8 ft provisional</text>
+<polygon points="200.0,288.0 328.0,288.0 328.0,480.0 200.0,480.0" class="placeholder" fill="#d9b38c"/>
+<text x="264.0" y="355.0" text-anchor="middle" class="tiny">Rug zone</text>
+<text x="264.0" y="368.0" text-anchor="middle" class="tiny">8 x 12 ft provisional</text>
+<polygon points="195.2,160.0 248.0,160.0 248.0,192.0 195.2,192.0" class="placeholder" fill="#c58b55"/>
+<polygon points="195.2,448.0 248.0,448.0 248.0,480.0 195.2,480.0" class="placeholder" fill="#c58b55"/>
+<line x1="200.0" y1="192.0" x2="200.0" y2="480.0" stroke="#2e7d32" stroke-width="6" stroke-linecap="round"/>
+<text x="209.6" y="333.0" class="tiny" transform="rotate(90 209.6 336.0)">18 ft awning</text>
+<text x="209.6" y="345.0" class="tiny" transform="rotate(90 209.6 336.0)">projection TBD</text>
+<line x1="195.2" y1="163.2" x2="195.2" y2="185.6" stroke="#a56200" stroke-width="6" stroke-linecap="round"/>
+<text x="232.0" y="171.4" class="tiny" transform="rotate(90 232.0 174.4)">Rear door</text>
+<line x1="195.2" y1="454.4" x2="195.2" y2="476.8" stroke="#a56200" stroke-width="6" stroke-linecap="round"/>
+<text x="232.0" y="462.6" class="tiny" transform="rotate(90 232.0 465.6)">Main door</text>
+<text x="131.2" y="530.0" text-anchor="middle" class="label">S. + S. — Camper</text>
+<text x="131.2" y="548.0" text-anchor="middle" class="small">600 sq ft pass</text>
+</svg>

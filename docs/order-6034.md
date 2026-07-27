@@ -24,7 +24,7 @@ This file records the planning-relevant details of Texas Renaissance Festival Or
 
 ### April 29, 2026 — purchase verification inquiry
 
-Jason asked TRF to verify a season-pass purchase he believed had been started on April 15. Campground Reservations initially reported that no order could be found under his name or email address and suggested purchasing with the `earlybird26` promotional code.
+J. asked TRF to verify a season-pass purchase he believed had been started on April 15. Campground Reservations initially reported that no order could be found under his name or email address and suggested purchasing with the `earlybird26` promotional code.
 
 ### April 29, 2026 — Order #6034 confirmation
 

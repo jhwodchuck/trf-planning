@@ -15,6 +15,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, major support equipment, disconnected-allocation rules, and links to every household record
 - [Interactive map + group site map v0.1](maps/viewer/index.html) — aerial overlay with ten 600 sq ft pass polygons, known structures, placeholders, road, and setbacks, merged with the broader GIS viewer (parcels, streets, flood, wetlands, drawing tools)
 - [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — printable scale drawing of the current provisional arrangement
+- [2025 occupied-camp imagery reference](planning/2025-camp-layout-reference.md) and [Google Earth KML overlay](maps/overlays/group-site-v0.1.kml) — compare the dated 2025-10-20 camp scene with the 2026 candidate polygons without rehosting Google's imagery
 - [Pass layout tool](maps/viewer/pass-layout.html) — drag, rotate, and rearrange the ten individual pass drawings ([`maps/overlays/passes/`](maps/overlays/passes/)) on a freeform canvas, independent of the georeferenced viewer
 - [Group site map assumptions](planning/group-site-map-v0.1.md) — status, known dimensions, strategy, and limitations
 
@@ -37,6 +38,8 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [Pass layout tool](maps/viewer/pass-layout.html) and [per-pass SVGs](maps/overlays/passes/) — each 600 sq ft pass as its own editable drawing, freely draggable and rotatable on a freeform master canvas
 - [Road control and setback geometry](planning/site-control-road-setback.md) — supplied road points, true bearing, 10 ft and 14 ft parallel offsets, and the current corner-label conflict
 - [Road and setback GeoJSON](maps/data/site-control-road-setbacks.geojson) — map-ready supplied points, road alignment, perpendicular measurement, and derived setback lines
+- [2025 occupied-camp imagery reference](planning/2025-camp-layout-reference.md) — dated Google Earth evidence, observed clearing/road constraints, anchor offset, and 2026 planning consequences
+- [Google Earth KML overlay](maps/overlays/group-site-v0.1.kml) — the current project-owned GeoJSON plan converted for local comparison against the dated imagery
 - [Dimensioned campsite footprint](maps/overlays/requested-campsite-footprint.svg) — scale-controlled RV and 10 × 15 ft canopy working template
 - [Known and missing site data](planning/known-and-missing-data.md) — assumptions, dimensional conflicts, and final-plan gates
 - [Field site survey checklist](planning/site-survey-checklist.md) — boundary, terrain, access, camper, generator, and photo measurements
@@ -44,13 +47,13 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ### Group and household units
 
 - [Household roster and allocations](planning/group-pass-allocation.md) — authoritative pass count, 600 sq ft-per-pass totals, major equipment, and non-contiguous planning rules
-- [Chris and Sallie](planning/households/chris-and-sallie.md) — confirmed 16 × 20 ft tent, canopy TBD, one pass, 600 sq ft
-- [Birdie and Gustav](planning/households/birdie-and-gustav.md) — 13 × 26 ft primary tent and approximate 10 × 20 ft closet tent, two passes, 1,200 sq ft
-- [Amanda](planning/amanda-site-notes.md) — confirmed 10 × 20 ft sleeping tent and 10 × 17 ft Yoga Tent, one pass, 600 sq ft
-- [MC and Elizabeth](planning/households/mc-and-elizabeth.md) — camper, two passes, 1,200 sq ft
-- [Shane and Sabrina](planning/households/shane-and-sabrina.md) — KZ Connect SE C312BHKSE camper working reference plus 16 ft flatbed shower trailer, two passes, 1,200 sq ft
-- [Jason and Catrina](planning/households/jason-and-catrina.md) — camper, one pass, 600 sq ft
-- [Stephane and True](planning/households/stephane-and-true.md) — tent, one pass, 600 sq ft
+- [C. and S.](planning/households/cs.md) — exact 600 sq ft T-shaped pass with reported approximately 20 × 20 ft tent-plus-add-on and 10 × 13 ft canopy
+- [B. and G.](planning/households/bg.md) — primary and closet tents in an offset pass with two generic generator placeholders between them; models, dimensions, and operation remain unresolved; 20 × 30 ft community tent in the second pass
+- [A.](planning/a-site-notes.md) — confirmed 10 × 20 ft sleeping tent and 10 × 17 ft Yoga Tent, one pass, 600 sq ft
+- [M. and E.](planning/households/me.md) — camper, two passes, 1,200 sq ft; temporary mirrored camper-pass placeholder pending actual geometry
+- [S. and S.](planning/households/ss.md) — KZ Connect SE C312BHKSE camper working reference plus 16 ft flatbed shower trailer, two passes, 1,200 sq ft
+- [J. and C.](planning/households/jc.md) — camper, one pass, 600 sq ft
+- [S. and T.](planning/households/st.md) — tent, one pass, 600 sq ft
 
 ### Rules and submission
 
@@ -65,8 +68,8 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [Cummins Onan P4500i generator inventory](equipment/cummins-onan-p4500i.md) — two generators, electrical capability, operating footprint, CO/fire constraints, and readiness checklist
 - [Anker SOLIX S2000 power station inventory](equipment/anker-solix-s2000.md) — battery specifications, charging limits, and camper-use planning
 - [2012 Wildcat dimensional baseline](equipment/2012-wildcat-dimensional-baseline.md) — floor plan, requested rotation, model conflict, and measurements needed
-- [Shane and Sabrina camper floor plan](equipment/shane-sabrina-kz-connect-se-c312bhkse.md) — KZ Connect SE C312BHKSE working identification, manufacturer floor plan, published dimensions, and measurements needed for site placement
-- [Shane and Sabrina shower trailer](equipment/shane-sabrina-16ft-shower-trailer.md) — confirmed 16 ft flatbed trailer use, shower-facility requirements, unknown dimensions, tanks, plumbing, utilities, privacy, and drawing rules
+- [S. and S. camper floor plan](equipment/ss-kz-connect-se-c312bhkse.md) — KZ Connect SE C312BHKSE working identification, manufacturer floor plan, published dimensions, and measurements needed for site placement
+- [S. and S. shower trailer](equipment/ss-16ft-shower-trailer.md) — sideways shower trailer, perpendicular 8 ft IBC trailer, and a long connector leg to a provisional fire-pit end; dimensions and clearances pending
 - [2018 Ford F-250 long-bed baseline](equipment/2018-ford-f250-long-bed.md) — cab-specific lengths and maneuvering inputs
 
 ## Critical blockers

@@ -30,12 +30,18 @@ The viewers `fetch()` sibling GeoJSON, so `file://` will not work. Serve the rep
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/maps/viewer/index.html` (or `provisional-site.html`, `pass-layout.html`, or `maps/all-maps.html`, the map-pack hub page). `index.html` is the merged viewer — parcels/streets/flood/wetlands/drawing tools plus the "Group site v0.1" pass-polygon overlay (there is no separate `group-site-v0.1.html` anymore). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` fetches its own aerial backdrop (Texas NAIP 2022, 60 cm/px) from a live ArcGIS ImageServer, so it also needs network access despite having no CDN script dependencies.
+Then open `http://localhost:8000/maps/viewer/index.html` (or `provisional-site.html`, `pass-layout.html`, or `maps/all-maps.html`, the map-pack hub page). `index.html` is the merged viewer — parcels/streets/flood/wetlands/drawing tools plus the "Group site v0.1" pass-polygon overlay (there is no separate `group-site-v0.1.html` anymore). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` uses the committed `maps/assets/pass-layout-aerial-naip-2022-context-v2.jpg` backdrop and its local pass SVGs, so it works without live GIS or CDN requests when served locally.
 
 Per-pass SVGs and their manifest (no network, no CDN deps):
 
 ```bash
 python scripts/build_pass_svgs.py
+```
+
+Google Earth KML overlay generated from `maps/data/group-site-v0.1.geojson`:
+
+```bash
+python scripts/build_group_site_kml.py
 ```
 
 On Windows, always pass `encoding="utf-8"` when reading these files from Python; the repo's Markdown and GeoJSON contain em dashes and `×`, and Python's default cp1252 will mojibake them.
@@ -45,7 +51,7 @@ On Windows, always pass `encoding="utf-8"` when reading these files from Python;
 Facts flow in one direction; do not let a downstream artifact become the source of truth.
 
 1. **Official TRF sources** — catalogued in [docs/source-index.md](docs/source-index.md), extracted into [docs/trf-2026-requirements.md](docs/trf-2026-requirements.md), with official map copies under `maps/reference/official/` (referenced from the TRF host, never re-hosted).
-2. **Planning conventions and household facts** — [planning/group-pass-allocation.md](planning/group-pass-allocation.md) is the authoritative roster (7 households, 10 passes); each household has a record in `planning/households/`, plus [planning/amanda-site-notes.md](planning/amanda-site-notes.md).
+2. **Planning conventions and household facts** — [planning/group-pass-allocation.md](planning/group-pass-allocation.md) is the authoritative roster (7 households, 10 passes); each household has a record in `planning/households/`, plus [planning/a-site-notes.md](planning/a-site-notes.md).
 3. **Equipment dimensions** — `equipment/*.md`, one file per camper, trailer, generator, or vehicle.
 4. **Site control geometry** — [planning/site-control-road-setback.md](planning/site-control-road-setback.md) derives the road bearing and the 10 ft / 14 ft setbacks from three user-supplied coordinates; the numbers there feed `maps/data/*.geojson`.
 5. **Drawn artifacts** — `maps/data/*.geojson` (georeferenced), `maps/overlays/*.svg` (scale drawings), `maps/viewer/*.html` (interactive).

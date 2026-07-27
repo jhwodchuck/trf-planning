@@ -1,6 +1,6 @@
 # 2025 TRF Submission Reference
 
-These files are public-safe reference copies of the package Jason Harmon emailed to the Texas Renaissance Festival camping office on **September 25, 2025**. Because this repository is public, phone numbers, personal email addresses, and handwritten signatures have been redacted. The location, rules, dimensions, camper information, and other planning content were retained.
+These files are public-safe reference copies of the package J. Harmon emailed to the Texas Renaissance Festival camping office on **September 25, 2025**. Because this repository is public, phone numbers, personal email addresses, and handwritten signatures have been redacted. The location, rules, dimensions, camper information, and other planning content were retained.
 
 ## Files
 

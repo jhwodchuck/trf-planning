@@ -16,6 +16,17 @@ All coordinates are assumed to be WGS84 decimal degrees.
 
 The campsite is on the west side of the road.
 
+## Hard western limit
+
+No pass polygon or equipment footprint may extend west of the line through:
+
+| End | Latitude | Longitude |
+|---|---:|---:|
+| North | 30°15'20.86"N | 95°50'47.36"W |
+| South | 30°15'19.63"N | 95°50'47.44"W |
+
+For constraint checks, the alignment is extrapolated across the full planning canvas. The pass-layout viewer draws it in cyan and automatically moves any dragged, rotated, saved, or imported pass back to the east side.
+
 ## Derived road alignment
 
 - Distance between `ROAD_B` and `ROAD_A`: approximately **21.707 ft**.
@@ -23,7 +34,15 @@ The campsite is on the west side of the road.
 - Equivalent southbound bearing: **181.676721 degrees**.
 - Perpendicular direction into the campsite, toward the west: **271.676721 degrees**.
 
-The road and road-facing campsite edges should therefore be drawn nearly north-south, rotated about **1.68 degrees east of true north**.
+That bearing describes only the short segment between the two supplied controls. It remains useful as measured control, but it is no longer extrapolated as the displayed full road edge.
+
+## User-traced curved road edge
+
+The planning map and pass-layout viewer now use a 25-point WGS84 curve supplied by the user on 2026-07-27 while tracing the campsite-side road edge in the current Google Maps satellite view. This coordinate trace replaces the earlier NAIP/Google Earth visual estimate.
+
+In local viewer feet, the supplied trace begins near `(-36.596, 279.114)` on the southwest road segment, follows the bend east to a maximum local x of about `213.243`, and then turns north to `(113.140, -27.901)` past HAVOK. The earlier incorrect southeast continuation to local `(450, 350)` has been removed.
+
+The coordinates are retained exactly for the road edge in both GeoJSON files. The viewer uses their affine-converted local-foot values. The curved 10-foot and 14-foot lines are approximate campsite-side perpendicular offsets computed from averaged local segment normals. They are suitable for arranging passes on the image, but they are not surveyed boundaries. The original straight observed segment, straight extrapolation, and straight-offset calculations remain in `maps/data/site-control-road-setbacks.geojson` as an audit record.
 
 ## Parallel setback lines
 
@@ -43,7 +62,7 @@ The derived lines are west of the straight road reference line.
 | South | 30.255669822 | -95.846174229 |
 | North | 30.255999620 | -95.846163108 |
 
-These are 120-foot planning segments extrapolated from the two supplied road points. The observed road segment itself is only about 21.7 feet long, so the road must be checked for curvature before relying on the extrapolated portions.
+These are the original 120-foot straight planning segments extrapolated from the two supplied road points. They are retained for comparison; the displayed site plan now uses the imagery-traced curve and its curved offsets.
 
 ## Relationship of the supplied boundary reference to the road
 
@@ -71,6 +90,8 @@ No final 600 sq ft polygon is established in this record. The final shape should
 The corresponding points and derived lines are stored in:
 
 - `maps/data/site-control-road-setbacks.geojson`
+- `maps/data/group-site-v0.1.geojson`
+- `maps/viewer/pass-layout.html`
 
 ## Field verification
 
@@ -78,6 +99,6 @@ Before final placement:
 
 1. Confirm both road coordinates lie on the road edge nearest the campsite, not the centerline.
 2. Measure at least two longer-spaced points along the same edge if possible.
-3. Check whether the road curves over the full length of the proposed site.
+3. Check the 25-point coordinate trace against the physical road edge over the full proposed site.
 4. Mark the 10-foot and preferred 14-foot offsets with a tape measured perpendicular to the physical road edge.
 5. Recheck every boundary vertex after the 600 sq ft polygon is laid out.

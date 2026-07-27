@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preload" as="image" href="../assets/pass-layout-aerial-naip-2022-context-v2.jpg" type="image/jpeg">
 <title>TRF Pass Layout Tool</title>
 <style>
 html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
@@ -14,6 +15,9 @@ p,li{font-size:.86rem;line-height:1.35}
 .warning{background:#fff1bf;border-left:5px solid #b97b00;padding:.6rem}
 .metric{display:grid;grid-template-columns:1fr auto;gap:.25rem .8rem;font-size:.86rem}
 .controls{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0}
+.zoom-controls{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:.4rem;margin:.5rem 0}
+.zoom-controls input{min-width:0;width:100%}
+.zoom-value{min-width:3.2rem;text-align:right;font-size:.82rem;font-variant-numeric:tabular-nums}
 button{font:inherit;font-size:.82rem;padding:.4rem .6rem;border:1px solid #555;border-radius:.3rem;background:#fff;cursor:pointer}
 button:hover{background:#eee}
 button.danger{border-color:#a33;color:#a33}
@@ -31,7 +35,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 .row input[type=range]{flex:1}
 #canvasWrap{position:relative;overflow:auto;background:#dedbd2}
 #canvas{position:relative;background:#fbfaf6;box-shadow:0 0 0 2px #777 inset;overflow:hidden}
-#aerialImg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none}
+#aerialImg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:fill;transform-origin:0 0;opacity:.62;filter:saturate(.72) contrast(.9) brightness(1.12);pointer-events:none;user-select:none}
 .token{position:absolute;top:0;left:0;transform-origin:center center;cursor:grab;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
 .token.dragging{cursor:grabbing;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
 .token.selected{outline:3px solid #1976d2;outline-offset:2px}
@@ -39,6 +43,8 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 .token .tag{position:absolute;left:2px;top:-1.1rem;font-size:.68rem;background:#111d;color:#fff;padding:1px 4px;border-radius:2px;white-space:nowrap}
 #status{white-space:pre-wrap;background:#fff;border:1px solid #ccc;padding:.5rem;font-size:.78rem;min-height:2rem;margin-top:.4rem}
 .ref{position:absolute;pointer-events:none}
+#canvasStage{position:relative}
+#canvas{transform-origin:top left}
 @media(max-width:800px){body{display:block}aside{max-height:45vh}#canvasWrap{height:55vh}}
 </style>
 </head>
@@ -46,7 +52,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <aside>
 <h1>TRF Pass Layout Tool</h1>
 <p><a href="../all-maps.html">&larr; All maps &amp; tools</a> &middot; <a href="index.html">Group site map &rarr;</a></p>
-<p class="warning"><strong>Freeform experimentation, not georeferenced.</strong> Positions are local feet only, independent of the site anchor and road-control geometry used elsewhere in the repo. The aerial photo behind the canvas is a visual approximation for ground context (see below) — dragging a pass here does not move it in the georeferenced map.</p>
+<p class="warning"><strong>Planning-grade GPS alignment, not a survey.</strong> The offline aerial is affine-registered to the same local-foot/WGS84 transform as the supplied road coordinates. Pass positions remain editable local feet and must be field-verified before placement.</p>
 
 <div class="metric">
 <span>Households</span><strong>7</strong>
@@ -56,7 +62,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 </div>
 
 <div class="controls">
-<button id="resetBtn">Reset to v0.1 default</button>
+<button id="resetBtn">Reset to saved camp start</button>
 <button id="saveBtn">Save layout (.json)</button>
 <label class="file">Load layout <input id="loadInput" type="file" accept="application/json,.json"></label>
 </div>
@@ -65,6 +71,16 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <button id="gridBtn">Toggle grid</button>
 <button id="refBtn">Toggle road reference</button>
 <button id="frontBtn">Bring selected to front</button>
+</div>
+<div class="zoom-controls">
+<button id="zoomOutBtn" aria-label="Zoom out">−</button>
+<input id="zoomRange" type="range" min="10" max="150" step="1" value="20" aria-label="Canvas zoom percentage">
+<button id="zoomInBtn" aria-label="Zoom in">+</button>
+<span class="zoom-value" id="zoomValue">20%</span>
+</div>
+<div class="controls">
+<button id="fitPlanBtn">Fit plan</button>
+<button id="fitContextBtn">Fit aerial context</button>
 </div>
 
 <h2>Passes</h2>
@@ -81,103 +97,258 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 
 <h2>How this works</h2>
 <ul>
+<li>Use the zoom slider, −/+ buttons, <strong>Fit plan</strong>, or <strong>Fit aerial context</strong>. Zooming out reveals the surrounding campground while dragging remains measured in local feet.</li>
 <li>Drag a pass by clicking and dragging its shape.</li>
 <li>Click a pass (on the canvas or in the list) to select it, then fine-tune with the X/Y/rotation fields.</li>
 <li>Positions are the pass SVG's own top-left corner (each file has a small margin around its true 600 sq ft boundary — see <code>maps/overlays/passes/passes-manifest.json</code>).</li>
 <li>Layout autosaves to this browser's local storage. Use Save/Load to keep a portable copy in the repo or share it.</li>
 <li>Each pass file under <code>maps/overlays/passes/</code> can be edited independently, then regenerate with <code>python scripts/build_pass_svgs.py</code> (or hand-edit the SVGs directly) — reload this page to pick up changes.</li>
-<li>The aerial backdrop is a single live Texas NAIP 2022 (60 cm) image fetched at the canvas's full on-screen resolution, positioned using the same local-ft-to-lat/lon transform that georeferences <code>group-site-v0.1.geojson</code> — but it is <strong>not</strong> corrected for the ~1.68° road-bearing rotation between this canvas's grid and true north, so treat alignment as approximate, not survey-grade. At this AOI's real-world size (roughly 230 × 200 ft), 60 cm/px is close to the practical sharpness ceiling for public aerial imagery.</li>
+<li>The muted aerial backdrop is a committed local copy of Texas NAIP 2022 (60 cm) imagery, so the layout tool no longer waits on a live GIS service. Its roughly 700 × 450 ft extent provides surrounding road, clearing, and tree context while the editable planning coordinates remain the same 230 × 200 ft area. The image is affine-warped in the browser using the same local-foot/WGS84 transform as <code>group-site-v0.1.geojson</code>, correcting the former ~1.68° rotation and the resulting southern-road drift. This is still planning imagery, not a survey.</li>
+<li>The cyan line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W is a <strong>hard western limit</strong>. Passes are automatically kept east of its extrapolated alignment, including when rotated or loaded from an older saved layout.</li>
 </ul>
 
 <div id="status"></div>
 </aside>
 <div id="canvasWrap">
-<div id="canvas"></div>
+<div id="canvasStage"><div id="canvas"></div></div>
 </div>
 
 <script>
 const SCALE = 14; // on-screen px per ft for this canvas (independent of each pass file's internal scale)
 const CANVAS_W_FT = 230, CANVAS_H_FT = 200;
-const STORAGE_KEY = 'trf-pass-layout-v1';
+const VIEW_MIN_X_FT = -250, VIEW_MIN_Y_FT = -100;
+const VIEW_W_FT = 700, VIEW_H_FT = 450;
+const LAYOUT_OFFSET_X_FT = -VIEW_MIN_X_FT, LAYOUT_OFFSET_Y_FT = -VIEW_MIN_Y_FT;
+const MIN_ZOOM = 0.1, MAX_ZOOM = 1.5, ZOOM_STEP = 0.1;
+const STORAGE_KEY = 'trf-pass-layout-v2';
 const MANIFEST_URL = '../overlays/passes/passes-manifest.json';
+const STARTING_LAYOUT_URL = '../overlays/passes/saved-camp-v0.1.json';
 const PASS_DIR = '../overlays/passes/';
+const AERIAL_IMAGE_URL = '../assets/pass-layout-aerial-naip-2022-context-v2.jpg';
+const AERIAL_BBOX_WGS84 = {
+  west: -95.84753348955002,
+  south: 30.255112027019997,
+  east: -95.84527380905,
+  north: 30.25639971322
+};
 
-// Approximate road/setback reference, matching maps/overlays/group-site-v0.1.svg
-// (drawn here purely as a static backdrop, not draggable, not georeferenced).
-const ROAD_X_FT = 187.27, SETBACK10_X_FT = 177.27, SETBACK14_X_FT = 173.27;
+// Exact affine used by scripts/build_road_geometry.py. Applying its inverse
+// to the axis-aligned WGS84 aerial removes the rotation/skew that previously
+// displaced the image from the GPS road trace by as much as 10.74 ft.
+const GEO_AFFINE = {
+  lon0: -95.84670890455,
+  lat0: 30.25610599422,
+  dlonDx: 3.16849e-06,
+  dlonDy: -9.275e-08,
+  dlatDx: -8.0116e-08,
+  dlatDy: -2.7369e-06
+};
 
-// Local-ft -> WGS84, derived and verified from Jason & Catrina's already
-// georeferenced RV-zone corners in maps/data/group-site-v0.1.geojson. Used
-// only to fetch a roughly-positioned aerial backdrop image -- it is NOT
-// corrected for the ~1.68 degree road-bearing rotation, so treat the
-// resulting alignment as approximate, not survey-grade.
-const GEO_LON0 = -95.84618, GEO_LAT0 = 30.255805; // anchor at local (170, 105)
-const GEO_WEST_LON = -3.16849e-6, GEO_WEST_LAT = 8.0116e-8;   // per ft of local -x (west)
-const GEO_NORTH_LON = 9.275e-8, GEO_NORTH_LAT = 2.7369e-6;    // per ft of local -y (north)
-function localToGeo(xFt, yFt) {
-  const dx = 170 - xFt, dy = 105 - yFt;
-  return {
-    lon: GEO_LON0 + dx * GEO_WEST_LON + dy * GEO_NORTH_LON,
-    lat: GEO_LAT0 + dx * GEO_WEST_LAT + dy * GEO_NORTH_LAT
-  };
-}
+// Planning-grade trace converted from 25 WGS84 road-edge coordinates supplied
+// by the user on 2026-07-27 while tracing the current Google Maps satellite
+// view. The points start on the southwest road segment, follow the bend east,
+// and then turn north past HAVOK. It is not a field survey. Setbacks are
+// approximate local perpendicular offsets toward the campsite.
+const ROAD_CURVE_LOCAL = [
+  [-36.596, 279.114], [59.788, 275.023], [83.569, 277.713],
+  [100.733, 285.676], [115.930, 298.775], [161.249, 343.161],
+  [167.580, 342.553], [176.275, 335.949], [185.173, 307.330],
+  [195.512, 284.594], [206.287, 262.269], [213.243, 239.633],
+  [210.497, 218.127], [198.936, 170.213], [190.457, 140.833],
+  [188.297, 110.421], [187.406, 79.972], [193.180, 60.333],
+  [190.707, 48.131], [186.391, 45.295], [163.158, 32.430],
+  [143.744, 19.878], [132.427, 9.204], [121.322, -8.671],
+  [113.140, -27.901]
+];
 
-// Request the image at (up to) the canvas's actual on-screen pixel size so
-// the browser never has to upscale a smaller fetch via CSS on top of the
-// service's own resampling -- that double-upscale was the main source of
-// blur. ArcGIS ImageServer export limits are typically several thousand
-// pixels per side, well above what this canvas needs.
-const AERIAL_IMG_MAX_PX = 4096;
-function aerialImageUrl() {
-  const corners = [
-    localToGeo(0, 0), localToGeo(CANVAS_W_FT, 0),
-    localToGeo(CANVAS_W_FT, CANVAS_H_FT), localToGeo(0, CANVAS_H_FT)
-  ];
-  const lons = corners.map(c => c.lon), lats = corners.map(c => c.lat);
-  const west = Math.min(...lons), east = Math.max(...lons);
-  const south = Math.min(...lats), north = Math.max(...lats);
-  const aspect = CANVAS_W_FT / CANVAS_H_FT;
-  let w = Math.min(AERIAL_IMG_MAX_PX, CANVAS_W_FT * SCALE);
-  let h = Math.round(w / aspect);
-  if (h > AERIAL_IMG_MAX_PX) { h = AERIAL_IMG_MAX_PX; w = Math.round(h * aspect); }
-  const params = new URLSearchParams({
-    bbox: [west, south, east, north].join(','),
-    bboxSR: '4326', imageSR: '4326',
-    size: `${Math.round(w)},${Math.round(h)}`,
-    format: 'jpgpng',
-    interpolation: 'RSP_BilinearInterpolation',
-    f: 'image'
-  });
-  // Texas GIO's 2022 NAIP mosaic (60 cm/px) is sharper for this AOI than the
-  // generic national USGS NAIP service the other viewers default to.
-  return `https://imagery.geographic.texas.gov/server/rest/services/NAIP/NAIP22_NCCIR_60cm/ImageServer/exportImage?${params}`;
-}
+// User-supplied hard western limit, converted from WGS84 to this viewer's
+// local-foot coordinates. The constraint uses the infinite line through the
+// two controls so it protects the entire planning canvas.
+const WEST_LIMIT_LOCAL = [
+  [72.708537, 111.704724],
+  [69.352216, 236.640074]
+];
 
 let manifest = null;
+let startingLayout = null;
 let layout = {}; // id -> {x_ft, y_ft, rotation_deg, z}
 let selectedId = null;
 let showGrid = true;
 let showRef = true;
 let showAerial = true;
 let zCounter = 10;
+let zoom = 0.2;
 
 const canvas = document.getElementById('canvas');
+const canvasStage = document.getElementById('canvasStage');
+const canvasWrap = document.getElementById('canvasWrap');
 const statusEl = document.getElementById('status');
 const aerialImg = document.createElement('img');
 aerialImg.id = 'aerialImg';
-aerialImg.alt = 'Approximate Texas NAIP 2022 (60 cm) aerial backdrop';
-aerialImg.src = aerialImageUrl();
-aerialImg.addEventListener('error', () => setStatus('Could not load the aerial backdrop (Texas NAIP service unavailable or blocked). Everything else still works.'));
+aerialImg.alt = 'Approximate local Texas NAIP 2022 (60 cm) aerial backdrop';
+aerialImg.decoding = 'async';
+aerialImg.fetchPriority = 'high';
+aerialImg.width = 1400;
+aerialImg.height = 900;
+aerialImg.src = AERIAL_IMAGE_URL;
+aerialImg.addEventListener('error', () => setStatus('Could not load the local aerial backdrop. Everything else still works.'));
 canvas.appendChild(aerialImg);
 
 function setStatus(msg) { statusEl.textContent = msg; }
 
+function geoToLocal(lon, lat) {
+  const determinant = GEO_AFFINE.dlonDx * GEO_AFFINE.dlatDy -
+    GEO_AFFINE.dlonDy * GEO_AFFINE.dlatDx;
+  const deltaLon = lon - GEO_AFFINE.lon0;
+  const deltaLat = lat - GEO_AFFINE.lat0;
+  return [
+    (deltaLon * GEO_AFFINE.dlatDy - GEO_AFFINE.dlonDy * deltaLat) / determinant,
+    (GEO_AFFINE.dlonDx * deltaLat - deltaLon * GEO_AFFINE.dlatDx) / determinant
+  ];
+}
+
+function geoToCanvasPoint(lon, lat) {
+  const [xFt, yFt] = geoToLocal(lon, lat);
+  return [(xFt - VIEW_MIN_X_FT) * SCALE, (yFt - VIEW_MIN_Y_FT) * SCALE];
+}
+
+function alignAerialToLocalCanvas() {
+  const sourceWidth = VIEW_W_FT * SCALE;
+  const sourceHeight = VIEW_H_FT * SCALE;
+  const topLeft = geoToCanvasPoint(AERIAL_BBOX_WGS84.west, AERIAL_BBOX_WGS84.north);
+  const topRight = geoToCanvasPoint(AERIAL_BBOX_WGS84.east, AERIAL_BBOX_WGS84.north);
+  const bottomLeft = geoToCanvasPoint(AERIAL_BBOX_WGS84.west, AERIAL_BBOX_WGS84.south);
+  const a = (topRight[0] - topLeft[0]) / sourceWidth;
+  const b = (topRight[1] - topLeft[1]) / sourceWidth;
+  const c = (bottomLeft[0] - topLeft[0]) / sourceHeight;
+  const d = (bottomLeft[1] - topLeft[1]) / sourceHeight;
+  aerialImg.style.transform = `matrix(${a},${b},${c},${d},${topLeft[0]},${topLeft[1]})`;
+}
+
+function clampZoom(value) {
+  return Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value));
+}
+
+function applyZoom(nextZoom, preserveCenter = true) {
+  const oldZoom = zoom;
+  const centerXFt = (canvasWrap.scrollLeft + canvasWrap.clientWidth / 2) / (SCALE * oldZoom);
+  const centerYFt = (canvasWrap.scrollTop + canvasWrap.clientHeight / 2) / (SCALE * oldZoom);
+  zoom = clampZoom(nextZoom);
+  canvas.style.transform = `scale(${zoom})`;
+  canvasStage.style.width = (VIEW_W_FT * SCALE * zoom) + 'px';
+  canvasStage.style.height = (VIEW_H_FT * SCALE * zoom) + 'px';
+  document.getElementById('zoomRange').value = Math.round(zoom * 100);
+  document.getElementById('zoomValue').textContent = Math.round(zoom * 100) + '%';
+  if (preserveCenter) {
+    canvasWrap.scrollLeft = centerXFt * SCALE * zoom - canvasWrap.clientWidth / 2;
+    canvasWrap.scrollTop = centerYFt * SCALE * zoom - canvasWrap.clientHeight / 2;
+  }
+}
+
+function fitContext() {
+  const availableWidth = Math.max(1, canvasWrap.clientWidth - 16);
+  const availableHeight = Math.max(1, canvasWrap.clientHeight - 16);
+  const fitted = Math.min(
+    availableWidth / (VIEW_W_FT * SCALE),
+    availableHeight / (VIEW_H_FT * SCALE),
+    1
+  );
+  applyZoom(fitted, false);
+  canvasWrap.scrollLeft = 0;
+  canvasWrap.scrollTop = 0;
+}
+
+function centerOnPlan() {
+  canvasWrap.scrollLeft = (LAYOUT_OFFSET_X_FT + CANVAS_W_FT / 2) * SCALE * zoom - canvasWrap.clientWidth / 2;
+  canvasWrap.scrollTop = (LAYOUT_OFFSET_Y_FT + CANVAS_H_FT / 2) * SCALE * zoom - canvasWrap.clientHeight / 2;
+}
+
+function fitPlan() {
+  const availableWidth = Math.max(1, canvasWrap.clientWidth - 32);
+  const availableHeight = Math.max(1, canvasWrap.clientHeight - 32);
+  const fitted = Math.min(
+    availableWidth / (CANVAS_W_FT * SCALE),
+    availableHeight / (CANVAS_H_FT * SCALE),
+    1
+  );
+  applyZoom(fitted, false);
+  centerOnPlan();
+}
+
+function offsetCurve(points, distanceFt) {
+  const normals = [];
+  for (let i = 0; i < points.length - 1; i += 1) {
+    const dx = points[i + 1][0] - points[i][0];
+    const dy = points[i + 1][1] - points[i][1];
+    const length = Math.hypot(dx, dy);
+    normals.push([-dy / length, dx / length]);
+  }
+  return points.map((point, i) => {
+    let nx, ny;
+    if (i === 0) [nx, ny] = normals[0];
+    else if (i === points.length - 1) [nx, ny] = normals[normals.length - 1];
+    else {
+      nx = normals[i - 1][0] + normals[i][0];
+      ny = normals[i - 1][1] + normals[i][1];
+      const length = Math.hypot(nx, ny);
+      nx /= length;
+      ny /= length;
+    }
+    return [point[0] + nx * distanceFt, point[1] + ny * distanceFt];
+  });
+}
+
+function westLimitXAtY(yFt) {
+  const [north, south] = WEST_LIMIT_LOCAL;
+  return north[0] + (yFt - north[1]) * (south[0] - north[0]) / (south[1] - north[1]);
+}
+
+function constrainToWestLimit(pass, pos) {
+  const w = pass.viewbox_width_ft;
+  const h = pass.viewbox_height_ft;
+  const angle = (pos.rotation_deg || 0) * Math.PI / 180;
+  const cos = Math.cos(angle), sin = Math.sin(angle);
+  const cx = w / 2, cy = h / 2;
+  const corners = [[0, 0], [w, 0], [w, h], [0, h]].map(([x, y]) => {
+    const dx = x - cx, dy = y - cy;
+    return [cx + dx * cos - dy * sin, cy + dx * sin + dy * cos];
+  });
+  const requiredX = Math.max(...corners.map(([x, y]) => westLimitXAtY(pos.y_ft + y) - x));
+  if (pos.x_ft < requiredX) pos.x_ft = Math.ceil(requiredX * 4) / 4;
+  return pos;
+}
+
+function curveScreenPoint(point) {
+  return [
+    (LAYOUT_OFFSET_X_FT + point[0]) * SCALE,
+    (LAYOUT_OFFSET_Y_FT + point[1]) * SCALE
+  ];
+}
+
+function smoothCurvePath(points) {
+  const p = points.map(curveScreenPoint);
+  let d = `M ${p[0][0]} ${p[0][1]}`;
+  for (let i = 0; i < p.length - 1; i += 1) {
+    const p0 = p[Math.max(0, i - 1)];
+    const p1 = p[i];
+    const p2 = p[i + 1];
+    const p3 = p[Math.min(p.length - 1, i + 2)];
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += ` C ${c1[0]} ${c1[1]}, ${c2[0]} ${c2[1]}, ${p2[0]} ${p2[1]}`;
+  }
+  return d;
+}
+
 function defaultLayout() {
   const out = {};
   manifest.passes.forEach((p, i) => {
-    out[p.id] = { x_ft: p.default_x_ft, y_ft: p.default_y_ft, rotation_deg: 0, z: i + 1 };
+    const committed = startingLayout && startingLayout[p.id];
+    out[p.id] = committed
+      ? { x_ft: committed.x_ft, y_ft: committed.y_ft, rotation_deg: committed.rotation_deg, z: committed.z }
+      : { x_ft: p.default_x_ft, y_ft: p.default_y_ft, rotation_deg: 0, z: i + 1 };
   });
-  zCounter = manifest.passes.length + 1;
+  zCounter = Math.max(...Object.values(out).map(pos => pos.z), manifest.passes.length) + 1;
   return out;
 }
 
@@ -196,47 +367,75 @@ function saveToStorage() {
 }
 
 function buildCanvasBackground() {
-  canvas.style.width = (CANVAS_W_FT * SCALE) + 'px';
-  canvas.style.height = (CANVAS_H_FT * SCALE) + 'px';
+  canvas.style.width = (VIEW_W_FT * SCALE) + 'px';
+  canvas.style.height = (VIEW_H_FT * SCALE) + 'px';
+  alignAerialToLocalCanvas();
   document.querySelectorAll('.grid-line, .ref').forEach(el => el.remove());
 
   if (showGrid) {
     const gridColor = showAerial ? '#ffffff55' : '#0000000f';
-    for (let x = 0; x <= CANVAS_W_FT; x += 10) {
+    for (let x = Math.ceil(VIEW_MIN_X_FT / 10) * 10; x <= VIEW_MIN_X_FT + VIEW_W_FT; x += 10) {
       const line = document.createElement('div');
       line.className = 'grid-line ref';
-      line.style.cssText = `left:${x*SCALE}px;top:0;width:1px;height:100%;background:${gridColor}`;
+      line.style.cssText = `left:${(x - VIEW_MIN_X_FT)*SCALE}px;top:0;width:1px;height:100%;background:${gridColor}`;
       canvas.appendChild(line);
     }
-    for (let y = 0; y <= CANVAS_H_FT; y += 10) {
+    for (let y = Math.ceil(VIEW_MIN_Y_FT / 10) * 10; y <= VIEW_MIN_Y_FT + VIEW_H_FT; y += 10) {
       const line = document.createElement('div');
       line.className = 'grid-line ref';
-      line.style.cssText = `left:0;top:${y*SCALE}px;width:100%;height:1px;background:${gridColor}`;
+      line.style.cssText = `left:0;top:${(y - VIEW_MIN_Y_FT)*SCALE}px;width:100%;height:1px;background:${gridColor}`;
       canvas.appendChild(line);
     }
   }
 
   if (showRef) {
-    const mk = (xft, color, dash, label) => {
-      const line = document.createElement('div');
-      line.className = 'ref';
-      line.style.cssText = `left:${xft*SCALE}px;top:0;width:0;height:100%;border-left:3px ${dash} ${color}`;
-      canvas.appendChild(line);
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('ref');
+    svg.setAttribute('viewBox', `0 0 ${VIEW_W_FT * SCALE} ${VIEW_H_FT * SCALE}`);
+    svg.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible';
+    canvas.appendChild(svg);
+
+    const mk = (points, color, dash, label, labelIndex, labelDy) => {
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', smoothCurvePath(points));
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke', color);
+      path.setAttribute('stroke-width', '4');
+      path.setAttribute('stroke-linecap', 'round');
+      path.setAttribute('stroke-linejoin', 'round');
+      path.setAttribute('vector-effect', 'non-scaling-stroke');
+      if (dash) path.setAttribute('stroke-dasharray', '10 8');
+      svg.appendChild(path);
+
+      const labelPoint = curveScreenPoint(points[labelIndex]);
       const tag = document.createElement('div');
       tag.className = 'ref';
-      tag.style.cssText = `left:${xft*SCALE+4}px;top:4px;font-size:10px;background:#111d;color:#fff;padding:1px 4px;border-radius:2px;white-space:nowrap`;
+      tag.style.cssText = `left:${labelPoint[0]+6}px;top:${labelPoint[1]+labelDy}px;font-size:10px;background:#111d;color:#fff;padding:1px 4px;border-radius:2px;white-space:nowrap`;
       tag.textContent = label;
       canvas.appendChild(tag);
     };
-    mk(ROAD_X_FT, '#f5d000', 'solid', 'road edge (~1.68° off true north; treated as vertical here)');
-    mk(SETBACK10_X_FT, '#d7263d', 'dashed', '10 ft minimum setback');
-    mk(SETBACK14_X_FT, '#f28c28', 'dashed', '14 ft preferred setback');
+    const westLine = [
+      [westLimitXAtY(VIEW_MIN_Y_FT), VIEW_MIN_Y_FT],
+      WEST_LIMIT_LOCAL[0],
+      WEST_LIMIT_LOCAL[1],
+      [westLimitXAtY(VIEW_MIN_Y_FT + VIEW_H_FT), VIEW_MIN_Y_FT + VIEW_H_FT]
+    ];
+    mk(westLine, '#00e5ff', true, 'HARD WEST LIMIT — no pass beyond this line', 1, -22);
+    mk(ROAD_CURVE_LOCAL, '#f5d000', false, 'user-traced campsite-side road edge (25 supplied coordinates)', 6, -24);
+    mk(offsetCurve(ROAD_CURVE_LOCAL, 10), '#d7263d', true, '10 ft minimum setback', 8, -8);
+    mk(offsetCurve(ROAD_CURVE_LOCAL, 14), '#f28c28', true, '14 ft preferred setback', 9, 10);
   }
 }
 
 function applyTokenTransform(el, pos) {
-  el.style.left = (pos.x_ft * SCALE) + 'px';
-  el.style.top = (pos.y_ft * SCALE) + 'px';
+  const pass = manifest && manifest.passes.find(p => p.id === el.dataset.id);
+  if (pass) constrainToWestLimit(pass, pos);
+  if (selectedId === el.dataset.id) {
+    document.getElementById('xIn').value = pos.x_ft;
+    document.getElementById('yIn').value = pos.y_ft;
+  }
+  el.style.left = ((LAYOUT_OFFSET_X_FT + pos.x_ft) * SCALE) + 'px';
+  el.style.top = ((LAYOUT_OFFSET_Y_FT + pos.y_ft) * SCALE) + 'px';
   el.style.transform = `rotate(${pos.rotation_deg}deg)`;
   el.style.zIndex = pos.z;
 }
@@ -312,8 +511,8 @@ function makeToken(p) {
     if (!dragging) return;
     ev.preventDefault();
     const point = ev.touches ? ev.touches[0] : ev;
-    const dx = (point.clientX - startPointer.x) / SCALE;
-    const dy = (point.clientY - startPointer.y) / SCALE;
+    const dx = (point.clientX - startPointer.x) / (SCALE * zoom);
+    const dy = (point.clientY - startPointer.y) / (SCALE * zoom);
     layout[p.id].x_ft = Math.round((startPos.x_ft + dx) * 4) / 4;
     layout[p.id].y_ft = Math.round((startPos.y_ft + dy) * 4) / 4;
     applyTokenTransform(el, layout[p.id]);
@@ -351,17 +550,21 @@ function totalAreaLabel() {
   return `${manifest.passes.length} passes loaded, ${total.toLocaleString()} sq ft total.`;
 }
 
-function init(manifestData, savedLayout) {
+function init(manifestData, savedLayout, committedLayout) {
   manifest = manifestData;
+  startingLayout = committedLayout;
   const base = defaultLayout();
   layout = {};
   manifest.passes.forEach(p => {
     const saved = savedLayout && savedLayout[p.id];
     layout[p.id] = saved ? { ...base[p.id], ...saved } : base[p.id];
+    constrainToWestLimit(p, layout[p.id]);
   });
   buildCanvasBackground();
+  applyZoom(zoom, false);
   renderRoster();
   renderTokens();
+  centerOnPlan();
   setStatus(totalAreaLabel());
 }
 
@@ -371,13 +574,18 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   saveToStorage();
   renderTokens();
   renderRoster();
-  setStatus('Reset to the v0.1 default arrangement. ' + totalAreaLabel());
+  setStatus('Reset to the committed saved-camp starting arrangement. ' + totalAreaLabel());
 });
 
 document.getElementById('aerialBtn').addEventListener('click', () => { showAerial = !showAerial; aerialImg.style.display = showAerial ? '' : 'none'; buildCanvasBackground(); renderTokens(); });
 document.getElementById('gridBtn').addEventListener('click', () => { showGrid = !showGrid; buildCanvasBackground(); renderTokens(); });
 document.getElementById('refBtn').addEventListener('click', () => { showRef = !showRef; buildCanvasBackground(); renderTokens(); });
 document.getElementById('frontBtn').addEventListener('click', () => { if (selectedId) bringToFront(selectedId); });
+document.getElementById('zoomOutBtn').addEventListener('click', () => applyZoom(zoom - ZOOM_STEP));
+document.getElementById('zoomInBtn').addEventListener('click', () => applyZoom(zoom + ZOOM_STEP));
+document.getElementById('zoomRange').addEventListener('input', (ev) => applyZoom(Number(ev.target.value) / 100));
+document.getElementById('fitPlanBtn').addEventListener('click', fitPlan);
+document.getElementById('fitContextBtn').addEventListener('click', fitContext);
 
 document.getElementById('saveBtn').addEventListener('click', () => {
   const data = { saved_at_local: new Date().toString(), scale_px_per_ft: SCALE, passes: layout };
@@ -398,6 +606,7 @@ document.getElementById('loadInput').addEventListener('change', (ev) => {
       const data = JSON.parse(reader.result);
       if (!data.passes) throw new Error('Missing "passes" key');
       layout = { ...defaultLayout(), ...data.passes };
+      manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
       saveToStorage();
       renderTokens();
       renderRoster();
@@ -434,13 +643,13 @@ document.getElementById('rot0Btn').addEventListener('click', () => {
   saveToStorage();
 });
 
-fetch(MANIFEST_URL).then(r => {
-  if (!r.ok) throw new Error('HTTP ' + r.status);
+Promise.all([MANIFEST_URL, STARTING_LAYOUT_URL].map(url => fetch(url).then(r => {
+  if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
   return r.json();
-}).then(data => {
-  init(data, loadFromStorage());
+}))).then(([manifestData, committedData]) => {
+  init(manifestData, loadFromStorage(), committedData.passes);
 }).catch(e => {
-  setStatus('Could not load passes-manifest.json: ' + e + '\nServe this repo over http(s) (e.g. "python -m http.server") rather than opening the file directly.');
+  setStatus('Could not load the pass manifest or saved-camp start: ' + e + '\nServe this repo over http(s) (e.g. "python -m http.server") rather than opening the file directly.');
 });
 </script>
 </body>

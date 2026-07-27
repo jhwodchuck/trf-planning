@@ -31,8 +31,7 @@
     </style>
   </defs>
 
-  <rect width="1400" height="760" fill="#fff"/>
-  <text x="45" y="46" class="title">Shane + Sabrina — KZ Connect SE C312BHKSE floorplan schematic</text>
+  <text x="45" y="46" class="title">S. + S. — KZ Connect SE C312BHKSE floorplan schematic</text>
   <text x="45" y="73" class="subtitle">Based on the official 2021 KZ layout. Published shell dimensions are shown; internal and deployed geometry is provisional.</text>
 
   <!-- Orientation labels -->
@@ -157,5 +156,5 @@
   </g>
 
   <text x="45" y="716" class="tiny">Official KZ 2021 C312BHKSE floorplan used as the visual source. Furniture and partitions are schematic; no unverified slide depth or room dimension is asserted.</text>
-  <text x="45" y="737" class="tiny">Source record: equipment/shane-sabrina-kz-connect-se-c312bhkse.md</text>
+  <text x="45" y="737" class="tiny">Source record: equipment/ss-kz-connect-se-c312bhkse.md</text>
 </svg>

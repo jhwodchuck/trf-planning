@@ -14,14 +14,30 @@ Last updated: **2026-07-27**
 ## Household roster
 
 | Household | Primary shelter and major support equipment | Passes | Planning allocation | Household notes |
+# Group Pass Allocation and Household Roster
+
+Last updated: **2026-07-27**
+
+## Planning baseline
+
+- Use **600 sq ft per qualifying pass** for all working layouts.
+- Each pass contributes its own 600 sq ft allocation, and those allocations do **not** need to form one compact or contiguous household polygon.
+- Compactness, neat rectangles, and land-use efficiency are **not planning goals**.
+- Prefer disconnected, stepped, narrow, or irregular polygons when they claim more practical usable area around roads, trees, drainage, neighboring camps, or other constraints.
+- Gaps between claimed polygons may remain unallocated; do not shrink the requested pass areas merely to eliminate gaps.
+- Final placement must retain roadway setbacks, access, drainage, emergency egress, and any conditions imposed by TRF.
+
+## Household roster
+
+| Household | Primary shelter and major support equipment | Passes | Planning allocation | Household notes |
 |---|---|---:|---:|---|
-| Chris and Sallie | Confirmed 16 × 20 ft tent and canopy TBD | 1 | **600 sq ft** | [Planning notes](households/chris-and-sallie.md) |
-| Birdie and Gustav | Confirmed 13 × 26 ft primary tent and approximately 10 × 20 ft replacement closet tent | 2 | **1,200 sq ft** | [Planning notes](households/birdie-and-gustav.md) |
-| Amanda | Sleeping tent and Yoga Tent canopy | 1 | **600 sq ft** | [Planning notes](amanda-site-notes.md) |
-| MC and Elizabeth | Camper | 2 | **1,200 sq ft** | [Planning notes](households/mc-and-elizabeth.md) |
-| Shane and Sabrina | Camper and 16 ft flatbed shower trailer | 2 | **1,200 sq ft** | [Planning notes](households/shane-and-sabrina.md) |
-| Jason and Catrina | Camper | 1 | **600 sq ft** | [Planning notes](households/jason-and-catrina.md) |
-| Stephane and True | Tent | 1 | **600 sq ft** | [Planning notes](households/stephane-and-true.md) |
+| C. and S. | 12 × 16 ft main tent, 8 × 8 ft end-room, and 10 × 13 ft canopy | 1 | **600 sq ft** | [Planning notes](households/cs.md) |
+| B. and G. | 13 × 26 ft primary tent and approximate 10 × 20 ft closet tent with two generic generator placeholders staged between them; 20 × 30 ft community tent in the second | 2 | **1,200 sq ft** | [Planning notes](households/bg.md) |
+| A. | Sleeping tent and Yoga Tent canopy | 1 | **600 sq ft** | [Planning notes](a-site-notes.md) |
+| M. and E. | Camper; temporary mirrored S./S. pass used until actual geometry is known | 2 | **1,200 sq ft** | [Planning notes](households/me.md) |
+| S. and S. | Camper and 16 ft flatbed shower trailer | 2 | **1,200 sq ft** | [Planning notes](households/ss.md) |
+| J. and C. | Camper | 1 | **600 sq ft** | [Planning notes](households/jc.md) |
+| S. and T. | Two-ended pass with 10 × 20 ft tent, long narrow connector, and handicap portapotty | 1 | **600 sq ft** | [Planning notes](households/st.md) |
 | **Total** | 3 camper households, 4 tent-based households, and 1 shower trailer | **10** | **6,000 sq ft** |  |
 
 ## Current master map
@@ -31,17 +47,17 @@ Last updated: **2026-07-27**
 - [Georeferenced group geometry](../maps/data/group-site-v0.1.geojson)
 - [Map assumptions and limitations](group-site-map-v0.1.md)
 
-The v0.1 map preserves ten separate 600 sq ft pass polygons. Only Jason and Catrina's site is tied to the supplied road controls; all other positions remain conceptual.
+The v0.1 map preserves ten separate 600 sq ft pass polygons. Only J. and C.'s site is tied to the supplied road controls; all other positions remain conceptual.
 
 ## Allocation summary
 
-- **Camper households:** MC and Elizabeth; Shane and Sabrina; Jason and Catrina.
+- **Camper households:** M. and E.; S. and S.; J. and C..
 - **Camper-household passes:** 5.
 - **Camper-household planning area:** 3,000 sq ft.
-- **Tent-based households:** Chris and Sallie; Birdie and Gustav; Amanda; Stephane and True.
+- **Tent-based households:** C. and S.; B. and G.; A.; S. and T..
 - **Tent-household passes:** 5.
 - **Tent-household planning area:** 3,000 sq ft.
-- **Shared-support equipment currently identified:** Shane and Sabrina's 16 ft flatbed shower trailer.
+- **Shared-support equipment currently identified:** S. and S.'s 16 ft flatbed shower trailer.
 - **Total households:** 7.
 - **Total passes:** 10.
 - **Total planning area:** 6,000 sq ft.
@@ -67,28 +83,36 @@ A layout is preferable when it:
 5. Do not count shared roads, required setbacks, intentional gaps, or unapproved outside space toward a household's allocation.
 6. Keep required circulation and emergency access, but do not treat general layout efficiency as a design objective.
 7. Treat equipment dimensions as unknown until recorded in the household note or another verified equipment file.
-8. For Shane and Sabrina, test using one 600 sq ft polygon primarily for the camper and the second primarily for the shower trailer, while also testing irregular combined arrangements.
+8. For S. and S., test using one 600 sq ft polygon primarily for the camper and the second primarily for the shower trailer, while also testing irregular combined arrangements.
 
 ## Current confirmation status
 
-### Amanda
+### A.
 
 - Sleeping Tent: **10 × 20 ft**.
 - Yoga Tent: **10 × 17 ft** COVERPRO canopy.
 
-### Chris and Sallie
+### C. and S.
 
-- Tent: **16 × 20 ft**, nominally **320 sq ft**.
-- Canopy: dimensions still required.
+- Main tent: **12 × 16 ft**, nominally **192 sq ft**.
+- Add-on room: **8 × 8 ft**, nominally **64 sq ft**; attached at one end, with centered alignment still a planning assumption.
+- Canopy: **10 × 13 ft**, nominally **130 sq ft**; product, legs, anchors, ropes, and ballast still require confirmation.
 
-### Birdie and Gustav
+### B. and G.
 
 - Primary tent: **13 × 26 ft**, nominally **338 sq ft**.
 - Closet tent: **approximately 10 × 20 ft**, nominally approximately **200 sq ft**; replacement model still TBD.
+- Community tent: **20 × 30 ft**, nominally **600 sq ft**; fills the second pass before operational clearances.
 
-### Shane and Sabrina
+### S. and S.
 
 - KZ Connect SE C312BHKSE camper as the working identification; exact year and deployed dimensions still require verification.
-- **16 ft flatbed trailer** confirmed for use as a shower facility; width, overall length, enclosure, tanks, steps, plumbing, and utility clearances still require measurement.
+- **16 ft flatbed trailer** confirmed for use as a shower facility, with a **full-width fold-down rear ramp**, plus a separate **8 ft trailer carrying an IBC water tote**. Pass B turns the shower trailer sideways, T's the water trailer into it, omits a separate landing zone, and extends a 3 × 22 ft leg from the water tongue to a 10.2 × 10 ft fire-pit end. All assumed dimensions and fire/utility clearances require measurement and approval.
 
-Jason and Catrina's camper has a separate equipment and site-planning record. MC and Elizabeth and Stephane and True still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.
+### S. and T.
+
+- Two-ended **600 sq ft** pass boundary: 12 × 22 ft tent end, 4 × 30 ft connector path, and 12 × 18 ft portapotty end.
+- Tent: **10 × 20 ft** (200 sq ft) assumed inside the first end.
+- Handicap Portapotty: **6 × 6 ft** (36 sq ft) ADA accessible unit assumed inside the opposite end; door direction and accessible approach remain unverified.
+
+J. and C.'s camper has a separate equipment and site-planning record. M. and E. still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.

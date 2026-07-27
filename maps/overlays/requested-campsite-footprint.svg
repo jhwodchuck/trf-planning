@@ -19,7 +19,6 @@
     </style>
   </defs>
 
-  <rect width="1120" height="960" fill="#fff"/>
   <text x="45" y="46" font-size="27" font-weight="700">Requested campsite footprint — floorplan-matched orientation</text>
   <text x="45" y="73" font-size="15">Drawing scale: 20 px = 1 ft. Planning geometry remains provisional pending field measurements.</text>
 
