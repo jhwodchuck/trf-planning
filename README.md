@@ -25,6 +25,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 - [Authoritative source index](docs/source-index.md) — TRF, manufacturer, and government references
 - [2026 TRF requirements](docs/trf-2026-requirements.md) — dates, land-request package, rules, and questions for TRF
+- [TRF Order #6034 record](docs/order-6034.md) — sanitized Diamond and Ruby season-pass purchase, completion requirements, and Camping Will Call record
 - [Submission checklist](docs/submission-checklist.md) — readiness checklist for approval drawings and field setup
 
 ### Equipment
