@@ -5,7 +5,60 @@
     -95.823,
     30.286
   ],
-  "generated_at": "2026-07-27T13:12:29.529085+00:00",
+  "elevation_layer_build_at": "2026-07-27T22:19:54.784852+00:00",
+  "elevation_outputs": [
+    "08-3dep-tinted-hillshade.png",
+    "09-3dep-slope.png",
+    "10-3dep-2ft-contours.png",
+    "11-3dep-5ft-contours.png"
+  ],
+  "elevation_sources": [
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "USGS 3DEP Hillshade Elevation Tinted"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "USGS 3DEP Slope Map"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "USGS 3DEP Preset 2ft Contour Interval"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "USGS 3DEP Preset 5ft Contour Interval"
+    }
+  ],
+  "generated_at": "2026-07-27T22:18:57.013167+00:00",
+  "hazard_layer_rebuild_at": "2026-07-27T22:19:10.068996+00:00",
+  "hazard_outputs": [
+    "05-fema-flood-hazard.png",
+    "06-usfws-wetlands.png",
+    "07-flood-wetlands-composite.png",
+    "05-flood-wetlands.png"
+  ],
+  "hazard_sources": [
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "Texas NAIP 2022 hazard-map base"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "FEMA NFHL flood-hazard zones"
+    },
+    {
+      "detail": "RuntimeError('Expected image response, received text/html; charset=utf-8: \\r\\n\\r\\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\\r\\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\\r\\n<head id=\"Head1\">\\r\\n<style> body {\\n      font-family: Avenir-Light, Verdana, Ge')",
+      "ok": false,
+      "source": "USFWS National Wetlands Inventory"
+    }
+  ],
   "image_size": [
     2400,
     2400
@@ -47,7 +100,7 @@
       "source": "USGS shaded relief"
     },
     {
-      "detail": "ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))",
+      "detail": "UnidentifiedImageError('cannot identify image file <_io.BytesIO object at 0x7f120f66dda0>')",
       "ok": false,
       "source": "FEMA NFHL / USFWS wetlands composite"
     }
