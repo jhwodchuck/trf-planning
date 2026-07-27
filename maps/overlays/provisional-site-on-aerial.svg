@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1700" viewBox="0 0 1200 1700" role="img" aria-labelledby="title desc">
+<title id="title">TRF provisional campsite over aerial imagery</title>
+<desc id="desc">Planning overlay of a 598.9 square foot stepped campsite west of a road, with 10 and 14 foot setback lines.</desc>
+<rect width="1200" height="1700" fill="#5b655b"/>
+<image href="https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-95.846376771247,30.255578413272,-95.846010488577,30.256110274828&amp;bboxSR=4326&amp;imageSR=4326&amp;size=1200,1700&amp;format=jpgpng&amp;f=image&amp;renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D" x="0" y="0" width="1200" height="1700" preserveAspectRatio="none"/>
+<rect width="1200" height="1700" fill="#000" opacity=".08"/>
+<polyline points="810.01,1375.29 846.43,321.70" fill="none" stroke="#ffe600" stroke-width="11" stroke-linecap="round"/>
+<polyline points="706.35,1372.72 742.76,319.13" fill="none" stroke="#ef233c" stroke-width="8" stroke-dasharray="22 18"/>
+<polyline points="664.89,1371.69 701.30,318.10" fill="none" stroke="#ff9800" stroke-width="8" stroke-dasharray="22 18"/>
+<polyline points="644.65,975.76 823.67,980.19" fill="none" stroke="white" stroke-width="6" stroke-dasharray="10 10"/>
+<polygon points="644.65,975.76 654.21,699.19 506.49,695.53 496.94,972.09 644.65,975.76" fill="#1976d2" fill-opacity=".32" stroke="#0d47a1" stroke-width="6"/>
+<polygon points="496.94,972.09 499.97,884.29 344.48,880.44 341.44,968.24 496.94,972.09" fill="#ff9800" fill-opacity=".42" stroke="#8c5200" stroke-width="6"/>
+<polygon points="644.65,975.76 654.21,699.19 506.49,695.53 499.97,884.29 344.48,880.44 341.44,968.24 644.65,975.76" fill="none" stroke="#b00020" stroke-width="12" stroke-linejoin="round"/>
+<circle cx="644.65" cy="975.76" r="13" fill="#b00020" stroke="white" stroke-width="6"/>
+<circle cx="830.28" cy="789.01" r="9" fill="#ffe600" stroke="#111" stroke-width="4"/>
+<circle cx="823.69" cy="979.70" r="9" fill="#ffe600" stroke="#111" stroke-width="4"/>
+<g font-family="system-ui,Segoe UI,sans-serif">
+<rect x="28" y="28" width="760" height="172" rx="14" fill="white" fill-opacity=".92" stroke="#222" stroke-width="3"/>
+<text x="55" y="75" font-size="34" font-weight="800">TRF provisional site location</text>
+<text x="55" y="112" font-size="23">598.9 sq ft stepped footprint • campsite west of road</text>
+<text x="55" y="147" font-size="21">Anchor-to-road: 17.27 ft • preferred setback: 14 ft</text>
+<text x="55" y="180" font-size="18">Planning overlay only — verify the physical road edge and corners in the field.</text>
+<g transform="translate(664.65,1009.76)"><rect x="0" y="-29" width="300" height="42" rx="7" fill="white" fill-opacity=".9"/><text x="10" y="0" font-size="20" font-weight="700">supplied anchor / provisional SE corner</text></g>
+<g transform="translate(296.49,667.53)"><rect x="0" y="-28" width="230" height="42" rx="7" fill="white" fill-opacity=".9"/><text x="10" y="0" font-size="21" font-weight="750">deployed RV zone</text></g>
+<g transform="translate(159.48,858.44)"><rect x="0" y="-28" width="178" height="42" rx="7" fill="white" fill-opacity=".9"/><text x="10" y="0" font-size="21" font-weight="750">15 × 10 canopy</text></g>
+<g transform="translate(451.30,328.10)"><rect x="0" y="-28" width="230" height="42" rx="7" fill="#111" fill-opacity=".82"/><text x="10" y="0" font-size="20" fill="white" font-weight="700">preferred 14 ft line</text></g>
+<rect x="28" y="1370" width="510" height="274" rx="14" fill="white" fill-opacity=".92" stroke="#222" stroke-width="3"/>
+<text x="55" y="1410" font-size="25" font-weight="800">Legend</text>
+<rect x="58" y="1442" width="45" height="24" fill="#e53935" fill-opacity=".38" stroke="#b00020" stroke-width="5"/><text x="120" y="1462" font-size="20">requested boundary</text>
+<rect x="58" y="1485" width="45" height="24" fill="#1976d2" fill-opacity=".45" stroke="#0d47a1" stroke-width="4"/><text x="120" y="1505" font-size="20">RV deployed zone</text>
+<rect x="58" y="1528" width="45" height="24" fill="#ff9800" fill-opacity=".5" stroke="#8c5200" stroke-width="4"/><text x="120" y="1548" font-size="20">canopy</text>
+<line x1="58" y1="1588" x2="105" y2="1588" stroke="#ffe600" stroke-width="10"/><text x="120" y="1596" font-size="20">road edge reference</text>
+<line x1="58" y1="1631" x2="105" y2="1631" stroke="#ef233c" stroke-width="7" stroke-dasharray="15 11"/><text x="120" y="1639" font-size="20">10 ft minimum setback</text>
+<g transform="translate(1088,90)"><rect x="-50" y="-52" width="100" height="145" rx="12" fill="white" fill-opacity=".9" stroke="#222" stroke-width="3"/><text x="0" y="-14" text-anchor="middle" font-size="28" font-weight="850">N</text><path d="M0 64 L-24 20 L-8 25 L-8 -2 L8 -2 L8 25 L24 20 Z" fill="#111"/></g>
+<g transform="translate(840,1620)"><rect x="-20" y="-45" width="269.1" height="72" rx="10" fill="white" fill-opacity=".9"/><line x1="10" y1="0" x2="209.1" y2="0" stroke="#111" stroke-width="8"/><line x1="10" y1="-13" x2="10" y2="13" stroke="#111" stroke-width="5"/><line x1="209.1" y1="-13" x2="209.1" y2="13" stroke="#111" stroke-width="5"/><text x="109.6" y="-18" text-anchor="middle" font-size="20" font-weight="700">20 ft</text></g>
+<text x="1182" y="1688" text-anchor="end" font-size="15" fill="white" stroke="#111" stroke-width="3" paint-order="stroke">Aerial: USGS / USDA NAIP • overlay coordinates supplied by user</text>
+</g></svg>
