@@ -30,7 +30,7 @@ The viewers `fetch()` sibling GeoJSON, so `file://` will not work. Serve the rep
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/maps/viewer/group-site-v0.1.html` (or `index.html`, `provisional-site.html`, `pass-layout.html`, or `maps/all-maps.html`, the map-pack hub page). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` has no external dependencies, but it still needs http(s) for its own `fetch()` of sibling files.
+Then open `http://localhost:8000/maps/viewer/index.html` (or `provisional-site.html`, `pass-layout.html`, or `maps/all-maps.html`, the map-pack hub page). `index.html` is the merged viewer — parcels/streets/flood/wetlands/drawing tools plus the "Group site v0.1" pass-polygon overlay (there is no separate `group-site-v0.1.html` anymore). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` fetches its own aerial backdrop from the same live NAIP service, so it also needs network access despite having no CDN script dependencies.
 
 Per-pass SVGs and their manifest (no network, no CDN deps):
 
@@ -78,7 +78,7 @@ These are project decisions, not preferences. They are restated in `README.md`, 
 
 ## Deployment
 
-`maps/` is deployed as a static site to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, no build step/framework, linked locally via `vercel link` inside `maps/`). `maps/vercel.json` rewrites `/` to `viewer/group-site-v0.1.html`; every other path mirrors the folder layout (`viewer/pass-layout.html`, `data/*.geojson`, `overlays/passes/*.svg`, etc.), so the viewers' relative `fetch()` calls work unmodified in production. Nothing outside `maps/` is deployed.
+`maps/` is deployed as a static site to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, no build step/framework, linked locally via `vercel link` inside `maps/`). `maps/vercel.json` rewrites `/` to `viewer/index.html` (the merged general/group-site viewer); every other path mirrors the folder layout (`viewer/pass-layout.html`, `data/*.geojson`, `overlays/passes/*.svg`, etc.), so the viewers' relative `fetch()` calls work unmodified in production. Nothing outside `maps/` is deployed.
 
 **Vercel serves a matching static file before it ever checks `rewrites`.** That's why the map-pack hub page is `maps/all-maps.html`, not `maps/index.html` — a real `index.html` at that path would shadow the `/` rewrite and silently take over the production root. If you ever need another file literally named `index.html` directly in `maps/`, expect the same collision and rename it instead of fighting the rewrite.
 

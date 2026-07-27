@@ -30,7 +30,8 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 .row input[type=number]{width:5.5rem}
 .row input[type=range]{flex:1}
 #canvasWrap{position:relative;overflow:auto;background:#dedbd2}
-#canvas{position:relative;background:#fbfaf6;box-shadow:0 0 0 2px #777 inset}
+#canvas{position:relative;background:#fbfaf6;box-shadow:0 0 0 2px #777 inset;overflow:hidden}
+#aerialImg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none}
 .token{position:absolute;top:0;left:0;transform-origin:center center;cursor:grab;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
 .token.dragging{cursor:grabbing;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
 .token.selected{outline:3px solid #1976d2;outline-offset:2px}
@@ -44,8 +45,8 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <body>
 <aside>
 <h1>TRF Pass Layout Tool</h1>
-<p><a href="../all-maps.html">&larr; All maps &amp; tools</a> &middot; <a href="group-site-v0.1.html">Group site map &rarr;</a></p>
-<p class="warning"><strong>Freeform experimentation, not georeferenced.</strong> This canvas is independent of the site anchor and road-control geometry used elsewhere in the repo. Use it to test adjacency and arrangement; it is not tied to lat/long.</p>
+<p><a href="../all-maps.html">&larr; All maps &amp; tools</a> &middot; <a href="index.html">Group site map &rarr;</a></p>
+<p class="warning"><strong>Freeform experimentation, not georeferenced.</strong> Positions are local feet only, independent of the site anchor and road-control geometry used elsewhere in the repo. The aerial photo behind the canvas is a visual approximation for ground context (see below) — dragging a pass here does not move it in the georeferenced map.</p>
 
 <div class="metric">
 <span>Households</span><strong>7</strong>
@@ -60,6 +61,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <label class="file">Load layout <input id="loadInput" type="file" accept="application/json,.json"></label>
 </div>
 <div class="controls">
+<button id="aerialBtn">Toggle aerial</button>
 <button id="gridBtn">Toggle grid</button>
 <button id="refBtn">Toggle road reference</button>
 <button id="frontBtn">Bring selected to front</button>
@@ -84,6 +86,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <li>Positions are the pass SVG's own top-left corner (each file has a small margin around its true 600 sq ft boundary — see <code>maps/overlays/passes/passes-manifest.json</code>).</li>
 <li>Layout autosaves to this browser's local storage. Use Save/Load to keep a portable copy in the repo or share it.</li>
 <li>Each pass file under <code>maps/overlays/passes/</code> can be edited independently, then regenerate with <code>python scripts/build_pass_svgs.py</code> (or hand-edit the SVGs directly) — reload this page to pick up changes.</li>
+<li>The aerial backdrop is a single live USGS NAIP image fetched for the whole canvas, positioned using the same local-ft-to-lat/lon transform that georeferences <code>group-site-v0.1.geojson</code> — but it is <strong>not</strong> corrected for the ~1.68° road-bearing rotation between this canvas's grid and true north, so treat alignment as approximate, not survey-grade.</li>
 </ul>
 
 <div id="status"></div>
@@ -103,15 +106,61 @@ const PASS_DIR = '../overlays/passes/';
 // (drawn here purely as a static backdrop, not draggable, not georeferenced).
 const ROAD_X_FT = 187.27, SETBACK10_X_FT = 177.27, SETBACK14_X_FT = 173.27;
 
+// Local-ft -> WGS84, derived and verified from Jason & Catrina's already
+// georeferenced RV-zone corners in maps/data/group-site-v0.1.geojson. Used
+// only to fetch a roughly-positioned aerial backdrop image -- it is NOT
+// corrected for the ~1.68 degree road-bearing rotation, so treat the
+// resulting alignment as approximate, not survey-grade.
+const GEO_LON0 = -95.84618, GEO_LAT0 = 30.255805; // anchor at local (170, 105)
+const GEO_WEST_LON = -3.16849e-6, GEO_WEST_LAT = 8.0116e-8;   // per ft of local -x (west)
+const GEO_NORTH_LON = 9.275e-8, GEO_NORTH_LAT = 2.7369e-6;    // per ft of local -y (north)
+function localToGeo(xFt, yFt) {
+  const dx = 170 - xFt, dy = 105 - yFt;
+  return {
+    lon: GEO_LON0 + dx * GEO_WEST_LON + dy * GEO_NORTH_LON,
+    lat: GEO_LAT0 + dx * GEO_WEST_LAT + dy * GEO_NORTH_LAT
+  };
+}
+
+const AERIAL_IMG_MAX_PX = 1600;
+function aerialImageUrl() {
+  const corners = [
+    localToGeo(0, 0), localToGeo(CANVAS_W_FT, 0),
+    localToGeo(CANVAS_W_FT, CANVAS_H_FT), localToGeo(0, CANVAS_H_FT)
+  ];
+  const lons = corners.map(c => c.lon), lats = corners.map(c => c.lat);
+  const west = Math.min(...lons), east = Math.max(...lons);
+  const south = Math.min(...lats), north = Math.max(...lats);
+  const aspect = CANVAS_W_FT / CANVAS_H_FT;
+  let w = AERIAL_IMG_MAX_PX, h = Math.round(AERIAL_IMG_MAX_PX / aspect);
+  if (h > AERIAL_IMG_MAX_PX) { h = AERIAL_IMG_MAX_PX; w = Math.round(AERIAL_IMG_MAX_PX * aspect); }
+  const params = new URLSearchParams({
+    bbox: [west, south, east, north].join(','),
+    bboxSR: '4326', imageSR: '4326',
+    size: `${w},${h}`,
+    format: 'jpgpng',
+    interpolation: 'RSP_BilinearInterpolation',
+    f: 'image'
+  });
+  return `https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?${params}`;
+}
+
 let manifest = null;
 let layout = {}; // id -> {x_ft, y_ft, rotation_deg, z}
 let selectedId = null;
 let showGrid = true;
 let showRef = true;
+let showAerial = true;
 let zCounter = 10;
 
 const canvas = document.getElementById('canvas');
 const statusEl = document.getElementById('status');
+const aerialImg = document.createElement('img');
+aerialImg.id = 'aerialImg';
+aerialImg.alt = 'Approximate USGS NAIP aerial backdrop';
+aerialImg.src = aerialImageUrl();
+aerialImg.addEventListener('error', () => setStatus('Could not load the aerial backdrop (USGS NAIP service unavailable or blocked). Everything else still works.'));
+canvas.appendChild(aerialImg);
 
 function setStatus(msg) { statusEl.textContent = msg; }
 
@@ -144,16 +193,17 @@ function buildCanvasBackground() {
   document.querySelectorAll('.grid-line, .ref').forEach(el => el.remove());
 
   if (showGrid) {
+    const gridColor = showAerial ? '#ffffff55' : '#0000000f';
     for (let x = 0; x <= CANVAS_W_FT; x += 10) {
       const line = document.createElement('div');
       line.className = 'grid-line ref';
-      line.style.cssText = `left:${x*SCALE}px;top:0;width:1px;height:100%;background:#0000000f`;
+      line.style.cssText = `left:${x*SCALE}px;top:0;width:1px;height:100%;background:${gridColor}`;
       canvas.appendChild(line);
     }
     for (let y = 0; y <= CANVAS_H_FT; y += 10) {
       const line = document.createElement('div');
       line.className = 'grid-line ref';
-      line.style.cssText = `left:0;top:${y*SCALE}px;width:100%;height:1px;background:#0000000f`;
+      line.style.cssText = `left:0;top:${y*SCALE}px;width:100%;height:1px;background:${gridColor}`;
       canvas.appendChild(line);
     }
   }
@@ -316,6 +366,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   setStatus('Reset to the v0.1 default arrangement. ' + totalAreaLabel());
 });
 
+document.getElementById('aerialBtn').addEventListener('click', () => { showAerial = !showAerial; aerialImg.style.display = showAerial ? '' : 'none'; buildCanvasBackground(); renderTokens(); });
 document.getElementById('gridBtn').addEventListener('click', () => { showGrid = !showGrid; buildCanvasBackground(); renderTokens(); });
 document.getElementById('refBtn').addEventListener('click', () => { showRef = !showRef; buildCanvasBackground(); renderTokens(); });
 document.getElementById('frontBtn').addEventListener('click', () => { if (selectedId) bringToFront(selectedId); });

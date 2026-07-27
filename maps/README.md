@@ -2,18 +2,20 @@
 
 This folder is the map workspace for planning a campsite in the Texas Renaissance Festival Fields of New Market campground.
 
-This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, static — no build step). `vercel.json` in this folder rewrites `/` to `viewer/group-site-v0.1.html`. The folder's own hub/index page therefore lives at `all-maps.html` (not `index.html`) — a literal `index.html` at this level would shadow the rewrite, since Vercel serves a matching static file before it ever consults `rewrites`. Every other path mirrors the file layout below (`viewer/pass-layout.html`, `data/*.geojson`, etc.). Redeploy after changing anything under `maps/` — Vercel does not watch this repo automatically.
+This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, static — no build step). `vercel.json` in this folder rewrites `/` to `viewer/index.html`. The folder's own hub/index page therefore lives at `all-maps.html` (not `index.html`) — a literal `index.html` at this level would shadow the rewrite, since Vercel serves a matching static file before it ever consults `rewrites`. Every other path mirrors the file layout below (`viewer/pass-layout.html`, `data/*.geojson`, etc.). Redeploy after changing anything under `maps/` — Vercel does not watch this repo automatically.
 
 ## Start here
 
 1. Open `viewer/provisional-site.html` for the current site-specific aerial overlay with the proposed boundary, RV zone, canopy, road reference, and 10- and 14-foot setback lines.
 2. Open `overlays/provisional-site-on-aerial.svg` for a static aerial-overlay view.
-3. Open `viewer/index.html` for the broader interactive map with aerial imagery, USGS topography, parcels, streets, FEMA flood data, and wetlands.
+3. Open `viewer/index.html` for the broader interactive map with aerial imagery, USGS topography, parcels, streets, FEMA flood data, wetlands, and the group site map v0.1 overlay (merged in — see below).
 4. Review `reference/official/2026-season-pass-plotting-map.html` for the official season-pass camping, parking, and restricted-area planning context.
 5. Review `reference/official/2026-campground-map.html` for roads, numbered campground areas, gates, services, and emergency exits.
 6. Use `overlays/requested-campsite-footprint.svg` as the original dimensioned, scale-controlled RV and canopy footprint template.
 7. Review the static files in `generated/` after the map-build workflow runs.
-8. Open `viewer/pass-layout.html` to drag, rotate, and rearrange the ten individual 600 sq ft pass drawings in `overlays/passes/` on a freeform (non-georeferenced) canvas.
+8. Open `viewer/pass-layout.html` to drag, rotate, and rearrange the ten individual 600 sq ft pass drawings in `overlays/passes/` on a freeform (non-georeferenced) canvas, with a live USGS NAIP aerial backdrop for context.
+
+`viewer/group-site-v0.1.html` no longer exists as a separate page — its geojson layer, legend, and metrics were folded into `viewer/index.html` as a toggleable "Group site v0.1" overlay, to stop maintaining two near-identical Leaflet viewers.
 
 ## Current map inventory
 

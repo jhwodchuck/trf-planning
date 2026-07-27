@@ -13,7 +13,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ## Group allocation
 
 - [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, major support equipment, disconnected-allocation rules, and links to every household record
-- [Interactive group site map v0.1](maps/viewer/group-site-v0.1.html) — aerial overlay with ten 600 sq ft pass polygons, known structures, placeholders, road, and setbacks
+- [Interactive map + group site map v0.1](maps/viewer/index.html) — aerial overlay with ten 600 sq ft pass polygons, known structures, placeholders, road, and setbacks, merged with the broader GIS viewer (parcels, streets, flood, wetlands, drawing tools)
 - [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — printable scale drawing of the current provisional arrangement
 - [Pass layout tool](maps/viewer/pass-layout.html) — drag, rotate, and rearrange the ten individual pass drawings ([`maps/overlays/passes/`](maps/overlays/passes/)) on a freeform canvas, independent of the georeferenced viewer
 - [Group site map assumptions](planning/group-site-map-v0.1.md) — status, known dimensions, strategy, and limitations
@@ -33,7 +33,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ### Maps and geometry
 
 - [TRF site-planning map pack](maps/README.md) — official campground reference, interactive aerial/topographic/GIS viewer, source catalog, GeoJSON area, and automated static-map builder
-- [Interactive map viewer](maps/viewer/index.html) — aerial imagery, USGS topography, parcels, streets, FEMA flood zones, wetlands, drawing, measurement, and GeoJSON import/export
+- [Interactive map viewer](maps/viewer/index.html) — aerial imagery, USGS topography, parcels, streets, FEMA flood zones, wetlands, drawing, measurement, GeoJSON import/export, and the group site map v0.1 overlay
 - [Pass layout tool](maps/viewer/pass-layout.html) and [per-pass SVGs](maps/overlays/passes/) — each 600 sq ft pass as its own editable drawing, freely draggable and rotatable on a freeform master canvas
 - [Road control and setback geometry](planning/site-control-road-setback.md) — supplied road points, true bearing, 10 ft and 14 ft parallel offsets, and the current corner-label conflict
 - [Road and setback GeoJSON](maps/data/site-control-road-setbacks.geojson) — map-ready supplied points, road alignment, perpendicular measurement, and derived setback lines
@@ -55,6 +55,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ### Rules and submission
 
 - [Authoritative source index](docs/source-index.md) — TRF, manufacturer, and government references
+- [TRF Website Local Corpus](docs/trf-corpus/README.md) — complete local Markdown mirror and index of texrenfest.com
 - [2026 TRF requirements](docs/trf-2026-requirements.md) — dates, land-request package, official-source conflicts, rules, and questions for TRF
 - [TRF Order #6034 record](docs/order-6034.md) — sanitized Diamond and Ruby season-pass purchase, completion requirements, and Camping Will Call record
 - [Submission checklist](docs/submission-checklist.md) — readiness checklist for approval drawings and field setup

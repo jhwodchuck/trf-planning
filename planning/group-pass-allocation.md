@@ -26,7 +26,7 @@ Last updated: **2026-07-27**
 
 ## Current master map
 
-- [Interactive group map v0.1](../maps/viewer/group-site-v0.1.html)
+- [Interactive group map v0.1](../maps/viewer/index.html) — "Group site v0.1" overlay in the merged map viewer
 - [Scale drawing v0.1](../maps/overlays/group-site-v0.1.svg)
 - [Georeferenced group geometry](../maps/data/group-site-v0.1.geojson)
 - [Map assumptions and limitations](group-site-map-v0.1.md)
