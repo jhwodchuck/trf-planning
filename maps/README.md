@@ -1,14 +1,52 @@
-# Texas Renaissance Festival Maps
+# TRF Site-Planning Map Pack
 
-This directory collects official map references for planning work.
+This folder is the map workspace for planning a campsite in the Texas Renaissance Festival Fields of New Market campground.
 
-## Official campground map
+## Start here
 
-- [Fields of New Market Campground Map](https://www.texrenfest.com/p/camping-and-more/camping/campground-map)
-- [Official downloadable map](https://cdn.saffire.com/files.ashx?t=fg&rid=TexasRenFest&f=2024_TRF_Campground_Map_LARGE.jpg)
+1. Open `viewer/index.html` in a web browser for an interactive map with aerial imagery, USGS topography, parcels, streets, FEMA flood data, and wetlands.
+2. Review `reference/official/2026-campground-map.html` for the current official campground operations map.
+3. Review the static files in `generated/` after the map-build workflow runs.
+4. Use `overlays/requested-campsite-footprint.svg` as the dimensioned, scale-controlled footprint template for the RV and 10 x 15 ft canopy.
 
-The campground map is maintained by the Texas Renaissance Festival. Use the official page above to check for revisions before relying on it for campsite measurements or final placement.
+## Current map inventory
 
-## Planning note
+| Map or layer | Primary planning use | Status |
+|---|---|---|
+| Official 2026 campground map | Camp roads, numbered camping areas, gates, emergency exits, water, showers, cabins, first aid, restrooms, and landmarks | Live official reference |
+| NAIP aerial imagery | Trees, clearings, roads, drainage traces, and current ground context | In viewer and generated map |
+| USGS topographic map | Terrain, hydrography, roads, and elevation context | In viewer and generated map |
+| USGS shaded relief | Slope and drainage pattern reconnaissance | Generated map |
+| Grimes CAD parcels | Parcel boundaries and public-road context | In viewer and downloaded as GeoJSON |
+| FEMA NFHL | Flood-hazard screening | In viewer and generated map |
+| USFWS wetlands | Wetland and low-area screening | In viewer and generated map |
+| USDA NRCS SSURGO / Web Soil Survey | Soil drainage, ponding, flooding frequency, and engineering limitations | Source registered; AOI report still needed |
+| Exact campsite survey/control points | Final placement, setbacks, and defensible dimensions | Missing; requires field measurements or surveyed coordinates |
+| Utility locations | Safe placement of stakes, ballast, generators, and temporary infrastructure | Missing; verify with TRF and field locate before work |
 
-The official map is useful for orientation, roads, entrances, campground regions, and landmarks. It should not be treated as a survey-grade or parcel-scale drawing. Any campsite layout in this repository should retain its own dimensions, scale, north arrow, and source date.
+## Known requested-site reference
+
+The working location description from the prior land-request packet is **immediately north/northeast of the Havok camp, beside the adjacent access road**. That description is useful for orientation, but it is not a coordinate, surveyed boundary, or proof of approval.
+
+The current requested footprint template uses these planning dimensions:
+
+- Fifth-wheel body: 31 ft 6 in long x 8 ft 4 in wide.
+- Approximate deployed RV zone: 31 ft 6 in x 14 ft 3 in.
+- Canopy: 15 ft x 10 ft on the west side, away from the adjacent road.
+- Stepped requested area: about 598.9 sq ft.
+
+No phone numbers, email addresses, order numbers, or signed application documents are stored in this public repository.
+
+## Accuracy rules
+
+- Treat the official campground graphic as an operations/orientation map, not a scale drawing.
+- Treat aerial, parcel, flood, wetland, soil, and topo layers as planning-grade screening data.
+- Do not infer an exact campsite boundary from imagery alone.
+- Keep all physical boundaries and structures at least 10 ft from roadways unless TRF provides a different written site-specific direction.
+- Confirm the final site, roadway edge, tree trunks, drainage, utilities, and usable ground in the field before finalizing the layout.
+
+## Automated map build
+
+The workflow in `.github/workflows/build-maps.yml` runs `scripts/build_map_pack.py`. It downloads the current public GIS layers for the configured area of interest, creates static PNG map sheets, saves selected vector layers as GeoJSON, and writes a build report. Generated outputs are committed back to `maps/generated/` and `maps/data/` when repository permissions allow it.
+
+The initial area of interest is deliberately broad and approximate. Update `AOI_BBOX` in `scripts/build_map_pack.py` after the exact Havok-area location is identified on aerial imagery or measured in the field.
