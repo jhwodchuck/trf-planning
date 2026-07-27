@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1550" height="760" viewBox="0 0 1550 760" role="img" aria-labelledby="title desc">
+  <title id="title">2021 KZ Connect SE C312BHKSE floorplan-derived schematic</title>
+  <desc id="desc">Vector schematic based on the official KZ floorplan. The travel trailer is shown with its rear at left and hitch at right, two roadside slides at top, two curbside entry doors at bottom, rear bunkhouse and outside kitchen, central bath and living area, and front queen bedroom. Published overall length is 36 feet 9 inches and body width is 8 feet. Interior and deployed dimensions require field verification.</desc>
+  <metadata>
+    Source: https://www.kz-rv.com/2021-products/connect-se-travel-trailers/2021-C312BHKSE.html
+    Official floorplan: https://www.kz-rv.com/2021-products/connect-se-travel-trailers/images/2021/floorplans/floorplan-page/2021-KZ-RV-Connect-SE-C312BHKSE-Travel-Trailer-Floorplan.jpg
+    Created as a planning schematic; not an approval-scale or construction drawing.
+  </metadata>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#30343b"/>
+    </marker>
+    <pattern id="floor" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M0 12H24M12 0V24" stroke="#ddd6c8" stroke-width=".8" opacity=".6"/>
+    </pattern>
+    <style>
+      text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;fill:#20252a}
+      .title{font-size:27px;font-weight:750}
+      .subtitle{font-size:15px}
+      .room{fill:#f4f0e8;stroke:#30343b;stroke-width:3}
+      .slide{fill:#a9c9e8;stroke:#26547a;stroke-width:4}
+      .cabinet{fill:#d9c5a4;stroke:#65553f;stroke-width:2}
+      .fixture{fill:#e7ebee;stroke:#4b535b;stroke-width:2}
+      .bed{fill:#d7e4f0;stroke:#315778;stroke-width:3}
+      .label{font-size:17px;font-weight:700}
+      .small{font-size:14px}
+      .tiny{font-size:12px}
+      .dim{stroke:#30343b;stroke-width:2;marker-start:url(#arrow);marker-end:url(#arrow)}
+      .door{fill:none;stroke:#a56200;stroke-width:4}
+      .awning{stroke:#2e7d32;stroke-width:8;stroke-linecap:round}
+    </style>
+  </defs>
+
+  <rect width="1400" height="760" fill="#fff"/>
+  <text x="45" y="46" class="title">Shane + Sabrina — KZ Connect SE C312BHKSE floorplan schematic</text>
+  <text x="45" y="73" class="subtitle">Based on the official 2021 KZ layout. Published shell dimensions are shown; internal and deployed geometry is provisional.</text>
+
+  <!-- Orientation labels -->
+  <text x="105" y="117" class="label">ROADSIDE / SLIDE SIDE</text>
+  <text x="395" y="605" class="label">CURBSIDE / DOOR + AWNING SIDE</text>
+  <text x="105" y="137" class="label">REAR / BUMPER</text>
+  <text x="1113" y="215" class="label">FRONT / HITCH</text>
+
+  <!-- Main 8 ft body, schematically scaled at 28 px/ft. -->
+  <rect x="105" y="230" width="1008" height="224" rx="6" fill="url(#floor)" stroke="#20252a" stroke-width="6"/>
+
+  <!-- Coupler and tongue; total published rear-bumper-to-coupler length is 36 ft 9 in. -->
+  <path d="M1113 270L1220 330L1113 414Z" fill="#d8dadd" stroke="#20252a" stroke-width="5"/>
+  <circle cx="1222" cy="341" r="13" fill="#30343b"/>
+  <path d="M1113 288H1078V396H1113" fill="#e4e5e7" stroke="#20252a" stroke-width="4"/>
+  <text x="1148" y="337" text-anchor="middle" class="small" font-weight="700">A-FRAME</text>
+  <text x="1148" y="355" text-anchor="middle" class="tiny">COUPLER</text>
+
+  <!-- Roadside slide 1: rear bunkhouse flip-up dinette. -->
+  <rect x="130" y="143" width="230" height="87" rx="5" class="slide"/>
+  <rect x="153" y="166" width="184" height="42" rx="8" class="fixture"/>
+  <text x="245" y="182" text-anchor="middle" class="small" font-weight="700">TOP BUNK / FLIP-UP</text>
+  <text x="245" y="201" text-anchor="middle" class="small">DINETTE SLIDE</text>
+
+  <!-- Roadside slide 2: U-dinette and sofa. -->
+  <rect x="405" y="126" width="430" height="104" rx="5" class="slide"/>
+  <rect x="425" y="149" width="215" height="61" rx="12" class="fixture"/>
+  <text x="532" y="176" text-anchor="middle" class="label">80″ U-DINETTE</text>
+  <rect x="655" y="149" width="160" height="61" rx="12" class="fixture"/>
+  <text x="735" y="176" text-anchor="middle" class="label">64″ SOFA</text>
+  <text x="620" y="115" text-anchor="middle" class="small" font-weight="700">MAIN LIVING SLIDE — PROJECTION TBD</text>
+
+  <!-- Rear bunkhouse -->
+  <rect x="105" y="230" width="270" height="224" class="room"/>
+  <rect x="120" y="248" width="95" height="80" rx="8" class="bed"/>
+  <text x="167" y="282" text-anchor="middle" class="small" font-weight="700">BUNK</text>
+  <rect x="120" y="342" width="95" height="92" rx="8" class="bed"/>
+  <text x="167" y="382" text-anchor="middle" class="small" font-weight="700">BUNKS /</text>
+  <text x="167" y="400" text-anchor="middle" class="small" font-weight="700">CLOSET</text>
+  <rect x="230" y="248" width="128" height="80" class="cabinet"/>
+  <text x="294" y="282" text-anchor="middle" class="small" font-weight="700">REAR</text>
+  <text x="294" y="300" text-anchor="middle" class="small">STORAGE</text>
+  <text x="240" y="355" class="label">BUNKHOUSE</text>
+
+  <!-- Bathroom -->
+  <rect x="375" y="230" width="185" height="224" class="room"/>
+  <rect x="400" y="252" width="85" height="91" rx="7" class="fixture"/>
+  <text x="442" y="291" text-anchor="middle" class="small" font-weight="700">30″ × 36″</text>
+  <text x="442" y="310" text-anchor="middle" class="small" font-weight="700">SHOWER</text>
+  <ellipse cx="518" cy="286" rx="24" ry="31" class="fixture"/>
+  <rect x="484" y="355" width="55" height="40" rx="8" class="fixture"/>
+  <text x="467" y="426" text-anchor="middle" class="label">BATH</text>
+
+  <!-- Central kitchen and circulation -->
+  <rect x="560" y="230" width="275" height="224" class="room"/>
+  <rect x="575" y="370" width="68" height="68" class="cabinet"/>
+  <text x="609" y="400" text-anchor="middle" class="small" font-weight="700">10 CU FT</text>
+  <text x="609" y="418" text-anchor="middle" class="small">FRIDGE</text>
+  <rect x="643" y="370" width="177" height="68" class="cabinet"/>
+  <circle cx="686" cy="404" r="13" class="fixture"/>
+  <circle cx="725" cy="404" r="13" class="fixture"/>
+  <rect x="755" y="382" width="48" height="35" rx="7" class="fixture"/>
+  <text x="695" y="350" text-anchor="middle" class="label">KITCHEN</text>
+  <text x="695" y="290" text-anchor="middle" class="label">LIVING AREA</text>
+  <text x="695" y="315" text-anchor="middle" class="small">U-dinette + sofa in roadside slide</text>
+
+  <!-- Front queen bedroom -->
+  <rect x="835" y="230" width="278" height="224" class="room"/>
+  <rect x="914" y="257" width="145" height="170" rx="22" class="bed"/>
+  <path d="M927 280H1046M987 280V414" stroke="#70889e" stroke-width="2"/>
+  <text x="986" y="340" text-anchor="middle" class="label">QUEEN BED</text>
+  <rect x="851" y="246" width="55" height="80" class="cabinet"/>
+  <rect x="1064" y="246" width="34" height="80" class="cabinet"/>
+  <text x="876" y="286" text-anchor="middle" class="tiny" transform="rotate(-90 876 286)">WARDROBE</text>
+  <text x="1081" y="286" text-anchor="middle" class="tiny" transform="rotate(90 1081 286)">WARDROBE</text>
+  <text x="974" y="445" text-anchor="middle" class="small" font-weight="700">FRONT BEDROOM</text>
+
+  <!-- Pass-through storage -->
+  <rect x="850" y="230" width="248" height="22" fill="#efd59e" stroke="#65553f" stroke-width="2"/>
+  <text x="974" y="246" text-anchor="middle" class="tiny" font-weight="700">PASS-THROUGH STORAGE</text>
+
+  <!-- Two curbside doors and steps -->
+  <path d="M347 454V397M347 397A57 57 0 0 1 404 454" class="door"/>
+  <path d="M331 462H363M324 477H370M317 492H377" class="door"/>
+  <text x="347" y="515" text-anchor="middle" class="small" font-weight="700">REAR ENTRY</text>
+
+  <path d="M846 454V392M846 392A62 62 0 0 0 784 454" class="door"/>
+  <path d="M824 462H868M814 477H878M804 492H888" class="door"/>
+  <text x="846" y="515" text-anchor="middle" class="small" font-weight="700">MAIN ENTRY / SOLID STEPS</text>
+
+  <!-- Outside kitchen and griddle at rear curbside -->
+  <rect x="115" y="454" width="190" height="70" rx="4" fill="#ffe0a8" stroke="#a56200" stroke-width="4"/>
+  <rect x="133" y="470" width="57" height="38" rx="8" class="fixture"/>
+  <rect x="205" y="470" width="42" height="38" class="cabinet"/>
+  <text x="210" y="502" text-anchor="middle" class="label">OUTSIDE KITCHEN</text>
+  <rect x="85" y="532" width="83" height="41" rx="5" fill="#50555a" stroke="#20252a" stroke-width="3"/>
+  <text x="126" y="594" text-anchor="middle" class="small" font-weight="700">OUTSIDE GRIDDLE</text>
+
+  <!-- Published 18 ft awning -->
+  <line x1="445" y1="540" x2="949" y2="540" class="awning"/>
+  <circle cx="445" cy="540" r="8" fill="#2e7d32"/>
+  <circle cx="949" cy="540" r="8" fill="#2e7d32"/>
+  <text x="697" y="570" text-anchor="middle" class="label" fill="#1b5e20">18 FT AWNING — DEPLOYED PROJECTION TBD</text>
+
+  <!-- Published dimensions -->
+  <line x1="105" y1="635" x2="1222" y2="635" class="dim"/>
+  <text x="663.5" y="660" text-anchor="middle" class="label">36 ft 9 in published rear-bumper-to-coupler length</text>
+  <line x1="72" y1="230" x2="72" y2="454" class="dim"/>
+  <text x="52" y="342" text-anchor="middle" class="label" transform="rotate(-90 52 342)">8 ft published body width</text>
+
+  <!-- Verification panel -->
+  <g transform="translate(1270 125)">
+    <text class="label">VERIFY IN FIELD</text>
+    <text y="30" class="tiny">• Exact model year / VIN</text>
+    <text y="52" class="tiny">• Body and coupler lengths</text>
+    <text y="74" class="tiny">• Both slide projections</text>
+    <text y="96" class="tiny">• Both step projections</text>
+    <text y="118" class="tiny">• Awning projection/supports</text>
+    <text y="140" class="tiny">• Kitchen/griddle clearance</text>
+    <text y="162" class="tiny">• Stabilizers and utilities</text>
+    <text y="204" class="tiny" font-weight="700">Not approval-scale.</text>
+  </g>
+
+  <text x="45" y="716" class="tiny">Official KZ 2021 C312BHKSE floorplan used as the visual source. Furniture and partitions are schematic; no unverified slide depth or room dimension is asserted.</text>
+  <text x="45" y="737" class="tiny">Source record: equipment/shane-sabrina-kz-connect-se-c312bhkse.md</text>
+</svg>

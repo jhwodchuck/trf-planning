@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/viewer/group-site-v0.1.html" }
+  ]
+}

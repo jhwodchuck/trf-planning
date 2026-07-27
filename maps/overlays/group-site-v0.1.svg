@@ -66,9 +66,9 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <polygon points="300.0,420.0 300.0,240.0 180.0,240.0 180.0,420.0" class="pass" fill="#6fa8dc"/>
 <text x="240.0" y="326.0" text-anchor="middle" class="label">MC + Elizabeth B</text>
 <text x="240.0" y="343.0" text-anchor="middle" class="small">600 sq ft</text>
-<polygon points="750.0,840.0 750.0,660.0 630.0,660.0 630.0,840.0" class="pass" fill="#76a5af"/>
-<text x="690.0" y="746.0" text-anchor="middle" class="label">Amanda</text>
-<text x="690.0" y="763.0" text-anchor="middle" class="small">600 sq ft</text>
+<polygon points="600.0,696.0 750.0,696.0 750.0,768.0 711.0,768.0 711.0,918.0 639.0,918.0 639.0,768.0 600.0,768.0" class="pass" fill="#76a5af"/>
+<text x="675.0" y="902.0" text-anchor="middle" class="label">Amanda</text>
+<text x="675.0" y="915.0" text-anchor="middle" class="small">600 sq ft</text>
 <polygon points="570.0,870.0 570.0,690.0 450.0,690.0 450.0,870.0" class="pass" fill="#ffd966"/>
 <text x="510.0" y="776.0" text-anchor="middle" class="label">Chris + Sallie</text>
 <text x="510.0" y="793.0" text-anchor="middle" class="small">600 sq ft</text>
@@ -85,10 +85,11 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <text x="977.2" y="538.5" text-anchor="middle" class="tiny">Jason Wildcat</text>
 <polygon points="934.5,630.0 934.5,570.0 844.5,570.0 844.5,630.0" class="eq" fill="#f6b26b" stroke="#333"/>
 <text x="889.5" y="603.0" text-anchor="middle" class="tiny">Jason 15x10 canopy</text>
-<polygon points="750.0,810.0 750.0,690.0 690.0,690.0 690.0,810.0" class="eq" fill="#76a5af" stroke="#333"/>
-<text x="720.0" y="753.0" text-anchor="middle" class="tiny">Amanda 10x20 tent</text>
-<polygon points="690.0,792.0 690.0,690.0 630.0,690.0 630.0,792.0" class="eq" fill="#3d85c6" stroke="#333"/>
-<text x="660.0" y="744.0" text-anchor="middle" class="tiny">Amanda 10x17 Yoga Tent</text>
+<polygon points="615.0,702.0 735.0,702.0 735.0,762.0 615.0,762.0" class="eq" fill="#76a5af" stroke="#333"/>
+<text x="675.0" y="735.0" text-anchor="middle" class="tiny">Amanda sleeping tent 20x10 (rotated)</text>
+<polygon points="645.0,786.0 705.0,786.0 705.0,888.0 645.0,888.0" class="eq" fill="#3d85c6" stroke="#333"/>
+<text x="675.0" y="840.0" text-anchor="middle" class="tiny">Amanda 10x17 Yoga Tent</text>
+<text x="675.0" y="779.0" text-anchor="middle" class="tiny">4 ft aisle</text>
 <polygon points="558.0,858.0 558.0,738.0 462.0,738.0 462.0,858.0" class="eq" fill="#e6b800" stroke="#333"/>
 <text x="510.0" y="801.0" text-anchor="middle" class="tiny">Chris/Sallie 16x20 tent</text>
 <polygon points="369.0,888.0 369.0,732.0 291.0,732.0 291.0,888.0" class="eq" fill="#a64d79" stroke="#333"/>

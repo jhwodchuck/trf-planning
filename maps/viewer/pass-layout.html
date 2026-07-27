@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRF Pass Layout Tool</title>
+<style>
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{display:grid;grid-template-columns:340px 1fr;background:#111}
+aside{overflow:auto;padding:14px;background:#f7f5ef;color:#1b1b1b;box-shadow:2px 0 8px #0004;z-index:1000}
+h1{font-size:1.25rem;margin:0 0 .4rem}
+h2{font-size:.95rem;margin:1.1rem 0 .35rem}
+p,li{font-size:.86rem;line-height:1.35}
+.warning{background:#fff1bf;border-left:5px solid #b97b00;padding:.6rem}
+.metric{display:grid;grid-template-columns:1fr auto;gap:.25rem .8rem;font-size:.86rem}
+.controls{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0}
+button{font:inherit;font-size:.82rem;padding:.4rem .6rem;border:1px solid #555;border-radius:.3rem;background:#fff;cursor:pointer}
+button:hover{background:#eee}
+button.danger{border-color:#a33;color:#a33}
+label.file{display:inline-block}
+input[type=file]{display:none}
+table.roster{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.3rem}
+table.roster td,table.roster th{border-bottom:1px solid #ddd;padding:3px 4px;text-align:left}
+table.roster tr.selected{background:#fff4d6}
+table.roster tr{cursor:pointer}
+.swatch{display:inline-block;width:11px;height:11px;border:1px solid #333;margin-right:4px;vertical-align:-1px}
+fieldset{border:1px solid #999;border-radius:.3rem;margin-top:.6rem;padding:.5rem .6rem}
+legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
+.row{display:flex;align-items:center;gap:.4rem;margin:.3rem 0;font-size:.82rem}
+.row input[type=number]{width:5.5rem}
+.row input[type=range]{flex:1}
+#canvasWrap{position:relative;overflow:auto;background:#dedbd2}
+#canvas{position:relative;background:#fbfaf6;box-shadow:0 0 0 2px #777 inset}
+.token{position:absolute;top:0;left:0;transform-origin:center center;cursor:grab;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
+.token.dragging{cursor:grabbing;filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.token.selected{outline:3px solid #1976d2;outline-offset:2px}
+.token img{display:block;width:100%;height:100%;pointer-events:none;user-select:none}
+.token .tag{position:absolute;left:2px;top:-1.1rem;font-size:.68rem;background:#111d;color:#fff;padding:1px 4px;border-radius:2px;white-space:nowrap}
+#status{white-space:pre-wrap;background:#fff;border:1px solid #ccc;padding:.5rem;font-size:.78rem;min-height:2rem;margin-top:.4rem}
+.ref{position:absolute;pointer-events:none}
+@media(max-width:800px){body{display:block}aside{max-height:45vh}#canvasWrap{height:55vh}}
+</style>
+</head>
+<body>
+<aside>
+<h1>TRF Pass Layout Tool</h1>
+<p><a href="../index.html">&larr; All maps &amp; tools</a> &middot; <a href="group-site-v0.1.html">Group site map &rarr;</a></p>
+<p class="warning"><strong>Freeform experimentation, not georeferenced.</strong> This canvas is independent of the site anchor and road-control geometry used elsewhere in the repo. Use it to test adjacency and arrangement; it is not tied to lat/long.</p>
+
+<div class="metric">
+<span>Households</span><strong>7</strong>
+<span>Passes</span><strong>10</strong>
+<span>Area per pass</span><strong>600 sq ft</strong>
+<span>Total planning area</span><strong>6,000 sq ft</strong>
+</div>
+
+<div class="controls">
+<button id="resetBtn">Reset to v0.1 default</button>
+<button id="saveBtn">Save layout (.json)</button>
+<label class="file">Load layout <input id="loadInput" type="file" accept="application/json,.json"></label>
+</div>
+<div class="controls">
+<button id="gridBtn">Toggle grid</button>
+<button id="refBtn">Toggle road reference</button>
+<button id="frontBtn">Bring selected to front</button>
+</div>
+
+<h2>Passes</h2>
+<table class="roster" id="roster"><tbody></tbody></table>
+
+<fieldset>
+<legend>Selected pass</legend>
+<div class="row"><span id="selName">None selected</span></div>
+<div class="row"><label style="width:2rem">X ft</label><input id="xIn" type="number" step="0.25"></div>
+<div class="row"><label style="width:2rem">Y ft</label><input id="yIn" type="number" step="0.25"></div>
+<div class="row"><label style="width:2rem">Rot</label><input id="rotIn" type="range" min="-180" max="180" step="1" value="0"><span id="rotVal">0°</span></div>
+<div class="row"><button id="rot0Btn">Reset rotation</button></div>
+</fieldset>
+
+<h2>How this works</h2>
+<ul>
+<li>Drag a pass by clicking and dragging its shape.</li>
+<li>Click a pass (on the canvas or in the list) to select it, then fine-tune with the X/Y/rotation fields.</li>
+<li>Positions are the pass SVG's own top-left corner (each file has a small margin around its true 600 sq ft boundary — see <code>maps/overlays/passes/passes-manifest.json</code>).</li>
+<li>Layout autosaves to this browser's local storage. Use Save/Load to keep a portable copy in the repo or share it.</li>
+<li>Each pass file under <code>maps/overlays/passes/</code> can be edited independently, then regenerate with <code>python scripts/build_pass_svgs.py</code> (or hand-edit the SVGs directly) — reload this page to pick up changes.</li>
+</ul>
+
+<div id="status"></div>
+</aside>
+<div id="canvasWrap">
+<div id="canvas"></div>
+</div>
+
+<script>
+const SCALE = 14; // on-screen px per ft for this canvas (independent of each pass file's internal scale)
+const CANVAS_W_FT = 230, CANVAS_H_FT = 200;
+const STORAGE_KEY = 'trf-pass-layout-v1';
+const MANIFEST_URL = '../overlays/passes/passes-manifest.json';
+const PASS_DIR = '../overlays/passes/';
+
+// Approximate road/setback reference, matching maps/overlays/group-site-v0.1.svg
+// (drawn here purely as a static backdrop, not draggable, not georeferenced).
+const ROAD_X_FT = 187.27, SETBACK10_X_FT = 177.27, SETBACK14_X_FT = 173.27;
+
+let manifest = null;
+let layout = {}; // id -> {x_ft, y_ft, rotation_deg, z}
+let selectedId = null;
+let showGrid = true;
+let showRef = true;
+let zCounter = 10;
+
+const canvas = document.getElementById('canvas');
+const statusEl = document.getElementById('status');
+
+function setStatus(msg) { statusEl.textContent = msg; }
+
+function defaultLayout() {
+  const out = {};
+  manifest.passes.forEach((p, i) => {
+    out[p.id] = { x_ft: p.default_x_ft, y_ft: p.default_y_ft, rotation_deg: 0, z: i + 1 };
+  });
+  zCounter = manifest.passes.length + 1;
+  return out;
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || !parsed.passes) return null;
+    return parsed.passes;
+  } catch (e) { return null; }
+}
+
+function saveToStorage() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ saved_at_local: new Date().toString(), passes: layout }));
+}
+
+function buildCanvasBackground() {
+  canvas.style.width = (CANVAS_W_FT * SCALE) + 'px';
+  canvas.style.height = (CANVAS_H_FT * SCALE) + 'px';
+  document.querySelectorAll('.grid-line, .ref').forEach(el => el.remove());
+
+  if (showGrid) {
+    for (let x = 0; x <= CANVAS_W_FT; x += 10) {
+      const line = document.createElement('div');
+      line.className = 'grid-line ref';
+      line.style.cssText = `left:${x*SCALE}px;top:0;width:1px;height:100%;background:#0000000f`;
+      canvas.appendChild(line);
+    }
+    for (let y = 0; y <= CANVAS_H_FT; y += 10) {
+      const line = document.createElement('div');
+      line.className = 'grid-line ref';
+      line.style.cssText = `left:0;top:${y*SCALE}px;width:100%;height:1px;background:#0000000f`;
+      canvas.appendChild(line);
+    }
+  }
+
+  if (showRef) {
+    const mk = (xft, color, dash, label) => {
+      const line = document.createElement('div');
+      line.className = 'ref';
+      line.style.cssText = `left:${xft*SCALE}px;top:0;width:0;height:100%;border-left:3px ${dash} ${color}`;
+      canvas.appendChild(line);
+      const tag = document.createElement('div');
+      tag.className = 'ref';
+      tag.style.cssText = `left:${xft*SCALE+4}px;top:4px;font-size:10px;background:#111d;color:#fff;padding:1px 4px;border-radius:2px;white-space:nowrap`;
+      tag.textContent = label;
+      canvas.appendChild(tag);
+    };
+    mk(ROAD_X_FT, '#f5d000', 'solid', 'road edge (~1.68° off true north; treated as vertical here)');
+    mk(SETBACK10_X_FT, '#d7263d', 'dashed', '10 ft minimum setback');
+    mk(SETBACK14_X_FT, '#f28c28', 'dashed', '14 ft preferred setback');
+  }
+}
+
+function applyTokenTransform(el, pos) {
+  el.style.left = (pos.x_ft * SCALE) + 'px';
+  el.style.top = (pos.y_ft * SCALE) + 'px';
+  el.style.transform = `rotate(${pos.rotation_deg}deg)`;
+  el.style.zIndex = pos.z;
+}
+
+function renderRoster() {
+  const tbody = document.querySelector('#roster tbody');
+  tbody.innerHTML = '';
+  manifest.passes.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.dataset.id = p.id;
+    if (p.id === selectedId) tr.classList.add('selected');
+    tr.innerHTML = `<td><span class="swatch" style="background:${p.color}"></span>${p.name}</td><td>${p.area_sqft} sqft</td>`;
+    tr.addEventListener('click', () => selectPass(p.id));
+    tbody.appendChild(tr);
+  });
+}
+
+function selectPass(id) {
+  selectedId = id;
+  document.querySelectorAll('.token').forEach(t => t.classList.toggle('selected', t.dataset.id === id));
+  document.querySelectorAll('#roster tbody tr').forEach(tr => tr.classList.toggle('selected', tr.dataset.id === id));
+  const p = manifest.passes.find(p => p.id === id);
+  const pos = layout[id];
+  document.getElementById('selName').textContent = p ? p.name : 'None selected';
+  document.getElementById('xIn').value = pos ? pos.x_ft : '';
+  document.getElementById('yIn').value = pos ? pos.y_ft : '';
+  document.getElementById('rotIn').value = pos ? pos.rotation_deg : 0;
+  document.getElementById('rotVal').textContent = (pos ? pos.rotation_deg : 0) + '°';
+}
+
+function bringToFront(id) {
+  zCounter += 1;
+  layout[id].z = zCounter;
+  applyTokenTransform(document.querySelector(`.token[data-id="${id}"]`), layout[id]);
+}
+
+function makeToken(p) {
+  const el = document.createElement('div');
+  el.className = 'token';
+  el.dataset.id = p.id;
+  el.style.width = (p.viewbox_width_ft * SCALE) + 'px';
+  el.style.height = (p.viewbox_height_ft * SCALE) + 'px';
+
+  const tag = document.createElement('div');
+  tag.className = 'tag';
+  tag.textContent = p.name;
+  el.appendChild(tag);
+
+  const img = document.createElement('img');
+  img.src = PASS_DIR + p.file;
+  img.alt = p.name;
+  el.appendChild(img);
+
+  canvas.appendChild(el);
+
+  let dragging = false, startPointer = null, startPos = null;
+
+  const onDown = (ev) => {
+    ev.preventDefault();
+    selectPass(p.id);
+    bringToFront(p.id);
+    dragging = true;
+    el.classList.add('dragging');
+    const point = ev.touches ? ev.touches[0] : ev;
+    startPointer = { x: point.clientX, y: point.clientY };
+    startPos = { x_ft: layout[p.id].x_ft, y_ft: layout[p.id].y_ft };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('touchend', onUp);
+  };
+  const onMove = (ev) => {
+    if (!dragging) return;
+    ev.preventDefault();
+    const point = ev.touches ? ev.touches[0] : ev;
+    const dx = (point.clientX - startPointer.x) / SCALE;
+    const dy = (point.clientY - startPointer.y) / SCALE;
+    layout[p.id].x_ft = Math.round((startPos.x_ft + dx) * 4) / 4;
+    layout[p.id].y_ft = Math.round((startPos.y_ft + dy) * 4) / 4;
+    applyTokenTransform(el, layout[p.id]);
+    if (selectedId === p.id) {
+      document.getElementById('xIn').value = layout[p.id].x_ft;
+      document.getElementById('yIn').value = layout[p.id].y_ft;
+    }
+  };
+  const onUp = () => {
+    if (!dragging) return;
+    dragging = false;
+    el.classList.remove('dragging');
+    saveToStorage();
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onUp);
+    window.removeEventListener('touchmove', onMove);
+    window.removeEventListener('touchend', onUp);
+  };
+  el.addEventListener('mousedown', onDown);
+  el.addEventListener('touchstart', onDown, { passive: false });
+
+  return el;
+}
+
+function renderTokens() {
+  document.querySelectorAll('.token').forEach(t => t.remove());
+  manifest.passes.forEach(p => {
+    const el = makeToken(p);
+    applyTokenTransform(el, layout[p.id]);
+  });
+}
+
+function totalAreaLabel() {
+  const total = manifest.passes.reduce((sum, p) => sum + p.area_sqft, 0);
+  return `${manifest.passes.length} passes loaded, ${total.toLocaleString()} sq ft total.`;
+}
+
+function init(manifestData, savedLayout) {
+  manifest = manifestData;
+  const base = defaultLayout();
+  layout = {};
+  manifest.passes.forEach(p => {
+    const saved = savedLayout && savedLayout[p.id];
+    layout[p.id] = saved ? { ...base[p.id], ...saved } : base[p.id];
+  });
+  buildCanvasBackground();
+  renderRoster();
+  renderTokens();
+  setStatus(totalAreaLabel());
+}
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (!manifest) return;
+  layout = defaultLayout();
+  saveToStorage();
+  renderTokens();
+  renderRoster();
+  setStatus('Reset to the v0.1 default arrangement. ' + totalAreaLabel());
+});
+
+document.getElementById('gridBtn').addEventListener('click', () => { showGrid = !showGrid; buildCanvasBackground(); renderTokens(); });
+document.getElementById('refBtn').addEventListener('click', () => { showRef = !showRef; buildCanvasBackground(); renderTokens(); });
+document.getElementById('frontBtn').addEventListener('click', () => { if (selectedId) bringToFront(selectedId); });
+
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const data = { saved_at_local: new Date().toString(), scale_px_per_ft: SCALE, passes: layout };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'pass-layout.json';
+  a.click();
+  setStatus('Downloaded pass-layout.json. Commit it under maps/overlays/passes/ to keep this arrangement in the repo.');
+});
+
+document.getElementById('loadInput').addEventListener('change', (ev) => {
+  const file = ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (!data.passes) throw new Error('Missing "passes" key');
+      layout = { ...defaultLayout(), ...data.passes };
+      saveToStorage();
+      renderTokens();
+      renderRoster();
+      setStatus('Loaded layout from ' + file.name + '. ' + totalAreaLabel());
+    } catch (e) {
+      setStatus('Could not load file: ' + e);
+    }
+  };
+  reader.readAsText(file);
+});
+
+['xIn', 'yIn'].forEach(id => {
+  document.getElementById(id).addEventListener('input', (ev) => {
+    if (!selectedId) return;
+    const key = id === 'xIn' ? 'x_ft' : 'y_ft';
+    layout[selectedId][key] = parseFloat(ev.target.value) || 0;
+    applyTokenTransform(document.querySelector(`.token[data-id="${selectedId}"]`), layout[selectedId]);
+    saveToStorage();
+  });
+});
+document.getElementById('rotIn').addEventListener('input', (ev) => {
+  if (!selectedId) return;
+  layout[selectedId].rotation_deg = parseFloat(ev.target.value) || 0;
+  document.getElementById('rotVal').textContent = layout[selectedId].rotation_deg + '°';
+  applyTokenTransform(document.querySelector(`.token[data-id="${selectedId}"]`), layout[selectedId]);
+  saveToStorage();
+});
+document.getElementById('rot0Btn').addEventListener('click', () => {
+  if (!selectedId) return;
+  layout[selectedId].rotation_deg = 0;
+  document.getElementById('rotIn').value = 0;
+  document.getElementById('rotVal').textContent = '0°';
+  applyTokenTransform(document.querySelector(`.token[data-id="${selectedId}"]`), layout[selectedId]);
+  saveToStorage();
+});
+
+fetch(MANIFEST_URL).then(r => {
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}).then(data => {
+  init(data, loadFromStorage());
+}).catch(e => {
+  setStatus('Could not load passes-manifest.json: ' + e + '\nServe this repo over http(s) (e.g. "python -m http.server") rather than opening the file directly.');
+});
+</script>
+</body>
+</html>

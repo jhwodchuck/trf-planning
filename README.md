@@ -15,6 +15,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, major support equipment, disconnected-allocation rules, and links to every household record
 - [Interactive group site map v0.1](maps/viewer/group-site-v0.1.html) — aerial overlay with ten 600 sq ft pass polygons, known structures, placeholders, road, and setbacks
 - [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — printable scale drawing of the current provisional arrangement
+- [Pass layout tool](maps/viewer/pass-layout.html) — drag, rotate, and rearrange the ten individual pass drawings ([`maps/overlays/passes/`](maps/overlays/passes/)) on a freeform canvas, independent of the georeferenced viewer
 - [Group site map assumptions](planning/group-site-map-v0.1.md) — status, known dimensions, strategy, and limitations
 
 ## Current concept
@@ -33,6 +34,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 - [TRF site-planning map pack](maps/README.md) — official campground reference, interactive aerial/topographic/GIS viewer, source catalog, GeoJSON area, and automated static-map builder
 - [Interactive map viewer](maps/viewer/index.html) — aerial imagery, USGS topography, parcels, streets, FEMA flood zones, wetlands, drawing, measurement, and GeoJSON import/export
+- [Pass layout tool](maps/viewer/pass-layout.html) and [per-pass SVGs](maps/overlays/passes/) — each 600 sq ft pass as its own editable drawing, freely draggable and rotatable on a freeform master canvas
 - [Road control and setback geometry](planning/site-control-road-setback.md) — supplied road points, true bearing, 10 ft and 14 ft parallel offsets, and the current corner-label conflict
 - [Road and setback GeoJSON](maps/data/site-control-road-setbacks.geojson) — map-ready supplied points, road alignment, perpendicular measurement, and derived setback lines
 - [Dimensioned campsite footprint](maps/overlays/requested-campsite-footprint.svg) — scale-controlled RV and 10 × 15 ft canopy working template

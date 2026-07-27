@@ -2,6 +2,8 @@
 
 This folder is the map workspace for planning a campsite in the Texas Renaissance Festival Fields of New Market campground.
 
+This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, static — no build step). `vercel.json` in this folder rewrites `/` to `viewer/group-site-v0.1.html` so the live root matches this folder's `index.html` nav landing point; every other path mirrors the file layout below (`viewer/pass-layout.html`, `data/*.geojson`, etc.). Redeploy after changing anything under `maps/` — Vercel does not watch this repo automatically.
+
 ## Start here
 
 1. Open `viewer/provisional-site.html` for the current site-specific aerial overlay with the proposed boundary, RV zone, canopy, road reference, and 10- and 14-foot setback lines.
@@ -11,12 +13,14 @@ This folder is the map workspace for planning a campsite in the Texas Renaissanc
 5. Review `reference/official/2026-campground-map.html` for roads, numbered campground areas, gates, services, and emergency exits.
 6. Use `overlays/requested-campsite-footprint.svg` as the original dimensioned, scale-controlled RV and canopy footprint template.
 7. Review the static files in `generated/` after the map-build workflow runs.
+8. Open `viewer/pass-layout.html` to drag, rotate, and rearrange the ten individual 600 sq ft pass drawings in `overlays/passes/` on a freeform (non-georeferenced) canvas.
 
 ## Current map inventory
 
 | Map or layer | Primary planning use | Status |
 |---|---|---|
 | Provisional site-specific aerial overlay | Shows the current 598.9 sq ft stepped boundary, RV zone, canopy, road line, and setbacks at the supplied coordinates | Added; field verification required |
+| Per-pass SVGs and drag-layout tool | Ten standalone 600 sq ft pass drawings (`overlays/passes/`) that can be independently refined and freely repositioned on `viewer/pass-layout.html` | Added; freeform, not georeferenced |
 | Official 2026 Season Pass Plotting Map v3.2 | Broad season-pass camping, parking, and restricted-area context | Live official reference |
 | Official 2026 campground map | Camp roads, numbered campground areas, gates, emergency exits, water, showers, cabins, first aid, restrooms, and landmarks | Live official reference |
 | NAIP aerial imagery | Trees, clearings, roads, drainage traces, and current ground context | In viewers and generated maps |

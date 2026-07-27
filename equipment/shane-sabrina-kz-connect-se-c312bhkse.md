@@ -10,6 +10,7 @@ The supplied camper photographs match the **KZ Connect SE C312BHKSE** layout clo
 
 - [Official 2021 KZ model page](https://www.kz-rv.com/2021-products/connect-se-travel-trailers/2021-C312BHKSE.html)
 - [Full-resolution manufacturer floor-plan image](https://www.kz-rv.com/2021-products/connect-se-travel-trailers/images/2021/floorplans/floorplan-page/2021-KZ-RV-Connect-SE-C312BHKSE-Travel-Trailer-Floorplan.jpg)
+- [Local floorplan-derived SVG](../floorplans/2021-kz-connect-se-c312bhkse-floorplan.svg) — vector planning schematic; published shell dimensions only, with interior and deployed geometry explicitly provisional.
 
 ## Published 2021 reference dimensions
 

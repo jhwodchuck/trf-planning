@@ -1,1 +1,895 @@
-{"type":"FeatureCollection","name":"TRF group site map v0.1","properties":{"created_on":"2026-07-27","status":"provisional planning layout; only Jason/Catrina anchor is georeferenced from user-supplied road controls","planning_baseline":"600 sq ft per pass","passes":10,"households":7,"total_planning_area_sqft":6000,"compactness_goal":false,"warning":"Household positions other than Jason/Catrina are conceptual and must not be treated as assigned boundaries."},"features":[{"type":"Feature","properties":{"id":"jason_catrina","name":"Jason + Catrina","role":"pass","area_sqft":600,"status":"provisional planning polygon","note":"Includes 1.125 sq ft boundary buffer beyond the 598.875 sq ft RV+canopy equipment footprint."},"geometry":{"type":"Polygon","coordinates":[[[-95.84618,30.255805],[-95.84617707836821,30.255891212117845],[-95.84622222939429,30.255892353764875],[-95.84622421654124,30.255833715840293],[-95.84627174390987,30.255834917557284],[-95.84627267834172,30.255807343364026],[-95.84618,30.255805]]]}},{"type":"Feature","properties":{"id":"shane_camper","name":"Shane + Sabrina — Pass A / Camper","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.84630349347945,30.255903995826014],[-95.84630071107362,30.255986102604847],[-95.84636408099836,30.25598770485108],[-95.84636686335121,30.25590559807225],[-95.84630349347945,30.255903995826014]]]}},{"type":"Feature","properties":{"id":"shane_shower","name":"Shane + Sabrina — Pass B / Shower","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.84638177837346,30.25593336755532],[-95.84637899603229,30.256015474334134],[-95.84644236597725,30.256017076542225],[-95.84644514826545,30.255934969763416],[-95.84638177837346,30.25593336755532]]]}},{"type":"Feature","properties":{"id":"mc_camper","name":"MC + Elizabeth — Pass A / Camper","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.8464786880508,30.25588103300345],[-95.84647590579218,30.25596313978231],[-95.84653927570494,30.255964741944652],[-95.84654205791057,30.255882635165804],[-95.8464786880508,30.25588103300345]]]}},{"type":"Feature","properties":{"id":"mc_support","name":"MC + Elizabeth — Pass B / Support","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.84655697297887,30.255910404627908],[-95.84655419078494,30.255992511406742],[-95.84661756071793,30.25599411353096],[-95.84662034285891,30.255912006752126],[-95.84655697297887,30.255910404627908]]]}},{"type":"Feature","properties":{"id":"amanda","name":"Amanda","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.8463258281785,30.255712813906264],[-95.84632304579675,30.255794920685243],[-95.84638641559839,30.255796522923845],[-95.84638919792715,30.25571441614487],[-95.8463258281785,30.255712813906264]]]}},{"type":"Feature","properties":{"id":"chris_sallie","name":"Chris + Sallie","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.84642134651885,30.255701532789548],[-95.84641856421734,30.255783639568534],[-95.84648193401327,30.25578524176139],[-95.8464847162618,30.255703134982404],[-95.84642134651885,30.255701532789548]]]}},{"type":"Feature","properties":{"id":"birdie_primary","name":"Birdie + Gustav — Pass A / Primary Tent","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.84651686483727,30.25569025160422],[-95.846514082616,30.255772358383215],[-95.8465774524062,30.255773960530316],[-95.84658023457449,30.255691853751316],[-95.84651686483727,30.25569025160422]]]}},{"type":"Feature","properties":{"id":"birdie_closet","name":"Birdie + Gustav — Pass B / Closet Tent","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.84659514962462,30.255719623209664],[-95.846592367468,30.255801729988633],[-95.84665573727844,30.2558033320976],[-95.84665851938207,30.25572122531862],[-95.84659514962462,30.255719623209664]]]}},{"type":"Feature","properties":{"id":"stephane_true","name":"Stephane + True","role":"pass","area_sqft":600,"status":"provisional planning polygon"},"geometry":{"type":"Polygon","coordinates":[[[-95.84624754347716,30.25568344213878],[-95.84624476103077,30.255765548917772],[-95.84630813081216,30.25576715119449],[-95.8463109132056,30.255685044415504],[-95.84624754347716,30.25568344213878]]]}},{"type":"Feature","properties":{"id":"jason_rv","name":"Jason + Catrina Wildcat deployed zone","role":"rv","dimensions_ft":"31.5 x 14.25","area_sqft":448.875},"geometry":{"type":"Polygon","coordinates":[[[-95.84618,30.255805],[-95.84617707836821,30.255891212117845],[-95.84622222939429,30.255892353764875],[-95.84622515098644,30.255806141647028],[-95.84618,30.255805]]]}},{"type":"Feature","properties":{"id":"jason_canopy","name":"Jason + Catrina canopy","role":"canopy","dimensions_ft":"15 x 10","area_sqft":150},"geometry":{"type":"Polygon","coordinates":[[[-95.84622515098644,30.255806141647028],[-95.84622422349742,30.255833510573343],[-95.84627175086594,30.255834712290337],[-95.84627267834172,30.255807343364026],[-95.84622515098644,30.255806141647028]]]}},{"type":"Feature","properties":{"id":"amanda_sleep","name":"Amanda sleeping tent","role":"tent","dimensions_ft":"10 x 20","area_sqft":200,"status":"confirmed"},"geometry":{"type":"Polygon","coordinates":[[[-95.84632536444852,30.25572649836943],[-95.84632350952737,30.255781236222077],[-95.8463551944235,30.255782037345192],[-95.84635704932701,30.255727299492538],[-95.84632536444852,30.25572649836943]]]}},{"type":"Feature","properties":{"id":"amanda_yoga","name":"Amanda Yoga Tent","role":"canopy","dimensions_ft":"10 x 17","area_sqft":170,"status":"confirmed","placement":"far/outer west edge"},"geometry":{"type":"Polygon","coordinates":[[[-95.84635677109162,30.255735510170435],[-95.8463551944235,30.255782037345192],[-95.84638687932016,30.255782838460675],[-95.84638845597327,30.255736311285922],[-95.84635677109162,30.255735510170435]]]}},{"type":"Feature","properties":{"id":"chris_tent","name":"Chris + Sallie tent","role":"tent","dimensions_ft":"16 x 20","area_sqft":320,"status":"confirmed"},"geometry":{"type":"Polygon","coordinates":[[[-95.8464274980068,30.255707166795485],[-95.84642564314295,30.255761904648153],[-95.84647633896839,30.255763186402426],[-95.84647819380396,30.255708448549772],[-95.8464274980068,30.255707166795485]]]}},{"type":"Feature","properties":{"id":"birdie_primary_tent","name":"Birdie + Gustav primary tent","role":"tent","dimensions_ft":"13 x 26","area_sqft":338,"status":"confirmed for planning"},"geometry":{"type":"Polygon","coordinates":[[[-95.84652776906047,30.255696005767433],[-95.84652535781008,30.2557671649759],[-95.84656654817141,30.255768206371503],[-95.84656895939196,30.255697047163043],[-95.84652776906047,30.255696005767433]]]}},{"type":"Feature","properties":{"id":"birdie_closet_tent","name":"Birdie + Gustav closet tent","role":"tent_estimate","dimensions_ft":"approx. 10 x 20","area_sqft":200,"status":"estimate; replacement TBD"},"geometry":{"type":"Polygon","coordinates":[[[-95.84661052837355,30.255733708202925],[-95.8466086736113,30.255788446055575],[-95.8466403585121,30.25578924711006],[-95.8466422132567,30.255734509257408],[-95.84661052837355,30.255733708202925]]]}},{"type":"Feature","properties":{"id":"shane_shower_trailer","name":"Shane + Sabrina 16 ft shower trailer","role":"trailer_length","length_ft":16,"width_ft":null,"status":"width and total coupler length TBD"},"geometry":{"type":"LineString","coordinates":[[-95.84641281411284,30.255953326911587],[-95.84641133021168,30.255997117193612]]}},{"type":"Feature","properties":{"id":"shane_camper_placeholder","name":"Shane + Sabrina camper placeholder","role":"camper_placeholder","status":"not to scale; actual deployed dimensions required"},"geometry":{"type":"Polygon","coordinates":[[[-95.84631262797396,30.25591518373542],[-95.84631058754884,30.255975395373227],[-95.84635494649122,30.25597651694559],[-95.84635698688913,30.255916305307778],[-95.84631262797396,30.25591518373542]]]}},{"type":"Feature","properties":{"id":"mc_camper_placeholder","name":"MC + Elizabeth camper placeholder","role":"camper_placeholder","status":"not to scale; actual deployed dimensions required"},"geometry":{"type":"Polygon","coordinates":[[[-95.84648782256313,30.255892220900275],[-95.84648578224598,30.255952432538095],[-95.84653014117995,30.25595355405174],[-95.84653218146993,30.25589334241392],[-95.84648782256313,30.255892220900275]]]}},{"type":"Feature","properties":{"id":"stephane_tent_placeholder","name":"Stephane + True tent placeholder","role":"tent_placeholder","status":"not to scale; dimensions required"},"geometry":{"type":"Polygon","coordinates":[[[-95.84626282942281,30.25570026406661],[-95.84626115996292,30.25574952813401],[-95.84629284484832,30.255750329272377],[-95.84629451429234,30.255701065204985],[-95.84626282942281,30.25570026406661]]]}},{"type":"Feature","properties":{"id":"chris_canopy_placeholder","name":"Chris + Sallie canopy placeholder","role":"canopy_placeholder","status":"not to scale; dimensions required"},"geometry":{"type":"Polygon","coordinates":[[[-95.84641912067802,30.25576721821275],[-95.84641856421734,30.255783639568534],[-95.84648193401327,30.25578524176139],[-95.84648249046334,30.2557688204056],[-95.84641912067802,30.25576721821275]]]}},{"type":"Feature","properties":{"id":"road_edge","name":"Observed/extended road edge reference","role":"road_edge"},"geometry":{"type":"LineString","coordinates":[[-95.84613084843306,30.25563940290529],[-95.8461169356726,30.256049936799815]]}},{"type":"Feature","properties":{"id":"setback_10","name":"10 ft minimum road setback","role":"setback_10","offset_ft":10},"geometry":{"type":"LineString","coordinates":[[-95.84616253328184,30.25564020407589],[-95.84614862065382,30.256050737970412]]}},{"type":"Feature","properties":{"id":"setback_14","name":"14 ft preferred road setback","role":"setback_14","offset_ft":14},"geometry":{"type":"LineString","coordinates":[[-95.8461752072215,30.255640524542002],[-95.84616129464645,30.25605105843652]]}}]}
+{
+    "type": "FeatureCollection",
+    "name": "TRF group site map v0.1",
+    "properties": {
+        "created_on": "2026-07-27",
+        "status": "provisional planning layout; only Jason/Catrina anchor is georeferenced from user-supplied road controls",
+        "planning_baseline": "600 sq ft per pass",
+        "passes": 10,
+        "households": 7,
+        "total_planning_area_sqft": 6000,
+        "compactness_goal": false,
+        "warning": "Household positions other than Jason/Catrina are conceptual and must not be treated as assigned boundaries."
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "jason_catrina",
+                "name": "Jason + Catrina",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon",
+                "note": "Includes 1.125 sq ft boundary buffer beyond the 598.875 sq ft RV+canopy equipment footprint."
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84618,
+                            30.255805
+                        ],
+                        [
+                            -95.84617707836821,
+                            30.255891212117845
+                        ],
+                        [
+                            -95.84622222939429,
+                            30.255892353764875
+                        ],
+                        [
+                            -95.84622421654124,
+                            30.255833715840293
+                        ],
+                        [
+                            -95.84627174390987,
+                            30.255834917557284
+                        ],
+                        [
+                            -95.84627267834172,
+                            30.255807343364026
+                        ],
+                        [
+                            -95.84618,
+                            30.255805
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "shane_camper",
+                "name": "Shane + Sabrina \u2014 Pass A / Camper",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84630349347945,
+                            30.255903995826014
+                        ],
+                        [
+                            -95.84630071107362,
+                            30.255986102604847
+                        ],
+                        [
+                            -95.84636408099836,
+                            30.25598770485108
+                        ],
+                        [
+                            -95.84636686335121,
+                            30.25590559807225
+                        ],
+                        [
+                            -95.84630349347945,
+                            30.255903995826014
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "shane_shower",
+                "name": "Shane + Sabrina \u2014 Pass B / Shower",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84638177837346,
+                            30.25593336755532
+                        ],
+                        [
+                            -95.84637899603229,
+                            30.256015474334134
+                        ],
+                        [
+                            -95.84644236597725,
+                            30.256017076542225
+                        ],
+                        [
+                            -95.84644514826545,
+                            30.255934969763416
+                        ],
+                        [
+                            -95.84638177837346,
+                            30.25593336755532
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "mc_camper",
+                "name": "MC + Elizabeth \u2014 Pass A / Camper",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.8464786880508,
+                            30.25588103300345
+                        ],
+                        [
+                            -95.84647590579218,
+                            30.25596313978231
+                        ],
+                        [
+                            -95.84653927570494,
+                            30.255964741944652
+                        ],
+                        [
+                            -95.84654205791057,
+                            30.255882635165804
+                        ],
+                        [
+                            -95.8464786880508,
+                            30.25588103300345
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "mc_support",
+                "name": "MC + Elizabeth \u2014 Pass B / Support",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84655697297887,
+                            30.255910404627908
+                        ],
+                        [
+                            -95.84655419078494,
+                            30.255992511406742
+                        ],
+                        [
+                            -95.84661756071793,
+                            30.25599411353096
+                        ],
+                        [
+                            -95.84662034285891,
+                            30.255912006752126
+                        ],
+                        [
+                            -95.84655697297887,
+                            30.255910404627908
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "amanda",
+                "name": "Amanda",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional 25 x 24 ft planning polygon",
+                "layout_note": "Yoga Tent is on the outer west edge with a 4 ft nominal clear aisle to the sleeping tent."
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.8463258281785,
+                            30.255712813906264
+                        ],
+                        [
+                            -95.8463236022731,
+                            30.25577849932945
+                        ],
+                        [
+                            -95.84640281445893,
+                            30.255780502127703
+                        ],
+                        [
+                            -95.84640504036432,
+                            30.25571481670452
+                        ],
+                        [
+                            -95.8463258281785,
+                            30.255712813906264
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "chris_sallie",
+                "name": "Chris + Sallie",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84642134651885,
+                            30.255701532789548
+                        ],
+                        [
+                            -95.84641856421734,
+                            30.255783639568534
+                        ],
+                        [
+                            -95.84648193401327,
+                            30.25578524176139
+                        ],
+                        [
+                            -95.8464847162618,
+                            30.255703134982404
+                        ],
+                        [
+                            -95.84642134651885,
+                            30.255701532789548
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "birdie_primary",
+                "name": "Birdie + Gustav \u2014 Pass A / Primary Tent",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84651686483727,
+                            30.25569025160422
+                        ],
+                        [
+                            -95.846514082616,
+                            30.255772358383215
+                        ],
+                        [
+                            -95.8465774524062,
+                            30.255773960530316
+                        ],
+                        [
+                            -95.84658023457449,
+                            30.255691853751316
+                        ],
+                        [
+                            -95.84651686483727,
+                            30.25569025160422
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "birdie_closet",
+                "name": "Birdie + Gustav \u2014 Pass B / Closet Tent",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84659514962462,
+                            30.255719623209664
+                        ],
+                        [
+                            -95.846592367468,
+                            30.255801729988633
+                        ],
+                        [
+                            -95.84665573727844,
+                            30.2558033320976
+                        ],
+                        [
+                            -95.84665851938207,
+                            30.25572122531862
+                        ],
+                        [
+                            -95.84659514962462,
+                            30.255719623209664
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "stephane_true",
+                "name": "Stephane + True",
+                "role": "pass",
+                "area_sqft": 600,
+                "status": "provisional planning polygon"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84624754347716,
+                            30.25568344213878
+                        ],
+                        [
+                            -95.84624476103077,
+                            30.255765548917772
+                        ],
+                        [
+                            -95.84630813081216,
+                            30.25576715119449
+                        ],
+                        [
+                            -95.8463109132056,
+                            30.255685044415504
+                        ],
+                        [
+                            -95.84624754347716,
+                            30.25568344213878
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "jason_rv",
+                "name": "Jason + Catrina Wildcat deployed zone",
+                "role": "rv",
+                "dimensions_ft": "31.5 x 14.25",
+                "area_sqft": 448.875
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84618,
+                            30.255805
+                        ],
+                        [
+                            -95.84617707836821,
+                            30.255891212117845
+                        ],
+                        [
+                            -95.84622222939429,
+                            30.255892353764875
+                        ],
+                        [
+                            -95.84622515098644,
+                            30.255806141647028
+                        ],
+                        [
+                            -95.84618,
+                            30.255805
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "jason_canopy",
+                "name": "Jason + Catrina canopy",
+                "role": "canopy",
+                "dimensions_ft": "15 x 10",
+                "area_sqft": 150
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84622515098644,
+                            30.255806141647028
+                        ],
+                        [
+                            -95.84622422349742,
+                            30.255833510573343
+                        ],
+                        [
+                            -95.84627175086594,
+                            30.255834712290337
+                        ],
+                        [
+                            -95.84627267834172,
+                            30.255807343364026
+                        ],
+                        [
+                            -95.84622515098644,
+                            30.255806141647028
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "amanda_sleep",
+                "name": "Amanda sleeping tent",
+                "role": "tent",
+                "dimensions_ft": "10 x 20",
+                "area_sqft": 200,
+                "status": "confirmed",
+                "placement": "east side of Amanda pass; 4 ft nominal aisle to Yoga Tent"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.8463272269301,
+                            30.255718327747495
+                        ],
+                        [
+                            -95.84632537200893,
+                            30.25577306560015
+                        ],
+                        [
+                            -95.84635705688326,
+                            30.25577386671945
+                        ],
+                        [
+                            -95.84635891180443,
+                            30.255719128866797
+                        ],
+                        [
+                            -95.8463272269301,
+                            30.255718327747495
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "amanda_yoga",
+                "name": "Amanda Yoga Tent",
+                "role": "canopy",
+                "dimensions_ft": "10 x 17",
+                "area_sqft": 170,
+                "status": "confirmed",
+                "placement": "far/outer west edge; 4 ft nominal clear aisle to sleeping tent"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84637144663506,
+                            30.255723554653468
+                        ],
+                        [
+                            -95.84636986995208,
+                            30.255770081828224
+                        ],
+                        [
+                            -95.84640155482641,
+                            30.255770882947527
+                        ],
+                        [
+                            -95.84640313150939,
+                            30.25572435577277
+                        ],
+                        [
+                            -95.84637144663506,
+                            30.255723554653468
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "chris_tent",
+                "name": "Chris + Sallie tent",
+                "role": "tent",
+                "dimensions_ft": "16 x 20",
+                "area_sqft": 320,
+                "status": "confirmed"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.8464274980068,
+                            30.255707166795485
+                        ],
+                        [
+                            -95.84642564314295,
+                            30.255761904648153
+                        ],
+                        [
+                            -95.84647633896839,
+                            30.255763186402426
+                        ],
+                        [
+                            -95.84647819380396,
+                            30.255708448549772
+                        ],
+                        [
+                            -95.8464274980068,
+                            30.255707166795485
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "birdie_primary_tent",
+                "name": "Birdie + Gustav primary tent",
+                "role": "tent",
+                "dimensions_ft": "13 x 26",
+                "area_sqft": 338,
+                "status": "confirmed for planning"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84652776906047,
+                            30.255696005767433
+                        ],
+                        [
+                            -95.84652535781008,
+                            30.2557671649759
+                        ],
+                        [
+                            -95.84656654817141,
+                            30.255768206371503
+                        ],
+                        [
+                            -95.84656895939196,
+                            30.255697047163043
+                        ],
+                        [
+                            -95.84652776906047,
+                            30.255696005767433
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "birdie_closet_tent",
+                "name": "Birdie + Gustav closet tent",
+                "role": "tent_estimate",
+                "dimensions_ft": "approx. 10 x 20",
+                "area_sqft": 200,
+                "status": "estimate; replacement TBD"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84661052837355,
+                            30.255733708202925
+                        ],
+                        [
+                            -95.8466086736113,
+                            30.255788446055575
+                        ],
+                        [
+                            -95.8466403585121,
+                            30.25578924711006
+                        ],
+                        [
+                            -95.8466422132567,
+                            30.255734509257408
+                        ],
+                        [
+                            -95.84661052837355,
+                            30.255733708202925
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "shane_shower_trailer",
+                "name": "Shane + Sabrina 16 ft shower trailer",
+                "role": "trailer_length",
+                "length_ft": 16,
+                "width_ft": null,
+                "status": "width and total coupler length TBD"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -95.84641281411284,
+                        30.255953326911587
+                    ],
+                    [
+                        -95.84641133021168,
+                        30.255997117193612
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "shane_camper_placeholder",
+                "name": "Shane + Sabrina camper placeholder",
+                "role": "camper_placeholder",
+                "status": "not to scale; actual deployed dimensions required"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84631262797396,
+                            30.25591518373542
+                        ],
+                        [
+                            -95.84631058754884,
+                            30.255975395373227
+                        ],
+                        [
+                            -95.84635494649122,
+                            30.25597651694559
+                        ],
+                        [
+                            -95.84635698688913,
+                            30.255916305307778
+                        ],
+                        [
+                            -95.84631262797396,
+                            30.25591518373542
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "mc_camper_placeholder",
+                "name": "MC + Elizabeth camper placeholder",
+                "role": "camper_placeholder",
+                "status": "not to scale; actual deployed dimensions required"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84648782256313,
+                            30.255892220900275
+                        ],
+                        [
+                            -95.84648578224598,
+                            30.255952432538095
+                        ],
+                        [
+                            -95.84653014117995,
+                            30.25595355405174
+                        ],
+                        [
+                            -95.84653218146993,
+                            30.25589334241392
+                        ],
+                        [
+                            -95.84648782256313,
+                            30.255892220900275
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "stephane_tent_placeholder",
+                "name": "Stephane + True tent placeholder",
+                "role": "tent_placeholder",
+                "status": "not to scale; dimensions required"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84626282942281,
+                            30.25570026406661
+                        ],
+                        [
+                            -95.84626115996292,
+                            30.25574952813401
+                        ],
+                        [
+                            -95.84629284484832,
+                            30.255750329272377
+                        ],
+                        [
+                            -95.84629451429234,
+                            30.255701065204985
+                        ],
+                        [
+                            -95.84626282942281,
+                            30.25570026406661
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "chris_canopy_placeholder",
+                "name": "Chris + Sallie canopy placeholder",
+                "role": "canopy_placeholder",
+                "status": "not to scale; dimensions required"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -95.84641912067802,
+                            30.25576721821275
+                        ],
+                        [
+                            -95.84641856421734,
+                            30.255783639568534
+                        ],
+                        [
+                            -95.84648193401327,
+                            30.25578524176139
+                        ],
+                        [
+                            -95.84648249046334,
+                            30.2557688204056
+                        ],
+                        [
+                            -95.84641912067802,
+                            30.25576721821275
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "road_edge",
+                "name": "Observed/extended road edge reference",
+                "role": "road_edge"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -95.84613084843306,
+                        30.25563940290529
+                    ],
+                    [
+                        -95.8461169356726,
+                        30.256049936799815
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "setback_10",
+                "name": "10 ft minimum road setback",
+                "role": "setback_10",
+                "offset_ft": 10
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -95.84616253328184,
+                        30.25564020407589
+                    ],
+                    [
+                        -95.84614862065382,
+                        30.256050737970412
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "setback_14",
+                "name": "14 ft preferred road setback",
+                "role": "setback_14",
+                "offset_ft": 14
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -95.8461752072215,
+                        30.255640524542002
+                    ],
+                    [
+                        -95.84616129464645,
+                        30.25605105843652
+                    ]
+                ]
+            }
+        }
+    ]
+}
