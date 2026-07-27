@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRF Site-Planning Map Pack</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; }
+    body { margin: 0; background: #f4f2ea; color: #1f241f; }
+    header, main, footer { max-width: 1500px; margin: auto; padding: 1rem 1.25rem; }
+    header { padding-top: 2rem; }
+    h1 { margin-bottom: .3rem; }
+    h2 { margin-top: 2rem; border-bottom: 2px solid #65725d; padding-bottom: .3rem; }
+    .warning { background: #fff2c7; border-left: 6px solid #a97b00; padding: .8rem 1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0; }
+    .actions a { display: inline-block; background: #fff; border: 1px solid #4b5546; border-radius: .35rem; padding: .65rem .85rem; color: #172416; text-decoration: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1rem; }
+    figure { margin: 0; background: #fff; border: 1px solid #bbb; border-radius: .45rem; overflow: hidden; box-shadow: 0 2px 7px #0002; }
+    figure img { display: block; width: 100%; height: auto; background: #ddd; }
+    figcaption { padding: .75rem; }
+    figcaption strong { display: block; margin-bottom: .25rem; }
+    code { overflow-wrap: anywhere; }
+    .status { min-height: 2rem; }
+    footer { color: #4b5049; padding-bottom: 3rem; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Texas Renaissance Festival site-planning maps</h1>
+  <p>This page is the visual index for the map files gathered and generated for the TRF campsite project.</p>
+  <div class="warning"><strong>Planning use only.</strong> None of these layers is a boundary survey, utility locate, wetland determination, flood guarantee, or TRF site approval. The exact Havok-area plot still requires a measured field anchor and boundary.</div>
+  <nav class="actions">
+    <a href="viewer/index.html">Open interactive map</a>
+    <a href="overlays/requested-campsite-footprint.svg">Open scale campsite footprint</a>
+    <a href="reference/official/2026-campground-map.html">Official 2026 campground map</a>
+    <a href="reference/official/2026-season-pass-plotting-map.html">Official 2026 plotting map</a>
+    <a href="README.md">Map-pack documentation</a>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2>Official TRF orientation map</h2>
+    <div class="grid">
+      <figure>
+        <a href="https://www.texrenfest.com/p/camping-and-more/camping/campground-map">
+          <img src="https://cdn.saffire.com/images.ashx?cb=4b758454&amp;i=2026_Fields_of_New_Market_Map_Revised.png&amp;rid=TexasRenaissanceFval&amp;t=ig" alt="Official 2026 Fields of New Market campground map">
+        </a>
+        <figcaption><strong>2026 Fields of New Market campground map</strong>Roads, camping regions, gates, facilities, emergency exits, and campground landmarks. This schematic is not drawn to survey scale.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Generated GIS map sheets</h2>
+    <p>The gallery below is populated from the committed PNG files in <code>maps/generated/</code>. It therefore shows the current aerial, parcel, topographic, terrain, flood, wetland, soil, slope, hillshade, and contour sheets that have actually been built.</p>
+    <p id="status" class="status">Loading committed map sheets…</p>
+    <div id="gallery" class="grid"></div>
+    <noscript>JavaScript is required to enumerate the generated map files. Browse <a href="generated/">the generated directory</a> instead.</noscript>
+  </section>
+
+  <section>
+    <h2>Vector data and field control</h2>
+    <div class="actions">
+      <a href="data/trf-planning-area.geojson">Approximate planning area GeoJSON</a>
+      <a href="data/map-sources.json">Source manifest</a>
+      <a href="../planning/site-survey-checklist.md">Field survey checklist</a>
+      <a href="../planning/known-and-missing-data.md">Known and missing site inputs</a>
+    </div>
+    <p>Downloaded parcel data intentionally omits parcel-owner names. Personal application data and contact details are not stored in this public repository.</p>
+  </section>
+</main>
+<footer>
+  <p>Map outputs are reproducible through the workflows and scripts in this repository. Source dates and failures are recorded in each generated build report.</p>
+</footer>
+<script>
+  const api = 'https://api.github.com/repos/jhwodchuck/trf-planning/contents/maps/generated?ref=main';
+  const gallery = document.getElementById('gallery');
+  const status = document.getElementById('status');
+  const labels = {
+    '01-aerial-parcels.png': 'Aerial imagery and parcel boundaries',
+    '02-usgs-topographic.png': 'USGS topographic map',
+    '03-usgs-imagery-topo.png': 'USGS imagery with topographic labels',
+    '04-usgs-shaded-relief.png': 'USGS shaded-relief reconnaissance'
+  };
+
+  fetch(api, { headers: { 'Accept': 'application/vnd.github+json' } })
+    .then(response => {
+      if (!response.ok) throw new Error(`GitHub API returned ${response.status}`);
+      return response.json();
+    })
+    .then(files => {
+      const maps = files.filter(file => file.type === 'file' && file.name.toLowerCase().endsWith('.png'))
+                        .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+      status.textContent = maps.length ? `${maps.length} committed map sheet${maps.length === 1 ? '' : 's'}` : 'No committed PNG map sheets were found.';
+      for (const file of maps) {
+        const figure = document.createElement('figure');
+        const link = document.createElement('a');
+        link.href = file.download_url;
+        const image = document.createElement('img');
+        image.loading = 'lazy';
+        image.src = file.download_url;
+        image.alt = labels[file.name] || file.name.replace(/[-_]/g, ' ').replace(/\.png$/i, '');
+        const caption = document.createElement('figcaption');
+        const title = document.createElement('strong');
+        title.textContent = labels[file.name] || file.name.replace(/[-_]/g, ' ').replace(/\.png$/i, '');
+        const source = document.createElement('span');
+        source.textContent = file.name;
+        link.appendChild(image);
+        caption.append(title, source);
+        figure.append(link, caption);
+        gallery.appendChild(figure);
+      }
+    })
+    .catch(error => {
+      status.textContent = `Could not load the live directory listing: ${error.message}. Open maps/generated/ in the repository instead.`;
+    });
+</script>
+</body>
+</html>
