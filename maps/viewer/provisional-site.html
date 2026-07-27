@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRF provisional campsite location</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif}body{display:grid;grid-template-columns:370px 1fr;background:#111}aside{overflow:auto;padding:18px;background:#f7f5ef;color:#1d1d1d;box-shadow:2px 0 8px #0004;z-index:1000}#map{height:100vh;min-height:650px}h1{margin:0 0 6px;font-size:1.45rem}h2{margin:18px 0 7px;font-size:1.02rem}p,li{line-height:1.38;font-size:.92rem}code{font-size:.82rem}.warning{background:#fff2c6;border-left:5px solid #c98b00;padding:10px}.metric{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:.9rem}.metric strong{text-align:right}.legend{display:grid;grid-template-columns:26px 1fr;gap:7px 9px;align-items:center;font-size:.88rem}.swatch{height:12px;border:2px solid #333}.line{height:0;border-top:4px solid}.dash{border-top-style:dashed}.site-label{background:#fffffff0;border:2px solid #b00020;color:#111;font-weight:700;box-shadow:0 1px 5px #0005}.road-label{background:#141414e8;border:1px solid white;color:white;box-shadow:none}@media(max-width:800px){body{display:block}aside{max-height:45vh}#map{height:55vh;min-height:420px}}
+</style></head><body>
+<aside><h1>TRF provisional campsite location</h1>
+<p class="warning"><strong>Planning overlay, not a survey.</strong> Confirm the physical road edge and every boundary point with a tape before setup.</p>
+<h2>Working placement</h2><div class="metric">
+<span>Boundary area</span><strong>598.9 sq ft</strong><span>Road alignment</span><strong>1.68° true</strong>
+<span>Anchor to road</span><strong>17.27 ft</strong><span>Beyond preferred 14 ft</span><strong>3.27 ft</strong>
+<span>RV deployed zone</span><strong>31.5 × 14.25 ft</strong><span>Canopy</span><strong>15 × 10 ft</strong></div>
+<h2>Important interpretation</h2><p>The coordinate <code>30.255805, -95.846180</code> is shown as the <strong>road-side southeast/southern anchor</strong>. The footprint extends north and west. A literal southwest-corner interpretation would force the site toward the road and would not produce a practical footprint.</p>
+<h2>Orientation</h2><ul><li>Road is east of the campsite.</li><li>Camper follows the road with its hitch/front south.</li><li>Door faces west, away from the road.</li><li>The canopy's 15-foot side runs east–west, perpendicular to the camper, off the southwest portion.</li></ul>
+<h2>Legend</h2><div class="legend">
+<span class="swatch" style="background:#e5393550;border-color:#b00020"></span><span>Requested boundary</span>
+<span class="swatch" style="background:#1976d250;border-color:#0d47a1"></span><span>Deployed RV zone</span>
+<span class="swatch" style="background:#ff980060;border-color:#9a5b00"></span><span>Canopy</span>
+<span class="line" style="border-color:#ffe600"></span><span>Road edge reference</span>
+<span class="line dash" style="border-color:#ef233c"></span><span>10 ft minimum</span>
+<span class="line dash" style="border-color:#ff9800"></span><span>14 ft preferred</span></div>
+<h2>Map layers</h2><p>Use the layer control to switch among USGS NAIP, Texas 2022 NAIP, USGS imagery/topography and OpenStreetMap.</p></aside><div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://unpkg.com/esri-leaflet@3.0.15/dist/esri-leaflet.js"></script>
+<script>
+const map=L.map("map",{preferCanvas:true});
+const usgs=L.esri.imageMapLayer({url:"https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",opacity:1,attribution:"USGS / USDA NAIP imagery"}).addTo(map);
+const tx=L.esri.imageMapLayer({url:"https://imagery.geographic.texas.gov/server/rest/services/NAIP/NAIP22_NCCIR_60cm/ImageServer",opacity:1,attribution:"Texas Geographic Information Office / USDA NAIP 2022"});
+const topo=L.tileLayer("https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}",{maxZoom:20,attribution:"USGS The National Map"});
+const osm=L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:20,attribution:"&copy; OpenStreetMap contributors"});
+function st(f){const r=f.properties.role;if(r==="site")return{color:"#b00020",weight:5,fillColor:"#e53935",fillOpacity:.24};if(r==="rv")return{color:"#0d47a1",weight:3,fillColor:"#1976d2",fillOpacity:.30};if(r==="canopy")return{color:"#9a5b00",weight:3,fillColor:"#ff9800",fillOpacity:.38};if(r==="road_edge")return{color:"#ffe600",weight:6,opacity:.95};if(r==="setback_10")return{color:"#ef233c",weight:4,dashArray:"10 8"};if(r==="setback_14")return{color:"#ff9800",weight:4,dashArray:"10 8"};if(r==="measurement")return{color:"#fff",weight:3,dashArray:"4 5"};return{color:"#00e5ff",weight:2}}
+function pt(f,ll){return L.circleMarker(ll,f.properties.role==="site_anchor"?{radius:8,color:"#fff",weight:3,fillColor:"#b00020",fillOpacity:1}:{radius:5,color:"#111",weight:2,fillColor:"#ffe600",fillOpacity:1})}
+fetch("../data/provisional-site-footprint.geojson").then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+const overlay=L.geoJSON(data,{style:st,pointToLayer:pt,onEachFeature:(f,l)=>{const p=f.properties;let b="<strong>"+(p.name||p.id)+"</strong>";if(p.area_sqft)b+="<br>"+Number(p.area_sqft).toFixed(1)+" sq ft";if(p.length_ft)b+="<br>"+Number(p.length_ft).toFixed(2)+" ft";if(p.note)b+="<br>"+p.note;l.bindPopup(b);if(p.role==="site")l.bindTooltip("598.9 sq ft working boundary",{permanent:true,direction:"center",className:"site-label"});if(p.role==="road_edge")l.bindTooltip("road edge",{permanent:true,direction:"right",className:"road-label"});if(p.role==="setback_14")l.bindTooltip("preferred 14 ft",{permanent:true,direction:"left",className:"road-label"})}}).addTo(map);
+map.fitBounds(overlay.getBounds(),{padding:[55,55],maxZoom:21});
+L.control.layers({"USGS NAIP imagery":usgs,"Texas NAIP 2022":tx,"USGS imagery + topo":topo,"OpenStreetMap":osm},{"Site, road and setbacks":overlay},{collapsed:false}).addTo(map);
+L.control.scale({imperial:true,metric:false,maxWidth:180}).addTo(map);
+const n=L.control({position:"bottomright"});n.onAdd=()=>{const d=L.DomUtil.create("div");d.style.cssText="background:#fffE;padding:6px 9px;border:1px solid #333;font-weight:800;font-size:18px;line-height:1;text-align:center";d.innerHTML="N<br><span style='font-size:28px'>↑</span>";return d};n.addTo(map);
+}).catch(e=>{map.setView([30.25582,-95.8462],20);L.popup().setLatLng([30.25582,-95.8462]).setContent("Overlay failed to load: "+e).openOn(map)});
+</script></body></html>
