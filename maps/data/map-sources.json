@@ -1,11 +1,21 @@
 {
   "checked_on": "2026-07-27",
-  "builder_version": 1,
+  "builder_version": 2,
   "area_of_interest": {
     "description": "Approximate Texas Renaissance Festival campground and festival envelope; not a property or campsite boundary.",
     "bbox_wgs84": [-95.865, 30.243, -95.823, 30.286]
   },
   "sources": [
+    {
+      "id": "trf-official-season-pass-plotting-map",
+      "title": "Fields of New Market 2026 Season Pass Plotting Map v3.2",
+      "authority": "Texas Renaissance Festival",
+      "type": "official season-pass planning schematic",
+      "url": "https://www.texrenfest.com/p/camping-and-more/guilds",
+      "asset_url": "https://cdn.saffire.com/images.ashx?cb=39fab569&i=2026_Season_Pass_Plotting_Map_3.2.png&rid=TexasRenaissanceFval&t=ig",
+      "use": "Broad restricted, parking, camping, Family Camping, and Revel Camping context for season-pass land planning.",
+      "limitations": "Not a scale drawing, individual campsite boundary, approval record, or survey."
+    },
     {
       "id": "trf-official-campground-map",
       "title": "Fields of New Market Campground Map",
