@@ -1,0 +1,59 @@
+name: Assemble Wildcat floorplan
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".upload/floorplan.part*.b64"
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Assemble and verify floorplan
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          parts=(.upload/floorplan.part*.b64)
+          if [[ "${#parts[@]}" -ne 14 ]]; then
+            echo "Expected 14 floorplan chunks, found ${#parts[@]}" >&2
+            exit 1
+          fi
+
+          mkdir -p floorplans
+          cat "${parts[@]}" | tr -d '\r\n' | base64 --decode > floorplans/2012-wildcat-293mk-floorplan-clockwise.webp
+          test "$(wc -c < floorplans/2012-wildcat-293mk-floorplan-clockwise.webp)" -eq 52044
+          echo "9cf741480360d32e4ebfec7e19b9551a82cbbaf2b392f6ce978ea916b7edbe5c  floorplans/2012-wildcat-293mk-floorplan-clockwise.webp" | sha256sum --check -
+
+          rm -rf .upload
+          rm -f .github/workflows/assemble-wildcat-floorplan.yml
+
+      - name: Commit assembled floorplan
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add rotated Wildcat 293MK floorplan"
+
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 2
+          done
+
+          exit 1
