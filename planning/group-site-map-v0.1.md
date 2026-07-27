@@ -37,7 +37,8 @@ Only Jason and Catrina's placement is tied to the supplied site anchor and road-
 | Chris and Sallie | Canopy | dimensions required |
 | Birdie and Gustav | Primary tent | 13 × 26 ft |
 | Birdie and Gustav | Closet tent | approximately 10 × 20 ft; replacement TBD |
-| Shane and Sabrina | Camper | provisional placeholder pending deployed measurements |
+| Shane and Sabrina | Camper body | 36 ft 9 in × 8 ft published; KZ Connect SE C312BHKSE floorplan-informed, model/VIN unconfirmed |
+| Shane and Sabrina | Camper slide zones | ~3 ft 1 in and ~3 ft 9 in projections; scale-derived from floorplan artwork, unsuitable for approval |
 | Shane and Sabrina | Shower trailer | 16 ft stated length; width and overall coupler length TBD |
 | MC and Elizabeth | Camper | provisional placeholder pending dimensions |
 | Stephane and True | Tent | provisional placeholder pending dimensions |

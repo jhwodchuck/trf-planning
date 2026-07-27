@@ -37,6 +37,20 @@ With the hitch/nose shown at the right of the manufacturer drawing:
 - the awning, main steps, second exterior door, outside kitchen, and outside griddle are on the curb/door side;
 - pass-through storage is at the front.
 
+## Working estimates only
+
+Scale-reading [`../floorplans/2021-kz-connect-se-c312bhkse-floorplan.svg`](../floorplans/2021-kz-connect-se-c312bhkse-floorplan.svg) (drawn at the official floorplan's proportions, calibrated to the published 8 ft body width) suggests approximately:
+
+| Item | Estimate | Confidence |
+|---|---:|---|
+| Rear bunkhouse slide projection | about 3 ft 1 in | Scale-derived |
+| Rear bunkhouse slide length (along body) | about 7 ft 11 in | Scale-derived |
+| Main living slide projection | about 3 ft 9 in | Scale-derived |
+| Main living slide length (along body) | about 15 ft 5 in | Scale-derived |
+| Conservative deployed width (body + larger slide) | about 11 ft 9 in | Concept estimate |
+
+These values are unsuitable for approval. Artwork may not preserve exact exterior scale, and neither slide has been measured on the actual unit.
+
 ## Measurements still required
 
 Do not use the artwork alone as an approval-scale drawing. Before placing Shane and Sabrina's camper in a final TRF site plan, record:

@@ -24,13 +24,13 @@
       "file": "shane_camper.svg",
       "color": "#93c47d",
       "area_sqft": 600,
-      "bbox_width_ft": 20,
-      "bbox_height_ft": 30,
-      "viewbox_width_ft": 21.0,
-      "viewbox_height_ft": 31.0,
+      "bbox_width_ft": 15,
+      "bbox_height_ft": 40,
+      "viewbox_width_ft": 16.0,
+      "viewbox_height_ft": 41.0,
       "default_x_ft": 109.5,
       "default_y_ft": 39.5,
-      "source": "planning/households/shane-and-sabrina.md"
+      "source": "equipment/shane-sabrina-kz-connect-se-c312bhkse.md"
     },
     {
       "id": "shane_shower",

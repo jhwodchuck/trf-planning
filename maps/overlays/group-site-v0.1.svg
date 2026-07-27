@@ -54,9 +54,9 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <polygon points="1020.0,630.0 1020.0,441.0 934.5,441.0 934.5,569.5 844.5,569.5 844.5,630.0" class="pass" fill="#e69138"/>
 <text x="934.8" y="546.8" text-anchor="middle" class="label">Jason + Catrina</text>
 <text x="934.8" y="563.8" text-anchor="middle" class="small">600 sq ft</text>
-<polygon points="780.0,420.0 780.0,240.0 660.0,240.0 660.0,420.0" class="pass" fill="#93c47d"/>
-<text x="720.0" y="326.0" text-anchor="middle" class="label">Shane + Sabrina A</text>
-<text x="720.0" y="343.0" text-anchor="middle" class="small">600 sq ft</text>
+<polygon points="750.0,480.0 750.0,240.0 660.0,240.0 660.0,480.0" class="pass" fill="#93c47d"/>
+<text x="705.0" y="356.0" text-anchor="middle" class="label">Shane + Sabrina A</text>
+<text x="705.0" y="373.0" text-anchor="middle" class="small">600 sq ft</text>
 <polygon points="630.0,360.0 630.0,180.0 510.0,180.0 510.0,360.0" class="pass" fill="#93c47d"/>
 <text x="570.0" y="266.0" text-anchor="middle" class="label">Shane + Sabrina B</text>
 <text x="570.0" y="283.0" text-anchor="middle" class="small">600 sq ft</text>
@@ -96,8 +96,12 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <text x="330.0" y="813.0" text-anchor="middle" class="tiny">Birdie 13x26 tent</text>
 <polygon points="210.0,810.0 210.0,690.0 150.0,690.0 150.0,810.0" class="eq" fill="#c27ba0" stroke="#333"/>
 <text x="180.0" y="753.0" text-anchor="middle" class="tiny">Closet tent ~10x20</text>
-<polygon points="762.0,396.0 762.0,264.0 678.0,264.0 678.0,396.0" class="placeholder" fill="#4d8c4d" stroke="#333"/>
-<text x="720.0" y="333.0" text-anchor="middle" class="tiny">Shane camper TBD</text>
+<polygon points="711.0,249.0 711.0,469.5 663.0,469.5 663.0,249.0" class="eq" fill="#3d85c6" stroke="#333"/>
+<text x="685.5" y="356.2" text-anchor="middle" class="tiny">Shane camper body 36.75x8</text>
+<polygon points="729.6,254.4 729.6,301.8 711.0,301.8 711.0,254.4" class="placeholder" fill="#a9c9e8" stroke="#333"/>
+<text x="720.3" y="281.1" text-anchor="middle" class="tiny">Bunk slide ~3.1ft</text>
+<polygon points="733.2,313.2 733.2,405.6 711.0,405.6 711.0,313.2" class="placeholder" fill="#a9c9e8" stroke="#333"/>
+<text x="722.1" y="362.4" text-anchor="middle" class="tiny">Main slide ~3.75ft</text>
 <polygon points="432.0,456.0 432.0,324.0 348.0,324.0 348.0,456.0" class="placeholder" fill="#3d85c6" stroke="#333"/>
 <text x="390.0" y="393.0" text-anchor="middle" class="tiny">MC camper TBD</text>
 <polygon points="870.0,864.0 870.0,756.0 810.0,756.0 810.0,864.0" class="placeholder" fill="#8e7cc3" stroke="#333"/>
@@ -125,6 +129,7 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <text x="1195" y="499" class="small">Birdie primary tent: 338 sq ft</text>
 <text x="1195" y="522" class="small">Closet tent estimate: 200 sq ft</text>
 <text x="1195" y="545" class="small">Jason equipment envelope: 598.875 sq ft</text>
+<text x="1195" y="568" class="small">Shane camper body (published): 294 sq ft</text>
 <text x="1195" y="585" class="label">Scale</text>
 <line x1="1202" y1="620" x2="1382" y2="620" stroke="#111" stroke-width="6"/>
 <line x1="1202" y1="610" x2="1202" y2="630" stroke="#111" stroke-width="3"/>
