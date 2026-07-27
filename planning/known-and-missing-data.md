@@ -13,13 +13,26 @@ Last updated: **2026-07-27**
 - Generators: two Cummins Onan P4500i units.
 - Temporary screening: near the camper front/south area, without enclosing generator exhaust or cooling airflow.
 
+## Resolved camper identification
+
+The owner supplied a manufacturer data-plate photograph on 2026-07-27. The public transcription is in [`../equipment/evidence/2012-wildcat-data-plate.md`](../equipment/evidence/2012-wildcat-data-plate.md).
+
+- Manufacturer model code: **`WCP29MK`**.
+- Repository model designation: **29MK**, not 293MK.
+- GVWR: **12,275 lb**.
+- Front/rear GAWR: **5,200 lb each**.
+- Tires: **ST235/80R16/E**.
+- Rims: **16X6.0JJ**.
+
+The full VIN and unit identifier are withheld from this public repository. The data plate resolves identification but does not provide body or slide-out dimensions.
+
 ## Critical unresolved inputs
 
 | Priority | Input | Why it matters |
 |---|---|---|
 | Critical | Exact assigned/requested boundary | Regional GIS and approximate location cannot establish usable dimensions |
 | Critical | Written 600-versus-525-sq-ft ruling | Controls feasibility and submission geometry |
-| Critical | Camper model and actual deployed dimensions | Current template and published references differ |
+| Critical | Actual camper body and deployed dimensions | Current template and published dimensional references still differ |
 | Critical | Safe generator operating location | CO/fire clearance may exceed available space |
 | High | Physical road edge and setback | East-side slides face the road |
 | High | Canopy product dimensions and anchoring | Current 15 × 10 value must be verified |
@@ -32,7 +45,7 @@ Last updated: **2026-07-27**
 
 | Object/zone | Current reference | Verified value |
 |---|---:|---:|
-| RV body | Template: 31 ft 6 in × 8 ft 4 in; published Sterling reference differs |  |
+| RV body | Template: 31 ft 6 in × 8 ft 4 in; published Sterling 29MK reference: about 31 ft 7 in × 8 ft | Model `WCP29MK` verified; dimensions not measured |
 | Approximate deployed RV zone | Current template: 31 ft 6 in × 14 ft 3 in |  |
 | Canopy | Current template: 15 × 10 ft |  |
 | Current stepped requested area | About 598.9 sq ft |  |
@@ -46,14 +59,13 @@ Last updated: **2026-07-27**
 
 Before using the current SVG footprint as final:
 
-1. Confirm exact camper model from data plate/title.
-2. Field-measure body, slides, stairs, awning, and stabilizers.
-3. Explain and resolve the 8-ft versus 8-ft-4-in width difference.
-4. Verify the 15 × 10 canopy and all anchors/legs.
-5. Confirm the 598.9-sq-ft stepped shape is accepted by TRF.
-6. Locate the actual road edge and apply the 10-ft setback to the nearest deployed object.
-7. Add generator clearances, openings, fuel, cords, and screen.
-8. Add truck/access geometry or document off-plot parking.
+1. Field-measure camper body, slides, stairs, awning, stabilizers, hitch, and rear extremity.
+2. Explain and resolve the 8-ft versus 8-ft-4-in width difference.
+3. Verify the 15 × 10 canopy and all anchors/legs.
+4. Confirm the 598.9-sq-ft stepped shape is accepted by TRF.
+5. Locate the actual road edge and apply the 10-ft setback to the nearest deployed object.
+6. Add generator clearances, openings, fuel, cords, and screen.
+7. Add truck/access geometry or document off-plot parking.
 
 ## Data format
 
