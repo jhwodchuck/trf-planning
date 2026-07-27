@@ -7,6 +7,7 @@ on:
     paths:
       - "scripts/build_map_pack.py"
       - "scripts/build_hazard_maps.py"
+      - "scripts/build_elevation_maps.py"
       - "requirements-map.txt"
       - "maps/data/map-sources.json"
       - ".github/workflows/build-maps.yml"
@@ -21,7 +22,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -41,6 +42,9 @@ jobs:
 
       - name: Build resilient flood and wetland sheets
         run: python scripts/build_hazard_maps.py
+
+      - name: Build USGS 3DEP elevation sheets
+        run: python scripts/build_elevation_maps.py
 
       - name: Upload generated maps as workflow artifact
         uses: actions/upload-artifact@v4
