@@ -8,6 +8,10 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - Do not maintain a separate 525 sq ft planning version unless this assumption is explicitly changed.
 - Final setup must still follow the dimensions and conditions TRF actually approves.
 
+## Group allocation
+
+- [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, and links to every household record
+
 ## Current concept
 
 - Working location: immediately north/northeast of Havok camp beside the adjacent access road; exact boundary still required.
@@ -32,8 +36,14 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 ### Group and household units
 
-- [Amanda site planning notes](planning/amanda-site-notes.md) — confirmed 10 × 20 ft sleeping tent, 10 × 17 ft Yoga Tent, 600 sq ft planning unit, placement intent, and remaining measurements
-- [Shane and Sabrina camper floor plan](equipment/shane-sabrina-kz-connect-se-c312bhkse.md) — KZ Connect SE C312BHKSE working identification, manufacturer floor plan, published dimensions, and measurements needed for site placement
+- [Household roster and allocations](planning/group-pass-allocation.md) — authoritative pass count and 600 sq ft-per-pass allocation table
+- [Chris and Sallie](planning/households/chris-and-sallie.md) — tent and canopy, one pass, 600 sq ft
+- [Birdie and Gustav](planning/households/birdie-and-gustav.md) — two tents, two passes, 1,200 sq ft
+- [Amanda](planning/amanda-site-notes.md) — confirmed 10 × 20 ft sleeping tent and 10 × 17 ft Yoga Tent, one pass, 600 sq ft
+- [MC and Elizabeth](planning/households/mc-and-elizabeth.md) — camper, two passes, 1,200 sq ft
+- [Shane and Sabrina](planning/households/shane-and-sabrina.md) — KZ Connect SE C312BHKSE camper working reference, two passes, 1,200 sq ft
+- [Jason and Catrina](planning/households/jason-and-catrina.md) — camper, one pass, 600 sq ft
+- [Stephane and True](planning/households/stephane-and-true.md) — tent, one pass, 600 sq ft
 
 ### Rules and submission
 
@@ -47,6 +57,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [Cummins Onan P4500i generator inventory](equipment/cummins-onan-p4500i.md) — two generators, electrical capability, operating footprint, CO/fire constraints, and readiness checklist
 - [Anker SOLIX S2000 power station inventory](equipment/anker-solix-s2000.md) — battery specifications, charging limits, and camper-use planning
 - [2012 Wildcat dimensional baseline](equipment/2012-wildcat-dimensional-baseline.md) — floor plan, requested rotation, model conflict, and measurements needed
+- [Shane and Sabrina camper floor plan](equipment/shane-sabrina-kz-connect-se-c312bhkse.md) — KZ Connect SE C312BHKSE working identification, manufacturer floor plan, published dimensions, and measurements needed for site placement
 - [2018 Ford F-250 long-bed baseline](equipment/2018-ford-f250-long-bed.md) — cab-specific lengths and maneuvering inputs
 
 ## Critical blockers
