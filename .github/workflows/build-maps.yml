@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "scripts/build_map_pack.py"
+      - "scripts/build_hazard_maps.py"
       - "requirements-map.txt"
       - "maps/data/map-sources.json"
       - ".github/workflows/build-maps.yml"
@@ -20,7 +21,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -35,8 +36,11 @@ jobs:
       - name: Install map dependencies
         run: python -m pip install --upgrade pip -r requirements-map.txt
 
-      - name: Build map pack
+      - name: Build primary map pack
         run: python scripts/build_map_pack.py
+
+      - name: Build resilient flood and wetland sheets
+        run: python scripts/build_hazard_maps.py
 
       - name: Upload generated maps as workflow artifact
         uses: actions/upload-artifact@v4
