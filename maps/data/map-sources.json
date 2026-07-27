@@ -1,0 +1,109 @@
+{
+  "checked_on": "2026-07-27",
+  "area_of_interest": {
+    "description": "Approximate Texas Renaissance Festival campground and festival envelope; not a property or campsite boundary.",
+    "bbox_wgs84": [-95.865, 30.243, -95.823, 30.286]
+  },
+  "sources": [
+    {
+      "id": "trf-official-campground-map",
+      "title": "Fields of New Market Campground Map",
+      "authority": "Texas Renaissance Festival",
+      "type": "official schematic map",
+      "url": "https://www.texrenfest.com/p/camping-and-more/camping/campground-map",
+      "asset_url": "https://cdn.saffire.com/images.ashx?cb=4b758454&i=2026_Fields_of_New_Market_Map_Revised.png&rid=TexasRenaissanceFval&t=ig",
+      "use": "Road names, camping areas, gates, services, landmarks, emergency exits, and orientation.",
+      "limitations": "Copyrighted schematic; not georeferenced and not survey-grade. The repository viewer references the official hosted copy rather than claiming ownership."
+    },
+    {
+      "id": "tnris-naip-2022",
+      "title": "Texas NAIP 2022 Natural Color / Color Infrared 60 cm",
+      "authority": "Texas Geographic Information Office / USDA NAIP",
+      "type": "aerial imagery ImageServer",
+      "url": "https://imagery.geographic.texas.gov/server/rest/services/NAIP/NAIP22_NCCIR_60cm/ImageServer",
+      "use": "Trees, clearings, roads, surface drainage traces, and ground context.",
+      "limitations": "2022 acquisition; conditions may have changed."
+    },
+    {
+      "id": "usgs-topo",
+      "title": "USGS Topographic Map",
+      "authority": "U.S. Geological Survey",
+      "type": "cached MapServer",
+      "url": "https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer",
+      "use": "Topography, hydrography, roads, contours where available, and regional context.",
+      "limitations": "Planning-scale map; verify elevations with field measurements when exact grade matters."
+    },
+    {
+      "id": "usgs-imagery-topo",
+      "title": "USGS Imagery with Topographic Labels",
+      "authority": "U.S. Geological Survey",
+      "type": "cached MapServer",
+      "url": "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer",
+      "use": "Aerial context combined with roads, names, and hydrographic labels.",
+      "limitations": "Imagery dates vary by location."
+    },
+    {
+      "id": "usgs-shaded-relief",
+      "title": "USGS Shaded Relief",
+      "authority": "U.S. Geological Survey",
+      "type": "cached MapServer",
+      "url": "https://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer",
+      "use": "Reconnaissance of slopes, swales, and drainage direction.",
+      "limitations": "Not a replacement for a site survey or detailed digital elevation model analysis."
+    },
+    {
+      "id": "grimes-cad-parcels",
+      "title": "Grimes CAD Web Service - Parcels",
+      "authority": "Grimes County Appraisal District",
+      "type": "ArcGIS FeatureServer layer 0",
+      "url": "https://services8.arcgis.com/fpr21jaV02YtR7tv/ArcGIS/rest/services/GrimesCADWebService/FeatureServer/0",
+      "use": "Parcel-boundary and land-record orientation.",
+      "limitations": "Appraisal mapping is not a boundary survey. Owner names are intentionally excluded from downloaded project data."
+    },
+    {
+      "id": "grimes-cad-streets",
+      "title": "Grimes CAD Web Service - Streets",
+      "authority": "Grimes County Appraisal District",
+      "type": "ArcGIS FeatureServer layer 7",
+      "url": "https://services8.arcgis.com/fpr21jaV02YtR7tv/ArcGIS/rest/services/GrimesCADWebService/FeatureServer/7",
+      "use": "Public-road and access context.",
+      "limitations": "Does not necessarily include every internal campground road."
+    },
+    {
+      "id": "grimes-county-boundary",
+      "title": "Grimes CAD Web Service - County Boundary",
+      "authority": "Grimes County Appraisal District",
+      "type": "ArcGIS FeatureServer layer 8",
+      "url": "https://services8.arcgis.com/fpr21jaV02YtR7tv/ArcGIS/rest/services/GrimesCADWebService/FeatureServer/8",
+      "use": "Jurisdictional orientation.",
+      "limitations": "Not relevant to exact campsite placement."
+    },
+    {
+      "id": "fema-nfhl",
+      "title": "National Flood Hazard Layer - Flood Hazard Zones",
+      "authority": "Federal Emergency Management Agency",
+      "type": "ArcGIS MapServer layer 28",
+      "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer",
+      "use": "Screening for mapped flood hazards and flood-zone context.",
+      "limitations": "Absence of a mapped zone does not mean a campsite cannot pond or flood during heavy rain."
+    },
+    {
+      "id": "usfws-wetlands",
+      "title": "National Wetlands Inventory",
+      "authority": "U.S. Fish and Wildlife Service",
+      "type": "ArcGIS MapServer",
+      "url": "https://fwsprimary.wim.usgs.gov/server/rest/services/Wetlands/MapServer",
+      "use": "Screening for mapped wetlands and hydric landscape features.",
+      "limitations": "Map inventory is not a jurisdictional wetland determination."
+    },
+    {
+      "id": "usda-ssurgo",
+      "title": "Soil Survey Geographic Database / Web Soil Survey",
+      "authority": "USDA Natural Resources Conservation Service",
+      "type": "official soils database and AOI map/report tool",
+      "url": "https://websoilsurvey.nrcs.usda.gov/",
+      "use": "Soil drainage, ponding, flooding frequency, hydric rating, and engineering/recreation limitations.",
+      "limitations": "Requires an exact AOI and correct interpretation of soil-map scale and map-unit composition."
+    }
+  ]
+}
