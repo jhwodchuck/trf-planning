@@ -10,7 +10,11 @@ Last updated: **2026-07-27**
 
 ## Planning intent
 
-Use one contiguous 1,200 sq ft household envelope for the camper and its deployed operating footprint. The drawing must eventually include the camper body, hitch, slide-outs, stairs, awning, stabilizers, utility connections, vehicle, generator or power equipment, and required paths.
+Treat the two passes as two independent **600 sq ft** allocations. They may be contiguous, separated, stepped, or irregular. Do not force one compact 1,200 sq ft rectangle if a disconnected arrangement preserves more claimable and practically useful ground.
+
+The camper and its deployed operating footprint may occupy one pass polygon while the second pass polygon supports vehicle parking, canopy, generator/power equipment, storage, or another approved use, provided each object remains within the requested polygons and all safety and access requirements are preserved.
+
+The drawing must eventually include the camper body, hitch, slide-outs, stairs, awning, stabilizers, utility connections, vehicle, generator or power equipment, and required paths.
 
 ## Information still needed
 
@@ -25,4 +29,4 @@ Use one contiguous 1,200 sq ft household envelope for the camper and its deploye
 
 ## Drawing rule
 
-Show a labeled **1,200 sq ft MC and Elizabeth household boundary**. Do not draw a generic camper footprint as final until the actual dimensions and slide geometry are confirmed.
+Test one contiguous 1,200 sq ft envelope and two disconnected 600 sq ft polygons. Label each component and its area. Prefer the configuration that maximizes useful claimed space rather than compactness. Do not draw a generic camper footprint as final until the actual dimensions and slide geometry are confirmed.
