@@ -5,7 +5,7 @@
     -95.823,
     30.286
   ],
-  "generated_at": "2026-07-27T13:09:07.005111+00:00",
+  "generated_at": "2026-07-27T13:12:29.529085+00:00",
   "image_size": [
     2400,
     2400
@@ -47,8 +47,8 @@
       "source": "USGS shaded relief"
     },
     {
-      "detail": "downloaded",
-      "ok": true,
+      "detail": "ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))",
+      "ok": false,
       "source": "FEMA NFHL / USFWS wetlands composite"
     }
   ],
