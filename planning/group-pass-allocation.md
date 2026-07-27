@@ -15,14 +15,23 @@ Last updated: **2026-07-27**
 
 | Household | Primary shelter and major support equipment | Passes | Planning allocation | Household notes |
 |---|---|---:|---:|---|
-| Chris and Sallie | Tent and canopy | 1 | **600 sq ft** | [Planning notes](households/chris-and-sallie.md) |
-| Birdie and Gustav | Two tents | 2 | **1,200 sq ft** | [Planning notes](households/birdie-and-gustav.md) |
+| Chris and Sallie | Confirmed 16 × 20 ft tent and canopy TBD | 1 | **600 sq ft** | [Planning notes](households/chris-and-sallie.md) |
+| Birdie and Gustav | Confirmed 13 × 26 ft primary tent and approximately 10 × 20 ft replacement closet tent | 2 | **1,200 sq ft** | [Planning notes](households/birdie-and-gustav.md) |
 | Amanda | Sleeping tent and Yoga Tent canopy | 1 | **600 sq ft** | [Planning notes](amanda-site-notes.md) |
 | MC and Elizabeth | Camper | 2 | **1,200 sq ft** | [Planning notes](households/mc-and-elizabeth.md) |
 | Shane and Sabrina | Camper and 16 ft flatbed shower trailer | 2 | **1,200 sq ft** | [Planning notes](households/shane-and-sabrina.md) |
 | Jason and Catrina | Camper | 1 | **600 sq ft** | [Planning notes](households/jason-and-catrina.md) |
 | Stephane and True | Tent | 1 | **600 sq ft** | [Planning notes](households/stephane-and-true.md) |
 | **Total** | 3 camper households, 4 tent-based households, and 1 shower trailer | **10** | **6,000 sq ft** |  |
+
+## Current master map
+
+- [Interactive group map v0.1](../maps/viewer/group-site-v0.1.html)
+- [Scale drawing v0.1](../maps/overlays/group-site-v0.1.svg)
+- [Georeferenced group geometry](../maps/data/group-site-v0.1.geojson)
+- [Map assumptions and limitations](group-site-map-v0.1.md)
+
+The v0.1 map preserves ten separate 600 sq ft pass polygons. Only Jason and Catrina's site is tied to the supplied road controls; all other positions remain conceptual.
 
 ## Allocation summary
 
@@ -62,14 +71,24 @@ A layout is preferable when it:
 
 ## Current confirmation status
 
-Amanda currently has the most complete tent-based equipment record:
+### Amanda
 
 - Sleeping Tent: **10 × 20 ft**.
 - Yoga Tent: **10 × 17 ft** COVERPRO canopy.
 
-Shane and Sabrina currently have:
+### Chris and Sallie
+
+- Tent: **16 × 20 ft**, nominally **320 sq ft**.
+- Canopy: dimensions still required.
+
+### Birdie and Gustav
+
+- Primary tent: **13 × 26 ft**, nominally **338 sq ft**.
+- Closet tent: **approximately 10 × 20 ft**, nominally approximately **200 sq ft**; replacement model still TBD.
+
+### Shane and Sabrina
 
 - KZ Connect SE C312BHKSE camper as the working identification; exact year and deployed dimensions still require verification.
 - **16 ft flatbed trailer** confirmed for use as a shower facility; width, overall length, enclosure, tanks, steps, plumbing, and utility clearances still require measurement.
 
-Jason and Catrina's camper has a separate equipment and site-planning record. The remaining households currently have shelter type and pass count recorded, but still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.
+Jason and Catrina's camper has a separate equipment and site-planning record. MC and Elizabeth and Stephane and True still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.
