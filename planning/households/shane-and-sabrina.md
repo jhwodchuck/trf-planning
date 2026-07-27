@@ -25,27 +25,27 @@ Detailed equipment record: [`equipment/shane-sabrina-kz-connect-se-c312bhkse.md`
 
 ## Planning intent
 
-Plan the two pass allocations as one contiguous **1,200 sq ft** household area. The camper and all deployed features must fit within that envelope while preserving access, drainage, emergency egress, and any roadway setback.
+Treat the two passes as two independent **600 sq ft** allocations. They may form one 1,200 sq ft envelope or separate, stepped, or irregular polygons. Do not force a compact shape when disconnected polygons preserve more useful claimed ground around the camper, road, trees, drainage, or neighboring sites.
+
+The camper and its deployed features may occupy one primary polygon while the second pass polygon supports the tow vehicle, awning/outside-kitchen operating space, generator/power equipment, canopy, storage, or another approved use. Gaps between the two polygons are acceptable and should remain outside the calculated allocation.
 
 The published 36 ft 9 in overall length includes the coupler and should not be treated as a simple rectangular body footprint. Final site geometry must use measured body, hitch, bumper, slide, stair, awning, stabilizer, and operating-clearance dimensions.
 
 ## Information still needed
 
-1. VIN/data plate, exact model, and model year confirmation.
-2. Rear bumper-to-coupler overall length and rectangular body length.
+1. VIN/data plate, exact model, and model year.
+2. Rear bumper-to-coupler overall length and actual body length.
 3. Main body width.
-4. Main living-slide length and projection.
-5. Rear bunkhouse-slide length and projection.
-6. Entry-step projections for both exterior doors.
-7. Awning deployed projection and support locations.
+4. Main living slide length and projection.
+5. Rear bunkhouse slide length and projection.
+6. Entry-step projections for both doors.
+7. Awning length, deployed projection, and support locations.
 8. Outside-kitchen doors and griddle operating clearance.
 9. Stabilizer, tongue-jack, and pad locations.
 10. Utility connections, exhausts, windows, and emergency exits.
-11. Desired camper orientation and preferred door-facing direction.
-12. Tow-vehicle type and whether it remains onsite.
-13. Generator, fuel, utilities, storage, canopy, and fencing needs.
-14. Preferred position within the group camp.
+11. Tow-vehicle type and whether it remains onsite.
+12. Generator, fuel, storage, fencing, canopy, and preferred group position.
 
 ## Drawing rule
 
-Show a labeled **1,200 sq ft Shane and Sabrina household boundary**. Use the KZ C312BHKSE floor plan only as a provisional reference and do not reuse Jason and Catrina's camper geometry.
+Test both a contiguous 1,200 sq ft envelope and disconnected 600 sq ft pass polygons. Label every component and its area. Prefer the arrangement that maximizes usable claimed space and safe camper operation rather than compactness or symmetry.
