@@ -2,6 +2,12 @@
 
 Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
+## Planning baseline
+
+- Use **600 sq ft per qualifying pass** for every working layout and group-site calculation.
+- Do not maintain a separate 525 sq ft planning version unless this assumption is explicitly changed.
+- Final setup must still follow the dimensions and conditions TRF actually approves.
+
 ## Current concept
 
 - Working location: immediately north/northeast of Havok camp beside the adjacent access road; exact boundary still required.
@@ -26,12 +32,12 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 ### Group and household units
 
-- [Amanda site planning notes](planning/amanda-site-notes.md) — confirmed 10 × 20 ft tent footprint, earlier 600 sq ft draft allocation, remaining unknowns, and drawing rules
+- [Amanda site planning notes](planning/amanda-site-notes.md) — confirmed 10 × 20 ft sleeping tent, 10 × 17 ft Yoga Tent, 600 sq ft planning unit, placement intent, and remaining measurements
 
 ### Rules and submission
 
 - [Authoritative source index](docs/source-index.md) — TRF, manufacturer, and government references
-- [2026 TRF requirements](docs/trf-2026-requirements.md) — dates, land-request package, rules, and questions for TRF
+- [2026 TRF requirements](docs/trf-2026-requirements.md) — dates, land-request package, official-source conflicts, rules, and questions for TRF
 - [TRF Order #6034 record](docs/order-6034.md) — sanitized Diamond and Ruby season-pass purchase, completion requirements, and Camping Will Call record
 - [Submission checklist](docs/submission-checklist.md) — readiness checklist for approval drawings and field setup
 
@@ -44,10 +50,9 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 ## Critical blockers
 
-1. Written TRF confirmation of whether this request may use 600 sq ft or is capped at 525 sq ft.
-2. Final interpretation of the supplied boundary reference, plus field verification of the physical road edge and curvature.
-3. Camper model/data-plate verification and deployed field measurements.
-4. Exact canopy and screening dimensions/anchoring approval.
-5. A generator operating location that satisfies manual and CO/fire safety guidance.
+1. Final interpretation of the supplied boundary reference, plus field verification of the physical road edge and curvature.
+2. Camper model/data-plate verification and deployed field measurements.
+3. Exact canopy and screening dimensions/anchoring approval.
+4. A generator operating location that satisfies manual and CO/fire safety guidance.
 
-Do not label a layout final until those blockers are resolved.
+Do not label a layout final until those blockers and the applicable TRF approval conditions are resolved.
