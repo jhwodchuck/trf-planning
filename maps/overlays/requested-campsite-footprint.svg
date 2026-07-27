@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="760" viewBox="0 0 1050 760" role="img" aria-labelledby="title desc">
+  <title id="title">Requested campsite footprint template</title>
+  <desc id="desc">Scale-controlled plan template showing a 31 foot 6 inch by 14 foot 3 inch RV zone and a 15 by 10 foot canopy on the west side. Total stepped area is approximately 598.9 square feet.</desc>
+  <defs>
+    <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#d9ded8" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="1050" height="760" fill="#fff"/>
+  <rect x="55" y="100" width="900" height="560" fill="url(#grid)" stroke="#777"/>
+  <text x="55" y="55" font-family="system-ui, sans-serif" font-size="28" font-weight="700">Requested campsite footprint — scale template</text>
+  <text x="55" y="83" font-family="system-ui, sans-serif" font-size="16">Drawing scale: 25 px = 1 ft. North and exact geographic placement are not yet assigned.</text>
+
+  <rect x="165" y="220" width="787.5" height="356.25" fill="#d9e8f7" stroke="#264f73" stroke-width="4"/>
+  <rect x="165" y="294" width="787.5" height="208.33" rx="8" fill="#f0f2f4" stroke="#303941" stroke-width="4"/>
+  <text x="559" y="393" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700">2012 Forest River Wildcat 293MK</text>
+  <text x="559" y="424" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">Camper body: 31 ft 6 in x 8 ft 4 in</text>
+  <text x="559" y="261" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">Deployed RV zone: 31 ft 6 in x 14 ft 3 in</text>
+
+  <rect x="55" y="294" width="250" height="375" fill="#ffe3a8" fill-opacity=".9" stroke="#a56200" stroke-width="4"/>
+  <text x="180" y="458" text-anchor="middle" font-family="system-ui, sans-serif" font-size="23" font-weight="700">10 x 15 ft</text>
+  <text x="180" y="489" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22">CANOPY</text>
+  <text x="180" y="520" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">WEST / AWAY FROM ROAD</text>
+
+  <rect x="970" y="100" width="45" height="560" fill="#e6dfcc" stroke="#8a7b5f"/>
+  <text x="997" y="380" transform="rotate(90 997 380)" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" font-weight="700">EAST / ADJACENT ACCESS ROAD SIDE</text>
+
+  <line x1="165" y1="185" x2="952.5" y2="185" stroke="#333" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="559" y="174" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">31 ft 6 in</text>
+  <line x1="130" y1="220" x2="130" y2="576.25" stroke="#333" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="113" y="398" transform="rotate(-90 113 398)" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">14 ft 3 in RV zone</text>
+  <line x1="30" y1="294" x2="30" y2="669" stroke="#333" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="14" y="482" transform="rotate(-90 14 482)" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">15 ft canopy length</text>
+  <line x1="55" y1="705" x2="305" y2="705" stroke="#333" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="180" y="733" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18">10 ft canopy projection</text>
+
+  <text x="480" y="630" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Calculated stepped area: 598.9 sq ft</text>
+  <text x="480" y="655" font-family="system-ui, sans-serif" font-size="15">RV zone 448.9 sq ft + canopy 150.0 sq ft. The unused overlap/bounding rectangle is not requested.</text>
+  <text x="55" y="748" font-family="system-ui, sans-serif" font-size="13">Planning template only. Verify slide-out geometry, hitch/overhang, steps, road setback, trees, grade, and exact site anchor before final placement.</text>
+</svg>
