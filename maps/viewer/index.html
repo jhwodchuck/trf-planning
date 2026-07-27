@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRF Site-Planning Map Viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, sans-serif; }
+    body { display: grid; grid-template-columns: minmax(285px, 360px) 1fr; }
+    aside { overflow: auto; padding: 1rem; background: #f6f5ef; border-right: 1px solid #aaa; }
+    #map { height: 100%; min-height: 620px; }
+    h1 { margin-top: 0; font-size: 1.35rem; }
+    h2 { margin: 1.2rem 0 .4rem; font-size: 1rem; }
+    p, li { line-height: 1.35; font-size: .92rem; }
+    .warning { background: #fff3ce; border-left: 5px solid #d19b00; padding: .7rem; }
+    button, .file-button { display: inline-block; margin: .25rem .25rem .25rem 0; padding: .5rem .7rem; border: 1px solid #555; border-radius: .25rem; background: white; cursor: pointer; font: inherit; }
+    #status { white-space: pre-wrap; background: white; border: 1px solid #ccc; padding: .6rem; min-height: 3.5rem; font-size: .82rem; }
+    .official-thumb { width: 100%; height: auto; border: 1px solid #777; background: white; }
+    code { font-size: .82rem; }
+    @media (max-width: 800px) {
+      body { display: block; }
+      aside { max-height: 45vh; border-right: 0; border-bottom: 1px solid #aaa; }
+      #map { height: 55vh; min-height: 420px; }
+    }
+  </style>
+</head>
+<body>
+<aside>
+  <h1>TRF Site-Planning Viewer</h1>
+  <p class="warning"><strong>Planning-grade only.</strong> The approximate AOI and orientation markers are not campsite, parcel, approval, or survey boundaries.</p>
+
+  <h2>Map controls</h2>
+  <p>Use the layer button in the upper-right to switch aerial/topographic basemaps and toggle parcels, streets, flood zones, wetlands, and reference markers.</p>
+  <p>Use the drawing toolbar to sketch a candidate footprint. Created shapes report approximate length or area.</p>
+  <button id="export">Export drawn GeoJSON</button>
+  <button id="clear">Clear drawings</button>
+  <label class="file-button">Import GeoJSON <input id="import" type="file" accept=".json,.geojson,application/geo+json" hidden></label>
+
+  <h2>Current working site reference</h2>
+  <p>North/northeast of the Havok camp, beside the adjacent access road. The exact geographic point has not yet been established.</p>
+
+  <h2>Official campground map</h2>
+  <a href="../reference/official/2026-campground-map.html">
+    <img class="official-thumb" src="https://cdn.saffire.com/images.ashx?cb=4b758454&amp;i=2026_Fields_of_New_Market_Map_Revised.png&amp;rid=TexasRenaissanceFval&amp;t=ig" alt="Official 2026 Fields of New Market campground map">
+  </a>
+  <p>This schematic cannot be accurately overlaid on aerial imagery without control points.</p>
+
+  <h2>Area of interest</h2>
+  <p><code>-95.865, 30.243, -95.823, 30.286</code></p>
+  <p>Update the AOI after the Havok location is positively identified.</p>
+
+  <h2>Measurement status</h2>
+  <div id="status">Draw a line or polygon to measure it.</div>
+
+  <h2>Required field checks</h2>
+  <ul>
+    <li>Exact road edge and 10 ft setback line.</li>
+    <li>Tree trunks, low branches, roots, and slide-out clearance.</li>
+    <li>High/low ground, drainage paths, mud, and ponding.</li>
+    <li>Utility and no-stake/no-anchor locations.</li>
+    <li>Verified campsite anchor points and north direction.</li>
+  </ul>
+</aside>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.15/dist/esri-leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+<script>
+  const bbox = [[30.243, -95.865], [30.286, -95.823]];
+  const map = L.map('map', { preferCanvas: true }).fitBounds(bbox);
+
+  const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  });
+  const usgsTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16,
+    attribution: 'USGS The National Map'
+  });
+  const usgsImagery = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16,
+    attribution: 'USGS The National Map'
+  });
+  const usgsImageryTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16,
+    attribution: 'USGS The National Map'
+  }).addTo(map);
+  const naip = L.esri.imageMapLayer({
+    url: 'https://imagery.geographic.texas.gov/server/rest/services/NAIP/NAIP22_NCCIR_60cm/ImageServer',
+    opacity: 1,
+    attribution: 'Texas Geographic Information Office / USDA NAIP 2022'
+  });
+
+  const parcels = L.esri.featureLayer({
+    url: 'https://services8.arcgis.com/fpr21jaV02YtR7tv/ArcGIS/rest/services/GrimesCADWebService/FeatureServer/0',
+    style: { color: '#ff5200', weight: 2, fillOpacity: 0 },
+    simplifyFactor: .5,
+    precision: 6
+  });
+  const streets = L.esri.featureLayer({
+    url: 'https://services8.arcgis.com/fpr21jaV02YtR7tv/ArcGIS/rest/services/GrimesCADWebService/FeatureServer/7',
+    style: { color: '#ffe600', weight: 3, opacity: .9 }
+  });
+  const countyBoundary = L.esri.featureLayer({
+    url: 'https://services8.arcgis.com/fpr21jaV02YtR7tv/ArcGIS/rest/services/GrimesCADWebService/FeatureServer/8',
+    style: { color: '#8055ff', weight: 3, dashArray: '8 6', fillOpacity: 0 }
+  });
+  const flood = L.esri.dynamicMapLayer({
+    url: 'https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer',
+    layers: [28],
+    opacity: .52,
+    attribution: 'FEMA National Flood Hazard Layer'
+  });
+  const wetlands = L.esri.dynamicMapLayer({
+    url: 'https://fwsprimary.wim.usgs.gov/server/rest/services/Wetlands/MapServer',
+    opacity: .55,
+    attribution: 'USFWS National Wetlands Inventory'
+  });
+
+  const reference = L.layerGroup();
+  L.rectangle(bbox, { color: '#00ffff', weight: 2, dashArray: '8 5', fillOpacity: 0 })
+    .bindPopup('Approximate planning AOI — not a boundary')
+    .addTo(reference);
+  L.marker([30.2687, -95.843]).bindPopup('<strong>Fields of New Market</strong><br>Approximate orientation point').addTo(reference);
+  L.marker([30.25392, -95.84094]).bindPopup('<strong>Texas Renaissance Festival</strong><br>Approximate orientation point').addTo(reference);
+  reference.addTo(map);
+
+  const drawn = new L.FeatureGroup().addTo(map);
+  map.addControl(new L.Control.Draw({
+    edit: { featureGroup: drawn },
+    draw: { circle: false, circlemarker: false, marker: true, polyline: true, polygon: true, rectangle: true }
+  }));
+
+  const status = document.getElementById('status');
+  const feet = meters => meters * 3.280839895;
+  const sqft = sqm => sqm * 10.763910417;
+  function describe(layer) {
+    if (layer instanceof L.Polygon) {
+      const ring = layer.getLatLngs()[0];
+      const sqm = L.GeometryUtil && L.GeometryUtil.geodesicArea ? L.GeometryUtil.geodesicArea(ring) : approximateArea(ring);
+      status.textContent = `Approximate area: ${sqft(sqm).toFixed(1)} sq ft (${sqm.toFixed(1)} m²)`;
+    } else if (layer instanceof L.Polyline) {
+      const pts = layer.getLatLngs();
+      let m = 0;
+      for (let i = 1; i < pts.length; i++) m += pts[i - 1].distanceTo(pts[i]);
+      status.textContent = `Approximate length: ${feet(m).toFixed(1)} ft (${m.toFixed(1)} m)`;
+    } else if (layer.getLatLng) {
+      const p = layer.getLatLng();
+      status.textContent = `Point: ${p.lat.toFixed(7)}, ${p.lng.toFixed(7)}`;
+    }
+  }
+  function approximateArea(points) {
+    if (points.length < 3) return 0;
+    const lat0 = points.reduce((s, p) => s + p.lat, 0) / points.length * Math.PI / 180;
+    const xy = points.map(p => [p.lng * 111320 * Math.cos(lat0), p.lat * 110540]);
+    let a = 0;
+    for (let i = 0; i < xy.length; i++) {
+      const j = (i + 1) % xy.length;
+      a += xy[i][0] * xy[j][1] - xy[j][0] * xy[i][1];
+    }
+    return Math.abs(a) / 2;
+  }
+
+  map.on(L.Draw.Event.CREATED, e => { drawn.addLayer(e.layer); describe(e.layer); });
+  map.on(L.Draw.Event.EDITED, e => e.layers.eachLayer(describe));
+  map.on('click', e => { status.textContent = `Cursor: ${e.latlng.lat.toFixed(7)}, ${e.latlng.lng.toFixed(7)}`; });
+
+  L.control.layers({
+    'USGS imagery + topo': usgsImageryTopo,
+    'Texas NAIP 2022': naip,
+    'USGS imagery': usgsImagery,
+    'USGS topographic': usgsTopo,
+    'OpenStreetMap': osm
+  }, {
+    'Approximate AOI and markers': reference,
+    'Grimes CAD parcels': parcels,
+    'Grimes CAD streets': streets,
+    'Grimes County boundary': countyBoundary,
+    'FEMA flood hazard zones': flood,
+    'USFWS wetlands': wetlands,
+    'Drawn/imported features': drawn
+  }, { collapsed: false }).addTo(map);
+
+  L.control.scale({ imperial: true, metric: true }).addTo(map);
+
+  document.getElementById('clear').addEventListener('click', () => {
+    drawn.clearLayers();
+    status.textContent = 'Draw a line or polygon to measure it.';
+  });
+  document.getElementById('export').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify(drawn.toGeoJSON(), null, 2)], { type: 'application/geo+json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'trf-site-drawings.geojson';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+  document.getElementById('import').addEventListener('change', async event => {
+    const file = event.target.files[0];
+    if (!file) return;
+    try {
+      const data = JSON.parse(await file.text());
+      const layer = L.geoJSON(data, { style: { color: '#00d4ff', weight: 3, fillOpacity: .12 } });
+      layer.eachLayer(l => drawn.addLayer(l));
+      if (layer.getBounds && layer.getBounds().isValid()) map.fitBounds(layer.getBounds(), { padding: [30, 30] });
+      status.textContent = `Imported ${file.name}`;
+    } catch (err) {
+      status.textContent = `Import failed: ${err.message}`;
+    }
+  });
+</script>
+</body>
+</html>
