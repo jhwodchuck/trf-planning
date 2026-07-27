@@ -1,0 +1,7 @@
+id,category,description,value,unit,start_reference,end_reference,source_date,source_type,confidence,notes
+C-01,camper-identification,manufacturer model code,WCP29MK,,,,2026-07-27,manufacturer-label,verified-document,"Resolves 29MK versus 293MK in favor of 29MK; full VIN and unit identifier withheld from public repository"
+C-11,camper-rating,GVWR,12275,lb,,,2026-07-27,manufacturer-label,verified-document,"Label also states 5568 kg"
+C-12,camper-rating,front GAWR,5200,lb,,,2026-07-27,manufacturer-label,verified-document,"Label also states 2359 kg"
+C-13,camper-rating,rear GAWR,5200,lb,,,2026-07-27,manufacturer-label,verified-document,"Label also states 2359 kg"
+C-14,camper-running-gear,tire specification,ST235/80R16/E,designation,,,2026-07-27,manufacturer-label,verified-document,"Same specification shown for both axles"
+C-15,camper-running-gear,rim specification,16X6.0JJ,designation,,,2026-07-27,manufacturer-label,verified-document,"Same specification shown for both axles"
