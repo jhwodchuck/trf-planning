@@ -5,12 +5,14 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 ## Planning baseline
 
 - Use **600 sq ft per qualifying pass** for every working layout and group-site calculation.
+- Pass allocations may be contiguous, separated, stepped, narrow, or irregular.
+- Compactness and land-use efficiency are **not goals**; prefer arrangements that preserve more practical claimed area, even when they create gaps or disconnected boxes.
 - Do not maintain a separate 525 sq ft planning version unless this assumption is explicitly changed.
 - Final setup must still follow the dimensions and conditions TRF actually approves.
 
 ## Group allocation
 
-- [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, and links to every household record
+- [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, disconnected-allocation rules, and links to every household record
 
 ## Current concept
 
@@ -36,7 +38,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 ### Group and household units
 
-- [Household roster and allocations](planning/group-pass-allocation.md) — authoritative pass count and 600 sq ft-per-pass allocation table
+- [Household roster and allocations](planning/group-pass-allocation.md) — authoritative pass count, 600 sq ft-per-pass totals, and non-contiguous planning rules
 - [Chris and Sallie](planning/households/chris-and-sallie.md) — tent and canopy, one pass, 600 sq ft
 - [Birdie and Gustav](planning/households/birdie-and-gustav.md) — two tents, two passes, 1,200 sq ft
 - [Amanda](planning/amanda-site-notes.md) — confirmed 10 × 20 ft sleeping tent and 10 × 17 ft Yoga Tent, one pass, 600 sq ft
