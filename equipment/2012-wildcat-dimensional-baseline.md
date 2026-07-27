@@ -1,15 +1,29 @@
-# 2012 Forest River Wildcat Dimensional Baseline
+# 2012 Forest River Wildcat 29MK (WCP29MK) Dimensional Baseline
 
-Status: **working identification; field verification required**
+Status: **model verified from the manufacturer data plate; field dimensions still required**
 
-## Conflicts to resolve
+## Verified manufacturer data plate
 
-The camper has been described as a `Wildcat Sterling Edition 293MK`, while published 2012 data distinguishes:
+The owner supplied a clear photograph of the Forest River certification/data plate on 2026-07-27. The public evidence record is in [`evidence/2012-wildcat-data-plate.md`](evidence/2012-wildcat-data-plate.md); the full VIN and unit identifier are intentionally withheld from this public repository.
 
-- **Wildcat Sterling Edition 29MK**, and
-- **Wildcat 293MK**, a different non-Sterling model.
+| Property | Verified label value |
+|---|---:|
+| Manufacturer | Forest River, Inc. |
+| Manufacturer model code | `WCP29MK` |
+| Vehicle type | Trailer |
+| GVWR | 5,568 kg (12,275 lb) |
+| Front GAWR | 2,359 kg (5,200 lb) |
+| Rear GAWR | 2,359 kg (5,200 lb) |
+| Tires, both axles | `ST235/80R16/E` |
+| Rims, both axles | `16X6.0JJ` |
 
-The current map template also uses a **31 ft 6 in × 8 ft 4 in** body, while published Sterling 29MK sources commonly report about **31 ft 7 in × 8 ft**. Do not silently choose between these values. Confirm the VIN/data plate and measure the actual camper.
+## Model designation resolved
+
+The data plate resolves the earlier `29MK` versus `293MK` conflict in favor of **29MK**. The camper must not be labeled `293MK` in site plans or equipment records.
+
+The label itself does not spell out the consumer-facing **Sterling Edition** name. Published 2012 references for the **Wildcat Sterling Edition 29MK** match the verified `29MK` model code and remain the working floor-plan/specification reference. The title or original sales paperwork may be retained as supporting evidence for the marketing designation, but it is no longer needed to resolve `29MK` versus `293MK`.
+
+The current map template still uses a **31 ft 6 in × 8 ft 4 in** body, while published Sterling 29MK sources commonly report about **31 ft 7 in × 8 ft**. The data plate does not resolve that dimensional difference. Measure the actual camper before treating either value as final.
 
 ## Published Sterling 29MK reference
 
@@ -56,7 +70,7 @@ These values are unsuitable for approval. Artwork may not preserve exact exterio
 
 | ID | Measurement | Value/evidence |
 |---|---|---|
-| C-01 | VIN/data plate and exact model |  |
+| C-01 | VIN/data plate and exact model | **Complete:** `WCP29MK`; manufacturer data plate photographed 2026-07-27 |
 | C-02 | Nose-to-rear overall length |  |
 | C-03 | Main body width |  |
 | C-04 | Main living slide length and projection |  |
@@ -71,9 +85,9 @@ Map every door, operable window, emergency exit, roof vent, furnace/water-heater
 
 ## Required photographs
 
-1. VIN/data plate and model label.
-2. Four sides with slides retracted.
-3. Four sides with slides, stairs, and awning deployed.
-4. Tape visible on every critical projection.
-5. All openings, exhausts, and utilities.
-6. Hitch/nose, rear extremity, and roofline clearance.
+- [x] VIN/data plate and model label supplied; public transcription recorded with identifiers withheld.
+- [ ] Four sides with slides retracted.
+- [ ] Four sides with slides, stairs, and awning deployed.
+- [ ] Tape visible on every critical projection.
+- [ ] All openings, exhausts, and utilities.
+- [ ] Hitch/nose, rear extremity, and roofline clearance.

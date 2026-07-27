@@ -26,8 +26,8 @@ Use this checklist before sending an individual land request or treating a layou
 
 ## Camper
 
-- [ ] VIN/data plate photographed.
-- [ ] Exact model designation confirmed: `29MK` versus `293MK`.
+- [x] VIN/data plate photographed; sensitive identifiers withheld from the public repository.
+- [x] Exact model designation confirmed as `WCP29MK` / **29MK**, not `293MK`; see [`../equipment/evidence/2012-wildcat-data-plate.md`](../equipment/evidence/2012-wildcat-data-plate.md).
 - [ ] Overall body length measured, including hitch/nose and rear extremity.
 - [ ] Body width measured.
 - [ ] Main living slide length and projection measured.

@@ -37,12 +37,13 @@ Store written interpretations in the repository. The current sources appear to c
 
 | Source | Authority | Use |
 |---|---|---|
+| [Owner-supplied Forest River data-plate transcription](../equipment/evidence/2012-wildcat-data-plate.md) | Primary manufacturer-label evidence | Verifies `WCP29MK`, GVWR, axle ratings, tire size, and rim size; VIN and unit identifier withheld from the public repository |
 | [2012 Wildcat Sterling 29MK floor plan image](https://spec.dlrwebservice.com/3/rv/fp/2012-Forest-River-Wildcat-Sterling-29MK-fp.png) | Dealer-data floor-plan service | Slide locations, door side, and orientation reference |
 | [RVUSA 2012 Wildcat Sterling 29MK specifications](https://www.rvusa.com/rv-guide/2012-forest-river-wildcat-sterling-29mk-fifth-wheel-specs-fp31523) | Secondary specification database | Published body dimensions, weights, tanks, and equipment |
 | [J.D. Power 2012 Wildcat Sterling 29MK specifications](https://www.jdpower.com/rvs/2012/wildcat-by-forest-river/m-29mk/6019298/specs) | Secondary specification database | Cross-check model and specifications |
 | [Optimum RV 2012 Wildcat Sterling 29MK listing](https://www.optimumrv.com/product/used-2012-forest-river-rv-wildcat-sterling-edition-29mk-2426569-5) | Dealer listing | Additional cross-check and photographs |
 
-**Primary evidence still needed:** VIN/data plate photograph, title/model designation, original owner's manual, and actual deployed measurements.
+**Primary identification obtained:** the manufacturer data plate confirms model code `WCP29MK`, resolving `29MK` versus `293MK` in favor of `29MK`. Still needed are actual body/deployed measurements, the original owner's manual if available, and title or sales paperwork only as supporting evidence for the consumer-facing Sterling Edition wording.
 
 ## Tow vehicle
 
