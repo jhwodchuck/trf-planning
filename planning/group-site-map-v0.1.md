@@ -1,0 +1,60 @@
+# TRF Group Site Map v0.1
+
+Last updated: **2026-07-27**
+
+## Files
+
+- `maps/viewer/group-site-v0.1.html` — interactive aerial overlay.
+- `maps/overlays/group-site-v0.1.svg` — scale drawing.
+- `maps/data/group-site-v0.1.geojson` — georeferenced planning geometry.
+
+## Status
+
+This is a **provisional group planning layout**, not a survey or final TRF submission.
+
+Only Jason and Catrina's placement is tied to the supplied site anchor and road-control points. All other household positions are conceptual and may move.
+
+## Planning totals
+
+- Households: **7**
+- Passes: **10**
+- Planning area per pass: **600 sq ft**
+- Total planning area: **6,000 sq ft**
+- Compactness objective: **none**
+- Disconnected pass polygons: **allowed and preferred when useful**
+
+## Current known structures represented
+
+| Household | Structure | Planning dimensions/status |
+|---|---|---|
+| Jason and Catrina | Wildcat deployed zone | 31.5 × 14.25 ft |
+| Jason and Catrina | Canopy | 15 × 10 ft |
+| Amanda | Sleeping tent | 10 × 20 ft confirmed |
+| Amanda | Yoga Tent | 10 × 17 ft confirmed |
+| Chris and Sallie | Tent | 16 × 20 ft confirmed |
+| Chris and Sallie | Canopy | dimensions required |
+| Birdie and Gustav | Primary tent | 13 × 26 ft |
+| Birdie and Gustav | Closet tent | approximately 10 × 20 ft; replacement TBD |
+| Shane and Sabrina | Camper | provisional placeholder pending deployed measurements |
+| Shane and Sabrina | Shower trailer | 16 ft stated length; width and overall coupler length TBD |
+| MC and Elizabeth | Camper | provisional placeholder pending dimensions |
+| Stephane and True | Tent | provisional placeholder pending dimensions |
+
+## Layout strategy
+
+1. Preserve ten full 600 sq ft pass polygons.
+2. Do not force two-pass households into a single compact envelope.
+3. Keep Jason and Catrina beside the measured road/setback reference.
+4. Use a separate shower-trailer polygon for Shane and Sabrina in the initial concept.
+5. Put Amanda's Yoga Tent on the far/outer edge of her pass.
+6. Use independent pass polygons for Birdie and Gustav's two tents.
+7. Leave gaps outside claimed polygons rather than reducing requested area.
+8. Retain a conceptual circulation and emergency-access band through the group.
+
+## Known limitations
+
+- The broader group boundary has not been surveyed or assigned.
+- Household adjacency preferences have not yet been supplied.
+- Terrain, trees, drainage, and utility constraints have not been applied household-by-household.
+- Several structures still use placeholders.
+- The proposed positions may not match the final usable ground visible during field setup.
