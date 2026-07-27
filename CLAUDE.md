@@ -30,7 +30,7 @@ The viewers `fetch()` sibling GeoJSON, so `file://` will not work. Serve the rep
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/maps/viewer/group-site-v0.1.html` (or `index.html`, `provisional-site.html`, `pass-layout.html`, or `maps/index.html`). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` has no external dependencies, but it still needs http(s) for its own `fetch()` of sibling files.
+Then open `http://localhost:8000/maps/viewer/group-site-v0.1.html` (or `index.html`, `provisional-site.html`, `pass-layout.html`, or `maps/all-maps.html`, the map-pack hub page). Leaflet, esri-leaflet, and all basemaps load from CDNs and live services — the georeferenced viewers require network access. `pass-layout.html` has no external dependencies, but it still needs http(s) for its own `fetch()` of sibling files.
 
 Per-pass SVGs and their manifest (no network, no CDN deps):
 
@@ -78,9 +78,11 @@ These are project decisions, not preferences. They are restated in `README.md`, 
 
 ## Deployment
 
-`maps/` is deployed as a static site to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, no build step/framework). `maps/vercel.json` rewrites `/` to `viewer/group-site-v0.1.html`; every other path mirrors the folder layout (`viewer/pass-layout.html`, `data/*.geojson`, `overlays/passes/*.svg`, etc.), so the viewers' relative `fetch()` calls work unmodified in production. Nothing outside `maps/` is deployed.
+`maps/` is deployed as a static site to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, no build step/framework, linked locally via `vercel link` inside `maps/`). `maps/vercel.json` rewrites `/` to `viewer/group-site-v0.1.html`; every other path mirrors the folder layout (`viewer/pass-layout.html`, `data/*.geojson`, `overlays/passes/*.svg`, etc.), so the viewers' relative `fetch()` calls work unmodified in production. Nothing outside `maps/` is deployed.
 
-**There is no CI/CD wired to this.** Vercel does not auto-deploy on push — someone must trigger a deployment (Vercel CLI, dashboard, or the `deploy_to_vercel`/`get_project`/`list_projects` MCP tools) after merging changes under `maps/`, or the live site drifts from the repo. It has drifted before: a prior production deploy was a single hand-patched copy of `group-site-v0.1.html` (fetching its geojson from a hardcoded `raw.githubusercontent.com/.../main/...` URL instead of the relative path) uploaded on its own, with every other path 404ing. If `https://trf-planning.vercel.app/data/...` or `/viewer/...` ever 404 while `/` works, that ad hoc single-file state is back — redeploy the full `maps/` tree to fix it, and do not reintroduce the GitHub-raw fetch hack.
+**Vercel serves a matching static file before it ever checks `rewrites`.** That's why the map-pack hub page is `maps/all-maps.html`, not `maps/index.html` — a real `index.html` at that path would shadow the `/` rewrite and silently take over the production root. If you ever need another file literally named `index.html` directly in `maps/`, expect the same collision and rename it instead of fighting the rewrite.
+
+**There is no CI/CD wired to this.** Vercel does not auto-deploy on push — someone must trigger a deployment (`cd maps && vercel deploy --prod --yes`, the dashboard, or the `deploy_to_vercel`/`get_project`/`list_projects` MCP tools — but note `deploy_to_vercel` takes inline file content per call, which is impractical once `maps/data/grimes-*.geojson` (~2.5 MB) or `maps/generated/*.png` are involved; the CLI has no such limit) after merging changes under `maps/`, or the live site drifts from the repo. It has drifted before: a prior production deploy was a single hand-patched copy of `group-site-v0.1.html` (fetching its geojson from a hardcoded `raw.githubusercontent.com/.../main/...` URL instead of the relative path) uploaded on its own, with every other path 404ing. If `https://trf-planning.vercel.app/data/...` or `/viewer/...` ever 404 while `/` works, that ad hoc single-file state is back — redeploy the full `maps/` tree to fix it, and do not reintroduce the GitHub-raw fetch hack.
 
 ## Repository layout gotchas
 

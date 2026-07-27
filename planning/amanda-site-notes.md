@@ -26,7 +26,7 @@ The manufacturer's listed canopy footprint is nominal. The product includes nylo
 
 Place the **Yoga Tent on the far/outer edge of Amanda's campsite**, rather than between Amanda's site and the shared interior of the group camp.
 
-The selected working layout is **T-shaped**. The 10 × 20 ft sleeping tent is rotated across the 25 ft top bar, and the 10 × 17 ft Yoga Tent sits lengthwise in the centered stem. A **4 ft nominal clear aisle** separates the two nominal footprints. Dashed 6 in planning buffers surround both rectangles, leaving 3 ft between those provisional buffer zones. Field measurements of rainflies, ropes, anchors, feet, and ballast may require a larger separation.
+The selected working layout is **T-shaped**. The 10 × 20 ft sleeping tent is rotated across the 25 ft top bar, and the 10 × 17 ft Yoga Tent is bottom-aligned lengthwise in the centered stem. An **8.5 ft nominal clear aisle** separates the two nominal footprints. Dashed 6 in planning buffers surround both rectangles, leaving 7.5 ft between those provisional buffer zones. Field measurements of rainflies, ropes, anchors, feet, and ballast may require a larger separation.
 
 Until the final group arrangement establishes compass directions, interpret **far/outer edge** as:
 
@@ -74,7 +74,7 @@ Before Amanda's individual site plan is final, record:
 3. Sleeping-tent door location and preferred orientation.
 4. Yoga Tent entrance/open-end orientation.
 5. Measured Yoga Tent rope, stake, frame-foot, or ballast projection.
-6. Whether the current 4 ft nominal aisle remains sufficient after measuring the sleeping-tent rainfly and Yoga Tent ropes, anchors, feet, or ballast.
+6. Whether the current 8.5 ft nominal aisle remains sufficient after measuring the sleeping-tent rainfly and Yoga Tent ropes, anchors, feet, or ballast.
 7. Vehicle, generator, cooking, storage, fencing, and utility requirements.
 8. Which compass boundary is the far/outer edge after Amanda's unit is placed on the master map.
 
@@ -83,6 +83,6 @@ Before Amanda's individual site plan is final, record:
 - Represent Amanda's complete pass boundary as exactly **600 sq ft**.
 - Represent the sleeping tent as a **20 × 10 ft rotated rectangle across the top bar** labeled `SLEEPING TENT — CONFIRMED 10 × 20 FT`.
 - Represent the canopy as a **10 × 17 ft rectangle** labeled `YOGA TENT — COVERPRO 10 × 17 FT`.
-- Place the Yoga Tent lengthwise in the centered stem, separated from the sleeping tent by the current 4 ft nominal clear aisle.
+- Bottom-align the Yoga Tent lengthwise in the centered stem, separated from the sleeping tent by the current 8.5 ft nominal clear aisle.
 - Add a surrounding dashed zone for unverified ropes, anchors, rainfly, frame feet, or ballast.
 - Do not retain the old 10 × 10 ft tent, unknown-canopy, or 525 sq ft planning alternatives in revised maps.

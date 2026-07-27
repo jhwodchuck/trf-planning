@@ -65,6 +65,7 @@ class Pass:
     polygon: list[tuple[float, float]] | None = None
     area_note: str = ""
     equipment: list[Equipment] = field(default_factory=list)
+    annotations: list[tuple[float, float, str]] = field(default_factory=list)
     # Anchor point (relative to the bbox origin) for the household name/area
     # labels. Defaults to the bbox center, which is always inside a rect
     # boundary but can fall in the notch of a non-rectangular polygon, so
@@ -211,7 +212,8 @@ PASSES: list[Pass] = [
             (0, 12),
         ],
         default_bbox_origin=(100, 116),
-        label_anchor=(12.5, 35),
+        label_anchor=(12.5, 14.8),
+        annotations=[(12.5, 17.2, "8.5 ft nominal aisle")],
         equipment=[
             Equipment(
                 id="amanda_sleep",
@@ -227,8 +229,8 @@ PASSES: list[Pass] = [
                 id="amanda_yoga",
                 label="Yoga Tent (COVERPRO canopy)",
                 role="eq",
-                status="confirmed; placed on far/outer west edge with 4 ft nominal separation",
-                rect=(7.5, 15, 10, 17),
+                status="confirmed; bottom-aligned in T stem with 8.5 ft nominal separation",
+                rect=(7.5, 19.5, 10, 17),
                 fill="#3d85c6",
                 dims_label="10 x 17 ft",
                 buffer_ft=0.5,
@@ -422,6 +424,12 @@ def render_pass(p: Pass) -> str:
             parts.append(f'<text x="{lx}" y="{ly - 3}" class="tiny">{esc(eq.label)}</text>')
             if eq.dims_label:
                 parts.append(f'<text x="{lx}" y="{ly + 9}" class="tiny">{esc(eq.dims_label)}</text>')
+
+    for x, y, label in p.annotations:
+        parts.append(
+            f'<text x="{X(x)}" y="{Y(y)}" text-anchor="middle" '
+            f'class="tiny">{esc(label)}</text>'
+        )
 
     # Boundary labels
     anchor_x, anchor_y = p.label_anchor if p.label_anchor is not None else (bbox_w / 2, bbox_h / 2)

@@ -2,7 +2,7 @@
 
 This folder is the map workspace for planning a campsite in the Texas Renaissance Festival Fields of New Market campground.
 
-This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, static — no build step). `vercel.json` in this folder rewrites `/` to `viewer/group-site-v0.1.html` so the live root matches this folder's `index.html` nav landing point; every other path mirrors the file layout below (`viewer/pass-layout.html`, `data/*.geojson`, etc.). Redeploy after changing anything under `maps/` — Vercel does not watch this repo automatically.
+This folder is deployed as-is to **https://trf-planning.vercel.app/** (Vercel project `trf-planning`, root directory `maps/`, static — no build step). `vercel.json` in this folder rewrites `/` to `viewer/group-site-v0.1.html`. The folder's own hub/index page therefore lives at `all-maps.html` (not `index.html`) — a literal `index.html` at this level would shadow the rewrite, since Vercel serves a matching static file before it ever consults `rewrites`. Every other path mirrors the file layout below (`viewer/pass-layout.html`, `data/*.geojson`, etc.). Redeploy after changing anything under `maps/` — Vercel does not watch this repo automatically.
 
 ## Start here
 

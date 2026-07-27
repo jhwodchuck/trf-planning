@@ -48,7 +48,7 @@ Only Jason and Catrina's placement is tied to the supplied site anchor and road-
 2. Do not force two-pass households into a single compact envelope.
 3. Keep Jason and Catrina beside the measured road/setback reference.
 4. Use a separate shower-trailer polygon for Shane and Sabrina in the initial concept.
-5. Use Amanda's selected 600 sq ft T-shaped pass: her sleeping tent runs across the 25 × 12 ft top bar, and her Yoga Tent sits in the centered 12 × 25 ft stem with a 4 ft nominal clear aisle between them.
+5. Use Amanda's selected 600 sq ft T-shaped pass: her sleeping tent runs across the 25 × 12 ft top bar, and her Yoga Tent is bottom-aligned in the centered 12 × 25 ft stem with an 8.5 ft nominal clear aisle between them.
 6. Use independent pass polygons for Birdie and Gustav's two tents.
 7. Leave gaps outside claimed polygons rather than reducing requested area.
 8. Retain a conceptual circulation and emergency-access band through the group.

@@ -81,9 +81,9 @@
       "color": "#76a5af",
       "area_sqft": 600,
       "bbox_width_ft": 25,
-      "bbox_height_ft": 24,
+      "bbox_height_ft": 37,
       "viewbox_width_ft": 26.0,
-      "viewbox_height_ft": 25.0,
+      "viewbox_height_ft": 38.0,
       "default_x_ft": 99.5,
       "default_y_ft": 115.5,
       "source": "planning/amanda-site-notes.md"
