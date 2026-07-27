@@ -5,14 +5,16 @@ This folder is the map workspace for planning a campsite in the Texas Renaissanc
 ## Start here
 
 1. Open `viewer/index.html` in a web browser for an interactive map with aerial imagery, USGS topography, parcels, streets, FEMA flood data, and wetlands.
-2. Review `reference/official/2026-campground-map.html` for the current official campground operations map.
-3. Review the static files in `generated/` after the map-build workflow runs.
+2. Review `reference/official/2026-season-pass-plotting-map.html` for the official season-pass camping, parking, and restricted-area planning context.
+3. Review `reference/official/2026-campground-map.html` for roads, numbered campground areas, gates, services, and emergency exits.
 4. Use `overlays/requested-campsite-footprint.svg` as the dimensioned, scale-controlled footprint template for the RV and 10 x 15 ft canopy.
+5. Review the static files in `generated/` after the map-build workflow runs.
 
 ## Current map inventory
 
 | Map or layer | Primary planning use | Status |
 |---|---|---|
+| Official 2026 Season Pass Plotting Map v3.2 | Broad season-pass camping, parking, and restricted-area context | Live official reference |
 | Official 2026 campground map | Camp roads, numbered camping areas, gates, emergency exits, water, showers, cabins, first aid, restrooms, and landmarks | Live official reference |
 | NAIP aerial imagery | Trees, clearings, roads, drainage traces, and current ground context | In viewer and generated map |
 | USGS topographic map | Terrain, hydrography, roads, and elevation context | In viewer and generated map |
@@ -39,7 +41,7 @@ No phone numbers, email addresses, order numbers, or signed application document
 
 ## Accuracy rules
 
-- Treat the official campground graphic as an operations/orientation map, not a scale drawing.
+- Treat both official TRF graphics as planning/orientation maps, not scale drawings.
 - Treat aerial, parcel, flood, wetland, soil, and topo layers as planning-grade screening data.
 - Do not infer an exact campsite boundary from imagery alone.
 - Keep all physical boundaries and structures at least 10 ft from roadways unless TRF provides a different written site-specific direction.
