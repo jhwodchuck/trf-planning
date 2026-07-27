@@ -1,0 +1,56 @@
+{
+  "aoi_bbox_wgs84": [
+    -95.865,
+    30.243,
+    -95.823,
+    30.286
+  ],
+  "generated_at": "2026-07-27T13:09:07.005111+00:00",
+  "image_size": [
+    2400,
+    2400
+  ],
+  "sources": [
+    {
+      "detail": "1266 features",
+      "ok": true,
+      "source": "Grimes CAD parcels"
+    },
+    {
+      "detail": "230 features",
+      "ok": true,
+      "source": "Grimes CAD streets"
+    },
+    {
+      "detail": "1 features",
+      "ok": true,
+      "source": "Grimes county boundary"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "Texas NAIP 2022"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "USGS topographic"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "USGS imagery topo"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "USGS shaded relief"
+    },
+    {
+      "detail": "downloaded",
+      "ok": true,
+      "source": "FEMA NFHL / USFWS wetlands composite"
+    }
+  ],
+  "warning": "Planning-grade output; not a survey, approval, utility locate, wetland determination, or guarantee against flooding."
+}
