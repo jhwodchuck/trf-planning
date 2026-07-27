@@ -2,9 +2,15 @@
 
 Last updated: **2026-07-27**
 
+## Planning baseline
+
+Use **600 sq ft per qualifying pass** for all working layouts, area calculations, and group-site arrangements. Do not maintain a parallel 525 sq ft planning version unless Jason explicitly changes this assumption.
+
+This is a planning convention. Final field setup must still follow the dimensions and conditions TRF actually approves.
+
 ## Current design intent
 
-- Requested area target: about 600 sq ft, subject to TRF confirmation.
+- Requested area target: **600 sq ft per pass**.
 - Working location: immediately north/northeast of Havok camp beside the adjacent access road; orientation only, not an exact boundary.
 - Camper nose/hitch: south.
 - Camper door and stairs: west, away from the road.
@@ -18,7 +24,6 @@ Last updated: **2026-07-27**
 | Priority | Input | Why it matters |
 |---|---|---|
 | Critical | Exact assigned/requested boundary | Regional GIS and approximate location cannot establish usable dimensions |
-| Critical | Written 600-versus-525-sq-ft ruling | Controls feasibility and submission geometry |
 | Critical | Camper model and actual deployed dimensions | Current template and published references differ |
 | Critical | Safe generator operating location | CO/fire clearance may exceed available space |
 | High | Physical road edge and setback | East-side slides face the road |
@@ -32,6 +37,7 @@ Last updated: **2026-07-27**
 
 | Object/zone | Current reference | Verified value |
 |---|---:|---:|
+| Planning allowance per pass | 600 sq ft | 600 sq ft |
 | RV body | Template: 31 ft 6 in × 8 ft 4 in; published Sterling reference differs |  |
 | Approximate deployed RV zone | Current template: 31 ft 6 in × 14 ft 3 in |  |
 | Canopy | Current template: 15 × 10 ft |  |
@@ -50,7 +56,7 @@ Before using the current SVG footprint as final:
 2. Field-measure body, slides, stairs, awning, and stabilizers.
 3. Explain and resolve the 8-ft versus 8-ft-4-in width difference.
 4. Verify the 15 × 10 canopy and all anchors/legs.
-5. Confirm the 598.9-sq-ft stepped shape is accepted by TRF.
+5. Keep the final requested polygon at or below **600 sq ft**.
 6. Locate the actual road edge and apply the 10-ft setback to the nearest deployed object.
 7. Add generator clearances, openings, fuel, cords, and screen.
 8. Add truck/access geometry or document off-plot parking.
@@ -67,4 +73,4 @@ Confidence values: `verified-field`, `verified-document`, `published`, `scale-de
 
 ## Gate for a final plan
 
-Do not label a drawing final until the exact boundary, written TRF interpretation, camper measurements, canopy/screen dimensions, and generator operating location are verified.
+Do not label a drawing final until the exact boundary, camper measurements, canopy/screen dimensions, generator operating location, and TRF approval conditions are verified.
