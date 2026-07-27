@@ -2,13 +2,20 @@
 
 Use this checklist before sending an individual land request or treating a layout as final.
 
+## Planning baseline
+
+- [ ] Every qualifying pass is represented as a **600 sq ft planning unit**.
+- [ ] Combined group area equals `number of qualifying passes × 600 sq ft`.
+- [ ] No separate 525 sq ft planning layout is being maintained unless Jason explicitly changes the baseline.
+- [ ] Final approval conditions will be applied before field setup.
+
 ## Administrative
 
 - [ ] Correct 2026 individual land-request form downloaded.
 - [ ] Qualifying season pass purchased by the applicable deadline.
 - [ ] Applicant name, contact information, and pass information completed.
 - [ ] Requested campground location marked on the current official map.
-- [ ] Requested square footage confirmed with TRF in writing.
+- [ ] Submitted square footage uses 600 sq ft per qualifying pass.
 - [ ] Submission/payment deadline reconfirmed.
 - [ ] Copies of the submitted package and approval response stored in the repository.
 
@@ -89,7 +96,7 @@ Use this checklist before sending an individual land request or treating a layou
 
 ## Final validation
 
-- [ ] Sum/geometry check confirms the plan stays within the approved area.
+- [ ] Sum/geometry check confirms each pass unit stays within 600 sq ft and the group total matches the pass count.
 - [ ] Camper can physically enter, turn, level, deploy, and leave.
 - [ ] No item crosses the plot boundary or road setback.
 - [ ] Generator plan is safe before visual-screen preferences are considered.
