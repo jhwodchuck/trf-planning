@@ -28,12 +28,18 @@ table.roster td,table.roster th{border-bottom:1px solid #ddd;padding:3px 4px;tex
 table.roster tr.selected{background:#fff4d6}
 table.roster tr{cursor:pointer}
 .swatch{display:inline-block;width:11px;height:11px;border:1px solid #333;margin-right:4px;vertical-align:-1px}
+kbd{background:#fff;border:1px solid #bbb;border-bottom-width:2px;border-radius:3px;padding:0 4px;font:inherit;font-size:.78em;white-space:nowrap}
 fieldset{border:1px solid #999;border-radius:.3rem;margin-top:.6rem;padding:.5rem .6rem}
 legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 .row{display:flex;align-items:center;gap:.4rem;margin:.3rem 0;font-size:.82rem}
 .row input[type=number]{width:5.5rem}
 .row input[type=range]{flex:1}
-#canvasWrap{position:relative;overflow:auto;background:#dedbd2}
+#mapPane{position:relative;overflow:hidden;background:#dedbd2}
+#canvasWrap{position:absolute;inset:0;overflow:auto;background:#dedbd2;cursor:grab;touch-action:none;overscroll-behavior:contain}
+#canvasWrap.panning{cursor:grabbing}
+#canvasWrap.panning .token{cursor:grabbing}
+#hud{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;align-items:center;pointer-events:none;z-index:5}
+#hud span{background:#111c;color:#fff;font-size:11px;font-variant-numeric:tabular-nums;padding:3px 7px;border-radius:3px;white-space:nowrap}
 #canvas{position:relative;background:#fbfaf6;box-shadow:0 0 0 2px #777 inset;overflow:hidden}
 #aerialImg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:fill;transform-origin:0 0;opacity:.62;filter:saturate(.72) contrast(.9) brightness(1.12);pointer-events:none;user-select:none}
 .token{position:absolute;top:0;left:0;transform-origin:center center;cursor:grab;filter:drop-shadow(0 1px 3px rgba(0,0,0,.35))}
@@ -45,7 +51,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 .ref{position:absolute;pointer-events:none}
 #canvasStage{position:relative}
 #canvas{transform-origin:top left}
-@media(max-width:800px){body{display:block}aside{max-height:45vh}#canvasWrap{height:55vh}}
+@media(max-width:800px){body{display:block}aside{max-height:45vh}#mapPane{height:55vh}}
 </style>
 </head>
 <body>
@@ -75,14 +81,18 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <p style="font-size:.78rem;color:#555;margin:.3rem 0 0">Presets save to this browser only. "Copy share link" puts the current arrangement in the URL itself — paste it to anyone and opening it loads that exact layout, no file needed.</p>
 </fieldset>
 <div class="controls">
+<button id="undoBtn" disabled>Undo</button>
+<button id="redoBtn" disabled>Redo</button>
+<button id="frontBtn">Bring selected to front</button>
+</div>
+<div class="controls">
 <button id="aerialBtn">Toggle aerial</button>
 <button id="gridBtn">Toggle grid</button>
 <button id="refBtn">Toggle road reference</button>
-<button id="frontBtn">Bring selected to front</button>
 </div>
 <div class="zoom-controls">
 <button id="zoomOutBtn" aria-label="Zoom out">−</button>
-<input id="zoomRange" type="range" min="10" max="150" step="1" value="20" aria-label="Canvas zoom percentage">
+<input id="zoomRange" type="range" min="6" max="150" step="1" value="20" aria-label="Canvas zoom percentage">
 <button id="zoomInBtn" aria-label="Zoom in">+</button>
 <span class="zoom-value" id="zoomValue">20%</span>
 </div>
@@ -99,15 +109,19 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <div class="row"><span id="selName">None selected</span></div>
 <div class="row"><label style="width:2rem">X ft</label><input id="xIn" type="number" step="0.25"></div>
 <div class="row"><label style="width:2rem">Y ft</label><input id="yIn" type="number" step="0.25"></div>
-<div class="row"><label style="width:2rem">Rot</label><input id="rotIn" type="range" min="-180" max="180" step="1" value="0"><span id="rotVal">0°</span></div>
-<div class="row"><button id="rot0Btn">Reset rotation</button></div>
+<div class="row"><label style="width:2rem">Rot</label><input id="rotIn" type="range" min="-180" max="180" step="1" value="0"><input id="rotNumIn" type="number" min="-180" max="180" step="1" value="0" style="width:4.2rem"><span>°</span></div>
+<div class="row"><button id="rot0Btn">Reset rotation</button><button id="rotL15">↺ 15°</button><button id="rotR15">↻ 15°</button></div>
 </fieldset>
 
 <h2>How this works</h2>
 <ul>
-<li>Use the zoom slider, −/+ buttons, <strong>Fit plan</strong>, or <strong>Fit aerial context</strong>. Zooming out reveals the surrounding campground while dragging remains measured in local feet.</li>
-<li>Drag a pass by clicking and dragging its shape.</li>
-<li>Click a pass (on the canvas or in the list) to select it, then fine-tune with the X/Y/rotation fields.</li>
+<li><strong>Move around:</strong> scroll wheel or trackpad pinch zooms in and out on whatever is under your pointer. Drag any empty area to pan, or hold <kbd>Space</kbd> (or middle-mouse) to pan even over a pass. On a touchscreen, drag to pan and pinch to zoom. The zoom slider, −/+ buttons, <strong>Fit plan</strong> and <strong>Fit aerial context</strong> all still work.</li>
+<li>Drag a pass by clicking and dragging its shape. Click empty ground to deselect.</li>
+<li>Click a pass in the list to select it <em>and</em> jump the map to it.</li>
+<li><strong>Precise placement:</strong> with a pass selected, arrow keys nudge it 0.25 ft (hold <kbd>Shift</kbd> for 1 ft), and <kbd>[</kbd> / <kbd>]</kbd> rotate it 1° (<kbd>Shift</kbd> for 15°). You can also type exact values into the X, Y, and rotation fields.</li>
+<li><strong>Mistakes are undoable:</strong> <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> redoes (or use the Undo/Redo buttons).</li>
+<li><strong>Keyboard shortcuts:</strong> <kbd>0</kbd> fit plan · <kbd>9</kbd> fit aerial context · <kbd>1</kbd> 100% zoom · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>Esc</kbd> deselect.</li>
+<li>The badge in the lower-left corner shows the current zoom and the exact local-foot coordinate under your pointer.</li>
 <li>Positions are the pass SVG's own top-left corner (each file has a small margin around its true 600 sq ft boundary — see <code>maps/overlays/passes/passes-manifest.json</code>).</li>
 <li>The current arrangement autosaves to this browser's local storage as you drag. Use <strong>Your presets</strong> to save multiple named arrangements in this browser and switch between them. Use <strong>Copy share link</strong> to send an exact arrangement to someone else — no file, no repo commit, they just open the link. Use <strong>Download layout (.json)</strong> / <strong>Load from file</strong> for a portable backup, or to propose a new committed starting point (see below).</li>
 <li>Each pass file under <code>maps/overlays/passes/</code> can be edited independently, then regenerate with <code>python scripts/build_pass_svgs.py</code> (or hand-edit the SVGs directly) — reload this page to pick up changes.</li>
@@ -117,8 +131,11 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 
 <div id="status"></div>
 </aside>
+<div id="mapPane">
 <div id="canvasWrap">
 <div id="canvasStage"><div id="canvas"></div></div>
+</div>
+<div id="hud"><span id="hudZoom">20%</span><span id="hudCoord">—</span></div>
 </div>
 
 <script>
@@ -127,7 +144,9 @@ const CANVAS_W_FT = 230, CANVAS_H_FT = 200;
 const VIEW_MIN_X_FT = -250, VIEW_MIN_Y_FT = -100;
 const VIEW_W_FT = 700, VIEW_H_FT = 450;
 const LAYOUT_OFFSET_X_FT = -VIEW_MIN_X_FT, LAYOUT_OFFSET_Y_FT = -VIEW_MIN_Y_FT;
-const MIN_ZOOM = 0.1, MAX_ZOOM = 1.5, ZOOM_STEP = 0.1;
+// Floor is low enough that "Fit aerial context" can actually show the whole
+// ~700 x 450 ft image on a narrow pane instead of clipping at the limit.
+const MIN_ZOOM = 0.06, MAX_ZOOM = 1.5, ZOOM_STEP = 0.1;
 const STORAGE_KEY = 'trf-pass-layout-v2';
 const MANIFEST_URL = '../overlays/passes/passes-manifest.json';
 const STARTING_LAYOUT_URL = '../overlays/passes/saved-camp-v0.1.json';
@@ -186,6 +205,7 @@ let showRef = true;
 let showAerial = true;
 let zCounter = 10;
 let zoom = 0.2;
+let spaceHeld = false;
 
 const canvas = document.getElementById('canvas');
 const canvasStage = document.getElementById('canvasStage');
@@ -237,23 +257,53 @@ function clampZoom(value) {
   return Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value));
 }
 
-function applyZoom(nextZoom, preserveCenter = true) {
+function syncZoomUi() {
+  const pct = Math.round(zoom * 100);
+  document.getElementById('zoomRange').value = pct;
+  document.getElementById('zoomValue').textContent = pct + '%';
+  document.getElementById('hudZoom').textContent = pct + '%';
+}
+
+// `anchor` keeps a fixed point on screen while the scale changes:
+//   'center'            -> viewport centre (buttons, slider)
+//   false               -> don't touch scroll (fit helpers set it themselves)
+//   {clientX, clientY}  -> that screen point (wheel zoom, pinch midpoint)
+function applyZoom(nextZoom, anchor = 'center') {
   const oldZoom = zoom;
-  const centerXFt = (canvasWrap.scrollLeft + canvasWrap.clientWidth / 2) / (SCALE * oldZoom);
-  const centerYFt = (canvasWrap.scrollTop + canvasWrap.clientHeight / 2) / (SCALE * oldZoom);
+  let viewX = null, viewY = null;
+  if (anchor && typeof anchor === 'object') {
+    const rect = canvasWrap.getBoundingClientRect();
+    viewX = anchor.clientX - rect.left;
+    viewY = anchor.clientY - rect.top;
+  } else if (anchor === 'center' || anchor === true) {
+    viewX = canvasWrap.clientWidth / 2;
+    viewY = canvasWrap.clientHeight / 2;
+  }
+  // Content point (in unscaled canvas px) currently under the anchor.
+  const contentX = viewX === null ? 0 : (canvasWrap.scrollLeft + viewX) / oldZoom;
+  const contentY = viewY === null ? 0 : (canvasWrap.scrollTop + viewY) / oldZoom;
+
   zoom = clampZoom(nextZoom);
   canvas.style.transform = `scale(${zoom})`;
   canvasStage.style.width = (VIEW_W_FT * SCALE * zoom) + 'px';
   canvasStage.style.height = (VIEW_H_FT * SCALE * zoom) + 'px';
-  document.getElementById('zoomRange').value = Math.round(zoom * 100);
-  document.getElementById('zoomValue').textContent = Math.round(zoom * 100) + '%';
-  if (preserveCenter) {
-    canvasWrap.scrollLeft = centerXFt * SCALE * zoom - canvasWrap.clientWidth / 2;
-    canvasWrap.scrollTop = centerYFt * SCALE * zoom - canvasWrap.clientHeight / 2;
+  syncZoomUi();
+
+  if (viewX !== null) {
+    canvasWrap.scrollLeft = contentX * zoom - viewX;
+    canvasWrap.scrollTop = contentY * zoom - viewY;
   }
 }
 
+function clampRotation(deg) {
+  let d = ((deg + 180) % 360 + 360) % 360 - 180;
+  return Math.round(d * 100) / 100;
+}
+
 function fitContext() {
+  // Bail rather than compute a bogus (clamped-to-minimum) zoom from an
+  // unmeasured pane; whenFitReady() re-runs this once it has a real size.
+  if (!canvasWrap.clientWidth || !canvasWrap.clientHeight) return;
   const availableWidth = Math.max(1, canvasWrap.clientWidth - 16);
   const availableHeight = Math.max(1, canvasWrap.clientHeight - 16);
   const fitted = Math.min(
@@ -271,7 +321,64 @@ function centerOnPlan() {
   canvasWrap.scrollTop = (LAYOUT_OFFSET_Y_FT + CANVAS_H_FT / 2) * SCALE * zoom - canvasWrap.clientHeight / 2;
 }
 
+// Self-contained scroll tween. Native `behavior:'smooth'` is unreliable
+// (silently ignored in some browsers and automation contexts), so animate
+// it here instead of depending on it.
+let scrollTween = null;
+function animateScrollTo(left, top, duration = 320) {
+  if (scrollTween) cancelAnimationFrame(scrollTween);
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const startL = canvasWrap.scrollLeft, startT = canvasWrap.scrollTop;
+  const dL = left - startL, dT = top - startT;
+  // rAF never fires while the tab is hidden, so jump instead of tweening.
+  if (reduceMotion || document.hidden || duration <= 0 || (Math.abs(dL) < 1 && Math.abs(dT) < 1)) {
+    canvasWrap.scrollLeft = left;
+    canvasWrap.scrollTop = top;
+    return;
+  }
+  const t0 = performance.now();
+  const step = (now) => {
+    const t = Math.min(1, (now - t0) / duration);
+    const ease = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    canvasWrap.scrollLeft = startL + dL * ease;
+    canvasWrap.scrollTop = startT + dT * ease;
+    if (t < 1) scrollTween = requestAnimationFrame(step);
+    else scrollTween = null;
+  };
+  scrollTween = requestAnimationFrame(step);
+}
+
+// Scroll a specific pass into the middle of the view, so picking a household
+// from the roster takes you straight to it instead of hunting for it.
+function centerOnPass(id) {
+  const pass = manifest && manifest.passes.find(p => p.id === id);
+  const pos = layout[id];
+  if (!pass || !pos) return;
+  const cx = LAYOUT_OFFSET_X_FT + pos.x_ft + pass.viewbox_width_ft / 2;
+  const cy = LAYOUT_OFFSET_Y_FT + pos.y_ft + pass.viewbox_height_ft / 2;
+  animateScrollTo(
+    cx * SCALE * zoom - canvasWrap.clientWidth / 2,
+    cy * SCALE * zoom - canvasWrap.clientHeight / 2
+  );
+}
+
+// Runs `fn` once the map pane actually has a size. Opening the tool in a
+// background tab (or before first layout) reports 0x0, which would otherwise
+// produce a nonsense "fit" zoom.
+function whenFitReady(fn) {
+  if (canvasWrap.clientWidth && canvasWrap.clientHeight) { fn(); return; }
+  if (typeof ResizeObserver !== 'function') { setTimeout(() => whenFitReady(fn), 120); return; }
+  const observer = new ResizeObserver(() => {
+    if (canvasWrap.clientWidth && canvasWrap.clientHeight) {
+      observer.disconnect();
+      fn();
+    }
+  });
+  observer.observe(document.getElementById('mapPane'));
+}
+
 function fitPlan() {
+  if (!canvasWrap.clientWidth || !canvasWrap.clientHeight) return;
   const availableWidth = Math.max(1, canvasWrap.clientWidth - 32);
   const availableHeight = Math.max(1, canvasWrap.clientHeight - 32);
   const fitted = Math.min(
@@ -282,6 +389,189 @@ function fitPlan() {
   applyZoom(fitted, false);
   centerOnPlan();
 }
+
+// --- Undo / redo -------------------------------------------------------
+const UNDO_LIMIT = 60;
+let undoStack = [], redoStack = [], lastUndoAt = 0;
+
+function snapshotLayout() { return JSON.parse(JSON.stringify(layout)); }
+
+function updateHistoryButtons() {
+  document.getElementById('undoBtn').disabled = undoStack.length === 0;
+  document.getElementById('redoBtn').disabled = redoStack.length === 0;
+}
+
+// coalesceMs > 0 folds rapid repeats (key-repeat, typing, slider drags)
+// into the entry already on the stack instead of adding a new one.
+function pushUndo(coalesceMs = 0) {
+  const now = Date.now();
+  if (coalesceMs && undoStack.length && now - lastUndoAt < coalesceMs) {
+    lastUndoAt = now;
+    return;
+  }
+  undoStack.push(snapshotLayout());
+  if (undoStack.length > UNDO_LIMIT) undoStack.shift();
+  redoStack.length = 0;
+  lastUndoAt = now;
+  updateHistoryButtons();
+}
+
+function restoreFrom(fromStack, toStack) {
+  if (!fromStack.length) return false;
+  toStack.push(snapshotLayout());
+  layout = fromStack.pop();
+  manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
+  saveToStorage();
+  renderTokens();
+  syncSelectedInputs();
+  updateHistoryButtons();
+  lastUndoAt = 0;
+  return true;
+}
+function undo() { setStatus(restoreFrom(undoStack, redoStack) ? 'Undid the last change.' : 'Nothing left to undo.'); }
+function redo() { setStatus(restoreFrom(redoStack, undoStack) ? 'Redid the last change.' : 'Nothing left to redo.'); }
+
+// --- Pointer navigation: wheel zoom, drag-pan, pinch -------------------
+function isOnToken(target) {
+  return !!(target && target.closest && target.closest('.token'));
+}
+
+canvasWrap.addEventListener('wheel', (ev) => {
+  ev.preventDefault();
+  if (scrollTween) { cancelAnimationFrame(scrollTween); scrollTween = null; }
+  // Normalise line/page delta modes so trackpads and mice feel the same.
+  const unit = ev.deltaMode === 1 ? 16 : ev.deltaMode === 2 ? canvasWrap.clientHeight : 1;
+  const factor = Math.exp(-ev.deltaY * unit * 0.0016);
+  applyZoom(zoom * factor, { clientX: ev.clientX, clientY: ev.clientY });
+}, { passive: false });
+
+let panning = false, panStart = null, panMoved = false;
+
+function beginPan(clientX, clientY) {
+  if (scrollTween) { cancelAnimationFrame(scrollTween); scrollTween = null; }
+  panning = true;
+  panMoved = false;
+  panStart = { x: clientX, y: clientY, sl: canvasWrap.scrollLeft, st: canvasWrap.scrollTop };
+  canvasWrap.classList.add('panning');
+}
+function movePan(clientX, clientY) {
+  if (!panning) return;
+  const dx = clientX - panStart.x;
+  const dy = clientY - panStart.y;
+  if (Math.abs(dx) > 3 || Math.abs(dy) > 3) panMoved = true;
+  canvasWrap.scrollLeft = panStart.sl - dx;
+  canvasWrap.scrollTop = panStart.st - dy;
+}
+function endPan() {
+  if (!panning) return;
+  panning = false;
+  canvasWrap.classList.remove('panning');
+}
+
+canvasWrap.addEventListener('mousedown', (ev) => {
+  const middle = ev.button === 1;
+  const leftOnBackground = ev.button === 0 && !isOnToken(ev.target);
+  if (!middle && !spaceHeld && !leftOnBackground) return;
+  ev.preventDefault();
+  beginPan(ev.clientX, ev.clientY);
+  const onMove = e => movePan(e.clientX, e.clientY);
+  const onUp = () => {
+    // A background click that never moved means "deselect".
+    if (!panMoved && leftOnBackground) deselectPass();
+    endPan();
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onUp);
+  };
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onUp);
+});
+
+let pinch = null;
+const touchDist = t => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+const touchMid = t => ({ clientX: (t[0].clientX + t[1].clientX) / 2, clientY: (t[0].clientY + t[1].clientY) / 2 });
+
+canvasWrap.addEventListener('touchstart', (ev) => {
+  if (ev.touches.length === 2) {
+    ev.preventDefault();
+    endPan();
+    pinch = { dist: touchDist(ev.touches), zoom };
+  } else if (ev.touches.length === 1 && !isOnToken(ev.target)) {
+    ev.preventDefault();
+    beginPan(ev.touches[0].clientX, ev.touches[0].clientY);
+  }
+}, { passive: false });
+
+canvasWrap.addEventListener('touchmove', (ev) => {
+  if (pinch && ev.touches.length === 2) {
+    ev.preventDefault();
+    const ratio = touchDist(ev.touches) / pinch.dist;
+    applyZoom(pinch.zoom * ratio, touchMid(ev.touches));
+  } else if (panning && ev.touches.length === 1) {
+    ev.preventDefault();
+    movePan(ev.touches[0].clientX, ev.touches[0].clientY);
+  }
+}, { passive: false });
+
+['touchend', 'touchcancel'].forEach(evt => {
+  canvasWrap.addEventListener(evt, (ev) => {
+    if (ev.touches.length < 2) pinch = null;
+    if (ev.touches.length === 0) endPan();
+  });
+});
+
+// Live cursor position in local feet.
+const hudCoord = document.getElementById('hudCoord');
+canvasWrap.addEventListener('mousemove', (ev) => {
+  const rect = canvasWrap.getBoundingClientRect();
+  const xFt = (canvasWrap.scrollLeft + ev.clientX - rect.left) / (SCALE * zoom) + VIEW_MIN_X_FT;
+  const yFt = (canvasWrap.scrollTop + ev.clientY - rect.top) / (SCALE * zoom) + VIEW_MIN_Y_FT;
+  hudCoord.textContent = `x ${xFt.toFixed(1)} ft · y ${yFt.toFixed(1)} ft`;
+});
+canvasWrap.addEventListener('mouseleave', () => { hudCoord.textContent = '—'; });
+
+// --- Keyboard ----------------------------------------------------------
+function typingInField(ev) {
+  const t = ev.target;
+  return !!(t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable));
+}
+
+window.addEventListener('keydown', (ev) => {
+  if (ev.code === 'Space' && !typingInField(ev)) {
+    if (!spaceHeld) { spaceHeld = true; canvasWrap.classList.add('panning'); }
+    ev.preventDefault();
+    return;
+  }
+
+  const meta = ev.ctrlKey || ev.metaKey;
+  if (meta && ev.key.toLowerCase() === 'z') { ev.preventDefault(); ev.shiftKey ? redo() : undo(); return; }
+  if (meta && ev.key.toLowerCase() === 'y') { ev.preventDefault(); redo(); return; }
+  if (typingInField(ev) || meta) return;
+
+  const step = ev.shiftKey ? 1 : 0.25;
+  switch (ev.key) {
+    case 'ArrowLeft':  updateSelected(p => { p.x_ft = Math.round((p.x_ft - step) * 4) / 4; }, 700); ev.preventDefault(); break;
+    case 'ArrowRight': updateSelected(p => { p.x_ft = Math.round((p.x_ft + step) * 4) / 4; }, 700); ev.preventDefault(); break;
+    case 'ArrowUp':    updateSelected(p => { p.y_ft = Math.round((p.y_ft - step) * 4) / 4; }, 700); ev.preventDefault(); break;
+    case 'ArrowDown':  updateSelected(p => { p.y_ft = Math.round((p.y_ft + step) * 4) / 4; }, 700); ev.preventDefault(); break;
+    case '[': updateSelected(p => { p.rotation_deg = clampRotation(p.rotation_deg - (ev.shiftKey ? 15 : 1)); }, 700); break;
+    case ']': updateSelected(p => { p.rotation_deg = clampRotation(p.rotation_deg + (ev.shiftKey ? 15 : 1)); }, 700); break;
+    case 'Escape': deselectPass(); break;
+    case '+': case '=': applyZoom(zoom + ZOOM_STEP); ev.preventDefault(); break;
+    case '-': case '_': applyZoom(zoom - ZOOM_STEP); ev.preventDefault(); break;
+    case '0': fitPlan(); break;
+    case '9': fitContext(); break;
+    case '1': applyZoom(1); break;
+    default: break;
+  }
+});
+
+window.addEventListener('keyup', (ev) => {
+  if (ev.code === 'Space') {
+    spaceHeld = false;
+    if (!panning) canvasWrap.classList.remove('panning');
+  }
+});
+window.addEventListener('blur', () => { spaceHeld = false; endPan(); });
 
 function offsetCurve(points, distanceFt) {
   const normals = [];
@@ -407,6 +697,7 @@ function renderPresetList() {
     const loadBtn = document.createElement('button');
     loadBtn.textContent = 'Load';
     loadBtn.addEventListener('click', () => {
+      pushUndo();
       layout = { ...defaultLayout(), ...presets[name].passes };
       manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
       saveToStorage();
@@ -541,9 +832,18 @@ function renderRoster() {
     tr.dataset.id = p.id;
     if (p.id === selectedId) tr.classList.add('selected');
     tr.innerHTML = `<td><span class="swatch" style="background:${p.color}"></span>${p.name}</td><td>${p.area_sqft} sqft</td>`;
-    tr.addEventListener('click', () => selectPass(p.id));
+    tr.addEventListener('click', () => { selectPass(p.id); centerOnPass(p.id); });
     tbody.appendChild(tr);
   });
+}
+
+function syncSelectedInputs() {
+  const pos = selectedId ? layout[selectedId] : null;
+  const rot = pos ? pos.rotation_deg : 0;
+  document.getElementById('xIn').value = pos ? pos.x_ft : '';
+  document.getElementById('yIn').value = pos ? pos.y_ft : '';
+  document.getElementById('rotIn').value = rot;
+  document.getElementById('rotNumIn').value = rot;
 }
 
 function selectPass(id) {
@@ -551,12 +851,28 @@ function selectPass(id) {
   document.querySelectorAll('.token').forEach(t => t.classList.toggle('selected', t.dataset.id === id));
   document.querySelectorAll('#roster tbody tr').forEach(tr => tr.classList.toggle('selected', tr.dataset.id === id));
   const p = manifest.passes.find(p => p.id === id);
-  const pos = layout[id];
   document.getElementById('selName').textContent = p ? p.name : 'None selected';
-  document.getElementById('xIn').value = pos ? pos.x_ft : '';
-  document.getElementById('yIn').value = pos ? pos.y_ft : '';
-  document.getElementById('rotIn').value = pos ? pos.rotation_deg : 0;
-  document.getElementById('rotVal').textContent = (pos ? pos.rotation_deg : 0) + '°';
+  syncSelectedInputs();
+}
+
+function deselectPass() {
+  selectedId = null;
+  document.querySelectorAll('.token').forEach(t => t.classList.remove('selected'));
+  document.querySelectorAll('#roster tbody tr').forEach(tr => tr.classList.remove('selected'));
+  document.getElementById('selName').textContent = 'None selected';
+  syncSelectedInputs();
+}
+
+// Applies a change to the selected pass with undo tracking. `coalesceMs`
+// groups rapid repeats (key-repeat nudging, typing in a number field) into
+// a single undo entry instead of dozens.
+function updateSelected(mutator, coalesceMs = 0) {
+  if (!selectedId) return;
+  pushUndo(coalesceMs);
+  mutator(layout[selectedId]);
+  applyTokenTransform(document.querySelector(`.token[data-id="${selectedId}"]`), layout[selectedId]);
+  syncSelectedInputs();
+  saveToStorage();
 }
 
 function bringToFront(id) {
@@ -587,7 +903,12 @@ function makeToken(p) {
   let dragging = false, startPointer = null, startPos = null;
 
   const onDown = (ev) => {
+    // Let middle-click, space-drag, and two-finger pinch pan the map instead.
+    if (ev.button !== undefined && ev.button !== 0) return;
+    if (spaceHeld) return;
+    if (ev.touches && ev.touches.length > 1) return;
     ev.preventDefault();
+    pushUndo();
     selectPass(p.id);
     bringToFront(p.id);
     dragging = true;
@@ -660,7 +981,8 @@ function init(manifestData, savedLayout, committedLayout) {
   renderRoster();
   renderPresetList();
   renderTokens();
-  centerOnPlan();
+  updateHistoryButtons();
+  whenFitReady(fitPlan);
   if (urlLayout) {
     saveToStorage();
     setStatus('Loaded a shared layout from the URL link. ' + totalAreaLabel() + ' Save it under "Your presets" to keep a copy in this browser.');
@@ -671,6 +993,7 @@ function init(manifestData, savedLayout, committedLayout) {
 
 document.getElementById('resetBtn').addEventListener('click', () => {
   if (!manifest) return;
+  pushUndo();
   layout = defaultLayout();
   saveToStorage();
   renderTokens();
@@ -731,6 +1054,7 @@ document.getElementById('loadInput').addEventListener('change', (ev) => {
     try {
       const data = JSON.parse(reader.result);
       if (!data.passes) throw new Error('Missing "passes" key');
+      pushUndo();
       layout = { ...defaultLayout(), ...data.passes };
       manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
       saveToStorage();
@@ -746,28 +1070,41 @@ document.getElementById('loadInput').addEventListener('change', (ev) => {
 
 ['xIn', 'yIn'].forEach(id => {
   document.getElementById(id).addEventListener('input', (ev) => {
-    if (!selectedId) return;
     const key = id === 'xIn' ? 'x_ft' : 'y_ft';
-    layout[selectedId][key] = parseFloat(ev.target.value) || 0;
+    const value = parseFloat(ev.target.value) || 0;
+    // Don't re-sync the field being typed in -- that fights the caret.
+    if (!selectedId) return;
+    pushUndo(900);
+    layout[selectedId][key] = value;
     applyTokenTransform(document.querySelector(`.token[data-id="${selectedId}"]`), layout[selectedId]);
     saveToStorage();
   });
 });
+
+// Snapshot once when a slider drag begins, not on every input event.
+['mousedown', 'touchstart', 'keydown'].forEach(evt => {
+  document.getElementById('rotIn').addEventListener(evt, () => { if (selectedId) pushUndo(600); });
+});
 document.getElementById('rotIn').addEventListener('input', (ev) => {
   if (!selectedId) return;
   layout[selectedId].rotation_deg = parseFloat(ev.target.value) || 0;
-  document.getElementById('rotVal').textContent = layout[selectedId].rotation_deg + '°';
+  document.getElementById('rotNumIn').value = layout[selectedId].rotation_deg;
   applyTokenTransform(document.querySelector(`.token[data-id="${selectedId}"]`), layout[selectedId]);
   saveToStorage();
 });
-document.getElementById('rot0Btn').addEventListener('click', () => {
+document.getElementById('rotNumIn').addEventListener('input', (ev) => {
   if (!selectedId) return;
-  layout[selectedId].rotation_deg = 0;
-  document.getElementById('rotIn').value = 0;
-  document.getElementById('rotVal').textContent = '0°';
+  pushUndo(900);
+  layout[selectedId].rotation_deg = clampRotation(parseFloat(ev.target.value) || 0);
+  document.getElementById('rotIn').value = layout[selectedId].rotation_deg;
   applyTokenTransform(document.querySelector(`.token[data-id="${selectedId}"]`), layout[selectedId]);
   saveToStorage();
 });
+document.getElementById('rot0Btn').addEventListener('click', () => updateSelected(pos => { pos.rotation_deg = 0; }));
+document.getElementById('rotL15').addEventListener('click', () => updateSelected(pos => { pos.rotation_deg = clampRotation(pos.rotation_deg - 15); }));
+document.getElementById('rotR15').addEventListener('click', () => updateSelected(pos => { pos.rotation_deg = clampRotation(pos.rotation_deg + 15); }));
+document.getElementById('undoBtn').addEventListener('click', undo);
+document.getElementById('redoBtn').addEventListener('click', redo);
 
 Promise.all([MANIFEST_URL, STARTING_LAYOUT_URL].map(url => fetch(url).then(r => {
   if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
