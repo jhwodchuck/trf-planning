@@ -36,4 +36,12 @@ Last updated: **2026-07-27**
 
 ## Drawing rule
 
-Use the current site-specific 600 sq ft overlay as the working household plan, but retain its provisional status until field measurements and TRF approval are complete.
+Use the current site-specific 600 sq ft overlay as the working household plan. Within the conservative **31.5 × 14.25 ft deployed envelope**, show the floorplan-derived:
+
+- approximately 8 ft camper body;
+- west-side kitchen slide;
+- east-side living/dinette and bedroom slides;
+- west-side entry and steps; and
+- south-facing hitch/front.
+
+Keep the literal camper components visually distinct from the conservative envelope, and retain their provisional status until field measurements and TRF approval are complete.

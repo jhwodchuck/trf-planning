@@ -67,7 +67,10 @@ def offset_curve(points: list[tuple[float, float]], distance_ft: float):
     for first, second in zip(points, points[1:]):
         dx, dy = second[0] - first[0], second[1] - first[1]
         length = (dx * dx + dy * dy) ** 0.5
-        normals.append((-dy / length, dx / length))
+        # Local y increases south/down in the viewer. The campsite is on the
+        # right-hand side of the supplied southwest-to-north road trace:
+        # north of its eastbound leg and west of its northbound leg.
+        normals.append((dy / length, -dx / length))
 
     result = []
     for index, point in enumerate(points):

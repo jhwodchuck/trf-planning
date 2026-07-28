@@ -173,32 +173,32 @@ z: 53</description>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Wildcat deployed zone</name>
-      <styleUrl>#role-known_equipment</styleUrl>
-      <description>id: jc_rv
-role: known_equipment
-status: working measurement; camper model/data-plate not yet confirmed
+      <name>Conservative deployed envelope</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: jc_rv_envelope
+role: equipment_placeholder
+status: 31.5 x 14.25 ft planning envelope; not the literal camper outline
 dimensions_ft: 31.5 x 14.25 ft
-color: #3d85c6
+color: #d9e8f7
 source_pass_id: jc</description>
       <ExtendedData>
         <Data name="id">
-          <value>jc_rv</value>
+          <value>jc_rv_envelope</value>
         </Data>
         <Data name="name">
-          <value>Wildcat deployed zone</value>
+          <value>Conservative deployed envelope</value>
         </Data>
         <Data name="role">
-          <value>known_equipment</value>
+          <value>equipment_placeholder</value>
         </Data>
         <Data name="status">
-          <value>working measurement; camper model/data-plate not yet confirmed</value>
+          <value>31.5 x 14.25 ft planning envelope; not the literal camper outline</value>
         </Data>
         <Data name="dimensions_ft">
           <value>31.5 x 14.25 ft</value>
         </Data>
         <Data name="color">
-          <value>#3d85c6</value>
+          <value>#d9e8f7</value>
         </Data>
         <Data name="source_pass_id">
           <value>jc</value>
@@ -212,6 +212,244 @@ source_pass_id: jc</description>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Wildcat body</name>
+      <styleUrl>#role-known_equipment</styleUrl>
+      <description>id: jc_rv_body
+role: known_equipment
+status: approximately 8 x 29.5 ft floorplan-derived body within the conservative envelope; exact model and dimensions require field verification
+dimensions_ft: approx. 8 x 29.5 ft
+color: #f0f2f4
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_rv_body</value>
+        </Data>
+        <Data name="name">
+          <value>Wildcat body</value>
+        </Data>
+        <Data name="role">
+          <value>known_equipment</value>
+        </Data>
+        <Data name="status">
+          <value>approximately 8 x 29.5 ft floorplan-derived body within the conservative envelope; exact model and dimensions require field verification</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>approx. 8 x 29.5 ft</value>
+        </Data>
+        <Data name="color">
+          <value>#f0f2f4</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846212196,30.255876350,0 -95.846186848,30.255875709,0 -95.846189584,30.255794970,0 -95.846214932,30.255795611,0 -95.846212196,30.255876350,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Kitchen slide</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: jc_slide_kitchen
+role: equipment_placeholder
+status: floorplan-derived west-side projection; approximately 25 in in the detailed planning schematic; field verify
+dimensions_ft: ~25 in west
+color: #9bc3e6
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_slide_kitchen</value>
+        </Data>
+        <Data name="name">
+          <value>Kitchen slide</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived west-side projection; approximately 25 in in the detailed planning schematic; field verify</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>~25 in west</value>
+        </Data>
+        <Data name="color">
+          <value>#9bc3e6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846219150,30.255866253,0 -95.846212544,30.255866086,0 -95.846213262,30.255844875,0 -95.846219869,30.255845042,0 -95.846219150,30.255866253,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Living / dinette slide</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: jc_slide_living
+role: equipment_placeholder
+status: floorplan-derived east-side projection; approximately 38 in in the detailed planning schematic; field verify
+dimensions_ft: ~38 in east
+color: #9bc3e6
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_slide_living</value>
+        </Data>
+        <Data name="name">
+          <value>Living / dinette slide</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived east-side projection; approximately 38 in in the detailed planning schematic; field verify</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>~38 in east</value>
+        </Data>
+        <Data name="color">
+          <value>#9bc3e6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846187149,30.255866814,0 -95.846177121,30.255866560,0 -95.846178257,30.255833033,0 -95.846188285,30.255833287,0 -95.846187149,30.255866814,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Bedroom slide</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: jc_slide_bedroom
+role: equipment_placeholder
+status: floorplan-derived east-side projection; approximately 29 in in the detailed planning schematic; field verify
+dimensions_ft: ~29 in east
+color: #9bc3e6
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_slide_bedroom</value>
+        </Data>
+        <Data name="name">
+          <value>Bedroom slide</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived east-side projection; approximately 29 in in the detailed planning schematic; field verify</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>~29 in east</value>
+        </Data>
+        <Data name="color">
+          <value>#9bc3e6</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846188564,30.255825076,0 -95.846180912,30.255824883,0 -95.846181538,30.255806409,0 -95.846189190,30.255806602,0 -95.846188564,30.255825076,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Entry + steps west</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: jc_entry_steps
+role: equipment_line_placeholder
+status: floorplan-derived west-side entry; stair projection requires field measurement
+dimensions_ft:
+color: #a56200
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_entry_steps</value>
+        </Data>
+        <Data name="name">
+          <value>Entry + steps west</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived west-side entry; stair projection requires field measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#a56200</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846214153,30.255818601,0 -95.846220880,30.255815210,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Hitch / front south</name>
+      <styleUrl>#role-equipment_line_placeholder</styleUrl>
+      <description>id: jc_hitch
+role: equipment_line_placeholder
+status: floorplan-derived orientation; exact hitch geometry requires measurement
+dimensions_ft:
+color: #303941
+source_pass_id: jc</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>jc_hitch</value>
+        </Data>
+        <Data name="name">
+          <value>Hitch / front south</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_line_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>floorplan-derived orientation; exact hitch geometry requires measurement</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#303941</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>jc</value>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-95.846202063,30.255801038,0 -95.846202235,30.255795975,0</coordinates>
+      </LineString>
     </Placemark>
     <Placemark>
       <name>Canopy</name>
@@ -2326,7 +2564,7 @@ z: 50</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846307347,30.255673312,0 -95.846221798,30.255671149,0 -95.846223560,30.255619148,0 -95.846166527,30.255617706,0 -95.846167547,30.255587600,0 -95.846234086,30.255589282,0 -95.846232509,30.255635810,0 -95.846308553,30.255637732,0 -95.846307347,30.255673312,0</coordinates>
+            <coordinates>-95.846307347,30.255673312,0 -95.846221798,30.255671149,0 -95.846224580,30.255589042,0 -95.846291118,30.255590724,0 -95.846290098,30.255620830,0 -95.846233065,30.255619388,0 -95.846232509,30.255635810,0 -95.846308553,30.255637732,0 -95.846307347,30.255673312,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2406,7 +2644,7 @@ source_pass_id: bg_primary</description>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Closet tent provisional clearance</name>
+      <name>Dressing / closet tent provisional clearance</name>
       <styleUrl>#role-clearance_placeholder</styleUrl>
       <description>id: bg_community_tent_buffer
 role: clearance_placeholder
@@ -2417,7 +2655,7 @@ source_pass_id: bg_primary</description>
           <value>bg_community_tent_buffer</value>
         </Data>
         <Data name="name">
-          <value>Closet tent provisional clearance</value>
+          <value>Dressing / closet tent provisional clearance</value>
         </Data>
         <Data name="role">
           <value>clearance_placeholder</value>
@@ -2433,13 +2671,13 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846233065,30.255619388,0 -95.846166527,30.255617706,0 -95.846167547,30.255587600,0 -95.846234086,30.255589282,0 -95.846233065,30.255619388,0</coordinates>
+            <coordinates>-95.846290098,30.255620830,0 -95.846223560,30.255619148,0 -95.846224580,30.255589042,0 -95.846291118,30.255590724,0 -95.846290098,30.255620830,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Closet tent</name>
+      <name>Dressing / closet tent</name>
       <styleUrl>#role-equipment_placeholder</styleUrl>
       <description>id: bg_community_tent
 role: equipment_placeholder
@@ -2452,7 +2690,7 @@ source_pass_id: bg_primary</description>
           <value>bg_community_tent</value>
         </Data>
         <Data name="name">
-          <value>Closet tent</value>
+          <value>Dressing / closet tent</value>
         </Data>
         <Data name="role">
           <value>equipment_placeholder</value>
@@ -2474,7 +2712,7 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846231528,30.255617980,0 -95.846168158,30.255616377,0 -95.846169085,30.255589008,0 -95.846232455,30.255590611,0 -95.846231528,30.255617980,0</coordinates>
+            <coordinates>-95.846288560,30.255619422,0 -95.846225191,30.255617820,0 -95.846226118,30.255590451,0 -95.846289488,30.255592053,0 -95.846288560,30.255619422,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2996,7 +3234,7 @@ trace_point_count: 25</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846850331,30.255317641,0 -95.846547015,30.255321170,0 -95.846479326,30.255313091,0 -95.846434185,30.255293493,0 -95.846391414,30.255259378,0 -95.846241245,30.255128338,0 -95.846199027,30.255129254,0 -95.846156123,30.255156048,0 -95.846121414,30.255239532,0 -95.846087525,30.255299085,0 -95.846050456,30.255360921,0 -95.846023983,30.255429922,0 -95.846030848,30.255496302,0 -95.846063498,30.255630432,0 -95.846087147,30.255709292,0 -95.846090837,30.255789267,0 -95.846091223,30.255867806,0 -95.846070796,30.255923415,0 -95.846082352,30.255973655,0 -95.846105347,30.255990104,0 -95.846177867,30.256027229,0 -95.846235015,30.256061117,0 -95.846265047,30.256086895,0 -95.846295148,30.256131911,0 -95.846318315,30.256183271,0</coordinates>
+        <coordinates>-95.846851165,30.255372397,0 -95.846542937,30.255375818,0 -95.846460423,30.255365362,0 -95.846398275,30.255338623,0 -95.846347169,30.255298598,0 -95.846218388,30.255179417,0 -95.846220373,30.255180818,0 -95.846206950,30.255188778,0 -95.846179969,30.255260523,0 -95.846144120,30.255323763,0 -95.846108770,30.255382405,0 -95.846086963,30.255436197,0 -95.846093508,30.255487977,0 -95.846125232,30.255617969,0 -95.846149863,30.255701289,0 -95.846154220,30.255788127,0 -95.846153834,30.255876401,0 -95.846134027,30.255927367,0 -95.846135882,30.255944316,0 -95.846139709,30.255944084,0 -95.846212029,30.255981098,0 -95.846275580,30.256019033,0 -95.846315285,30.256053493,0 -95.846352239,30.256108101,0 -95.846377353,30.256163316,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -3041,7 +3279,7 @@ trace_point_count: 25</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846850164,30.255306689,0 -95.846547831,30.255310241,0 -95.846483106,30.255302637,0 -95.846441366,30.255284467,0 -95.846400263,30.255251534,0 -95.846245817,30.255118123,0 -95.846194758,30.255118941,0 -95.846145958,30.255149501,0 -95.846109703,30.255235334,0 -95.846076206,30.255294150,0 -95.846038793,30.255356624,0 -95.846011387,30.255428667,0 -95.846018316,30.255497967,0 -95.846051152,30.255632924,0 -95.846074603,30.255710892,0 -95.846078160,30.255789495,0 -95.846078700,30.255866087,0 -95.846058149,30.255922624,0 -95.846071646,30.255979522,0 -95.846098474,30.255999308,0 -95.846171034,30.256036455,0 -95.846226902,30.256069534,0 -95.846255000,30.256093576,0 -95.846283730,30.256136673,0 -95.846306507,30.256187262,0</coordinates>
+        <coordinates>-95.846851332,30.255383349,0 -95.846542121,30.255386748,0 -95.846456642,30.255375816,0 -95.846391094,30.255347649,0 -95.846338320,30.255306442,0 -95.846213816,30.255189633,0 -95.846224642,30.255191131,0 -95.846217116,30.255195324,0 -95.846191680,30.255264721,0 -95.846155439,30.255328699,0 -95.846120433,30.255386702,0 -95.846099558,30.255437452,0 -95.846106040,30.255486312,0 -95.846137578,30.255615476,0 -95.846162406,30.255699688,0 -95.846166896,30.255787899,0 -95.846166356,30.255878120,0 -95.846146674,30.255928158,0 -95.846146588,30.255938448,0 -95.846146582,30.255934880,0 -95.846218861,30.255971872,0 -95.846283693,30.256010616,0 -95.846325332,30.256046812,0 -95.846363657,30.256103339,0 -95.846389160,30.256159325,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>

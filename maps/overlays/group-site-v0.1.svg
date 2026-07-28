@@ -53,8 +53,8 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <g clip-path="url(#plotClip)" fill="none" stroke-linejoin="round" stroke-linecap="round">
 <line x1="451.0" y1="120" x2="422.0" y2="1200" stroke="#00bcd4" stroke-width="5" stroke-dasharray="12 8"/>
 <path d="M -219.6 1674.7 L 358.7 1650.1 L 501.4 1666.3 L 604.4 1714.1 L 695.6 1792.7 L 967.5 2059.0 L 1005.5 2055.3 L 1057.7 2015.7 L 1111.0 1844.0 L 1173.1 1707.6 L 1237.7 1573.6 L 1279.5 1437.8 L 1263.0 1308.8 L 1193.6 1021.3 L 1142.7 845.0 L 1129.8 662.5 L 1124.4 479.8 L 1159.1 362.0 L 1144.2 288.8 L 1118.3 271.8 L 978.9 194.6 L 862.5 119.3 L 794.6 55.2 L 727.9 -52.0 L 678.8 -167.4" class="road"/>
-<path d="M -217.0 1734.6 L 356.6 1710.1 L 485.2 1724.0 L 571.9 1764.5 L 655.0 1836.8 L 947.5 2115.5 L 1027.3 2111.2 L 1106.8 2050.1 L 1167.1 1865.3 L 1227.4 1733.0 L 1293.6 1595.5 L 1339.2 1442.9 L 1322.0 1297.9 L 1251.6 1005.9 L 1201.8 834.5 L 1189.7 659.5 L 1183.9 487.5 L 1219.0 364.6 L 1193.9 255.2 L 1149.4 220.4 L 1009.8 143.1 L 899.5 72.1 L 841.0 17.3 L 781.2 -79.7 L 734.1 -190.9" class="s10"/>
-<path d="M -216.0 1758.6 L 355.8 1734.1 L 478.7 1747.2 L 558.9 1784.6 L 638.7 1854.5 L 939.5 2138.2 L 1036.1 2133.5 L 1126.4 2063.9 L 1189.5 1873.9 L 1249.1 1743.2 L 1315.9 1604.3 L 1363.1 1445.0 L 1345.6 1293.6 L 1274.8 999.8 L 1225.4 830.3 L 1213.7 658.3 L 1207.7 490.6 L 1243.0 365.6 L 1213.8 241.7 L 1161.8 199.9 L 1022.1 122.5 L 914.3 53.2 L 859.6 2.1 L 802.5 -90.7 L 756.1 -200.3" class="s14"/>
+<path d="M -222.1 1614.7 L 360.8 1590.2 L 517.6 1608.5 L 636.9 1663.6 L 736.2 1748.5 L 987.5 2002.4 L 983.6 1999.4 L 1008.5 1981.3 L 1055.0 1822.6 L 1118.7 1682.1 L 1181.9 1551.7 L 1219.7 1432.7 L 1204.0 1319.6 L 1135.6 1036.6 L 1083.7 855.5 L 1069.9 665.5 L 1064.9 472.2 L 1099.1 359.4 L 1094.5 322.4 L 1087.3 323.1 L 948.1 246.1 L 825.4 166.5 L 748.1 93.2 L 674.7 -24.4 L 623.6 -143.9" class="s10"/>
+<path d="M -223.1 1590.8 L 361.7 1566.2 L 524.1 1585.4 L 649.9 1643.5 L 752.4 1730.8 L 995.5 1979.8 L 974.9 1977.1 L 988.9 1967.5 L 1032.5 1814.1 L 1097.0 1671.9 L 1159.5 1542.9 L 1195.8 1430.6 L 1180.4 1324.0 L 1112.4 1042.8 L 1060.0 859.7 L 1045.9 666.7 L 1041.1 469.1 L 1075.2 358.4 L 1074.7 335.8 L 1074.9 343.7 L 935.8 266.6 L 810.6 185.4 L 729.5 108.4 L 653.4 -13.3 L 601.5 -134.5" class="s14"/>
 </g>
 <text x="463" y="705" class="label" fill="#007b89">HARD WEST LIMIT</text>
 <text x="944" y="145" class="label">USER-TRACED ROAD EDGE</text>
@@ -84,7 +84,7 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <polygon points="450.0,690.0 690.0,690.0 690.0,780.0 450.0,780.0" class="pass" fill="#ffd966"/>
 <text x="570.0" y="698.0" text-anchor="middle" class="small">C. + S. — 600 sq ft — 40x15 row</text>
 <g transform="translate(330 240)">
-<polygon points="120.0,720.0 282.0,720.0 282.0,834.0 390.0,834.0 390.0,900.0 264.0,900.0 264.0,798.0 120.0,798.0" class="pass" fill="#c27ba0"/>
+<polygon points="120.0,720.0 282.0,720.0 282.0,900.0 156.0,900.0 156.0,834.0 264.0,834.0 264.0,798.0 120.0,798.0" class="pass" fill="#c27ba0"/>
 <text x="201.0" y="785.0" text-anchor="middle" class="label">B. + G. A</text>
 <text x="201.0" y="796.0" text-anchor="middle" class="small">600 sq ft / tents + generator staging</text>
 </g>
@@ -114,8 +114,8 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <g transform="translate(330 240)">
 <polygon points="123.0,720.0 279.0,720.0 279.0,798.0 123.0,798.0" class="eq" fill="#a64d79" stroke="#333"/>
 <text x="201.0" y="762.0" text-anchor="middle" class="tiny">Primary tent 26x13 (rotated)</text>
-<polygon points="267.0,837.0 387.0,837.0 387.0,897.0 267.0,897.0" class="placeholder" fill="#c27ba0" stroke="#333"/>
-<text x="327.0" y="870.0" text-anchor="middle" class="tiny">Closet tent ~20x10 (rotated)</text>
+<polygon points="159.0,837.0 279.0,837.0 279.0,897.0 159.0,897.0" class="placeholder" fill="#c27ba0" stroke="#333"/>
+<text x="219.0" y="870.0" text-anchor="middle" class="tiny">Dressing / closet tent ~20x10 (rotated)</text>
 <rect x="267.0" y="801.0" width="12.0" height="12.0" class="placeholder" fill="#cc0000" stroke="#900"/>
 <text x="273.0" y="809.0" text-anchor="middle" class="tiny">G1</text>
 <rect x="267.0" y="819.0" width="12.0" height="12.0" class="placeholder" fill="#cc0000" stroke="#900"/>

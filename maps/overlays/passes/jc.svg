@@ -11,13 +11,29 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
 </style></defs>
 <polygon points="476.0,512.0 476.0,8.0 248.0,8.0 248.0,350.7 8.0,350.7 8.0,512.0" class="pass" fill="#e69138"/>
-<polygon points="248.0,8.0 476.0,8.0 476.0,512.0 248.0,512.0" class="eq" fill="#3d85c6"/>
-<text x="362.0" y="255.0" text-anchor="middle" class="tiny">Wildcat deployed zone</text>
-<text x="362.0" y="268.0" text-anchor="middle" class="tiny">31.5 x 14.25 ft</text>
+<polygon points="248.0,8.0 476.0,8.0 476.0,512.0 248.0,512.0" class="placeholder" fill="#d9e8f7"/>
+<text x="362.0" y="25.4" text-anchor="middle" class="tiny">Conservative deployed envelope</text>
+<text x="362.0" y="38.4" text-anchor="middle" class="tiny">31.5 x 14.25 ft</text>
+<polygon points="289.4,40.0 417.4,40.0 417.4,512.0 289.4,512.0" class="eq" fill="#f0f2f4"/>
+<text x="353.4" y="271.0" text-anchor="middle" class="tiny" transform="rotate(90 353.4 276.0)">Wildcat body</text>
+<text x="353.4" y="284.0" text-anchor="middle" class="tiny" transform="rotate(90 353.4 276.0)">approx. 8 x 29.5 ft</text>
+<polygon points="256.0,100.0 289.4,100.0 289.4,224.0 256.0,224.0" class="placeholder" fill="#9bc3e6"/>
+<text x="272.7" y="157.0" text-anchor="middle" class="tiny" transform="rotate(90 272.7 162.0)">Kitchen slide</text>
+<text x="272.7" y="170.0" text-anchor="middle" class="tiny" transform="rotate(90 272.7 162.0)">~25 in west</text>
+<polygon points="417.4,92.0 468.0,92.0 468.0,288.0 417.4,288.0" class="placeholder" fill="#9bc3e6"/>
+<text x="442.7" y="185.0" text-anchor="middle" class="tiny" transform="rotate(90 442.7 190.0)">Living / dinette slide</text>
+<text x="442.7" y="198.0" text-anchor="middle" class="tiny" transform="rotate(90 442.7 190.0)">~38 in east</text>
+<polygon points="417.4,336.0 456.0,336.0 456.0,444.0 417.4,444.0" class="placeholder" fill="#9bc3e6"/>
+<text x="436.7" y="385.0" text-anchor="middle" class="tiny" transform="rotate(90 436.7 390.0)">Bedroom slide</text>
+<text x="436.7" y="398.0" text-anchor="middle" class="tiny" transform="rotate(90 436.7 390.0)">~29 in east</text>
+<line x1="289.4" y1="377.6" x2="256.0" y2="398.4" stroke="#a56200" stroke-width="6" stroke-linecap="round"/>
+<text x="251.2" y="368.2" class="tiny">Entry + steps west</text>
+<line x1="353.4" y1="478.4" x2="353.4" y2="508.0" stroke="#303941" stroke-width="6" stroke-linecap="round"/>
+<text x="363.2" y="469.0" class="tiny">Hitch / front south</text>
 <polygon points="8.0,350.7 248.0,350.7 248.0,510.7 8.0,510.7" class="eq" fill="#f6b26b"/>
 <text x="128.0" y="425.7" text-anchor="middle" class="tiny">Canopy</text>
 <text x="128.0" y="438.7" text-anchor="middle" class="tiny">15 x 10 ft</text>
-<text x="248.8" y="276.1" text-anchor="middle" class="label">J. + C.</text>
-<text x="248.8" y="294.1" text-anchor="middle" class="small">600 sq ft</text>
-<text x="248.8" y="306.1" text-anchor="middle" class="tiny">598.875 sq ft RV + canopy equipment footprint, plus 1.125 sq ft boundary buffer</text>
+<text x="448.0" y="496.0" text-anchor="middle" class="tiny">Road / east side</text>
+<text x="216.0" y="336.0" text-anchor="middle" class="tiny">Entry / west side</text>
+<text x="128.0" y="364.0" text-anchor="middle" class="small">J. + C. — 600 sq ft — floorplan-derived Wildcat layout</text>
 </svg>

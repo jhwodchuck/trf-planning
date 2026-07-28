@@ -101,9 +101,9 @@
       "file": "bg_primary.svg",
       "color": "#c27ba0",
       "area_sqft": 600,
-      "bbox_width_ft": 45,
+      "bbox_width_ft": 27,
       "bbox_height_ft": 30,
-      "viewbox_width_ft": 46.0,
+      "viewbox_width_ft": 28.0,
       "viewbox_height_ft": 31.0,
       "default_x_ft": 74.5,
       "default_y_ft": 159.5
