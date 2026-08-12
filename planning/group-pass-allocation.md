@@ -16,7 +16,7 @@ Last updated: **2026-07-27**
 | Household | Primary shelter and major support equipment | Passes | Planning allocation | Household notes |
 # Group Pass Allocation and Household Roster
 
-Last updated: **2026-07-27**
+Last updated: **2026-08-11**
 
 ## Planning baseline
 
@@ -48,6 +48,8 @@ Last updated: **2026-07-27**
 - [Map assumptions and limitations](group-site-map-v0.1.md)
 
 The v0.1 map preserves ten separate 600 sq ft pass polygons. Only J. and C.'s site is tied to the supplied road controls; all other positions remain conceptual.
+
+The freeform pass-layout tool now stages three amenity sections independently: A.'s Yoga / smoking-tent section, S. and T.'s portapotty end, and S. and S.'s fire-pit end. It holds **186 sq ft** unplaced for future connector walkways (120 sq ft for S./T. and 66 sq ft for S./S.). The georeferenced v0.1 map remains on the last connected geometry until replacement routes are accepted.
 
 ## Allocation summary
 

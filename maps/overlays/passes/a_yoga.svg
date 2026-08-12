@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208" height="416" viewBox="0 0 208 416" role="img" aria-labelledby="title desc">
+<title id="title">A. — Yoga / Smoking Tent (detached) — detached planning section</title>
+<desc id="desc">Standalone provisional planning drawing for the freeform camp arrangement tool.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+.detached{stroke:#0b5394;stroke-width:2;stroke-dasharray:8 5;fill-opacity:.22}</style></defs>
+<polygon points="8.0,8.0 200.0,8.0 200.0,408.0 8.0,408.0" class="detached" fill="#76a5af"/>
+<polygon points="16.0,120.0 192.0,120.0 192.0,408.0 16.0,408.0" class="clearance" aria-label="Yoga Tent (COVERPRO canopy) provisional clearance zone"/>
+<polygon points="24.0,128.0 184.0,128.0 184.0,400.0 24.0,400.0" class="eq" fill="#3d85c6"/>
+<text x="104.0" y="259.0" text-anchor="middle" class="tiny">Yoga Tent (COVERPRO canopy)</text>
+<text x="104.0" y="272.0" text-anchor="middle" class="tiny">10 x 17 ft</text>
+<text x="104.0" y="24.0" text-anchor="middle" class="small">Detached Yoga / smoking section — 300 sq ft</text>
+</svg>

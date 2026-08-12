@@ -1,6 +1,6 @@
 # S. and S. Site Planning Notes
 
-Last updated: **2026-07-27**
+Last updated: **2026-08-11**
 
 ## Allocation
 
@@ -33,6 +33,10 @@ Detailed camper record: [`equipment/ss-kz-connect-se-c312bhkse.md`](../../equipm
 - Water supply: a separate **8 ft utility trailer with an IBC tote** is T'd perpendicularly into the shower trailer, provisionally drawn as a 5 × 8 ft deck, 3 ft tongue allowance, and 4 × 4 ft tote footprint.
 - Fire area: a **3 × 22 ft connector leg** extends from the water-trailer tongue to a **10.2 × 10 ft fire-pit end zone**, containing a provisional 3 × 3 ft fire pit.
 - Only the full-width fold-down ramp arrangement is confirmed; width, tongue, ramp depth, enclosure, steps, tanks, stabilizers, hoses, cords, privacy screening, and operating clearances remain unverified.
+
+### Detached-layout staging
+
+For freeform arrangement, treat the **432 sq ft shower/water-trailer head** and **102 sq ft fire-pit end** as independently movable pieces. Hold the former 3 × 22 ft leg's **66 sq ft** as an unplaced walkway reserve. Do not draw a replacement connector until the detached fire-pit end has been arranged and a safe route and fire-clearance plan can be evaluated.
 
 Detailed shower-trailer record: [`equipment/ss-16ft-shower-trailer.md`](../../equipment/ss-16ft-shower-trailer.md)
 
@@ -108,6 +112,7 @@ Test both contiguous and disconnected 600 sq ft pass allocations. Label every po
 Use separate provisional symbols for:
 
 - `S. & S. CAMPER — DEPLOYED DIMENSIONS REQUIRED`
-- `SIDEWAYS 16 × 7 SHOWER TRAILER + T'D IBC WATER TRAILER + LONG LEG TO FIRE PIT — VERIFY ALL DIMENSIONS AND CLEARANCES`
+- Current georeferenced reference: `SIDEWAYS 16 × 7 SHOWER TRAILER + T'D IBC WATER TRAILER + LONG LEG TO FIRE PIT — VERIFY ALL DIMENSIONS AND CLEARANCES`
+- Freeform staging: separate 432 sq ft shower/water section and 102 sq ft fire-pit end, with 66 sq ft reserved for a future connector.
 
 Prefer the arrangement that maximizes usable claimed area while providing safe shower access, privacy, drainage control, utility servicing, and camper operation rather than compactness or symmetry.

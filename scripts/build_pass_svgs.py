@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Build one standalone, self-contained SVG per 600 sq ft pass, plus a manifest
-that the interactive drag-layout tool (maps/viewer/pass-layout.html) reads.
+"""Build standalone SVGs for pass sections and detached amenity pieces, plus a
+manifest that the interactive drag-layout tool reads.
 
 This script does not touch any network service. It decomposes the same
 provisional geometry already committed in maps/overlays/group-site-v0.1.svg
@@ -12,14 +12,14 @@ Run:
     python scripts/build_pass_svgs.py
 
 Outputs:
-    maps/overlays/passes/<id>.svg           one file per pass
+    maps/overlays/passes/<id>.svg           one file per draggable piece
     maps/overlays/passes/passes-manifest.json
 """
 
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any
 
@@ -83,6 +83,13 @@ class Pass:
     # default position so the master tool opens matching the current README
     # arrangement.
     default_bbox_origin: tuple[float, float] = (0.0, 0.0)
+    # Freeform-layout metadata. PASSES remains the connected source geometry
+    # used by the georeferenced builder; LAYOUT_PASSES and DETACHED_PARTS below
+    # may split selected passes into independently draggable planning pieces.
+    kind: str = "pass"
+    parent_pass_id: str = ""
+    pass_allocation_sqft: float = 600.0
+    walkway_reserve_sqft: float = 0.0
 
     def bbox(self) -> tuple[float, float]:
         if self.rect is not None:
@@ -830,6 +837,146 @@ PASSES: list[Pass] = [
     ),
 ]
 
+
+def pass_by_id(pass_id: str) -> Pass:
+    return next(pass_definition for pass_definition in PASSES if pass_definition.id == pass_id)
+
+
+def equipment_by_id(pass_definition: Pass, equipment_id: str) -> Equipment:
+    return next(equipment for equipment in pass_definition.equipment if equipment.id == equipment_id)
+
+
+def shifted_equipment(equipment: Equipment, origin_x: float, origin_y: float) -> Equipment:
+    rect = equipment.rect
+    if rect is not None:
+        x, y, width, height = rect
+        rect = (x - origin_x, y - origin_y, width, height)
+    line = equipment.line
+    if line is not None:
+        x1, y1, x2, y2 = line
+        line = (x1 - origin_x, y1 - origin_y, x2 - origin_x, y2 - origin_y)
+    anchor = equipment.label_anchor
+    if anchor is not None:
+        anchor = (anchor[0] - origin_x, anchor[1] - origin_y)
+    return replace(equipment, rect=rect, line=line, label_anchor=anchor)
+
+
+_a_source = pass_by_id("a")
+_st_source = pass_by_id("st")
+_ss_shower_source = pass_by_id("ss_shower")
+
+# The freeform tool intentionally stages three amenity sections separately so
+# households can arrange them before connector walkways are designed. The
+# connected PASSES definitions above remain unchanged for the current
+# georeferenced map. Visible piece area plus reserved walkway area still totals
+# exactly 600 sq ft for every qualifying pass.
+_a_core = Pass(
+    id="a",
+    name="A. — Sleeping Camp",
+    color=_a_source.color,
+    area_sqft=300,
+    area_note="300 sq ft section; Yoga / smoking tent detached",
+    source=_a_source.source,
+    rect=(25, 12),
+    default_bbox_origin=_a_source.default_bbox_origin,
+    compact_label="A. — sleeping section — 300 sq ft",
+    label_anchor=(12.5, 11.5),
+    equipment=[equipment_by_id(_a_source, "a_sleep")],
+    kind="pass_section",
+    parent_pass_id="a",
+)
+
+_st_core = Pass(
+    id="st",
+    name="S. + T. — Tent Section",
+    color=_st_source.color,
+    area_sqft=264,
+    area_note="264 sq ft section; 120 sq ft reserved for a future walkway",
+    source=_st_source.source,
+    rect=(12, 22),
+    default_bbox_origin=_st_source.default_bbox_origin,
+    compact_label="S. + T. — tent section — 264 sq ft",
+    label_anchor=(6, 21.5),
+    equipment=[equipment_by_id(_st_source, "st_tent")],
+    kind="pass_section",
+    parent_pass_id="st",
+    walkway_reserve_sqft=120,
+)
+
+_ss_shower_core = Pass(
+    id="ss_shower",
+    name="S. + S. — Shower Section",
+    color=_ss_shower_source.color,
+    area_sqft=432,
+    area_note="432 sq ft section; 66 sq ft reserved for a future walkway",
+    source=_ss_shower_source.source,
+    rect=(24, 18),
+    default_bbox_origin=_ss_shower_source.default_bbox_origin,
+    label_anchor=(12, 16.2),
+    equipment=[
+        equipment
+        for equipment in _ss_shower_source.equipment
+        if equipment.id != "ss_fire_pit"
+    ],
+    annotations=[(12, 8.2, "Water trailer T'd into shower trailer")],
+    kind="pass_section",
+    parent_pass_id="ss_shower",
+    walkway_reserve_sqft=66,
+)
+
+LAYOUT_PASSES: list[Pass] = [
+    _ss_shower_core if pass_definition.id == "ss_shower" else
+    _a_core if pass_definition.id == "a" else
+    _st_core if pass_definition.id == "st" else
+    pass_definition
+    for pass_definition in PASSES
+]
+
+DETACHED_PARTS: list[Pass] = [
+    Pass(
+        id="a_yoga",
+        name="A. — Yoga / Smoking Tent (detached)",
+        color=_a_source.color,
+        area_sqft=300,
+        source=_a_source.source,
+        rect=(12, 25),
+        default_bbox_origin=(106.5, 128),
+        compact_label="Detached Yoga / smoking section — 300 sq ft",
+        label_anchor=(6, 1),
+        equipment=[shifted_equipment(equipment_by_id(_a_source, "a_yoga"), 6.5, 12)],
+        kind="detached_part",
+        parent_pass_id="a",
+    ),
+    Pass(
+        id="st_portapotty",
+        name="S. + T. — Portapotty End (detached)",
+        color=_st_source.color,
+        area_sqft=216,
+        source=_st_source.source,
+        rect=(12, 18),
+        default_bbox_origin=(130, 172),
+        compact_label="Detached portapotty end — 216 sq ft",
+        label_anchor=(6, 1),
+        equipment=[shifted_equipment(equipment_by_id(_st_source, "st_portapotty"), 0, 52)],
+        kind="detached_part",
+        parent_pass_id="st",
+    ),
+    Pass(
+        id="ss_firepit",
+        name="S. + S. — Fire-pit End (detached)",
+        color=_ss_shower_source.color,
+        area_sqft=102,
+        source=_ss_shower_source.source,
+        rect=(10.2, 10),
+        default_bbox_origin=(131.9, 190),
+        compact_label="Detached fire-pit end — 102 sq ft",
+        label_anchor=(5.1, 1),
+        equipment=[shifted_equipment(equipment_by_id(_ss_shower_source, "ss_fire_pit"), 6.9, 40)],
+        kind="detached_part",
+        parent_pass_id="ss_shower",
+    ),
+]
+
 STYLE = """
 text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .title{font-size:15px;font-weight:700}.sub{font-size:9px}
@@ -839,6 +986,8 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
 .clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
 """
+
+DETACHED_STYLE = ".detached{stroke:#0b5394;stroke-width:2;stroke-dasharray:8 5;fill-opacity:.22}"
 
 
 def esc(s: str) -> str:
@@ -868,22 +1017,32 @@ def render_pass(p: Pass) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{px_w}" height="{px_h}" '
         f'viewBox="0 0 {px_w} {px_h}" role="img" aria-labelledby="title desc">'
     )
-    parts.append(f'<title id="title">{esc(p.name)} — 600 sq ft pass</title>')
-    parts.append(
-        '<desc id="desc">Standalone provisional pass drawing, decomposed from '
-        "the public group-site planning overlay.</desc>"
-    )
-    parts.append(f"<defs><style>{STYLE}</style></defs>")
+    if p.kind == "pass":
+        parts.append(f'<title id="title">{esc(p.name)} — 600 sq ft pass</title>')
+        parts.append(
+            '<desc id="desc">Standalone provisional pass drawing, decomposed from '
+            "the public group-site planning overlay.</desc>"
+        )
+    else:
+        title_kind = "detached planning section" if p.kind == "detached_part" else "planning section"
+        parts.append(f'<title id="title">{esc(p.name)} — {title_kind}</title>')
+        parts.append(
+            '<desc id="desc">Standalone provisional planning drawing for the '
+            "freeform camp arrangement tool.</desc>"
+        )
+    style = STYLE + (DETACHED_STYLE if p.kind == "detached_part" else "")
+    parts.append(f"<defs><style>{style}</style></defs>")
     # Boundary
+    boundary_class = "detached" if p.kind == "detached_part" else "pass"
     if p.polygon is not None:
         pts = " ".join(f"{X(x)},{Y(y)}" for x, y in p.polygon)
-        parts.append(f'<polygon points="{pts}" class="pass" fill="{p.color}"/>')
+        parts.append(f'<polygon points="{pts}" class="{boundary_class}" fill="{p.color}"/>')
     else:
         w, h = p.rect  # type: ignore[misc]
         pts = " ".join(f"{X(px)},{Y(py)}" for px, py in [
             (0, 0), (w, 0), (w, h), (0, h)
         ])
-        parts.append(f'<polygon points="{pts}" class="pass" fill="{p.color}"/>')
+        parts.append(f'<polygon points="{pts}" class="{boundary_class}" fill="{p.color}"/>')
 
     # Equipment
     for eq in p.equipment:
@@ -990,17 +1149,25 @@ def main() -> int:
         "generated_by": "scripts/build_pass_svgs.py",
         "note": (
             "Freeform local layout data for maps/viewer/pass-layout.html. Not "
-            "georeferenced. default_x_ft/default_y_ft reproduce the arrangement "
-            "already committed in maps/overlays/group-site-v0.1.svg, expressed "
-            "as the top-left corner of each pass SVG's own viewBox (which "
-            "includes a fixed margin around the true 600 sq ft boundary)."
+            "georeferenced. Three amenity sections are detached for staging; "
+            "their parent-pass connector area remains reserved for future "
+            "walkways. default_x_ft/default_y_ft use each SVG viewBox top-left."
         ),
         "margin_ft": MARGIN_FT,
         "scale_px_per_ft_in_files": SCALE,
+        "planning_summary": {
+            "households": 7,
+            "passes": len(PASSES),
+            "total_planning_area_sqft": sum(pass_definition.area_sqft for pass_definition in PASSES),
+            "detached_parts": len(DETACHED_PARTS),
+            "visible_piece_area_sqft": sum(piece.area_sqft for piece in [*LAYOUT_PASSES, *DETACHED_PARTS]),
+            "walkway_reserve_sqft": sum(piece.walkway_reserve_sqft for piece in LAYOUT_PASSES),
+        },
         "passes": [],
+        "detached_parts": [],
     }
 
-    for p in PASSES:
+    def emit_piece(p: Pass, collection: str) -> None:
         svg = render_pass(p)
         out_path = OUT_DIR / f"{p.id}.svg"
         out_path.write_text(svg + "\n", encoding="utf-8")
@@ -1010,13 +1177,17 @@ def main() -> int:
         view_h = round(bbox_h + 2 * MARGIN_FT, 4)
         ox, oy = p.default_bbox_origin
 
-        manifest["passes"].append(
+        manifest[collection].append(
             {
                 "id": p.id,
                 "name": p.name,
                 "file": f"{p.id}.svg",
                 "color": p.color,
                 "area_sqft": p.area_sqft,
+                "kind": p.kind,
+                "parent_pass_id": p.parent_pass_id or p.id,
+                "pass_allocation_sqft": p.pass_allocation_sqft,
+                "walkway_reserve_sqft": p.walkway_reserve_sqft,
                 "bbox_width_ft": round(bbox_w, 4),
                 "bbox_height_ft": round(bbox_h, 4),
                 "viewbox_width_ft": view_w,
@@ -1026,10 +1197,18 @@ def main() -> int:
             }
         )
 
+    for p in LAYOUT_PASSES:
+        emit_piece(p, "passes")
+    for p in DETACHED_PARTS:
+        emit_piece(p, "detached_parts")
+
     manifest_path = OUT_DIR / "passes-manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
-    print(f"Wrote {len(PASSES)} pass SVGs and {manifest_path.name} to {OUT_DIR}")
+    print(
+        f"Wrote {len(LAYOUT_PASSES)} pass SVGs, {len(DETACHED_PARTS)} detached "
+        f"piece SVGs, and {manifest_path.name} to {OUT_DIR}"
+    )
     return 0
 
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208" height="304" viewBox="0 0 208 304" role="img" aria-labelledby="title desc">
+<title id="title">S. + T. — Portapotty End (detached) — detached planning section</title>
+<desc id="desc">Standalone provisional planning drawing for the freeform camp arrangement tool.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+.detached{stroke:#0b5394;stroke-width:2;stroke-dasharray:8 5;fill-opacity:.22}</style></defs>
+<polygon points="8.0,8.0 200.0,8.0 200.0,296.0 8.0,296.0" class="detached" fill="#b4a7d6"/>
+<polygon points="48.0,160.0 160.0,160.0 160.0,272.0 48.0,272.0" class="clearance" aria-label="Handicap Portapotty provisional clearance zone"/>
+<polygon points="56.0,168.0 152.0,168.0 152.0,264.0 56.0,264.0" class="eq" fill="#674ea7"/>
+<text x="104.0" y="211.0" text-anchor="middle" class="tiny">Handicap Portapotty</text>
+<text x="104.0" y="224.0" text-anchor="middle" class="tiny">6 x 6 ft ADA</text>
+<text x="104.0" y="24.0" text-anchor="middle" class="small">Detached portapotty end — 216 sq ft</text>
+</svg>

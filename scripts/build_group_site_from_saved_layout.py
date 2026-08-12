@@ -203,7 +203,11 @@ def pass_features(pass_definition: Pass, saved_position: dict[str, Any]):
 def main() -> int:
     saved = json.loads(SAVED_PATH.read_text(encoding="utf-8"))
     current = json.loads(GEOJSON_PATH.read_text(encoding="utf-8"))
-    saved_ids = set(saved["passes"])
+    # The freeform tool may split amenity sections into detached staging
+    # pieces before connector walkways are designed. Keep the geographic map
+    # on the last complete connected geometry until that redesign is accepted.
+    connected_positions = saved.get("connected_passes", saved["passes"])
+    saved_ids = set(connected_positions)
     pass_ids = {pass_definition.id for pass_definition in PASSES}
     if saved_ids != pass_ids:
         raise ValueError(
@@ -221,7 +225,7 @@ def main() -> int:
     for pass_definition in PASSES:
         layout_features.extend(
             pass_features(
-                pass_definition, saved["passes"][pass_definition.id]
+                pass_definition, connected_positions[pass_definition.id]
             )
         )
 
@@ -235,7 +239,9 @@ def main() -> int:
                 "shared planning-grade local-foot/WGS84 affine transform."
             ),
             "layout_source": str(SAVED_PATH.relative_to(ROOT)).replace("\\", "/"),
-            "saved_at_local": saved.get("saved_at_local"),
+            "saved_at_local": saved.get(
+                "connected_saved_at_local", saved.get("saved_at_local")
+            ),
             "planning_baseline": "600 sq ft per pass",
             "passes": len(PASSES),
             "households": 7,

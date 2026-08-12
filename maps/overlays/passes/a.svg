@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="416" height="608" viewBox="0 0 416 608" role="img" aria-labelledby="title desc">
-<title id="title">A. — 600 sq ft pass</title>
-<desc id="desc">Standalone provisional pass drawing, decomposed from the public group-site planning overlay.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="416" height="208" viewBox="0 0 416 208" role="img" aria-labelledby="title desc">
+<title id="title">A. — Sleeping Camp — planning section</title>
+<desc id="desc">Standalone provisional planning drawing for the freeform camp arrangement tool.</desc>
 <defs><style>
 text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .title{font-size:15px;font-weight:700}.sub{font-size:9px}
@@ -10,16 +10,10 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
 .clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
 </style></defs>
-<polygon points="8.0,8.0 408.0,8.0 408.0,200.0 304.0,200.0 304.0,600.0 112.0,600.0 112.0,200.0 8.0,200.0" class="pass" fill="#76a5af"/>
+<polygon points="8.0,8.0 408.0,8.0 408.0,200.0 8.0,200.0" class="pass" fill="#76a5af"/>
 <polygon points="40.0,16.0 376.0,16.0 376.0,192.0 40.0,192.0" class="clearance" aria-label="Sleeping tent provisional clearance zone"/>
 <polygon points="48.0,24.0 368.0,24.0 368.0,184.0 48.0,184.0" class="eq" fill="#76a5af"/>
 <text x="208.0" y="99.0" text-anchor="middle" class="tiny">Sleeping tent</text>
 <text x="208.0" y="112.0" text-anchor="middle" class="tiny">20 x 10 ft (rotated)</text>
-<polygon points="120.0,312.0 296.0,312.0 296.0,600.0 120.0,600.0" class="clearance" aria-label="Yoga Tent (COVERPRO canopy) provisional clearance zone"/>
-<polygon points="128.0,320.0 288.0,320.0 288.0,592.0 128.0,592.0" class="eq" fill="#3d85c6"/>
-<text x="208.0" y="451.0" text-anchor="middle" class="tiny">Yoga Tent (COVERPRO canopy)</text>
-<text x="208.0" y="464.0" text-anchor="middle" class="tiny">10 x 17 ft</text>
-<text x="208.0" y="283.2" text-anchor="middle" class="tiny">8.5 ft nominal aisle</text>
-<text x="208.0" y="230.8" text-anchor="middle" class="label">A.</text>
-<text x="208.0" y="248.8" text-anchor="middle" class="small">600 sq ft pass</text>
+<text x="208.0" y="192.0" text-anchor="middle" class="small">A. — sleeping section — 300 sq ft</text>
 </svg>

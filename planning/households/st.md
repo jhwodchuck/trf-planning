@@ -1,6 +1,6 @@
 # S. and T. Site Planning Notes
 
-Last updated: **2026-07-27**
+Last updated: **2026-08-11**
 
 ## Allocation
 
@@ -21,6 +21,10 @@ The tent, rainfly, guy lines, handicap portapotty, entrances, paths, and support
 
 The 4 ft connector is a planning allowance, not a confirmed accessible route. Its finished clear width, surface, slope, turns, obstructions, and connection to the portapotty door must be verified before treating it as accessible.
 
+### Detached-layout staging
+
+For freeform arrangement, treat the **264 sq ft tent end** and **216 sq ft portapotty end** as independently movable pieces. Hold the former connector's **120 sq ft** as an unplaced walkway reserve. Do not draw a new connector until the two ends have been arranged and the required route, width, door approach, surface, and slope can be evaluated.
+
 ## Information still confirmed vs. needed
 
 ### Confirmed / Assumed Layout Features:
@@ -37,4 +41,4 @@ The 4 ft connector is a planning allowance, not a confirmed accessible route. It
 
 ## Drawing rule
 
-Show a two-ended **600 sq ft S. and T. household boundary**: a 12 × 22 ft tent end, a 4 × 30 ft narrow connector path, and a 12 × 18 ft portapotty end. Render a 10 × 20 ft tent in the first end and a 6 × 6 ft handicap portapotty in the opposite end.
+Keep the current georeferenced reference drawing as the two-ended **600 sq ft S. and T. boundary** until a replacement is accepted. In the freeform tool, render the 12 × 22 ft tent end and 12 × 18 ft portapotty end separately, with 120 sq ft clearly reserved for a future connector.

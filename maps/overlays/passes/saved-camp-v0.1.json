@@ -1,7 +1,90 @@
 {
-  "saved_at_local": "Mon Jul 27 2026 16:42:11 GMT-0500 (Central Daylight Time)",
+  "saved_at_local": "Tue Aug 11 2026 (detached staging baseline)",
+  "connected_saved_at_local": "Mon Jul 27 2026 16:42:11 GMT-0500 (Central Daylight Time)",
   "scale_px_per_ft": 14,
   "passes": {
+    "jc": {
+      "x_ft": 141,
+      "y_ft": 76.75,
+      "rotation_deg": 0,
+      "z": 53
+    },
+    "ss_camper": {
+      "x_ft": 79.5,
+      "y_ft": 164.75,
+      "rotation_deg": -2,
+      "z": 52
+    },
+    "ss_shower": {
+      "x_ft": 75.9753,
+      "y_ft": 137.6208,
+      "rotation_deg": -104,
+      "z": 58
+    },
+    "me_camper": {
+      "x_ft": 157.25,
+      "y_ft": 187.75,
+      "rotation_deg": 10,
+      "z": 50
+    },
+    "me_support": {
+      "x_ft": 136.75,
+      "y_ft": 116.25,
+      "rotation_deg": 0,
+      "z": 52
+    },
+    "a": {
+      "x_ft": 106.4296,
+      "y_ft": 217.3119,
+      "rotation_deg": 103,
+      "z": 57
+    },
+    "cs": {
+      "x_ft": 121.25,
+      "y_ft": 178.25,
+      "rotation_deg": 133,
+      "z": 55
+    },
+    "bg_primary": {
+      "x_ft": 130.75,
+      "y_ft": 153.75,
+      "rotation_deg": 0,
+      "z": 50
+    },
+    "bg_community": {
+      "x_ft": 83.5,
+      "y_ft": 105.75,
+      "rotation_deg": -85,
+      "z": 60
+    },
+    "st": {
+      "x_ft": 186.4906,
+      "y_ft": 167.2524,
+      "rotation_deg": 158,
+      "z": 49
+    }
+  },
+  "detached_parts": {
+    "a_yoga": {
+      "x_ft": 94.9038,
+      "y_ft": 206.6503,
+      "rotation_deg": 103,
+      "z": 61
+    },
+    "st_portapotty": {
+      "x_ft": 167.7602,
+      "y_ft": 122.8932,
+      "rotation_deg": 158,
+      "z": 62
+    },
+    "ss_firepit": {
+      "x_ft": 117.8059,
+      "y_ft": 132.9116,
+      "rotation_deg": -104,
+      "z": 63
+    }
+  },
+  "connected_passes": {
     "jc": {
       "x_ft": 141,
       "y_ft": 76.75,

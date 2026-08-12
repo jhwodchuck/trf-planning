@@ -65,6 +65,8 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <span>Passes</span><strong>10</strong>
 <span>Area per pass</span><strong>600 sq ft</strong>
 <span>Total planning area</span><strong>6,000 sq ft</strong>
+<span>Detached pieces</span><strong>3</strong>
+<span>Future walkway reserve</span><strong>186 sq ft</strong>
 </div>
 
 <div class="controls">
@@ -101,11 +103,14 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <button id="fitContextBtn">Fit aerial context</button>
 </div>
 
-<h2>Passes</h2>
+<h2>Pass sections</h2>
 <table class="roster" id="roster"><tbody></tbody></table>
 
+<h2>Detached pieces</h2>
+<table class="roster" id="detachedRoster"><tbody></tbody></table>
+
 <fieldset>
-<legend>Selected pass</legend>
+<legend>Selected piece</legend>
 <div class="row"><span id="selName">None selected</span></div>
 <div class="row"><label style="width:2rem">X ft</label><input id="xIn" type="number" step="0.25"></div>
 <div class="row"><label style="width:2rem">Y ft</label><input id="yIn" type="number" step="0.25"></div>
@@ -116,17 +121,18 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <h2>How this works</h2>
 <ul>
 <li><strong>Move around:</strong> scroll wheel or trackpad pinch zooms in and out on whatever is under your pointer. Drag any empty area to pan, or hold <kbd>Space</kbd> (or middle-mouse) to pan even over a pass. On a touchscreen, drag to pan and pinch to zoom. The zoom slider, −/+ buttons, <strong>Fit plan</strong> and <strong>Fit aerial context</strong> all still work.</li>
-<li>Drag a pass by clicking and dragging its shape. Click empty ground to deselect.</li>
-<li>Click a pass in the list to select it <em>and</em> jump the map to it.</li>
-<li><strong>Precise placement:</strong> with a pass selected, arrow keys nudge it 0.25 ft (hold <kbd>Shift</kbd> for 1 ft), and <kbd>[</kbd> / <kbd>]</kbd> rotate it 1° (<kbd>Shift</kbd> for 15°). You can also type exact values into the X, Y, and rotation fields.</li>
+<li>Drag a pass section or detached piece by clicking and dragging its shape. Click empty ground to deselect.</li>
+<li>Click any item in either list to select it <em>and</em> jump the map to it.</li>
+<li><strong>Precise placement:</strong> with a piece selected, arrow keys nudge it 0.25 ft (hold <kbd>Shift</kbd> for 1 ft), and <kbd>[</kbd> / <kbd>]</kbd> rotate it 1° (<kbd>Shift</kbd> for 15°). You can also type exact values into the X, Y, and rotation fields.</li>
 <li><strong>Mistakes are undoable:</strong> <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> redoes (or use the Undo/Redo buttons).</li>
 <li><strong>Keyboard shortcuts:</strong> <kbd>0</kbd> fit plan · <kbd>9</kbd> fit aerial context · <kbd>1</kbd> 100% zoom · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>Esc</kbd> deselect.</li>
 <li>The badge in the lower-left corner shows the current zoom and the exact local-foot coordinate under your pointer.</li>
-<li>Positions are the pass SVG's own top-left corner (each file has a small margin around its true 600 sq ft boundary — see <code>maps/overlays/passes/passes-manifest.json</code>).</li>
+<li>Positions are each SVG's own top-left corner, including its small drawing margin. The Yoga / smoking section, portapotty end, and fire-pit end are independently draggable. Their current starting positions reconstruct the former connected layouts.</li>
+<li>S. + T. retains <strong>120 sq ft</strong> and S. + S. retains <strong>66 sq ft</strong> as unplaced walkway reserves. Those areas are counted in the 6,000 sq ft total but are intentionally not drawn until the detached pieces have been arranged.</li>
 <li>The current arrangement autosaves to this browser's local storage as you drag. Use <strong>Your presets</strong> to save multiple named arrangements in this browser and switch between them. Use <strong>Copy share link</strong> to send an exact arrangement to someone else — no file, no repo commit, they just open the link. Use <strong>Download layout (.json)</strong> / <strong>Load from file</strong> for a portable backup, or to propose a new committed starting point (see below).</li>
-<li>Each pass file under <code>maps/overlays/passes/</code> can be edited independently, then regenerate with <code>python scripts/build_pass_svgs.py</code> (or hand-edit the SVGs directly) — reload this page to pick up changes.</li>
+<li>Each pass-section and detached-piece file under <code>maps/overlays/passes/</code> is generated from <code>python scripts/build_pass_svgs.py</code>. Edit the source definitions and regenerate, then reload this page.</li>
 <li>The muted aerial backdrop is a committed local copy of Texas NAIP 2022 (60 cm) imagery, so the layout tool no longer waits on a live GIS service. Its roughly 700 × 450 ft extent provides surrounding road, clearing, and tree context while the editable planning coordinates remain the same 230 × 200 ft area. The image is affine-warped in the browser using the same local-foot/WGS84 transform as <code>group-site-v0.1.geojson</code>, correcting the former ~1.68° rotation and the resulting southern-road drift. This is still planning imagery, not a survey.</li>
-<li>The cyan line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W is a <strong>hard western limit</strong>. Passes are automatically kept east of its extrapolated alignment, including when rotated or loaded from an older saved layout.</li>
+<li>The cyan line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W is a <strong>hard western limit</strong>. Pass sections and detached pieces are automatically kept east of its extrapolated alignment, including when rotated or loaded from an older saved layout.</li>
 </ul>
 
 <div id="status"></div>
@@ -147,7 +153,7 @@ const LAYOUT_OFFSET_X_FT = -VIEW_MIN_X_FT, LAYOUT_OFFSET_Y_FT = -VIEW_MIN_Y_FT;
 // Floor is low enough that "Fit aerial context" can actually show the whole
 // ~700 x 450 ft image on a narrow pane instead of clipping at the limit.
 const MIN_ZOOM = 0.06, MAX_ZOOM = 1.5, ZOOM_STEP = 0.1;
-const STORAGE_KEY = 'trf-pass-layout-v2';
+const STORAGE_KEY = 'trf-pass-layout-v3';
 const MANIFEST_URL = '../overlays/passes/passes-manifest.json';
 const STARTING_LAYOUT_URL = '../overlays/passes/saved-camp-v0.1.json';
 const PASS_DIR = '../overlays/passes/';
@@ -198,6 +204,7 @@ const WEST_LIMIT_LOCAL = [
 
 let manifest = null;
 let startingLayout = null;
+let connectedPassLayout = null;
 let layout = {}; // id -> {x_ft, y_ft, rotation_deg, z}
 let selectedId = null;
 let showGrid = true;
@@ -223,6 +230,84 @@ aerialImg.addEventListener('error', () => setStatus('Could not load the local ae
 canvas.appendChild(aerialImg);
 
 function setStatus(msg) { statusEl.textContent = msg; }
+
+function movablePieces() {
+  if (!manifest) return [];
+  return [...(manifest.passes || []), ...(manifest.detached_parts || [])];
+}
+
+function movableById(id) {
+  return movablePieces().find(piece => piece.id === id);
+}
+
+const LEGACY_DETACH_SPECS = {
+  a: {
+    old_size: [25, 37],
+    core: [0, 0, 25, 12],
+    detached_id: 'a_yoga',
+    detached: [6.5, 12, 12, 25]
+  },
+  st: {
+    old_size: [12, 70],
+    core: [0, 0, 12, 22],
+    detached_id: 'st_portapotty',
+    detached: [0, 52, 12, 18]
+  },
+  ss_shower: {
+    old_size: [24, 50],
+    core: [0, 0, 24, 18],
+    detached_id: 'ss_firepit',
+    detached: [6.9, 40, 10.2, 10]
+  }
+};
+
+function splitLegacyPosition(position, oldSize, part, zOffset = 0) {
+  const margin = 0.5;
+  const [oldWidth, oldHeight] = oldSize;
+  const [originX, originY, width, height] = part;
+  const oldCenterX = position.x_ft + oldWidth / 2 + margin;
+  const oldCenterY = position.y_ft + oldHeight / 2 + margin;
+  const unrotatedCenterX = position.x_ft + margin + originX + width / 2;
+  const unrotatedCenterY = position.y_ft + margin + originY + height / 2;
+  const angle = (position.rotation_deg || 0) * Math.PI / 180;
+  const dx = unrotatedCenterX - oldCenterX;
+  const dy = unrotatedCenterY - oldCenterY;
+  const centerX = oldCenterX + dx * Math.cos(angle) - dy * Math.sin(angle);
+  const centerY = oldCenterY + dx * Math.sin(angle) + dy * Math.cos(angle);
+  return {
+    x_ft: Math.round((centerX - (width + 2 * margin) / 2) * 10000) / 10000,
+    y_ft: Math.round((centerY - (height + 2 * margin) / 2) * 10000) / 10000,
+    rotation_deg: position.rotation_deg || 0,
+    z: (position.z || 1) + zOffset
+  };
+}
+
+function migrateLegacyConnectedLayout(source) {
+  const migrated = { ...source };
+  Object.entries(LEGACY_DETACH_SPECS).forEach(([parentId, spec], index) => {
+    const connected = source[parentId];
+    if (!connected) return;
+    migrated[parentId] = splitLegacyPosition(connected, spec.old_size, spec.core);
+    migrated[spec.detached_id] = splitLegacyPosition(connected, spec.old_size, spec.detached, index + 1);
+  });
+  return migrated;
+}
+
+function combinedLayout(data) {
+  if (!data) return null;
+  const passes = data.passes || {};
+  const detached = data.detached_parts || {};
+  const combined = { ...passes, ...detached };
+  return data.detached_parts ? combined : migrateLegacyConnectedLayout(combined);
+}
+
+function partitionLayout(source = layout) {
+  const passes = {};
+  const detachedParts = {};
+  (manifest.passes || []).forEach(piece => { if (source[piece.id]) passes[piece.id] = source[piece.id]; });
+  (manifest.detached_parts || []).forEach(piece => { if (source[piece.id]) detachedParts[piece.id] = source[piece.id]; });
+  return { passes, detached_parts: detachedParts };
+}
 
 function geoToLocal(lon, lat) {
   const determinant = GEO_AFFINE.dlonDx * GEO_AFFINE.dlatDy -
@@ -351,7 +436,7 @@ function animateScrollTo(left, top, duration = 320) {
 // Scroll a specific pass into the middle of the view, so picking a household
 // from the roster takes you straight to it instead of hunting for it.
 function centerOnPass(id) {
-  const pass = manifest && manifest.passes.find(p => p.id === id);
+  const pass = movableById(id);
   const pos = layout[id];
   if (!pass || !pos) return;
   const cx = LAYOUT_OFFSET_X_FT + pos.x_ft + pass.viewbox_width_ft / 2;
@@ -420,7 +505,7 @@ function restoreFrom(fromStack, toStack) {
   if (!fromStack.length) return false;
   toStack.push(snapshotLayout());
   layout = fromStack.pop();
-  manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
+  movablePieces().forEach(p => constrainToWestLimit(p, layout[p.id]));
   saveToStorage();
   renderTokens();
   syncSelectedInputs();
@@ -643,35 +728,41 @@ function smoothCurvePath(points) {
 
 function defaultLayout() {
   const out = {};
-  manifest.passes.forEach((p, i) => {
+  const pieces = movablePieces();
+  pieces.forEach((p, i) => {
     const committed = startingLayout && startingLayout[p.id];
     out[p.id] = committed
       ? { x_ft: committed.x_ft, y_ft: committed.y_ft, rotation_deg: committed.rotation_deg, z: committed.z }
       : { x_ft: p.default_x_ft, y_ft: p.default_y_ft, rotation_deg: 0, z: i + 1 };
   });
-  zCounter = Math.max(...Object.values(out).map(pos => pos.z), manifest.passes.length) + 1;
+  zCounter = Math.max(...Object.values(out).map(pos => pos.z), pieces.length) + 1;
   return out;
 }
 
 function loadFromStorage() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('trf-pass-layout-v2');
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (!parsed || !parsed.passes) return null;
-    return parsed.passes;
+    return combinedLayout(parsed);
   } catch (e) { return null; }
 }
 
 function saveToStorage() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ saved_at_local: new Date().toString(), passes: layout }));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    saved_at_local: new Date().toString(),
+    ...partitionLayout()
+  }));
 }
 
 // --- Named local presets (per-browser) --------------------------------
-const PRESETS_KEY = 'trf-pass-presets-v1';
+const PRESETS_KEY = 'trf-pass-presets-v2';
 
 function loadPresets() {
-  try { return JSON.parse(localStorage.getItem(PRESETS_KEY) || '{}'); } catch (e) { return {}; }
+  try {
+    return JSON.parse(localStorage.getItem(PRESETS_KEY) || localStorage.getItem('trf-pass-presets-v1') || '{}');
+  } catch (e) { return {}; }
 }
 function savePresets(presets) {
   localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
@@ -698,8 +789,8 @@ function renderPresetList() {
     loadBtn.textContent = 'Load';
     loadBtn.addEventListener('click', () => {
       pushUndo();
-      layout = { ...defaultLayout(), ...presets[name].passes };
-      manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
+      layout = { ...defaultLayout(), ...combinedLayout(presets[name]) };
+      movablePieces().forEach(p => constrainToWestLimit(p, layout[p.id]));
       saveToStorage();
       renderTokens();
       renderRoster();
@@ -721,11 +812,10 @@ function renderPresetList() {
 }
 
 // --- Shareable URL (compact, no file needed) ---------------------------
-// Encodes x_ft,y_ft,rotation_deg for every pass, in manifest order, as a
-// flat comma-separated list in the URL hash. ~150-250 chars for 10 passes
-// -- short enough for texting, chat, or email without a link shortener.
+// Encodes x_ft,y_ft,rotation_deg for every draggable piece, in manifest order,
+// as a flat comma-separated list in the URL hash.
 function encodeLayoutForUrl() {
-  return manifest.passes
+  return movablePieces()
     .map(p => {
       const pos = layout[p.id] || {};
       return [pos.x_ft || 0, pos.y_ft || 0, pos.rotation_deg || 0]
@@ -736,13 +826,18 @@ function encodeLayoutForUrl() {
 }
 function decodeLayoutFromUrl(str) {
   const nums = str.split(',').map(Number);
-  if (nums.some(n => Number.isNaN(n)) || nums.length !== manifest.passes.length * 3) return null;
+  const pieces = movablePieces();
+  if (nums.some(n => Number.isNaN(n))) return null;
+  // Older links contain only the ten pass positions. Add detached pieces at
+  // their committed defaults so existing shared layouts remain usable.
+  const encodedPieces = nums.length / 3;
+  if (encodedPieces !== pieces.length && encodedPieces !== manifest.passes.length) return null;
   const out = {};
-  manifest.passes.forEach((p, i) => {
+  pieces.slice(0, encodedPieces).forEach((p, i) => {
     const [x, y, rot] = nums.slice(i * 3, i * 3 + 3);
     out[p.id] = { x_ft: x, y_ft: y, rotation_deg: rot, z: i + 1 };
   });
-  return out;
+  return encodedPieces === manifest.passes.length ? migrateLegacyConnectedLayout(out) : out;
 }
 function getUrlPresetLayout() {
   const match = location.hash.match(/preset=([^&]+)/);
@@ -812,7 +907,7 @@ function buildCanvasBackground() {
 }
 
 function applyTokenTransform(el, pos) {
-  const pass = manifest && manifest.passes.find(p => p.id === el.dataset.id);
+  const pass = movableById(el.dataset.id);
   if (pass) constrainToWestLimit(pass, pos);
   if (selectedId === el.dataset.id) {
     document.getElementById('xIn').value = pos.x_ft;
@@ -825,16 +920,21 @@ function applyTokenTransform(el, pos) {
 }
 
 function renderRoster() {
-  const tbody = document.querySelector('#roster tbody');
-  tbody.innerHTML = '';
-  manifest.passes.forEach(p => {
+  const renderRows = (selector, pieces) => {
+    const tbody = document.querySelector(selector);
+    tbody.innerHTML = '';
+    pieces.forEach(p => {
     const tr = document.createElement('tr');
     tr.dataset.id = p.id;
     if (p.id === selectedId) tr.classList.add('selected');
-    tr.innerHTML = `<td><span class="swatch" style="background:${p.color}"></span>${p.name}</td><td>${p.area_sqft} sqft</td>`;
+    const reserve = p.walkway_reserve_sqft ? ` + ${p.walkway_reserve_sqft} reserved` : '';
+    tr.innerHTML = `<td><span class="swatch" style="background:${p.color}"></span>${p.name}</td><td>${p.area_sqft} sqft${reserve}</td>`;
     tr.addEventListener('click', () => { selectPass(p.id); centerOnPass(p.id); });
     tbody.appendChild(tr);
-  });
+    });
+  };
+  renderRows('#roster tbody', manifest.passes || []);
+  renderRows('#detachedRoster tbody', manifest.detached_parts || []);
 }
 
 function syncSelectedInputs() {
@@ -849,8 +949,8 @@ function syncSelectedInputs() {
 function selectPass(id) {
   selectedId = id;
   document.querySelectorAll('.token').forEach(t => t.classList.toggle('selected', t.dataset.id === id));
-  document.querySelectorAll('#roster tbody tr').forEach(tr => tr.classList.toggle('selected', tr.dataset.id === id));
-  const p = manifest.passes.find(p => p.id === id);
+  document.querySelectorAll('.roster tbody tr').forEach(tr => tr.classList.toggle('selected', tr.dataset.id === id));
+  const p = movableById(id);
   document.getElementById('selName').textContent = p ? p.name : 'None selected';
   syncSelectedInputs();
 }
@@ -858,12 +958,12 @@ function selectPass(id) {
 function deselectPass() {
   selectedId = null;
   document.querySelectorAll('.token').forEach(t => t.classList.remove('selected'));
-  document.querySelectorAll('#roster tbody tr').forEach(tr => tr.classList.remove('selected'));
+  document.querySelectorAll('.roster tbody tr').forEach(tr => tr.classList.remove('selected'));
   document.getElementById('selName').textContent = 'None selected';
   syncSelectedInputs();
 }
 
-// Applies a change to the selected pass with undo tracking. `coalesceMs`
+// Applies a change to the selected piece with undo tracking. `coalesceMs`
 // groups rapid repeats (key-repeat nudging, typing in a number field) into
 // a single undo entry instead of dozens.
 function updateSelected(mutator, coalesceMs = 0) {
@@ -953,25 +1053,30 @@ function makeToken(p) {
 
 function renderTokens() {
   document.querySelectorAll('.token').forEach(t => t.remove());
-  manifest.passes.forEach(p => {
+  movablePieces().forEach(p => {
     const el = makeToken(p);
     applyTokenTransform(el, layout[p.id]);
   });
 }
 
 function totalAreaLabel() {
-  const total = manifest.passes.reduce((sum, p) => sum + p.area_sqft, 0);
-  return `${manifest.passes.length} passes loaded, ${total.toLocaleString()} sq ft total.`;
+  const summary = manifest.planning_summary || {};
+  const passCount = summary.passes || manifest.passes.length;
+  const total = summary.total_planning_area_sqft || manifest.passes.reduce((sum, p) => sum + p.area_sqft, 0);
+  const detached = (manifest.detached_parts || []).length;
+  const reserve = summary.walkway_reserve_sqft || 0;
+  return `${passCount} passes loaded, ${total.toLocaleString()} sq ft total; ${detached} detached pieces and ${reserve} sq ft reserved for future walkways.`;
 }
 
-function init(manifestData, savedLayout, committedLayout) {
+function init(manifestData, savedLayout, committedData) {
   manifest = manifestData;
-  startingLayout = committedLayout;
+  startingLayout = combinedLayout(committedData);
+  connectedPassLayout = committedData.connected_passes || null;
   const base = defaultLayout();
   const urlLayout = getUrlPresetLayout();
   const source = urlLayout || savedLayout;
   layout = {};
-  manifest.passes.forEach(p => {
+  movablePieces().forEach(p => {
     const saved = source && source[p.id];
     layout[p.id] = saved ? { ...base[p.id], ...saved } : base[p.id];
     constrainToWestLimit(p, layout[p.id]);
@@ -1012,7 +1117,12 @@ document.getElementById('fitPlanBtn').addEventListener('click', fitPlan);
 document.getElementById('fitContextBtn').addEventListener('click', fitContext);
 
 document.getElementById('saveBtn').addEventListener('click', () => {
-  const data = { saved_at_local: new Date().toString(), scale_px_per_ft: SCALE, passes: layout };
+  const data = {
+    saved_at_local: new Date().toString(),
+    scale_px_per_ft: SCALE,
+    ...partitionLayout(),
+    connected_passes: connectedPassLayout
+  };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -1026,7 +1136,7 @@ document.getElementById('presetSaveBtn').addEventListener('click', () => {
   const name = nameInput.value.trim();
   if (!name) { setStatus('Enter a name before saving a preset.'); return; }
   const presets = loadPresets();
-  presets[name] = { saved_at_local: new Date().toString(), passes: layout };
+  presets[name] = { saved_at_local: new Date().toString(), ...partitionLayout() };
   savePresets(presets);
   nameInput.value = '';
   renderPresetList();
@@ -1055,8 +1165,9 @@ document.getElementById('loadInput').addEventListener('change', (ev) => {
       const data = JSON.parse(reader.result);
       if (!data.passes) throw new Error('Missing "passes" key');
       pushUndo();
-      layout = { ...defaultLayout(), ...data.passes };
-      manifest.passes.forEach(p => constrainToWestLimit(p, layout[p.id]));
+      layout = { ...defaultLayout(), ...combinedLayout(data) };
+      movablePieces().forEach(p => constrainToWestLimit(p, layout[p.id]));
+      if (data.connected_passes) connectedPassLayout = data.connected_passes;
       saveToStorage();
       renderTokens();
       renderRoster();
@@ -1110,7 +1221,7 @@ Promise.all([MANIFEST_URL, STARTING_LAYOUT_URL].map(url => fetch(url).then(r => 
   if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
   return r.json();
 }))).then(([manifestData, committedData]) => {
-  init(manifestData, loadFromStorage(), committedData.passes);
+  init(manifestData, loadFromStorage(), committedData);
 }).catch(e => {
   setStatus('Could not load the pass manifest or saved-camp start: ' + e + '\nServe this repo over http(s) (e.g. "python -m http.server") rather than opening the file directly.');
 });

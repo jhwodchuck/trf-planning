@@ -1,6 +1,6 @@
 # A. Site Planning Notes
 
-Last updated: **2026-07-27**
+Last updated: **2026-08-11**
 
 ## Planning area baseline
 
@@ -14,6 +14,8 @@ Use **600 sq ft per qualifying pass** for all planning layouts and calculations.
 | **Yoga Tent** | COVERPRO portable car canopy, Harbor Freight SKU 62860 | **10 ft × 17 ft × 9 ft high** | **170 sq ft** | Confirmed | [Harbor Freight product page](https://www.harborfreight.com/10-ft-x-17-ft-portable-car-canopy-62860.html) |
 
 The earlier working assumptions that A.'s sleeping tent was 10 × 10 ft and that her canopy size was unknown are superseded.
+
+The **Yoga Tent is the smoking tent** referenced in the August 2026 layout discussion.
 
 Use these dimensions for future layouts:
 
@@ -44,6 +46,10 @@ A.'s pass-unit is planned as **600 sq ft**. The selected T-shaped boundary consi
 - a centered **12 × 25 ft stem** containing the Yoga Tent: **300 sq ft**.
 
 The resulting boundary is 25 ft wide by 37 ft deep at its maximum extents while claiming exactly 600 sq ft.
+
+### Detached-layout staging
+
+For freeform arrangement, treat the 25 × 12 ft sleeping section and the 12 × 25 ft Yoga / smoking-tent section as two independently movable **300 sq ft** pieces. This is a staging layout, not an accepted disconnected submission. After the pieces are arranged, design and validate any walkway or connecting boundary needed for the final request.
 
 Confirmed nominal equipment area:
 
