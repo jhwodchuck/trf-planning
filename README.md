@@ -14,7 +14,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 - [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, major support equipment, disconnected-allocation rules, and links to every household record
 - [Interactive map + group site map v0.1](maps/viewer/index.html) — aerial overlay with ten 600 sq ft pass polygons, known structures, placeholders, road, and setbacks, merged with the broader GIS viewer (parcels, streets, flood, wetlands, drawing tools)
-- [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — printable scale drawing of the current provisional arrangement
+- [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — printable scale drawing of the last connected reference arrangement
 - [2025 occupied-camp imagery reference](planning/2025-camp-layout-reference.md) and [Google Earth KML overlay](maps/overlays/group-site-v0.1.kml) — compare the dated 2025-10-20 camp scene with the 2026 candidate polygons without rehosting Google's imagery
 - [Pass layout tool](maps/viewer/pass-layout.html) — drag, rotate, and rearrange the ten individual pass drawings ([`maps/overlays/passes/`](maps/overlays/passes/)) on a freeform canvas, independent of the georeferenced viewer
 - [Group site map assumptions](planning/group-site-map-v0.1.md) — status, known dimensions, strategy, and limitations
@@ -53,7 +53,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [M. and E.](planning/households/me.md) — camper, two passes, 1,200 sq ft; temporary mirrored camper-pass placeholder pending actual geometry
 - [S. and S.](planning/households/ss.md) — KZ Connect SE C312BHKSE camper working reference plus 16 ft flatbed shower trailer, two passes, 1,200 sq ft
 - [J. and C.](planning/households/jc.md) — camper, one pass, 600 sq ft
-- [S. and T.](planning/households/st.md) — tent, one pass, 600 sq ft
+- [S. and T.](planning/households/st.md) — 20 ft diameter yurt and handicap portapotty, one pass, 600 sq ft
 
 ### Rules and submission
 

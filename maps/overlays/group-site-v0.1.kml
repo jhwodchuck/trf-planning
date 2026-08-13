@@ -3033,7 +3033,7 @@ source_pass_id: st</description>
       <styleUrl>#role-known_equipment</styleUrl>
       <description>id: st_tent
 role: known_equipment
-status: assumed 10 x 20 ft tent inside a 12 x 22 ft tent end
+status: legacy assumed 10 x 20 ft tent in the connected geographic reference
 dimensions_ft: 10 x 20 ft
 color: #8e7cc3
 source_pass_id: st</description>
@@ -3048,7 +3048,7 @@ source_pass_id: st</description>
           <value>known_equipment</value>
         </Data>
         <Data name="status">
-          <value>assumed 10 x 20 ft tent inside a 12 x 22 ft tent end</value>
+          <value>legacy assumed 10 x 20 ft tent in the connected geographic reference</value>
         </Data>
         <Data name="dimensions_ft">
           <value>10 x 20 ft</value>
@@ -3107,7 +3107,7 @@ source_pass_id: st</description>
       <styleUrl>#role-known_equipment</styleUrl>
       <description>id: st_portapotty
 role: known_equipment
-status: assumed 6 x 6 ft ADA unit inside a 12 x 18 ft potty end; door direction and accessible approach remain unverified
+status: legacy assumed 6 x 6 ft ADA unit in the connected geographic reference
 dimensions_ft: 6 x 6 ft ADA
 color: #674ea7
 source_pass_id: st</description>
@@ -3122,7 +3122,7 @@ source_pass_id: st</description>
           <value>known_equipment</value>
         </Data>
         <Data name="status">
-          <value>assumed 6 x 6 ft ADA unit inside a 12 x 18 ft potty end; door direction and accessible approach remain unverified</value>
+          <value>legacy assumed 6 x 6 ft ADA unit in the connected geographic reference</value>
         </Data>
         <Data name="dimensions_ft">
           <value>6 x 6 ft ADA</value>

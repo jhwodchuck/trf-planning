@@ -1,14 +1,14 @@
 # Per-pass SVGs
 
-Ten pass-section SVGs plus three detached amenity-section SVGs, decomposed from `maps/overlays/group-site-v0.1.svg` so each can be refined and freely repositioned on a separate master canvas.
+Ten pass-section SVGs plus three detached amenity-section SVGs, generated from the shared pass definitions so each can be refined and freely repositioned on a separate master canvas.
 
 The detached staging pieces are:
 
 - A.'s 12 × 25 ft, 300 sq ft Yoga / smoking-tent section;
-- S. and T.'s 12 × 18 ft, 216 sq ft portapotty end; and
+- S. and T.'s 10 × 10 ft, 100 sq ft portapotty end; and
 - S. and S.'s 10.2 × 10 ft, 102 sq ft fire-pit end.
 
-The former S. and T. connector contributes a **120 sq ft future-walkway reserve**, and the former S. and S. connector contributes **66 sq ft**. Those reserves remain in the 6,000 sq ft planning total but are intentionally not drawn until the detached pieces are arranged.
+S. and T.'s remaining pass section is now a true **20 ft diameter circle** (314.16 sq ft), rather than a 20 × 20 ft square. Together with the detached 100 sq ft portapotty end, it leaves **185.84 sq ft unplaced**: up to 100 sq ft for a future connector and 85.84 sq ft for yurt entry, platform edge, anchors, ropes, or setup clearance. S. and S. separately retains a **66 sq ft future-walkway reserve**. Those reserves remain in the 6,000 sq ft planning total but are intentionally not drawn until the pieces are arranged.
 
 ## Files
 

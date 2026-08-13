@@ -37,19 +37,19 @@ Last updated: **2026-08-11**
 | M. and E. | Camper; temporary mirrored S./S. pass used until actual geometry is known | 2 | **1,200 sq ft** | [Planning notes](households/me.md) |
 | S. and S. | Camper and 16 ft flatbed shower trailer | 2 | **1,200 sq ft** | [Planning notes](households/ss.md) |
 | J. and C. | Camper | 1 | **600 sq ft** | [Planning notes](households/jc.md) |
-| S. and T. | Two-ended pass with 10 × 20 ft tent, long narrow connector, and handicap portapotty | 1 | **600 sq ft** | [Planning notes](households/st.md) |
-| **Total** | 3 camper households, 4 tent-based households, and 1 shower trailer | **10** | **6,000 sq ft** |  |
+| S. and T. | Two-ended pass with 20 ft diameter yurt, long narrow connector, and handicap portapotty | 1 | **600 sq ft** | [Planning notes](households/st.md) |
+| **Total** | 3 camper households, 3 tent-based households, 1 yurt-based household, and 1 shower trailer | **10** | **6,000 sq ft** |  |
 
 ## Current master map
 
 - [Interactive group map v0.1](../maps/viewer/index.html) — "Group site v0.1" overlay in the merged map viewer
-- [Scale drawing v0.1](../maps/overlays/group-site-v0.1.svg)
+- [Scale drawing v0.1](../maps/overlays/group-site-v0.1.svg) — the last connected geographic reference
 - [Georeferenced group geometry](../maps/data/group-site-v0.1.geojson)
 - [Map assumptions and limitations](group-site-map-v0.1.md)
 
 The v0.1 map preserves ten separate 600 sq ft pass polygons. Only J. and C.'s site is tied to the supplied road controls; all other positions remain conceptual.
 
-The freeform pass-layout tool now stages three amenity sections independently: A.'s Yoga / smoking-tent section, S. and T.'s portapotty end, and S. and S.'s fire-pit end. It holds **186 sq ft** unplaced for future connector walkways (120 sq ft for S./T. and 66 sq ft for S./S.). The georeferenced v0.1 map remains on the last connected geometry until replacement routes are accepted.
+The freeform pass-layout tool now stages three amenity sections independently: A.'s Yoga / smoking-tent section, S. and T.'s portapotty end, and S. and S.'s fire-pit end. S./T.'s movable yurt is a 20 ft circle (314.16 sq ft), leaving **185.84 sq ft** unplaced after its 100 sq ft portapotty end: up to 100 sq ft for a future connector and 85.84 sq ft for yurt entry, platform-edge, anchor, rope, or setup clearance. S./S. retains another **66 sq ft** future-walkway reserve. The georeferenced v0.1 map remains on the last connected geometry until replacement routes are accepted.
 
 ## Allocation summary
 
@@ -113,8 +113,8 @@ A layout is preferable when it:
 
 ### S. and T.
 
-- Two-ended **600 sq ft** pass boundary: 12 × 22 ft tent end, 4 × 30 ft connector path, and 12 × 18 ft portapotty end.
-- Tent: **10 × 20 ft** (200 sq ft) assumed inside the first end.
-- Handicap Portapotty: **6 × 6 ft** (36 sq ft) ADA accessible unit assumed inside the opposite end; door direction and accessible approach remain unverified.
+- Freeform staging: a **20 ft diameter circular yurt piece** (314.16 sq ft), detached 10 × 10 ft portapotty end (100 sq ft), and 185.84 sq ft held unplaced for the eventual connector and yurt clearances.
+- Yurt: user-reported **20 ft diameter**; exact model, platform, entry, anchor, and total setup envelope remain unverified.
+- Handicap Portapotty: **6 × 6 ft** (36 sq ft) ADA-accessible unit assumed inside the opposite end; door direction, turning space, and accessible approach remain unverified.
 
 J. and C.'s camper has a separate equipment and site-planning record. M. and E. still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.

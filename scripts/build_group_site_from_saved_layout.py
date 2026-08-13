@@ -31,6 +31,22 @@ def rectangle(x: float, y: float, width: float, height: float):
     ]
 
 
+def ellipse_polygon(
+    center_x: float,
+    center_y: float,
+    radius_x: float,
+    radius_y: float,
+    vertices: int = 72,
+):
+    return [
+        (
+            center_x + radius_x * math.cos(2 * math.pi * index / vertices),
+            center_y + radius_y * math.sin(2 * math.pi * index / vertices),
+        )
+        for index in range(vertices)
+    ]
+
+
 def transform_points(
     points: list[tuple[float, float]],
     pass_definition: Pass,
@@ -125,9 +141,48 @@ def equipment_features(
     if equipment.line is not None:
         return [line_feature(equipment, pass_definition, saved_position)]
 
+    features = []
+    if equipment.ellipse is not None:
+        center_x, center_y, radius_x, radius_y = equipment.ellipse
+        if equipment.buffer_ft:
+            buffer = equipment.buffer_ft
+            features.append(
+                polygon_feature(
+                    f"{equipment.id}_buffer",
+                    f"{equipment.label} provisional clearance",
+                    "clearance_placeholder",
+                    ellipse_polygon(
+                        center_x,
+                        center_y,
+                        radius_x + buffer,
+                        radius_y + buffer,
+                    ),
+                    pass_definition,
+                    saved_position,
+                    status="Planning buffer only; verify actual operating clearance.",
+                    source_pass_id=pass_definition.id,
+                )
+            )
+        features.append(
+            polygon_feature(
+                equipment.id,
+                equipment.label,
+                "known_equipment"
+                if equipment.role == "eq"
+                else "equipment_placeholder",
+                ellipse_polygon(center_x, center_y, radius_x, radius_y),
+                pass_definition,
+                saved_position,
+                status=equipment.status,
+                dimensions_ft=equipment.dims_label,
+                color=equipment.fill,
+                source_pass_id=pass_definition.id,
+            )
+        )
+        return features
+
     assert equipment.rect is not None
     x, y, width, height = equipment.rect
-    features = []
     if equipment.buffer_ft:
         buffer = equipment.buffer_ft
         features.append(
@@ -170,6 +225,8 @@ def equipment_features(
 def pass_features(pass_definition: Pass, saved_position: dict[str, Any]):
     if pass_definition.polygon is not None:
         boundary = pass_definition.polygon
+    elif pass_definition.ellipse is not None:
+        boundary = ellipse_polygon(*pass_definition.ellipse)
     else:
         assert pass_definition.rect is not None
         boundary = rectangle(0, 0, *pass_definition.rect)

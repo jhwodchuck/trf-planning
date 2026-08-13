@@ -66,7 +66,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <span>Area per pass</span><strong>600 sq ft</strong>
 <span>Total planning area</span><strong>6,000 sq ft</strong>
 <span>Detached pieces</span><strong>3</strong>
-<span>Future walkway reserve</span><strong>186 sq ft</strong>
+<span>Unplaced reserve</span><strong>251.84 sq ft</strong>
 </div>
 
 <div class="controls">
@@ -127,8 +127,9 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <li><strong>Mistakes are undoable:</strong> <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> redoes (or use the Undo/Redo buttons).</li>
 <li><strong>Keyboard shortcuts:</strong> <kbd>0</kbd> fit plan · <kbd>9</kbd> fit aerial context · <kbd>1</kbd> 100% zoom · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>Esc</kbd> deselect.</li>
 <li>The badge in the lower-left corner shows the current zoom and the exact local-foot coordinate under your pointer.</li>
-<li>Positions are each SVG's own top-left corner, including its small drawing margin. The Yoga / smoking section, portapotty end, and fire-pit end are independently draggable. Their current starting positions reconstruct the former connected layouts.</li>
-<li>S. + T. retains <strong>120 sq ft</strong> and S. + S. retains <strong>66 sq ft</strong> as unplaced walkway reserves. Those areas are counted in the 6,000 sq ft total but are intentionally not drawn until the detached pieces have been arranged.</li>
+<li>Positions are each SVG's own top-left corner, including its small drawing margin. The Yoga / smoking section, portapotty end, and fire-pit end are independently draggable. The Yoga and fire-pit starting positions reconstruct their former connected layouts; S. + T.'s new circular yurt and smaller potty end retain staging anchors but no longer reconstruct the obsolete tent-based footprint.</li>
+<li><strong>S. + T. needs rearrangement:</strong> the enlarged circular yurt currently crosses the road/setback guides at its inherited staging anchor. Treat that start as a household handoff position, not a proposed placement.</li>
+<li>S. + T.'s movable 20 ft yurt circle is <strong>314.16 sq ft</strong>. With its detached 100 sq ft portapotty end, <strong>185.84 sq ft</strong> remains unplaced: up to 100 sq ft for a future connector and 85.84 sq ft for entry, platform-edge, anchor, rope, or setup clearance. S. + S. separately retains 66 sq ft for a future walkway. All reserves count toward the 6,000 sq ft total and are intentionally not drawn until the detached pieces have been arranged.</li>
 <li>The current arrangement autosaves to this browser's local storage as you drag. Use <strong>Your presets</strong> to save multiple named arrangements in this browser and switch between them. Use <strong>Copy share link</strong> to send an exact arrangement to someone else — no file, no repo commit, they just open the link. Use <strong>Download layout (.json)</strong> / <strong>Load from file</strong> for a portable backup, or to propose a new committed starting point (see below).</li>
 <li>Each pass-section and detached-piece file under <code>maps/overlays/passes/</code> is generated from <code>python scripts/build_pass_svgs.py</code>. Edit the source definitions and regenerate, then reload this page.</li>
 <li>The muted aerial backdrop is a committed local copy of Texas NAIP 2022 (60 cm) imagery, so the layout tool no longer waits on a live GIS service. Its roughly 700 × 450 ft extent provides surrounding road, clearing, and tree context while the editable planning coordinates remain the same 230 × 200 ft area. The image is affine-warped in the browser using the same local-foot/WGS84 transform as <code>group-site-v0.1.geojson</code>, correcting the former ~1.68° rotation and the resulting southern-road drift. This is still planning imagery, not a survey.</li>
@@ -927,8 +928,10 @@ function renderRoster() {
     const tr = document.createElement('tr');
     tr.dataset.id = p.id;
     if (p.id === selectedId) tr.classList.add('selected');
-    const reserve = p.walkway_reserve_sqft ? ` + ${p.walkway_reserve_sqft} reserved` : '';
-    tr.innerHTML = `<td><span class="swatch" style="background:${p.color}"></span>${p.name}</td><td>${p.area_sqft} sqft${reserve}</td>`;
+    const reserveSqft = p.unplaced_reserve_sqft || p.walkway_reserve_sqft || 0;
+    const reserve = reserveSqft ? ` + ${reserveSqft.toLocaleString(undefined, { maximumFractionDigits: 2 })} reserved` : '';
+    const area = p.area_sqft.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    tr.innerHTML = `<td><span class="swatch" style="background:${p.color}"></span>${p.name}</td><td>${area} sqft${reserve}</td>`;
     tr.addEventListener('click', () => { selectPass(p.id); centerOnPass(p.id); });
     tbody.appendChild(tr);
     });
@@ -1064,8 +1067,9 @@ function totalAreaLabel() {
   const passCount = summary.passes || manifest.passes.length;
   const total = summary.total_planning_area_sqft || manifest.passes.reduce((sum, p) => sum + p.area_sqft, 0);
   const detached = (manifest.detached_parts || []).length;
-  const reserve = summary.walkway_reserve_sqft || 0;
-  return `${passCount} passes loaded, ${total.toLocaleString()} sq ft total; ${detached} detached pieces and ${reserve} sq ft reserved for future walkways.`;
+  const reserve = summary.unplaced_reserve_sqft || summary.walkway_reserve_sqft || 0;
+  const reserveLabel = reserve.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  return `${passCount} passes loaded, ${total.toLocaleString()} sq ft total; ${detached} detached pieces and ${reserveLabel} sq ft held as unplaced connector/clearance reserve.`;
 }
 
 function init(manifestData, savedLayout, committedData) {

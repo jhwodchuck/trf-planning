@@ -2,11 +2,9 @@
 """Build standalone SVGs for pass sections and detached amenity pieces, plus a
 manifest that the interactive drag-layout tool reads.
 
-This script does not touch any network service. It decomposes the same
-provisional geometry already committed in maps/overlays/group-site-v0.1.svg
-and maps/data/group-site-v0.1.geojson into one file per pass so each can be
-refined independently and then freely repositioned on a separate master
-canvas, without being tied to the georeferenced viewer/geometry.
+This script does not touch any network service. It is the shared source for
+the current standalone pass pieces and their manifest, so each piece can be
+refined independently and freely repositioned on a separate master canvas.
 
 Run:
     python scripts/build_pass_svgs.py
@@ -19,6 +17,7 @@ Outputs:
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any
@@ -41,9 +40,11 @@ class Equipment:
     label: str
     role: str  # css class: eq (confirmed/estimate) or placeholder
     status: str
-    # Either a rect (x, y, w, h) or a line (x1, y1, x2, y2), all relative to
+    # A rect (x, y, w, h), ellipse (cx, cy, rx, ry), or line
+    # (x1, y1, x2, y2), all relative to
     # the pass's own bounding-box origin (its top-left corner, before margin).
     rect: tuple[float, float, float, float] | None = None
+    ellipse: tuple[float, float, float, float] | None = None
     line: tuple[float, float, float, float] | None = None
     fill: str = "#3d85c6"
     dims_label: str = ""
@@ -62,9 +63,10 @@ class Pass:
     color: str
     area_sqft: float
     source: str
-    # Rectangle boundary (w, h) OR an explicit polygon, both relative to the
-    # pass's own bounding-box origin (0, 0).
+    # Rectangle boundary (w, h), ellipse (cx, cy, rx, ry), OR an explicit
+    # polygon, all relative to the pass's own bounding-box origin (0, 0).
     rect: tuple[float, float] | None = None
+    ellipse: tuple[float, float, float, float] | None = None
     polygon: list[tuple[float, float]] | None = None
     area_note: str = ""
     equipment: list[Equipment] = field(default_factory=list)
@@ -90,10 +92,15 @@ class Pass:
     parent_pass_id: str = ""
     pass_allocation_sqft: float = 600.0
     walkway_reserve_sqft: float = 0.0
+    setup_clearance_reserve_sqft: float = 0.0
+    reserve_note: str = ""
 
     def bbox(self) -> tuple[float, float]:
         if self.rect is not None:
             return self.rect
+        if self.ellipse is not None:
+            _cx, _cy, radius_x, radius_y = self.ellipse
+            return (2 * radius_x, 2 * radius_y)
         assert self.polygon is not None
         xs = [p[0] for p in self.polygon]
         ys = [p[1] for p in self.polygon]
@@ -817,7 +824,7 @@ PASSES: list[Pass] = [
                 id="st_tent",
                 label="Primary tent",
                 role="eq",
-                status="assumed 10 x 20 ft tent inside a 12 x 22 ft tent end",
+                status="legacy assumed 10 x 20 ft tent in the connected geographic reference",
                 rect=(1, 1, 10, 20),
                 fill="#8e7cc3",
                 dims_label="10 x 20 ft",
@@ -827,7 +834,7 @@ PASSES: list[Pass] = [
                 id="st_portapotty",
                 label="Handicap Portapotty",
                 role="eq",
-                status="assumed 6 x 6 ft ADA unit inside a 12 x 18 ft potty end; door direction and accessible approach remain unverified",
+                status="legacy assumed 6 x 6 ft ADA unit in the connected geographic reference",
                 rect=(3, 62, 6, 6),
                 fill="#674ea7",
                 dims_label="6 x 6 ft ADA",
@@ -851,6 +858,10 @@ def shifted_equipment(equipment: Equipment, origin_x: float, origin_y: float) ->
     if rect is not None:
         x, y, width, height = rect
         rect = (x - origin_x, y - origin_y, width, height)
+    ellipse = equipment.ellipse
+    if ellipse is not None:
+        cx, cy, rx, ry = ellipse
+        ellipse = (cx - origin_x, cy - origin_y, rx, ry)
     line = equipment.line
     if line is not None:
         x1, y1, x2, y2 = line
@@ -858,18 +869,27 @@ def shifted_equipment(equipment: Equipment, origin_x: float, origin_y: float) ->
     anchor = equipment.label_anchor
     if anchor is not None:
         anchor = (anchor[0] - origin_x, anchor[1] - origin_y)
-    return replace(equipment, rect=rect, line=line, label_anchor=anchor)
+    return replace(
+        equipment,
+        rect=rect,
+        ellipse=ellipse,
+        line=line,
+        label_anchor=anchor,
+    )
 
 
 _a_source = pass_by_id("a")
 _st_source = pass_by_id("st")
 _ss_shower_source = pass_by_id("ss_shower")
 
+_st_yurt_area_sqft = round(math.pi * 10**2, 4)
+_st_setup_clearance_reserve_sqft = round(600 - _st_yurt_area_sqft - 100 - 100, 4)
+
 # The freeform tool intentionally stages three amenity sections separately so
 # households can arrange them before connector walkways are designed. The
 # connected PASSES definitions above remain unchanged for the current
-# georeferenced map. Visible piece area plus reserved walkway area still totals
-# exactly 600 sq ft for every qualifying pass.
+# georeferenced map. Visible piece area plus unplaced connector/setup reserve
+# still totals exactly 600 sq ft for every qualifying pass.
 _a_core = Pass(
     id="a",
     name="A. — Sleeping Camp",
@@ -888,19 +908,20 @@ _a_core = Pass(
 
 _st_core = Pass(
     id="st",
-    name="S. + T. — Tent Section",
+    name="S. + T. — 20 ft Yurt",
     color=_st_source.color,
-    area_sqft=264,
-    area_note="264 sq ft section; 120 sq ft reserved for a future walkway",
+    area_sqft=_st_yurt_area_sqft,
+    area_note="20 ft diameter circle; entry and anchor envelope unverified",
     source=_st_source.source,
-    rect=(12, 22),
+    ellipse=(10, 10, 10, 10),
     default_bbox_origin=_st_source.default_bbox_origin,
-    compact_label="S. + T. — tent section — 264 sq ft",
-    label_anchor=(6, 21.5),
-    equipment=[equipment_by_id(_st_source, "st_tent")],
+    compact_label="20 ft yurt — 314.16 sq ft",
+    label_anchor=(10, 10),
     kind="pass_section",
     parent_pass_id="st",
-    walkway_reserve_sqft=120,
+    walkway_reserve_sqft=100,
+    setup_clearance_reserve_sqft=_st_setup_clearance_reserve_sqft,
+    reserve_note="Up to 100 sq ft for a future connector plus 85.8407 sq ft for yurt entry, platform edge, anchors, ropes, or setup clearance",
 )
 
 _ss_shower_core = Pass(
@@ -951,13 +972,23 @@ DETACHED_PARTS: list[Pass] = [
         id="st_portapotty",
         name="S. + T. — Portapotty End (detached)",
         color=_st_source.color,
-        area_sqft=216,
+        area_sqft=100,
         source=_st_source.source,
-        rect=(12, 18),
-        default_bbox_origin=(130, 172),
-        compact_label="Detached portapotty end — 216 sq ft",
-        label_anchor=(6, 1),
-        equipment=[shifted_equipment(equipment_by_id(_st_source, "st_portapotty"), 0, 52)],
+        rect=(10, 10),
+        default_bbox_origin=(135, 165),
+        compact_label="Detached portapotty end — 100 sq ft",
+        label_anchor=(5, 1),
+        equipment=[
+            Equipment(
+                id="st_portapotty",
+                label="Handicap Portapotty",
+                role="eq",
+                status="assumed 6 x 6 ft ADA unit; door direction, turning space, servicing route, and accessible approach remain unverified",
+                rect=(2, 2, 6, 6),
+                fill="#674ea7",
+                dims_label="6 x 6 ft ADA",
+            )
+        ],
         kind="detached_part",
         parent_pass_id="st",
     ),
@@ -1037,6 +1068,12 @@ def render_pass(p: Pass) -> str:
     if p.polygon is not None:
         pts = " ".join(f"{X(x)},{Y(y)}" for x, y in p.polygon)
         parts.append(f'<polygon points="{pts}" class="{boundary_class}" fill="{p.color}"/>')
+    elif p.ellipse is not None:
+        cx, cy, rx, ry = p.ellipse
+        parts.append(
+            f'<ellipse cx="{X(cx)}" cy="{Y(cy)}" rx="{rx * SCALE:g}" ry="{ry * SCALE:g}" '
+            f'class="{boundary_class}" fill="{p.color}"/>'
+        )
     else:
         w, h = p.rect  # type: ignore[misc]
         pts = " ".join(f"{X(px)},{Y(py)}" for px, py in [
@@ -1047,7 +1084,29 @@ def render_pass(p: Pass) -> str:
     # Equipment
     for eq in p.equipment:
         cls = "eq" if eq.role == "eq" else "placeholder"
-        if eq.rect is not None:
+        if eq.ellipse is not None:
+            cx, cy, rx, ry = eq.ellipse
+            if eq.buffer_ft:
+                b = eq.buffer_ft
+                parts.append(
+                    f'<ellipse cx="{X(cx)}" cy="{Y(cy)}" rx="{(rx + b) * SCALE:g}" ry="{(ry + b) * SCALE:g}" '
+                    f'class="clearance" aria-label="{esc(eq.label)} provisional clearance zone"/>'
+                )
+            parts.append(
+                f'<ellipse cx="{X(cx)}" cy="{Y(cy)}" rx="{rx * SCALE:g}" ry="{ry * SCALE:g}" '
+                f'class="{cls}" fill="{eq.fill}"/>'
+            )
+            anchor_x, anchor_y = eq.label_anchor if eq.label_anchor is not None else (cx, cy)
+            lx, ly = X(anchor_x), Y(anchor_y)
+            if eq.show_label:
+                parts.append(
+                    f'<text x="{lx}" y="{ly - 5}" text-anchor="middle" class="tiny">{esc(eq.label)}</text>'
+                )
+                if eq.dims_label:
+                    parts.append(
+                        f'<text x="{lx}" y="{ly + 8}" text-anchor="middle" class="tiny">{esc(eq.dims_label)}</text>'
+                    )
+        elif eq.rect is not None:
             x, y, w, h = eq.rect
             if eq.buffer_ft:
                 b = eq.buffer_ft
@@ -1150,8 +1209,8 @@ def main() -> int:
         "note": (
             "Freeform local layout data for maps/viewer/pass-layout.html. Not "
             "georeferenced. Three amenity sections are detached for staging; "
-            "their parent-pass connector area remains reserved for future "
-            "walkways. default_x_ft/default_y_ft use each SVG viewBox top-left."
+            "their parent-pass connector or setup-clearance area remains "
+            "unplaced. default_x_ft/default_y_ft use each SVG viewBox top-left."
         ),
         "margin_ft": MARGIN_FT,
         "scale_px_per_ft_in_files": SCALE,
@@ -1162,6 +1221,11 @@ def main() -> int:
             "detached_parts": len(DETACHED_PARTS),
             "visible_piece_area_sqft": sum(piece.area_sqft for piece in [*LAYOUT_PASSES, *DETACHED_PARTS]),
             "walkway_reserve_sqft": sum(piece.walkway_reserve_sqft for piece in LAYOUT_PASSES),
+            "setup_clearance_reserve_sqft": sum(piece.setup_clearance_reserve_sqft for piece in LAYOUT_PASSES),
+            "unplaced_reserve_sqft": sum(
+                piece.walkway_reserve_sqft + piece.setup_clearance_reserve_sqft
+                for piece in LAYOUT_PASSES
+            ),
         },
         "passes": [],
         "detached_parts": [],
@@ -1177,25 +1241,31 @@ def main() -> int:
         view_h = round(bbox_h + 2 * MARGIN_FT, 4)
         ox, oy = p.default_bbox_origin
 
-        manifest[collection].append(
-            {
-                "id": p.id,
-                "name": p.name,
-                "file": f"{p.id}.svg",
-                "color": p.color,
-                "area_sqft": p.area_sqft,
-                "kind": p.kind,
-                "parent_pass_id": p.parent_pass_id or p.id,
-                "pass_allocation_sqft": p.pass_allocation_sqft,
-                "walkway_reserve_sqft": p.walkway_reserve_sqft,
-                "bbox_width_ft": round(bbox_w, 4),
-                "bbox_height_ft": round(bbox_h, 4),
-                "viewbox_width_ft": view_w,
-                "viewbox_height_ft": view_h,
-                "default_x_ft": round(ox - MARGIN_FT, 4),
-                "default_y_ft": round(oy - MARGIN_FT, 4),
-            }
-        )
+        piece_data = {
+            "id": p.id,
+            "name": p.name,
+            "file": f"{p.id}.svg",
+            "color": p.color,
+            "area_sqft": p.area_sqft,
+            "kind": p.kind,
+            "parent_pass_id": p.parent_pass_id or p.id,
+            "pass_allocation_sqft": p.pass_allocation_sqft,
+            "walkway_reserve_sqft": p.walkway_reserve_sqft,
+            "bbox_width_ft": round(bbox_w, 4),
+            "bbox_height_ft": round(bbox_h, 4),
+            "viewbox_width_ft": view_w,
+            "viewbox_height_ft": view_h,
+            "default_x_ft": round(ox - MARGIN_FT, 4),
+            "default_y_ft": round(oy - MARGIN_FT, 4),
+        }
+        unplaced_reserve = p.walkway_reserve_sqft + p.setup_clearance_reserve_sqft
+        if p.setup_clearance_reserve_sqft:
+            piece_data["setup_clearance_reserve_sqft"] = p.setup_clearance_reserve_sqft
+        if unplaced_reserve:
+            piece_data["unplaced_reserve_sqft"] = unplaced_reserve
+        if p.reserve_note:
+            piece_data["reserve_note"] = p.reserve_note
+        manifest[collection].append(piece_data)
 
     for p in LAYOUT_PASSES:
         emit_piece(p, "passes")

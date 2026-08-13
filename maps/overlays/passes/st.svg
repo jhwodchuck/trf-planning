@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="208" height="368" viewBox="0 0 208 368" role="img" aria-labelledby="title desc">
-<title id="title">S. + T. — Tent Section — planning section</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="336" height="336" viewBox="0 0 336 336" role="img" aria-labelledby="title desc">
+<title id="title">S. + T. — 20 ft Yurt — planning section</title>
 <desc id="desc">Standalone provisional planning drawing for the freeform camp arrangement tool.</desc>
 <defs><style>
 text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
@@ -10,10 +10,6 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
 .clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
 </style></defs>
-<polygon points="8.0,8.0 200.0,8.0 200.0,360.0 8.0,360.0" class="pass" fill="#b4a7d6"/>
-<polygon points="16.0,16.0 192.0,16.0 192.0,352.0 16.0,352.0" class="clearance" aria-label="Primary tent provisional clearance zone"/>
-<polygon points="24.0,24.0 184.0,24.0 184.0,344.0 24.0,344.0" class="eq" fill="#8e7cc3"/>
-<text x="104.0" y="179.0" text-anchor="middle" class="tiny">Primary tent</text>
-<text x="104.0" y="192.0" text-anchor="middle" class="tiny">10 x 20 ft</text>
-<text x="104.0" y="352.0" text-anchor="middle" class="small">S. + T. — tent section — 264 sq ft</text>
+<ellipse cx="168.0" cy="168.0" rx="160" ry="160" class="pass" fill="#b4a7d6"/>
+<text x="168.0" y="168.0" text-anchor="middle" class="small">20 ft yurt — 314.16 sq ft</text>
 </svg>
