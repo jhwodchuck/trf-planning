@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="851" height="581" viewBox="0 0 851 581" role="img" aria-labelledby="title desc">
+<title id="title">S. + T. — Yurt-to-Portapotty Walkway — accepted connector walkway</title>
+<desc id="desc">Standalone provisional planning drawing for the freeform camp arrangement tool.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+.connector{stroke:#6d4c1f;stroke-width:2;stroke-dasharray:5 3;fill:#d9c28f;fill-opacity:.72}</style></defs>
+<polygon points="8.0,30.0 55.8,48.7 632.4,317.6 718.0,456.2 718.0,572.6 842.6,572.6 842.6,549.0 741.6,549.0 741.6,449.4 648.8,299.2 65.1,27.0 16.6,8.0" class="connector" fill="#b4a7d6"/>
+</svg>

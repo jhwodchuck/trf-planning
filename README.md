@@ -14,9 +14,9 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 
 - [Group pass allocation and household roster](planning/group-pass-allocation.md) — seven households, ten passes, 6,000 sq ft total planning area, shelter types, major support equipment, disconnected-allocation rules, and links to every household record
 - [Interactive map + group site map v0.1](maps/viewer/index.html) — aerial overlay with ten 600 sq ft pass polygons, known structures, placeholders, road, and setbacks, merged with the broader GIS viewer (parcels, streets, flood, wetlands, drawing tools)
-- [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — printable scale drawing of the last connected reference arrangement
+- [Scale group site map v0.1](maps/overlays/group-site-v0.1.svg) — historical printable reference; use the interactive/georeferenced maps for the accepted reattached arrangement
 - [2025 occupied-camp imagery reference](planning/2025-camp-layout-reference.md) and [Google Earth KML overlay](maps/overlays/group-site-v0.1.kml) — compare the dated 2025-10-20 camp scene with the 2026 candidate polygons without rehosting Google's imagery
-- [Pass layout tool](maps/viewer/pass-layout.html) — drag, rotate, and rearrange the ten individual pass drawings ([`maps/overlays/passes/`](maps/overlays/passes/)) on a freeform canvas, independent of the georeferenced viewer
+- [Pass layout tool](maps/viewer/pass-layout.html) — drag, rotate, and rearrange the ten pass sections, three detached amenity sections, and two accepted walkway connectors ([`maps/overlays/passes/`](maps/overlays/passes/)) on a freeform canvas
 - [Group site map assumptions](planning/group-site-map-v0.1.md) — status, known dimensions, strategy, and limitations
 
 ## Current concept

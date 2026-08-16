@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="167" height="540" viewBox="0 0 167 540" role="img" aria-labelledby="title desc">
+<title id="title">S. + S. — Fire-pit Walkway — accepted connector walkway</title>
+<desc id="desc">Standalone provisional planning drawing for the freeform camp arrangement tool.</desc>
+<defs><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
+.title{font-size:15px;font-weight:700}.sub{font-size:9px}
+.label{font-size:11px;font-weight:700}.small{font-size:9px}.tiny{font-size:8px}
+.pass{stroke:#222;stroke-width:2;fill-opacity:.28}
+.eq{stroke-width:2;fill-opacity:.5;stroke:#333}
+.placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
+.clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
+.connector{stroke:#6d4c1f;stroke-width:2;stroke-dasharray:5 3;fill:#d9c28f;fill-opacity:.72}</style></defs>
+<polygon points="8.0,26.8 118.7,170.9 118.7,505.3 132.0,531.6 159.4,517.7 149.5,498.0 149.5,160.4 32.4,8.0" class="connector" fill="#93c47d"/>
+</svg>

@@ -15,6 +15,18 @@
         <scale>0.8</scale>
       </LabelStyle>
     </Style>
+    <Style id="role-connector">
+      <LineStyle>
+        <color>ff1f4c6d</color>
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>998fc2d9</color>
+      </PolyStyle>
+      <LabelStyle>
+        <scale>0.8</scale>
+      </LabelStyle>
+    </Style>
     <Style id="role-equipment_line_placeholder">
       <LineStyle>
         <color>ff777777</color>
@@ -117,14 +129,14 @@
       <description>id: jc
 role: pass
 area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note: 598.875 sq ft RV + canopy equipment footprint, plus 1.125 sq ft boundary buffer
 color: #e69138
 source: planning/households/jc.md
-saved_x_ft: 141
-saved_y_ft: 76.75
-rotation_deg: 0
-z: 53</description>
+saved_x_ft: 99.25
+saved_y_ft: 180.75
+rotation_deg: -103
+z: 1</description>
       <ExtendedData>
         <Data name="id">
           <value>jc</value>
@@ -139,7 +151,7 @@ z: 53</description>
           <value>600</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
           <value>598.875 sq ft RV + canopy equipment footprint, plus 1.125 sq ft boundary buffer</value>
@@ -151,23 +163,23 @@ z: 53</description>
           <value>planning/households/jc.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>141</value>
+          <value>99.25</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>76.75</value>
+          <value>180.75</value>
         </Data>
         <Data name="rotation_deg">
-          <value>0</value>
+          <value>-103</value>
         </Data>
         <Data name="z">
-          <value>53</value>
+          <value>1</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846177971,30.255794677,0 -95.846175050,30.255880889,0 -95.846220201,30.255882031,0 -95.846222187,30.255823415,0 -95.846269715,30.255824617,0 -95.846270650,30.255797020,0 -95.846177971,30.255794677,0</coordinates>
+            <coordinates>-95.846324929,30.255605394,0 -95.846422836,30.255588459,0 -95.846413967,30.255550201,0 -95.846347401,30.255561715,0 -95.846338065,30.255521443,0 -95.846306725,30.255526864,0 -95.846324929,30.255605394,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -208,7 +220,7 @@ source_pass_id: jc</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846220201,30.255882031,0 -95.846175050,30.255880889,0 -95.846177971,30.255794677,0 -95.846223122,30.255795818,0 -95.846220201,30.255882031,0</coordinates>
+            <coordinates>-95.846413967,30.255550201,0 -95.846422836,30.255588459,0 -95.846324929,30.255605394,0 -95.846316060,30.255567136,0 -95.846413967,30.255550201,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -249,7 +261,7 @@ source_pass_id: jc</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846212196,30.255876350,0 -95.846186848,30.255875709,0 -95.846189584,30.255794970,0 -95.846214932,30.255795611,0 -95.846212196,30.255876350,0</coordinates>
+            <coordinates>-95.846409360,30.255558217,0 -95.846414339,30.255579695,0 -95.846322648,30.255595554,0 -95.846317669,30.255574076,0 -95.846409360,30.255558217,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -290,7 +302,7 @@ source_pass_id: jc</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846219150,30.255866253,0 -95.846212544,30.255866086,0 -95.846213262,30.255844875,0 -95.846219869,30.255845042,0 -95.846219150,30.255866253,0</coordinates>
+            <coordinates>-95.846396406,30.255554635,0 -95.846397704,30.255560233,0 -95.846373616,30.255564399,0 -95.846372318,30.255558801,0 -95.846396406,30.255554635,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -331,7 +343,7 @@ source_pass_id: jc</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846187149,30.255866814,0 -95.846177121,30.255866560,0 -95.846178257,30.255833033,0 -95.846188285,30.255833287,0 -95.846187149,30.255866814,0</coordinates>
+            <coordinates>-95.846404237,30.255581442,0 -95.846406207,30.255589939,0 -95.846368132,30.255596525,0 -95.846366162,30.255588028,0 -95.846404237,30.255581442,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -372,7 +384,7 @@ source_pass_id: jc</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846188564,30.255825076,0 -95.846180912,30.255824883,0 -95.846181538,30.255806409,0 -95.846189190,30.255806602,0 -95.846188564,30.255825076,0</coordinates>
+            <coordinates>-95.846356838,30.255589640,0 -95.846358341,30.255596124,0 -95.846337361,30.255599753,0 -95.846335858,30.255593269,0 -95.846356838,30.255589640,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -411,7 +423,7 @@ source_pass_id: jc</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846214153,30.255818601,0 -95.846220880,30.255815210,0</coordinates>
+        <coordinates>-95.846343778,30.255569560,0 -95.846338439,30.255564661,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -448,7 +460,7 @@ source_pass_id: jc</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846202063,30.255801038,0 -95.846202235,30.255795975,0</coordinates>
+        <coordinates>-95.846326686,30.255583686,0 -95.846320936,30.255584681,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -487,7 +499,7 @@ source_pass_id: jc</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846269715,30.255824617,0 -95.846222187,30.255823415,0 -95.846223115,30.255796046,0 -95.846270642,30.255797248,0 -95.846269715,30.255824617,0</coordinates>
+            <coordinates>-95.846338065,30.255521443,0 -95.846347401,30.255561715,0 -95.846316319,30.255567091,0 -95.846306984,30.255526819,0 -95.846338065,30.255521443,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -498,14 +510,14 @@ source_pass_id: jc</description>
       <description>id: ss_camper
 role: pass
 area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #93c47d
 source: equipment/ss-kz-connect-se-c312bhkse.md
-saved_x_ft: 79.5
-saved_y_ft: 164.75
-rotation_deg: -2
-z: 52</description>
+saved_x_ft: 76.75
+saved_y_ft: 193.25
+rotation_deg: 1
+z: 2</description>
       <ExtendedData>
         <Data name="id">
           <value>ss_camper</value>
@@ -520,7 +532,7 @@ z: 52</description>
           <value>600</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
           <value />
@@ -532,23 +544,23 @@ z: 52</description>
           <value>equipment/ss-kz-connect-se-c312bhkse.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>79.5</value>
+          <value>76.75</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>164.75</value>
+          <value>193.25</value>
         </Data>
         <Data name="rotation_deg">
-          <value>-2</value>
+          <value>1</value>
         </Data>
         <Data name="z">
-          <value>52</value>
+          <value>2</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846472978,30.255646379,0 -95.846434940,30.255646565,0 -95.846434869,30.255635612,0 -95.846425360,30.255635659,0 -95.846425216,30.255613755,0 -95.846434726,30.255613708,0 -95.846434628,30.255598649,0 -95.846409269,30.255598773,0 -95.846409055,30.255565916,0 -95.846434413,30.255565793,0 -95.846434225,30.255537043,0 -95.846472263,30.255536858,0 -95.846472978,30.255646379,0</coordinates>
+            <coordinates>-95.846480982,30.255569972,0 -95.846442986,30.255568438,0 -95.846443578,30.255557497,0 -95.846434079,30.255557114,0 -95.846435263,30.255535233,0 -95.846444762,30.255535617,0 -95.846445576,30.255520574,0 -95.846420245,30.255519551,0 -95.846422022,30.255486730,0 -95.846447353,30.255487753,0 -95.846448907,30.255459034,0 -95.846486904,30.255460569,0 -95.846480982,30.255569972,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -589,7 +601,7 @@ source_pass_id: ss_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846461221,30.255641987,0 -95.846435862,30.255642111,0 -95.846435205,30.255541488,0 -95.846460563,30.255541364,0 -95.846461221,30.255641987,0</coordinates>
+            <coordinates>-95.846469507,30.255565054,0 -95.846444176,30.255564032,0 -95.846449616,30.255463517,0 -95.846474947,30.255464540,0 -95.846469507,30.255565054,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -630,7 +642,7 @@ source_pass_id: ss_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846471033,30.255639817,0 -95.846461207,30.255639865,0 -95.846461066,30.255618235,0 -95.846470892,30.255618187,0 -95.846471033,30.255639817,0</coordinates>
+            <coordinates>-95.846479438,30.255563331,0 -95.846469622,30.255562935,0 -95.846470791,30.255541328,0 -95.846480607,30.255541724,0 -95.846479438,30.255563331,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -671,7 +683,7 @@ source_pass_id: ss_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846472760,30.255612975,0 -95.846461032,30.255613032,0 -95.846460756,30.255570867,0 -95.846472484,30.255570810,0 -95.846472760,30.255612975,0</coordinates>
+            <coordinates>-95.846482788,30.255536604,0 -95.846471073,30.255536131,0 -95.846473352,30.255494011,0 -95.846485068,30.255494484,0 -95.846482788,30.255536604,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -712,7 +724,7 @@ source_pass_id: ss_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846434869,30.255635612,0 -95.846425360,30.255635659,0 -95.846425216,30.255613755,0 -95.846434726,30.255613708,0 -95.846434869,30.255635612,0</coordinates>
+            <coordinates>-95.846443578,30.255557497,0 -95.846434079,30.255557114,0 -95.846435263,30.255535233,0 -95.846444762,30.255535617,0 -95.846443578,30.255557497,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -753,7 +765,7 @@ source_pass_id: ss_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846434628,30.255598649,0 -95.846409269,30.255598773,0 -95.846409055,30.255565916,0 -95.846434413,30.255565793,0 -95.846434628,30.255598649,0</coordinates>
+            <coordinates>-95.846445576,30.255520574,0 -95.846420245,30.255519551,0 -95.846422022,30.255486730,0 -95.846447353,30.255487753,0 -95.846445576,30.255520574,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -794,7 +806,7 @@ source_pass_id: ss_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846435722,30.255620549,0 -95.846425261,30.255620600,0 -95.846425225,30.255615124,0 -95.846435686,30.255615073,0 -95.846435722,30.255620549,0</coordinates>
+            <coordinates>-95.846445342,30.255542493,0 -95.846434893,30.255542071,0 -95.846435189,30.255536601,0 -95.846445638,30.255537023,0 -95.846445342,30.255542493,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -835,7 +847,7 @@ source_pass_id: ss_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846435400,30.255571264,0 -95.846424939,30.255571315,0 -95.846424903,30.255565839,0 -95.846435364,30.255565788,0 -95.846435400,30.255571264,0</coordinates>
+            <coordinates>-95.846448007,30.255493261,0 -95.846437557,30.255492839,0 -95.846437853,30.255487369,0 -95.846448303,30.255487791,0 -95.846448007,30.255493261,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -874,7 +886,7 @@ source_pass_id: ss_camper</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846434735,30.255615077,0 -95.846434413,30.255565793,0</coordinates>
+        <coordinates>-95.846444688,30.255536984,0 -95.846447353,30.255487753,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -911,7 +923,7 @@ source_pass_id: ss_camper</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846435718,30.255620001,0 -95.846435693,30.255616168,0</coordinates>
+        <coordinates>-95.846445372,30.255541946,0 -95.846445579,30.255538117,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -948,41 +960,41 @@ source_pass_id: ss_camper</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846435392,30.255570169,0 -95.846435367,30.255566336,0</coordinates>
+        <coordinates>-95.846448066,30.255492167,0 -95.846448273,30.255488338,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
-      <name>S. + S. — Pass B / Shower</name>
+      <name>S. + S. — Shower Section</name>
       <styleUrl>#role-pass</styleUrl>
       <description>id: ss_shower
 role: pass
-area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
-layout_note: 432 + 66 + 102 = 600 sq ft
+area_sqft: 432
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
+layout_note: 432 sq ft section; separate accepted walkway uses 66 sq ft
 color: #93c47d
 source: equipment/ss-16ft-shower-trailer.md
-saved_x_ft: 91.5
-saved_y_ft: 117.75
-rotation_deg: -104
-z: 58</description>
+saved_x_ft: 151.5
+saved_y_ft: 272.75
+rotation_deg: -91
+z: 3</description>
       <ExtendedData>
         <Data name="id">
           <value>ss_shower</value>
         </Data>
         <Data name="name">
-          <value>S. + S. — Pass B / Shower</value>
+          <value>S. + S. — Shower Section</value>
         </Data>
         <Data name="role">
           <value>pass</value>
         </Data>
         <Data name="area_sqft">
-          <value>600</value>
+          <value>432</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
-          <value>432 + 66 + 102 = 600 sq ft</value>
+          <value>432 sq ft section; separate accepted walkway uses 66 sq ft</value>
         </Data>
         <Data name="color">
           <value>#93c47d</value>
@@ -991,23 +1003,23 @@ z: 58</description>
           <value>equipment/ss-16ft-shower-trailer.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>91.5</value>
+          <value>151.5</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>117.75</value>
+          <value>272.75</value>
         </Data>
         <Data name="rotation_deg">
-          <value>-104</value>
+          <value>-91</value>
         </Data>
         <Data name="z">
-          <value>58</value>
+          <value>3</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846461970,30.255658892,0 -95.846478207,30.255723092,0 -95.846422464,30.255733610,0 -95.846415361,30.255705523,0 -95.846347231,30.255718379,0 -95.846349666,30.255728009,0 -95.846318698,30.255733853,0 -95.846311797,30.255706568,0 -95.846342766,30.255700725,0 -95.846345201,30.255710354,0 -95.846413331,30.255697498,0 -95.846406227,30.255669411,0 -95.846461970,30.255658892,0</coordinates>
+            <coordinates>-95.846244427,30.255287802,0 -95.846243528,30.255353511,0 -95.846186475,30.255352929,0 -95.846187373,30.255287220,0 -95.846244427,30.255287802,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1048,7 +1060,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846464676,30.255669592,0 -95.846475501,30.255712392,0 -95.846453823,30.255716482,0 -95.846442998,30.255673683,0 -95.846464676,30.255669592,0</coordinates>
+            <coordinates>-95.846244277,30.255298753,0 -95.846243678,30.255342559,0 -95.846221491,30.255342333,0 -95.846222090,30.255298527,0 -95.846244277,30.255298753,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1089,7 +1101,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846475501,30.255712392,0 -95.846478207,30.255723092,0 -95.846456529,30.255727182,0 -95.846453823,30.255716482,0 -95.846475501,30.255712392,0</coordinates>
+            <coordinates>-95.846243678,30.255342559,0 -95.846243528,30.255353511,0 -95.846221341,30.255353284,0 -95.846221491,30.255342333,0 -95.846243678,30.255342559,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1128,7 +1140,7 @@ source_pass_id: ss_shower</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846448034,30.255661522,0 -95.846450740,30.255672222,0</coordinates>
+        <coordinates>-95.846230163,30.255287656,0 -95.846230014,30.255298608,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -1167,7 +1179,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846468735,30.255685642,0 -95.846471441,30.255696342,0 -95.846468345,30.255696926,0 -95.846465638,30.255686226,0 -95.846468735,30.255685642,0</coordinates>
+            <coordinates>-95.846244052,30.255315180,0 -95.846243903,30.255326132,0 -95.846240733,30.255326100,0 -95.846240883,30.255315148,0 -95.846244052,30.255315180,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1208,7 +1220,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846450154,30.255689148,0 -95.846452860,30.255699848,0 -95.846449764,30.255700432,0 -95.846447058,30.255689732,0 -95.846450154,30.255689148,0</coordinates>
+            <coordinates>-95.846225035,30.255314986,0 -95.846224885,30.255325938,0 -95.846221715,30.255325906,0 -95.846221865,30.255314954,0 -95.846225035,30.255314986,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1249,7 +1261,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846446719,30.255688395,0 -95.846450102,30.255701770,0 -95.846425327,30.255706445,0 -95.846421945,30.255693070,0 -95.846446719,30.255688395,0</coordinates>
+            <coordinates>-95.846221884,30.255313585,0 -95.846221697,30.255327275,0 -95.846196340,30.255327016,0 -95.846196527,30.255313326,0 -95.846221884,30.255313585,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1290,7 +1302,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846440864,30.255690901,0 -95.846443570,30.255701601,0 -95.846431183,30.255703939,0 -95.846428477,30.255693239,0 -95.846440864,30.255690901,0</coordinates>
+            <coordinates>-95.846215526,30.255314889,0 -95.846215376,30.255325841,0 -95.846202697,30.255325712,0 -95.846202847,30.255314760,0 -95.846215526,30.255314889,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1329,7 +1341,7 @@ source_pass_id: ss_shower</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846423636,30.255699757,0 -95.846414346,30.255701511,0</coordinates>
+        <coordinates>-95.846196433,30.255320171,0 -95.846186924,30.255320074,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -1368,7 +1380,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846436752,30.255687473,0 -95.846437429,30.255690148,0 -95.846431235,30.255691317,0 -95.846430559,30.255688642,0 -95.846436752,30.255687473,0</coordinates>
+            <coordinates>-95.846212412,30.255310750,0 -95.846212375,30.255313488,0 -95.846206036,30.255313423,0 -95.846206073,30.255310686,0 -95.846212412,30.255310750,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1409,48 +1421,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846440812,30.255703523,0 -95.846441488,30.255706198,0 -95.846435294,30.255707367,0 -95.846434618,30.255704692,0 -95.846440812,30.255703523,0</coordinates>
-          </LinearRing>
-        </outerBoundaryIs>
-      </Polygon>
-    </Placemark>
-    <Placemark>
-      <name>Fire pit</name>
-      <styleUrl>#role-equipment_placeholder</styleUrl>
-      <description>id: ss_fire_pit
-role: equipment_placeholder
-status: provisional 3 x 3 ft fire-pit footprint inside a 10.2 x 10 ft end zone; actual pit, spark, fuel, extinguisher, and combustible clearances plus festival approval TBD
-dimensions_ft: 3 x 3 ft assumed
-color: #cc4125
-source_pass_id: ss_shower</description>
-      <ExtendedData>
-        <Data name="id">
-          <value>ss_fire_pit</value>
-        </Data>
-        <Data name="name">
-          <value>Fire pit</value>
-        </Data>
-        <Data name="role">
-          <value>equipment_placeholder</value>
-        </Data>
-        <Data name="status">
-          <value>provisional 3 x 3 ft fire-pit footprint inside a 10.2 x 10 ft end zone; actual pit, spark, fuel, extinguisher, and combustible clearances plus festival approval TBD</value>
-        </Data>
-        <Data name="dimensions_ft">
-          <value>3 x 3 ft assumed</value>
-        </Data>
-        <Data name="color">
-          <value>#cc4125</value>
-        </Data>
-        <Data name="source_pass_id">
-          <value>ss_shower</value>
-        </Data>
-      </ExtendedData>
-      <Polygon>
-        <tessellate>1</tessellate>
-        <outerBoundaryIs>
-          <LinearRing>
-            <coordinates>-95.846334362,30.255712400,0 -95.846336392,30.255720425,0 -95.846327101,30.255722178,0 -95.846325072,30.255714153,0 -95.846334362,30.255712400,0</coordinates>
+            <coordinates>-95.846212188,30.255327178,0 -95.846212150,30.255329915,0 -95.846205811,30.255329851,0 -95.846205848,30.255327113,0 -95.846212188,30.255327178,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1461,14 +1432,14 @@ source_pass_id: ss_shower</description>
       <description>id: me_camper
 role: pass
 area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #6fa8dc
 source: planning/households/me.md
-saved_x_ft: 157.25
-saved_y_ft: 187.75
-rotation_deg: 10
-z: 50</description>
+saved_x_ft: 171
+saved_y_ft: 234.5
+rotation_deg: 25
+z: 4</description>
       <ExtendedData>
         <Data name="id">
           <value>me_camper</value>
@@ -1483,7 +1454,7 @@ z: 50</description>
           <value>600</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
           <value />
@@ -1495,23 +1466,23 @@ z: 50</description>
           <value>planning/households/me.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>157.25</value>
+          <value>171</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>187.75</value>
+          <value>234.5</value>
         </Data>
         <Data name="rotation_deg">
-          <value>10</value>
+          <value>25</value>
         </Data>
         <Data name="z">
-          <value>50</value>
+          <value>4</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846152832,30.255570682,0 -95.846190083,30.255577332,0 -95.846192649,30.255566606,0 -95.846201962,30.255568269,0 -95.846207094,30.255546817,0 -95.846197782,30.255545155,0 -95.846201310,30.255530407,0 -95.846226144,30.255534840,0 -95.846233843,30.255502664,0 -95.846209009,30.255498230,0 -95.846215745,30.255470075,0 -95.846178494,30.255463426,0 -95.846152832,30.255570682,0</coordinates>
+            <coordinates>-95.846100688,30.255430183,0 -95.846134677,30.255444935,0 -95.846140370,30.255435148,0 -95.846148867,30.255438836,0 -95.846160252,30.255419263,0 -95.846151755,30.255415575,0 -95.846159582,30.255402119,0 -95.846182241,30.255411953,0 -95.846199319,30.255382594,0 -95.846176659,30.255372759,0 -95.846191602,30.255347070,0 -95.846157613,30.255332319,0 -95.846100688,30.255430183,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1552,7 +1523,7 @@ source_pass_id: me_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846190194,30.255572808,0 -95.846165360,30.255568375,0 -95.846188937,30.255469833,0 -95.846213771,30.255474267,0 -95.846190194,30.255572808,0</coordinates>
+            <coordinates>-95.846136140,30.255440590,0 -95.846113481,30.255430756,0 -95.846165780,30.255340843,0 -95.846188440,30.255350677,0 -95.846136140,30.255440590,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1593,7 +1564,7 @@ source_pass_id: me_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846165858,30.255566297,0 -95.846156234,30.255564579,0 -95.846161303,30.255543396,0 -95.846170926,30.255545114,0 -95.846165858,30.255566297,0</coordinates>
+            <coordinates>-95.846114584,30.255428860,0 -95.846105803,30.255425049,0 -95.846117046,30.255405721,0 -95.846125826,30.255409531,0 -95.846114584,30.255428860,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1634,7 +1605,7 @@ source_pass_id: me_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846172145,30.255540019,0 -95.846160659,30.255537969,0 -95.846170539,30.255496675,0 -95.846182025,30.255498725,0 -95.846172145,30.255540019,0</coordinates>
+            <coordinates>-95.846128530,30.255404883,0 -95.846118050,30.255400335,0 -95.846139966,30.255362657,0 -95.846150446,30.255367205,0 -95.846128530,30.255404883,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1675,7 +1646,7 @@ source_pass_id: me_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846201962,30.255568269,0 -95.846192649,30.255566606,0 -95.846197782,30.255545155,0 -95.846207094,30.255546817,0 -95.846201962,30.255568269,0</coordinates>
+            <coordinates>-95.846148867,30.255438836,0 -95.846140370,30.255435148,0 -95.846151755,30.255415575,0 -95.846160252,30.255419263,0 -95.846148867,30.255438836,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1716,7 +1687,7 @@ source_pass_id: me_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846226144,30.255534840,0 -95.846201310,30.255530407,0 -95.846209009,30.255498230,0 -95.846233843,30.255502664,0 -95.846226144,30.255534840,0</coordinates>
+            <coordinates>-95.846182241,30.255411953,0 -95.846159582,30.255402119,0 -95.846176659,30.255372759,0 -95.846199319,30.255382594,0 -95.846182241,30.255411953,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1757,7 +1728,7 @@ source_pass_id: me_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846205491,30.255553521,0 -95.846195247,30.255551692,0 -95.846196530,30.255546329,0 -95.846206774,30.255548158,0 -95.846205491,30.255553521,0</coordinates>
+            <coordinates>-95.846156694,30.255425379,0 -95.846147347,30.255421323,0 -95.846150193,30.255416430,0 -95.846159540,30.255420486,0 -95.846156694,30.255425379,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1798,7 +1769,7 @@ source_pass_id: me_camper</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846217038,30.255505256,0 -95.846206794,30.255503427,0 -95.846208077,30.255498064,0 -95.846218321,30.255499893,0 -95.846217038,30.255505256,0</coordinates>
+            <coordinates>-95.846182310,30.255381340,0 -95.846172963,30.255377284,0 -95.846175810,30.255372391,0 -95.846185157,30.255376447,0 -95.846182310,30.255381340,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1837,7 +1808,7 @@ source_pass_id: me_camper</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846197461,30.255546496,0 -95.846209009,30.255498230,0</coordinates>
+        <coordinates>-95.846151043,30.255416798,0 -95.846176659,30.255372759,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -1874,7 +1845,7 @@ source_pass_id: me_camper</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846195375,30.255551156,0 -95.846196273,30.255547402,0</coordinates>
+        <coordinates>-95.846147632,30.255420834,0 -95.846149624,30.255417408,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -1911,7 +1882,7 @@ source_pass_id: me_camper</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846207051,30.255502354,0 -95.846207949,30.255498600,0</coordinates>
+        <coordinates>-95.846173533,30.255376305,0 -95.846175525,30.255372880,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -1920,14 +1891,14 @@ source_pass_id: me_camper</description>
       <description>id: me_support
 role: pass
 area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #6fa8dc
 source: planning/households/me.md
-saved_x_ft: 136.75
-saved_y_ft: 116.25
-rotation_deg: 0
-z: 52</description>
+saved_x_ft: 238.5
+saved_y_ft: 270.25
+rotation_deg: -91
+z: 5</description>
       <ExtendedData>
         <Data name="id">
           <value>me_support</value>
@@ -1942,7 +1913,7 @@ z: 52</description>
           <value>600</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
           <value />
@@ -1954,59 +1925,59 @@ z: 52</description>
           <value>planning/households/me.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>136.75</value>
+          <value>238.5</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>116.25</value>
+          <value>270.25</value>
         </Data>
         <Data name="rotation_deg">
-          <value>0</value>
+          <value>-91</value>
         </Data>
         <Data name="z">
-          <value>52</value>
+          <value>5</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846284858,30.255775465,0 -95.846221488,30.255773863,0 -95.846224271,30.255691756,0 -95.846287640,30.255693358,0 -95.846284858,30.255775465,0</coordinates>
+            <coordinates>-95.845994373,30.255277082,0 -95.845993624,30.255331840,0 -95.845898535,30.255330870,0 -95.845899284,30.255276112,0 -95.845994373,30.255277082,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>A.</name>
+      <name>A. — Sleeping Camp</name>
       <styleUrl>#role-pass</styleUrl>
       <description>id: a
 role: pass
-area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
-layout_note:
+area_sqft: 300
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
+layout_note: 300 sq ft section; Yoga / smoking tent detached
 color: #76a5af
 source: planning/a-site-notes.md
-saved_x_ft: 94.25
-saved_y_ft: 202
-rotation_deg: 103
-z: 57</description>
+saved_x_ft: 170.25
+saved_y_ft: 209.75
+rotation_deg: -8
+z: 6</description>
       <ExtendedData>
         <Data name="id">
           <value>a</value>
         </Data>
         <Data name="name">
-          <value>A.</value>
+          <value>A. — Sleeping Camp</value>
         </Data>
         <Data name="role">
           <value>pass</value>
         </Data>
         <Data name="area_sqft">
-          <value>600</value>
+          <value>300</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
-          <value />
+          <value>300 sq ft section; Yoga / smoking tent detached</value>
         </Data>
         <Data name="color">
           <value>#76a5af</value>
@@ -2015,23 +1986,23 @@ z: 57</description>
           <value>planning/a-site-notes.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>94.25</value>
+          <value>170.25</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>202</value>
+          <value>209.75</value>
         </Data>
         <Data name="rotation_deg">
-          <value>103</value>
+          <value>-8</value>
         </Data>
         <Data name="z">
-          <value>57</value>
+          <value>6</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846322814,30.255512822,0 -95.846342892,30.255446604,0 -95.846379689,30.255454928,0 -95.846374469,30.255472145,0 -95.846451129,30.255489489,0 -95.846441492,30.255521273,0 -95.846364831,30.255503930,0 -95.846359611,30.255521147,0 -95.846322814,30.255512822,0</coordinates>
+            <coordinates>-95.846189813,30.255512017,0 -95.846111049,30.255519556,0 -95.846106859,30.255486899,0 -95.846185623,30.255479360,0 -95.846189813,30.255512017,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2064,7 +2035,7 @@ source_pass_id: a</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846325953,30.255507871,0 -95.846342819,30.255452248,0 -95.846376550,30.255459879,0 -95.846359684,30.255515502,0 -95.846325953,30.255507871,0</coordinates>
+            <coordinates>-95.846183337,30.255511260,0 -95.846117175,30.255517593,0 -95.846113335,30.255487657,0 -95.846179497,30.255481324,0 -95.846183337,30.255511260,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2105,81 +2076,7 @@ source_pass_id: a</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846327888,30.255506894,0 -95.846343951,30.255453919,0 -95.846374615,30.255460857,0 -95.846358552,30.255513831,0 -95.846327888,30.255506894,0</coordinates>
-          </LinearRing>
-        </outerBoundaryIs>
-      </Polygon>
-    </Placemark>
-    <Placemark>
-      <name>Yoga Tent (COVERPRO canopy) provisional clearance</name>
-      <styleUrl>#role-clearance_placeholder</styleUrl>
-      <description>id: a_yoga_buffer
-role: clearance_placeholder
-status: Planning buffer only; verify actual operating clearance.
-source_pass_id: a</description>
-      <ExtendedData>
-        <Data name="id">
-          <value>a_yoga_buffer</value>
-        </Data>
-        <Data name="name">
-          <value>Yoga Tent (COVERPRO canopy) provisional clearance</value>
-        </Data>
-        <Data name="role">
-          <value>clearance_placeholder</value>
-        </Data>
-        <Data name="status">
-          <value>Planning buffer only; verify actual operating clearance.</value>
-        </Data>
-        <Data name="source_pass_id">
-          <value>a</value>
-        </Data>
-      </ExtendedData>
-      <Polygon>
-        <tessellate>1</tessellate>
-        <outerBoundaryIs>
-          <LinearRing>
-            <coordinates>-95.846386698,30.255507462,0 -95.846395532,30.255478326,0 -95.846450728,30.255490813,0 -95.846441893,30.255519949,0 -95.846386698,30.255507462,0</coordinates>
-          </LinearRing>
-        </outerBoundaryIs>
-      </Polygon>
-    </Placemark>
-    <Placemark>
-      <name>Yoga Tent (COVERPRO canopy)</name>
-      <styleUrl>#role-known_equipment</styleUrl>
-      <description>id: a_yoga
-role: known_equipment
-status: confirmed; bottom-aligned in T stem with 8.5 ft nominal separation
-dimensions_ft: 10 x 17 ft
-color: #3d85c6
-source_pass_id: a</description>
-      <ExtendedData>
-        <Data name="id">
-          <value>a_yoga</value>
-        </Data>
-        <Data name="name">
-          <value>Yoga Tent (COVERPRO canopy)</value>
-        </Data>
-        <Data name="role">
-          <value>known_equipment</value>
-        </Data>
-        <Data name="status">
-          <value>confirmed; bottom-aligned in T stem with 8.5 ft nominal separation</value>
-        </Data>
-        <Data name="dimensions_ft">
-          <value>10 x 17 ft</value>
-        </Data>
-        <Data name="color">
-          <value>#3d85c6</value>
-        </Data>
-        <Data name="source_pass_id">
-          <value>a</value>
-        </Data>
-      </ExtendedData>
-      <Polygon>
-        <tessellate>1</tessellate>
-        <outerBoundaryIs>
-          <LinearRing>
-            <coordinates>-95.846388633,30.255506484,0 -95.846396664,30.255479997,0 -95.846448793,30.255491790,0 -95.846440762,30.255518278,0 -95.846388633,30.255506484,0</coordinates>
+            <coordinates>-95.846181587,30.255510050,0 -95.846118576,30.255516081,0 -95.846115085,30.255488867,0 -95.846178096,30.255482836,0 -95.846181587,30.255510050,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2190,14 +2087,14 @@ source_pass_id: a</description>
       <description>id: cs
 role: pass
 area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note: 40 x 15 = 600 sq ft; equipment = 386 sq ft
 color: #ffd966
 source: planning/households/cs.md
-saved_x_ft: 121.25
-saved_y_ft: 178.25
-rotation_deg: 133
-z: 55</description>
+saved_x_ft: 92.75
+saved_y_ft: 247.75
+rotation_deg: 25
+z: 7</description>
       <ExtendedData>
         <Data name="id">
           <value>cs</value>
@@ -2212,7 +2109,7 @@ z: 55</description>
           <value>600</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
           <value>40 x 15 = 600 sq ft; equipment = 386 sq ft</value>
@@ -2224,23 +2121,23 @@ z: 55</description>
           <value>planning/households/cs.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>121.25</value>
+          <value>92.75</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>178.25</value>
+          <value>247.75</value>
         </Data>
         <Data name="rotation_deg">
-          <value>133</value>
+          <value>25</value>
         </Data>
         <Data name="z">
-          <value>55</value>
+          <value>7</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846215566,30.255609392,0 -95.846304715,30.255531511,0 -95.846338526,30.255560389,0 -95.846249376,30.255638269,0 -95.846215566,30.255609392,0</coordinates>
+            <coordinates>-95.846419769,30.255439894,0 -95.846306472,30.255390723,0 -95.846327819,30.255354024,0 -95.846441116,30.255403195,0 -95.846419769,30.255439894,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2281,7 +2178,7 @@ source_pass_id: cs</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846217820,30.255611317,0 -95.846304741,30.255535384,0 -95.846334043,30.255560411,0 -95.846247122,30.255636344,0 -95.846217820,30.255611317,0</coordinates>
+            <coordinates>-95.846421192,30.255437447,0 -95.846310727,30.255389506,0 -95.846329228,30.255357700,0 -95.846439693,30.255405641,0 -95.846421192,30.255437447,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2314,7 +2211,7 @@ source_pass_id: cs</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846220074,30.255613242,0 -95.846251276,30.255585984,0 -95.846276071,30.255607161,0 -95.846244868,30.255634419,0 -95.846220074,30.255613242,0</coordinates>
+            <coordinates>-95.846422615,30.255435001,0 -95.846382961,30.255417791,0 -95.846398616,30.255390878,0 -95.846438270,30.255408088,0 -95.846422615,30.255435001,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2355,7 +2252,7 @@ source_pass_id: cs</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846222315,30.255613231,0 -95.846251289,30.255587920,0 -95.846273829,30.255607171,0 -95.846244856,30.255632482,0 -95.846222315,30.255613231,0</coordinates>
+            <coordinates>-95.846421911,30.255433163,0 -95.846385089,30.255417182,0 -95.846399320,30.255392716,0 -95.846436142,30.255408697,0 -95.846421911,30.255433163,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2388,7 +2285,7 @@ source_pass_id: cs</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846249022,30.255584059,0 -95.846286911,30.255550960,0 -95.846316213,30.255575987,0 -95.846278325,30.255609086,0 -95.846249022,30.255584059,0</coordinates>
+            <coordinates>-95.846381538,30.255420238,0 -95.846333387,30.255399340,0 -95.846351887,30.255367534,0 -95.846400039,30.255388432,0 -95.846381538,30.255420238,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2429,7 +2326,7 @@ source_pass_id: cs</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846251264,30.255584048,0 -95.846286923,30.255552896,0 -95.846313972,30.255575998,0 -95.846278312,30.255607150,0 -95.846251264,30.255584048,0</coordinates>
+            <coordinates>-95.846380834,30.255418400,0 -95.846335515,30.255398731,0 -95.846352592,30.255369372,0 -95.846397911,30.255389040,0 -95.846380834,30.255418400,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2462,7 +2359,7 @@ source_pass_id: cs</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846289190,30.255556757,0 -95.846309249,30.255539234,0 -95.846329535,30.255556560,0 -95.846309476,30.255574083,0 -95.846289190,30.255556757,0</coordinates>
+            <coordinates>-95.846339066,30.255395676,0 -95.846313574,30.255384612,0 -95.846326382,30.255362593,0 -95.846351874,30.255373656,0 -95.846339066,30.255395676,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2503,7 +2400,7 @@ source_pass_id: cs</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846291431,30.255556746,0 -95.846309261,30.255541170,0 -95.846327294,30.255556571,0 -95.846309464,30.255572147,0 -95.846291431,30.255556746,0</coordinates>
+            <coordinates>-95.846338361,30.255393838,0 -95.846315701,30.255384004,0 -95.846327086,30.255364431,0 -95.846349746,30.255374265,0 -95.846338361,30.255393838,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2514,14 +2411,14 @@ source_pass_id: cs</description>
       <description>id: bg_primary
 role: pass
 area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note: 538 sq ft nominal tents; only 62 sq ft remains for all clearance and access
 color: #c27ba0
 source: planning/households/bg.md
-saved_x_ft: 130.75
-saved_y_ft: 153.75
-rotation_deg: 0
-z: 50</description>
+saved_x_ft: 157.75
+saved_y_ft: 177.5
+rotation_deg: 172
+z: 8</description>
       <ExtendedData>
         <Data name="id">
           <value>bg_primary</value>
@@ -2536,7 +2433,7 @@ z: 50</description>
           <value>600</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
           <value>538 sq ft nominal tents; only 62 sq ft remains for all clearance and access</value>
@@ -2548,23 +2445,23 @@ z: 50</description>
           <value>planning/households/bg.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>130.75</value>
+          <value>157.75</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>153.75</value>
+          <value>177.5</value>
         </Data>
         <Data name="rotation_deg">
-          <value>0</value>
+          <value>172</value>
         </Data>
         <Data name="z">
-          <value>50</value>
+          <value>8</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846307347,30.255673312,0 -95.846221798,30.255671149,0 -95.846224580,30.255589042,0 -95.846291118,30.255590724,0 -95.846290098,30.255620830,0 -95.846233065,30.255619388,0 -95.846232509,30.255635810,0 -95.846308553,30.255637732,0 -95.846307347,30.255673312,0</coordinates>
+            <coordinates>-95.846134848,30.255527263,0 -95.846219913,30.255519120,0 -95.846230387,30.255600763,0 -95.846164225,30.255607096,0 -95.846160384,30.255577160,0 -95.846217095,30.255571732,0 -95.846215000,30.255555403,0 -95.846139386,30.255562641,0 -95.846134848,30.255527263,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2597,7 +2494,7 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846307301,30.255674681,0 -95.846221751,30.255672517,0 -95.846223050,30.255634201,0 -95.846308599,30.255636364,0 -95.846307301,30.255674681,0</coordinates>
+            <coordinates>-95.846134673,30.255525902,0 -95.846219738,30.255517760,0 -95.846224626,30.255555859,0 -95.846139561,30.255564002,0 -95.846134673,30.255525902,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2638,7 +2535,7 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846305763,30.255673272,0 -95.846223382,30.255671189,0 -95.846224588,30.255635609,0 -95.846306968,30.255637692,0 -95.846305763,30.255673272,0</coordinates>
+            <coordinates>-95.846136423,30.255527112,0 -95.846218338,30.255519271,0 -95.846222876,30.255554649,0 -95.846140962,30.255562490,0 -95.846136423,30.255527112,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2671,7 +2568,7 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846290098,30.255620830,0 -95.846223560,30.255619148,0 -95.846224580,30.255589042,0 -95.846291118,30.255590724,0 -95.846290098,30.255620830,0</coordinates>
+            <coordinates>-95.846160384,30.255577160,0 -95.846226546,30.255570827,0 -95.846230387,30.255600763,0 -95.846164225,30.255607096,0 -95.846160384,30.255577160,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2712,7 +2609,7 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846288560,30.255619422,0 -95.846225191,30.255617820,0 -95.846226118,30.255590451,0 -95.846289488,30.255592053,0 -95.846288560,30.255619422,0</coordinates>
+            <coordinates>-95.846162134,30.255578370,0 -95.846225146,30.255572339,0 -95.846228637,30.255599553,0 -95.846165625,30.255605584,0 -95.846162134,30.255578370,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2753,7 +2650,7 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846230971,30.255634401,0 -95.846224634,30.255634241,0 -95.846224820,30.255628767,0 -95.846231157,30.255628927,0 -95.846230971,30.255634401,0</coordinates>
+            <coordinates>-95.846216750,30.255556613,0 -95.846223051,30.255556010,0 -95.846223749,30.255561453,0 -95.846217448,30.255562056,0 -95.846216750,30.255556613,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2794,7 +2691,7 @@ source_pass_id: bg_primary</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846231249,30.255626190,0 -95.846224912,30.255626030,0 -95.846225098,30.255620556,0 -95.846231435,30.255620717,0 -95.846231249,30.255626190,0</coordinates>
+            <coordinates>-95.846217797,30.255564777,0 -95.846224098,30.255564174,0 -95.846224796,30.255569617,0 -95.846218495,30.255570220,0 -95.846217797,30.255564777,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2805,14 +2702,14 @@ source_pass_id: bg_primary</description>
       <description>id: bg_community
 role: pass
 area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note: 20 x 30 ft tent fills the nominal pass; operational clearance remains unresolved
 color: #c27ba0
 source: planning/households/bg.md
-saved_x_ft: 83.5
-saved_y_ft: 105.75
-rotation_deg: -85
-z: 60</description>
+saved_x_ft: 133.5
+saved_y_ft: 249.25
+rotation_deg: -1
+z: 9</description>
       <ExtendedData>
         <Data name="id">
           <value>bg_community</value>
@@ -2827,7 +2724,7 @@ z: 60</description>
           <value>600</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
           <value>20 x 30 ft tent fills the nominal pass; operational clearance remains unresolved</value>
@@ -2839,23 +2736,23 @@ z: 60</description>
           <value>planning/households/bg.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>83.5</value>
+          <value>133.5</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>105.75</value>
+          <value>249.25</value>
         </Data>
         <Data name="rotation_deg">
-          <value>-85</value>
+          <value>-1</value>
         </Data>
         <Data name="z">
-          <value>60</value>
+          <value>9</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846473223,30.255744194,0 -95.846465852,30.255798584,0 -95.846371402,30.255789034,0 -95.846378773,30.255734644,0 -95.846473223,30.255744194,0</coordinates>
+            <coordinates>-95.846308332,30.255411255,0 -95.846244940,30.255410608,0 -95.846246063,30.255328472,0 -95.846309455,30.255329118,0 -95.846308332,30.255411255,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2888,7 +2785,7 @@ source_pass_id: bg_community</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846474982,30.255742994,0 -95.846467242,30.255800103,0 -95.846369643,30.255790235,0 -95.846377383,30.255733125,0 -95.846474982,30.255742994,0</coordinates>
+            <coordinates>-95.846309898,30.255412640,0 -95.846243336,30.255411961,0 -95.846244497,30.255327087,0 -95.846311059,30.255327766,0 -95.846309898,30.255412640,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2929,43 +2826,43 @@ source_pass_id: bg_community</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846473223,30.255744194,0 -95.846465852,30.255798584,0 -95.846371402,30.255789034,0 -95.846378773,30.255734644,0 -95.846473223,30.255744194,0</coordinates>
+            <coordinates>-95.846308332,30.255411255,0 -95.846244940,30.255410608,0 -95.846246063,30.255328472,0 -95.846309455,30.255329118,0 -95.846308332,30.255411255,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>S. + T.</name>
+      <name>S. + T. — 20 ft Yurt</name>
       <styleUrl>#role-pass</styleUrl>
       <description>id: st
 role: pass
-area_sqft: 600
-status: Saved freeform layout; planning-grade georeferencing, not a survey.
-layout_note: 264 + 120 + 216 = 600 sq ft
+area_sqft: 314.1593
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
+layout_note: 20 ft diameter circle; entry and anchor envelope unverified
 color: #b4a7d6
 source: planning/households/st.md
-saved_x_ft: 177.5
-saved_y_ft: 121
-rotation_deg: 158
-z: 49</description>
+saved_x_ft: 71.5
+saved_y_ft: 236.25
+rotation_deg: -180
+z: 10</description>
       <ExtendedData>
         <Data name="id">
           <value>st</value>
         </Data>
         <Data name="name">
-          <value>S. + T.</value>
+          <value>S. + T. — 20 ft Yurt</value>
         </Data>
         <Data name="role">
           <value>pass</value>
         </Data>
         <Data name="area_sqft">
-          <value>600</value>
+          <value>314.1593</value>
         </Data>
         <Data name="status">
-          <value>Saved freeform layout; planning-grade georeferencing, not a survey.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
-          <value>264 + 120 + 216 = 600 sq ft</value>
+          <value>20 ft diameter circle; entry and anchor envelope unverified</value>
         </Data>
         <Data name="color">
           <value>#b4a7d6</value>
@@ -2974,40 +2871,101 @@ z: 49</description>
           <value>planning/households/st.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>177.5</value>
+          <value>71.5</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>121</value>
+          <value>236.25</value>
         </Data>
         <Data name="rotation_deg">
-          <value>158</value>
+          <value>-180</value>
         </Data>
         <Data name="z">
-          <value>49</value>
+          <value>10</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846084050,30.255578767,0 -95.846119720,30.255567355,0 -95.846143941,30.255623843,0 -95.846132051,30.255627647,0 -95.846165079,30.255704676,0 -95.846176969,30.255700872,0 -95.846196786,30.255747089,0 -95.846161116,30.255758501,0 -95.846141299,30.255712283,0 -95.846153189,30.255708480,0 -95.846120160,30.255631451,0 -95.846108270,30.255635255,0 -95.846084050,30.255578767,0</coordinates>
+            <coordinates>-95.846503659,30.255424896,0 -95.846503458,30.255427278,0 -95.846503017,30.255429636,0 -95.846502340,30.255431952,0 -95.846501431,30.255434208,0 -95.846500299,30.255436387,0 -95.846498951,30.255438473,0 -95.846497397,30.255440449,0 -95.846495650,30.255442301,0 -95.846493723,30.255444014,0 -95.846491631,30.255445575,0 -95.846489388,30.255446974,0 -95.846487014,30.255448197,0 -95.846484524,30.255449238,0 -95.846481940,30.255450087,0 -95.846479279,30.255450738,0 -95.846476563,30.255451187,0 -95.846473812,30.255451429,0 -95.846471047,30.255451464,0 -95.846468289,30.255451290,0 -95.846465559,30.255450909,0 -95.846462878,30.255450324,0 -95.846460266,30.255449539,0 -95.846457743,30.255448561,0 -95.846455329,30.255447396,0 -95.846453041,30.255446054,0 -95.846450897,30.255444546,0 -95.846448914,30.255442881,0 -95.846447106,30.255441073,0 -95.846445488,30.255439137,0 -95.846444071,30.255437085,0 -95.846442866,30.255434935,0 -95.846441883,30.255432703,0 -95.846441129,30.255430404,0 -95.846440610,30.255428058,0 -95.846440329,30.255425682,0 -95.846440290,30.255423293,0 -95.846440491,30.255420911,0 -95.846440932,30.255418553,0 -95.846441609,30.255416237,0 -95.846442518,30.255413981,0 -95.846443650,30.255411802,0 -95.846444998,30.255409716,0 -95.846446552,30.255407740,0 -95.846448299,30.255405888,0 -95.846450226,30.255404175,0 -95.846452318,30.255402614,0 -95.846454560,30.255401216,0 -95.846456935,30.255399992,0 -95.846459424,30.255398951,0 -95.846462009,30.255398102,0 -95.846464670,30.255397451,0 -95.846467386,30.255397002,0 -95.846470137,30.255396760,0 -95.846472902,30.255396726,0 -95.846475660,30.255396900,0 -95.846478390,30.255397281,0 -95.846481071,30.255397866,0 -95.846483683,30.255398650,0 -95.846486206,30.255399628,0 -95.846488620,30.255400793,0 -95.846490908,30.255402135,0 -95.846493052,30.255403644,0 -95.846495035,30.255405308,0 -95.846496843,30.255407116,0 -95.846498461,30.255409053,0 -95.846499878,30.255411104,0 -95.846501083,30.255413254,0 -95.846502066,30.255415487,0 -95.846502820,30.255417785,0 -95.846503339,30.255420131,0 -95.846503620,30.255422507,0 -95.846503659,30.255424896,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Primary tent provisional clearance</name>
-      <styleUrl>#role-clearance_placeholder</styleUrl>
-      <description>id: st_tent_buffer
-role: clearance_placeholder
-status: Planning buffer only; verify actual operating clearance.
-source_pass_id: st</description>
+      <name>A. — Yoga / Smoking Tent (detached)</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: a_yoga
+role: pass
+area_sqft: 300
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
+layout_note:
+color: #76a5af
+source: planning/a-site-notes.md
+saved_x_ft: 184.1983
+saved_y_ft: 214.321
+rotation_deg: 82
+z: 11</description>
       <ExtendedData>
         <Data name="id">
-          <value>st_tent_buffer</value>
+          <value>a_yoga</value>
         </Data>
         <Data name="name">
-          <value>Primary tent provisional clearance</value>
+          <value>A. — Yoga / Smoking Tent (detached)</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>300</value>
+        </Data>
+        <Data name="status">
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#76a5af</value>
+        </Data>
+        <Data name="source">
+          <value>planning/a-site-notes.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>184.1983</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>214.321</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>82</value>
+        </Data>
+        <Data name="z">
+          <value>11</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846088476,30.255488659,0 -95.846084286,30.255456002,0 -95.846163050,30.255448463,0 -95.846167240,30.255481120,0 -95.846088476,30.255488659,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Yoga Tent (COVERPRO canopy) provisional clearance</name>
+      <styleUrl>#role-clearance_placeholder</styleUrl>
+      <description>id: a_yoga_buffer
+role: clearance_placeholder
+status: Planning buffer only; verify actual operating clearance.
+source_pass_id: a_yoga</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>a_yoga_buffer</value>
+        </Data>
+        <Data name="name">
+          <value>Yoga Tent (COVERPRO canopy) provisional clearance</value>
         </Data>
         <Data name="role">
           <value>clearance_placeholder</value>
@@ -3016,88 +2974,116 @@ source_pass_id: st</description>
           <value>Planning buffer only; verify actual operating clearance.</value>
         </Data>
         <Data name="source_pass_id">
-          <value>st</value>
+          <value>a_yoga</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846086086,30.255579575,0 -95.846118784,30.255569115,0 -95.846141904,30.255623035,0 -95.846109206,30.255633496,0 -95.846086086,30.255579575,0</coordinates>
+            <coordinates>-95.846110355,30.255485188,0 -95.846106515,30.255455252,0 -95.846163225,30.255449824,0 -95.846167065,30.255479760,0 -95.846110355,30.255485188,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Primary tent</name>
+      <name>Yoga Tent (COVERPRO canopy)</name>
       <styleUrl>#role-known_equipment</styleUrl>
-      <description>id: st_tent
+      <description>id: a_yoga
 role: known_equipment
-status: legacy assumed 10 x 20 ft tent in the connected geographic reference
-dimensions_ft: 10 x 20 ft
-color: #8e7cc3
-source_pass_id: st</description>
+status: confirmed; bottom-aligned in T stem with 8.5 ft nominal separation
+dimensions_ft: 10 x 17 ft
+color: #3d85c6
+source_pass_id: a_yoga</description>
       <ExtendedData>
         <Data name="id">
-          <value>st_tent</value>
+          <value>a_yoga</value>
         </Data>
         <Data name="name">
-          <value>Primary tent</value>
+          <value>Yoga Tent (COVERPRO canopy)</value>
         </Data>
         <Data name="role">
           <value>known_equipment</value>
         </Data>
         <Data name="status">
-          <value>legacy assumed 10 x 20 ft tent in the connected geographic reference</value>
+          <value>confirmed; bottom-aligned in T stem with 8.5 ft nominal separation</value>
         </Data>
         <Data name="dimensions_ft">
-          <value>10 x 20 ft</value>
+          <value>10 x 17 ft</value>
         </Data>
         <Data name="color">
-          <value>#8e7cc3</value>
+          <value>#3d85c6</value>
         </Data>
         <Data name="source_pass_id">
-          <value>st</value>
+          <value>a_yoga</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846088123,30.255580384,0 -95.846117848,30.255570874,0 -95.846139867,30.255622226,0 -95.846110142,30.255631736,0 -95.846088123,30.255580384,0</coordinates>
+            <coordinates>-95.846111756,30.255483676,0 -95.846108264,30.255456462,0 -95.846161824,30.255451336,0 -95.846165315,30.255478550,0 -95.846111756,30.255483676,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Handicap Portapotty provisional clearance</name>
-      <styleUrl>#role-clearance_placeholder</styleUrl>
-      <description>id: st_portapotty_buffer
-role: clearance_placeholder
-status: Planning buffer only; verify actual operating clearance.
-source_pass_id: st</description>
+      <name>S. + T. — Portapotty End (detached)</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: st_portapotty
+role: pass
+area_sqft: 100
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
+layout_note:
+color: #b4a7d6
+source: planning/households/st.md
+saved_x_ft: 139.5
+saved_y_ft: 282
+rotation_deg: -1
+z: 12</description>
       <ExtendedData>
         <Data name="id">
-          <value>st_portapotty_buffer</value>
+          <value>st_portapotty</value>
         </Data>
         <Data name="name">
-          <value>Handicap Portapotty provisional clearance</value>
+          <value>S. + T. — Portapotty End (detached)</value>
         </Data>
         <Data name="role">
-          <value>clearance_placeholder</value>
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>100</value>
         </Data>
         <Data name="status">
-          <value>Planning buffer only; verify actual operating clearance.</value>
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
-        <Data name="source_pass_id">
-          <value>st</value>
+        <Data name="layout_note">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#b4a7d6</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/st.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>139.5</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>282</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>-1</value>
+        </Data>
+        <Data name="z">
+          <value>12</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846159189,30.255734298,0 -95.846179997,30.255727642,0 -95.846187703,30.255745615,0 -95.846166895,30.255752272,0 -95.846159189,30.255734298,0</coordinates>
+            <coordinates>-95.846291800,30.255321370,0 -95.846260104,30.255321046,0 -95.846260478,30.255293668,0 -95.846292174,30.255293991,0 -95.846291800,30.255321370,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3107,10 +3093,10 @@ source_pass_id: st</description>
       <styleUrl>#role-known_equipment</styleUrl>
       <description>id: st_portapotty
 role: known_equipment
-status: legacy assumed 6 x 6 ft ADA unit in the connected geographic reference
+status: assumed 6 x 6 ft ADA unit; door direction, turning space, servicing route, and accessible approach remain unverified
 dimensions_ft: 6 x 6 ft ADA
 color: #674ea7
-source_pass_id: st</description>
+source_pass_id: st_portapotty</description>
       <ExtendedData>
         <Data name="id">
           <value>st_portapotty</value>
@@ -3122,7 +3108,7 @@ source_pass_id: st</description>
           <value>known_equipment</value>
         </Data>
         <Data name="status">
-          <value>legacy assumed 6 x 6 ft ADA unit in the connected geographic reference</value>
+          <value>assumed 6 x 6 ft ADA unit; door direction, turning space, servicing route, and accessible approach remain unverified</value>
         </Data>
         <Data name="dimensions_ft">
           <value>6 x 6 ft ADA</value>
@@ -3131,14 +3117,254 @@ source_pass_id: st</description>
           <value>#674ea7</value>
         </Data>
         <Data name="source_pass_id">
-          <value>st</value>
+          <value>st_portapotty</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846161226,30.255735107,0 -95.846179061,30.255729401,0 -95.846185666,30.255744807,0 -95.846167831,30.255750512,0 -95.846161226,30.255735107,0</coordinates>
+            <coordinates>-95.846285536,30.255315829,0 -95.846266518,30.255315635,0 -95.846266743,30.255299208,0 -95.846285760,30.255299402,0 -95.846285536,30.255315829,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>S. + S. — Fire-pit End (detached)</name>
+      <styleUrl>#role-pass</styleUrl>
+      <description>id: ss_firepit
+role: pass
+area_sqft: 102
+status: Accepted saved layout; planning-grade georeferencing, not a survey.
+layout_note:
+color: #93c47d
+source: equipment/ss-16ft-shower-trailer.md
+saved_x_ft: 139
+saved_y_ft: 229
+rotation_deg: -91
+z: 13</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_firepit</value>
+        </Data>
+        <Data name="name">
+          <value>S. + S. — Fire-pit End (detached)</value>
+        </Data>
+        <Data name="role">
+          <value>pass</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>102</value>
+        </Data>
+        <Data name="status">
+          <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
+        </Data>
+        <Data name="layout_note">
+          <value />
+        </Data>
+        <Data name="color">
+          <value>#93c47d</value>
+        </Data>
+        <Data name="source">
+          <value>equipment/ss-16ft-shower-trailer.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>139</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>229</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>-91</value>
+        </Data>
+        <Data name="z">
+          <value>13</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846288530,30.255438805,0 -95.846288148,30.255466731,0 -95.846256452,30.255466408,0 -95.846256834,30.255438482,0 -95.846288530,30.255438805,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Fire pit</name>
+      <styleUrl>#role-equipment_placeholder</styleUrl>
+      <description>id: ss_fire_pit
+role: equipment_placeholder
+status: provisional 3 x 3 ft fire-pit footprint inside a 10.2 x 10 ft end zone; actual pit, spark, fuel, extinguisher, and combustible clearances plus festival approval TBD
+dimensions_ft: 3 x 3 ft assumed
+color: #cc4125
+source_pass_id: ss_firepit</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_fire_pit</value>
+        </Data>
+        <Data name="name">
+          <value>Fire pit</value>
+        </Data>
+        <Data name="role">
+          <value>equipment_placeholder</value>
+        </Data>
+        <Data name="status">
+          <value>provisional 3 x 3 ft fire-pit footprint inside a 10.2 x 10 ft end zone; actual pit, spark, fuel, extinguisher, and combustible clearances plus festival approval TBD</value>
+        </Data>
+        <Data name="dimensions_ft">
+          <value>3 x 3 ft assumed</value>
+        </Data>
+        <Data name="color">
+          <value>#cc4125</value>
+        </Data>
+        <Data name="source_pass_id">
+          <value>ss_firepit</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846277301,30.255448548,0 -95.846277189,30.255456762,0 -95.846267680,30.255456665,0 -95.846267792,30.255448451,0 -95.846277301,30.255448548,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>S. + S. — Fire-pit Walkway</name>
+      <styleUrl>#role-connector</styleUrl>
+      <description>id: ss_walkway
+role: connector
+area_sqft: 66
+status: Accepted allocation connector; width is planning-only and not confirmed accessible.
+layout_note: Accepted routed connector; planning-only width is not accessible
+color: #93c47d
+source: equipment/ss-16ft-shower-trailer.md
+saved_x_ft: 147.1202
+saved_y_ft: 238.0463
+rotation_deg: 0
+z: 0
+connector_width_ft: 1.9246
+connector_length_ft: 34.292</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>ss_walkway</value>
+        </Data>
+        <Data name="name">
+          <value>S. + S. — Fire-pit Walkway</value>
+        </Data>
+        <Data name="role">
+          <value>connector</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>66</value>
+        </Data>
+        <Data name="status">
+          <value>Accepted allocation connector; width is planning-only and not confirmed accessible.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>Accepted routed connector; planning-only width is not accessible</value>
+        </Data>
+        <Data name="color">
+          <value>#93c47d</value>
+        </Data>
+        <Data name="source">
+          <value>equipment/ss-16ft-shower-trailer.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>147.1202</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>238.0463</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>0</value>
+        </Data>
+        <Data name="z">
+          <value>0</value>
+        </Data>
+        <Data name="connector_width_ft">
+          <value>1.9246</value>
+        </Data>
+        <Data name="connector_length_ft">
+          <value>34.292</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846263405,30.255438082,0 -95.846242323,30.255412873,0 -95.846244262,30.255355664,0 -95.846241786,30.255351112,0 -95.846236264,30.255353353,0 -95.846238121,30.255356767,0 -95.846236164,30.255414508,0 -95.846258460,30.255441168,0 -95.846263405,30.255438082,0</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>S. + T. — Yurt-to-Portapotty Walkway</name>
+      <styleUrl>#role-connector</styleUrl>
+      <description>id: st_walkway
+role: connector
+area_sqft: 100
+status: Accepted allocation connector; width is planning-only and not confirmed accessible.
+layout_note: Accepted routed connector; planning-only width is not accessible
+color: #b4a7d6
+source: planning/households/st.md
+saved_x_ft: 87.8361
+saved_y_ft: 252.4505
+rotation_deg: 0
+z: 0
+connector_width_ft: 1.4783
+connector_length_ft: 67.6463</description>
+      <ExtendedData>
+        <Data name="id">
+          <value>st_walkway</value>
+        </Data>
+        <Data name="name">
+          <value>S. + T. — Yurt-to-Portapotty Walkway</value>
+        </Data>
+        <Data name="role">
+          <value>connector</value>
+        </Data>
+        <Data name="area_sqft">
+          <value>100</value>
+        </Data>
+        <Data name="status">
+          <value>Accepted allocation connector; width is planning-only and not confirmed accessible.</value>
+        </Data>
+        <Data name="layout_note">
+          <value>Accepted routed connector; planning-only width is not accessible</value>
+        </Data>
+        <Data name="color">
+          <value>#b4a7d6</value>
+        </Data>
+        <Data name="source">
+          <value>planning/households/st.md</value>
+        </Data>
+        <Data name="saved_x_ft">
+          <value>87.8361</value>
+        </Data>
+        <Data name="saved_y_ft">
+          <value>252.4505</value>
+        </Data>
+        <Data name="rotation_deg">
+          <value>0</value>
+        </Data>
+        <Data name="z">
+          <value>0</value>
+        </Data>
+        <Data name="connector_width_ft">
+          <value>1.4783</value>
+        </Data>
+        <Data name="connector_length_ft">
+          <value>67.6463</value>
+        </Data>
+      </ExtendedData>
+      <Polygon>
+        <tessellate>1</tessellate>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-95.846452601,30.255402849,0 -95.846443252,30.255399414,0 -95.846330624,30.255350529,0 -95.846314471,30.255326403,0 -95.846315146,30.255306480,0 -95.846290469,30.255305856,0 -95.846290332,30.255309902,0 -95.846310325,30.255310408,0 -95.846309748,30.255327434,0 -95.846327268,30.255353602,0 -95.846441281,30.255403089,0 -95.846450767,30.255406574,0 -95.846452601,30.255402849,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>

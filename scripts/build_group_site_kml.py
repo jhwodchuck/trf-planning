@@ -19,6 +19,7 @@ ET.register_namespace("", KML_NS)
 
 ROLE_COLORS = {
     "pass": ("ff3869e6", "553869e6"),
+    "connector": ("ff1f4c6d", "998fc2d9"),
     "rv": ("ff86523d", "6686523d"),
     "canopy": ("ff0098ff", "660098ff"),
     "tent": ("ff5d9b45", "665d9b45"),

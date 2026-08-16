@@ -8,7 +8,15 @@ import math
 from pathlib import Path
 from typing import Any
 
-from build_pass_svgs import MARGIN_FT, PASSES, Equipment, Pass
+from build_pass_svgs import (
+    CONNECTOR_PARTS,
+    DETACHED_PARTS,
+    LAYOUT_PASSES,
+    MARGIN_FT,
+    PASSES,
+    Equipment,
+    Pass,
+)
 from build_road_geometry import to_geo
 
 
@@ -231,16 +239,21 @@ def pass_features(pass_definition: Pass, saved_position: dict[str, Any]):
         assert pass_definition.rect is not None
         boundary = rectangle(0, 0, *pass_definition.rect)
 
+    is_connector = pass_definition.kind == "connector"
     features = [
         polygon_feature(
             pass_definition.id,
             pass_definition.name,
-            "pass",
+            "connector" if is_connector else "pass",
             boundary,
             pass_definition,
             saved_position,
             area_sqft=pass_definition.area_sqft,
-            status="Saved freeform layout; planning-grade georeferencing, not a survey.",
+            status=(
+                "Accepted allocation connector; width is planning-only and not confirmed accessible."
+                if is_connector
+                else "Accepted saved layout; planning-grade georeferencing, not a survey."
+            ),
             layout_note=pass_definition.area_note,
             color=pass_definition.color,
             source=pass_definition.source,
@@ -248,6 +261,16 @@ def pass_features(pass_definition: Pass, saved_position: dict[str, Any]):
             saved_y_ft=saved_position["y_ft"],
             rotation_deg=saved_position.get("rotation_deg", 0),
             z=saved_position.get("z"),
+            connector_width_ft=(
+                round(pass_definition.connector_width_ft, 4)
+                if pass_definition.connector_width_ft
+                else None
+            ),
+            connector_length_ft=(
+                round(pass_definition.connector_length_ft, 4)
+                if pass_definition.connector_length_ft
+                else None
+            ),
         )
     ]
     for equipment in pass_definition.equipment:
@@ -260,17 +283,19 @@ def pass_features(pass_definition: Pass, saved_position: dict[str, Any]):
 def main() -> int:
     saved = json.loads(SAVED_PATH.read_text(encoding="utf-8"))
     current = json.loads(GEOJSON_PATH.read_text(encoding="utf-8"))
-    # The freeform tool may split amenity sections into detached staging
-    # pieces before connector walkways are designed. Keep the geographic map
-    # on the last complete connected geometry until that redesign is accepted.
-    connected_positions = saved.get("connected_passes", saved["passes"])
-    saved_ids = set(connected_positions)
-    pass_ids = {pass_definition.id for pass_definition in PASSES}
-    if saved_ids != pass_ids:
+    accepted_positions = {
+        **saved.get("passes", {}),
+        **saved.get("detached_parts", {}),
+        **saved.get("connectors", {}),
+    }
+    accepted_definitions = [*LAYOUT_PASSES, *DETACHED_PARTS, *CONNECTOR_PARTS]
+    saved_ids = set(accepted_positions)
+    accepted_ids = {pass_definition.id for pass_definition in accepted_definitions}
+    if saved_ids != accepted_ids:
         raise ValueError(
             "Saved layout IDs do not match pass definitions: "
-            f"missing={sorted(pass_ids - saved_ids)}, "
-            f"extra={sorted(saved_ids - pass_ids)}"
+            f"missing={sorted(accepted_ids - saved_ids)}, "
+            f"extra={sorted(saved_ids - accepted_ids)}"
         )
 
     references = [
@@ -279,10 +304,10 @@ def main() -> int:
         if feature.get("properties", {}).get("role") in REFERENCE_ROLES
     ]
     layout_features = []
-    for pass_definition in PASSES:
+    for pass_definition in accepted_definitions:
         layout_features.extend(
             pass_features(
-                pass_definition, connected_positions[pass_definition.id]
+                pass_definition, accepted_positions[pass_definition.id]
             )
         )
 
@@ -290,15 +315,13 @@ def main() -> int:
         "type": "FeatureCollection",
         "name": "TRF group site map v0.1",
         "properties": {
-            "created_on": "2026-07-27",
+            "created_on": "2026-08-16",
             "status": (
-                "Generated from the saved freeform pass layout through the "
-                "shared planning-grade local-foot/WGS84 affine transform."
+                "Generated from the accepted reattached freeform layout through "
+                "the shared planning-grade local-foot/WGS84 affine transform."
             ),
             "layout_source": str(SAVED_PATH.relative_to(ROOT)).replace("\\", "/"),
-            "saved_at_local": saved.get(
-                "connected_saved_at_local", saved.get("saved_at_local")
-            ),
+            "saved_at_local": saved.get("saved_at_local"),
             "planning_baseline": "600 sq ft per pass",
             "passes": len(PASSES),
             "households": 7,

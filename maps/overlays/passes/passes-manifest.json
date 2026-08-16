@@ -1,6 +1,6 @@
 {
   "generated_by": "scripts/build_pass_svgs.py",
-  "note": "Freeform local layout data for maps/viewer/pass-layout.html. Not georeferenced. Three amenity sections are detached for staging; their parent-pass connector or setup-clearance area remains unplaced. default_x_ft/default_y_ft use each SVG viewBox top-left.",
+  "note": "Freeform local layout data for maps/viewer/pass-layout.html. Not georeferenced. Three amenity sections remain independently movable; two accepted connector walkways reattach the separated S.+S. and S.+T. sections. default_x_ft/default_y_ft use each SVG viewBox top-left.",
   "margin_ft": 0.5,
   "scale_px_per_ft_in_files": 16,
   "planning_summary": {
@@ -8,10 +8,12 @@
     "passes": 10,
     "total_planning_area_sqft": 6000,
     "detached_parts": 3,
-    "visible_piece_area_sqft": 5748.1593,
-    "walkway_reserve_sqft": 166.0,
+    "connector_parts": 2,
+    "visible_piece_area_sqft": 5914.1593,
+    "walkway_area_sqft": 166,
+    "walkway_reserve_sqft": 0.0,
     "setup_clearance_reserve_sqft": 85.8407,
-    "unplaced_reserve_sqft": 251.8407
+    "unplaced_reserve_sqft": 85.8407
   },
   "passes": [
     {
@@ -57,14 +59,13 @@
       "kind": "pass_section",
       "parent_pass_id": "ss_shower",
       "pass_allocation_sqft": 600.0,
-      "walkway_reserve_sqft": 66,
+      "walkway_reserve_sqft": 0.0,
       "bbox_width_ft": 24,
       "bbox_height_ft": 18,
       "viewbox_width_ft": 25.0,
       "viewbox_height_ft": 19.0,
       "default_x_ft": 124.5,
-      "default_y_ft": 149.5,
-      "unplaced_reserve_sqft": 66.0
+      "default_y_ft": 149.5
     },
     {
       "id": "me_camper",
@@ -177,7 +178,7 @@
       "kind": "pass_section",
       "parent_pass_id": "st",
       "pass_allocation_sqft": 600.0,
-      "walkway_reserve_sqft": 100,
+      "walkway_reserve_sqft": 0.0,
       "bbox_width_ft": 20,
       "bbox_height_ft": 20,
       "viewbox_width_ft": 21.0,
@@ -185,8 +186,8 @@
       "default_x_ft": 129.5,
       "default_y_ft": 119.5,
       "setup_clearance_reserve_sqft": 85.8407,
-      "unplaced_reserve_sqft": 185.8407,
-      "reserve_note": "Up to 100 sq ft for a future connector plus 85.8407 sq ft for yurt entry, platform edge, anchors, ropes, or setup clearance"
+      "unplaced_reserve_sqft": 85.8407,
+      "reserve_note": "85.8407 sq ft remains unplaced for yurt entry, platform edge, anchors, ropes, or setup clearance"
     }
   ],
   "detached_parts": [
@@ -240,6 +241,46 @@
       "viewbox_height_ft": 11.0,
       "default_x_ft": 131.4,
       "default_y_ft": 189.5
+    }
+  ],
+  "connectors": [
+    {
+      "id": "ss_walkway",
+      "name": "S. + S. \u2014 Fire-pit Walkway",
+      "file": "ss_walkway.svg",
+      "color": "#93c47d",
+      "area_sqft": 66,
+      "kind": "connector",
+      "parent_pass_id": "ss_shower",
+      "pass_allocation_sqft": 600.0,
+      "walkway_reserve_sqft": 0.0,
+      "bbox_width_ft": 9.4642,
+      "bbox_height_ft": 32.7223,
+      "viewbox_width_ft": 10.4642,
+      "viewbox_height_ft": 33.7223,
+      "default_x_ft": 147.1202,
+      "default_y_ft": 238.0463,
+      "connector_width_ft": 1.9246,
+      "connector_length_ft": 34.292
+    },
+    {
+      "id": "st_walkway",
+      "name": "S. + T. \u2014 Yurt-to-Portapotty Walkway",
+      "file": "st_walkway.svg",
+      "color": "#b4a7d6",
+      "area_sqft": 100,
+      "kind": "connector",
+      "parent_pass_id": "st",
+      "pass_allocation_sqft": 600.0,
+      "walkway_reserve_sqft": 0.0,
+      "bbox_width_ft": 52.1629,
+      "bbox_height_ft": 35.2886,
+      "viewbox_width_ft": 53.1629,
+      "viewbox_height_ft": 36.2886,
+      "default_x_ft": 87.8361,
+      "default_y_ft": 252.4505,
+      "connector_width_ft": 1.4783,
+      "connector_length_ft": 67.6463
     }
   ]
 }

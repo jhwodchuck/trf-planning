@@ -1,149 +1,26 @@
 {
-  "saved_at_local": "Tue Aug 11 2026 (detached staging baseline)",
-  "connected_saved_at_local": "Mon Jul 27 2026 16:42:11 GMT-0500 (Central Daylight Time)",
+  "saved_at_local": "Sun Aug 16 2026 (accepted reattached default)",
+  "accepted_source": "Shared pass-layout preset supplied by user; A. Yoga section minimally aligned to touch the sleeping section and exact-area S.+S./S.+T. connector walkways added.",
   "scale_px_per_ft": 14,
   "passes": {
-    "jc": {
-      "x_ft": 141,
-      "y_ft": 76.75,
-      "rotation_deg": 0,
-      "z": 53
-    },
-    "ss_camper": {
-      "x_ft": 79.5,
-      "y_ft": 164.75,
-      "rotation_deg": -2,
-      "z": 52
-    },
-    "ss_shower": {
-      "x_ft": 75.9753,
-      "y_ft": 137.6208,
-      "rotation_deg": -104,
-      "z": 58
-    },
-    "me_camper": {
-      "x_ft": 157.25,
-      "y_ft": 187.75,
-      "rotation_deg": 10,
-      "z": 50
-    },
-    "me_support": {
-      "x_ft": 136.75,
-      "y_ft": 116.25,
-      "rotation_deg": 0,
-      "z": 52
-    },
-    "a": {
-      "x_ft": 106.4296,
-      "y_ft": 217.3119,
-      "rotation_deg": 103,
-      "z": 57
-    },
-    "cs": {
-      "x_ft": 121.25,
-      "y_ft": 178.25,
-      "rotation_deg": 133,
-      "z": 55
-    },
-    "bg_primary": {
-      "x_ft": 130.75,
-      "y_ft": 153.75,
-      "rotation_deg": 0,
-      "z": 50
-    },
-    "bg_community": {
-      "x_ft": 83.5,
-      "y_ft": 105.75,
-      "rotation_deg": -85,
-      "z": 60
-    },
-    "st": {
-      "x_ft": 186.4906,
-      "y_ft": 167.2524,
-      "rotation_deg": 158,
-      "z": 49
-    }
+    "jc": { "x_ft": 99.25, "y_ft": 180.75, "rotation_deg": -103, "z": 1 },
+    "ss_camper": { "x_ft": 76.75, "y_ft": 193.25, "rotation_deg": 1, "z": 2 },
+    "ss_shower": { "x_ft": 151.5, "y_ft": 272.75, "rotation_deg": -91, "z": 3 },
+    "me_camper": { "x_ft": 171, "y_ft": 234.5, "rotation_deg": 25, "z": 4 },
+    "me_support": { "x_ft": 238.5, "y_ft": 270.25, "rotation_deg": -91, "z": 5 },
+    "a": { "x_ft": 170.25, "y_ft": 209.75, "rotation_deg": -8, "z": 6 },
+    "cs": { "x_ft": 92.75, "y_ft": 247.75, "rotation_deg": 25, "z": 7 },
+    "bg_primary": { "x_ft": 157.75, "y_ft": 177.5, "rotation_deg": 172, "z": 8 },
+    "bg_community": { "x_ft": 133.5, "y_ft": 249.25, "rotation_deg": -1, "z": 9 },
+    "st": { "x_ft": 71.5, "y_ft": 236.25, "rotation_deg": -180, "z": 10 }
   },
   "detached_parts": {
-    "a_yoga": {
-      "x_ft": 94.9038,
-      "y_ft": 206.6503,
-      "rotation_deg": 103,
-      "z": 61
-    },
-    "st_portapotty": {
-      "x_ft": 167.7602,
-      "y_ft": 122.8932,
-      "rotation_deg": 158,
-      "z": 62
-    },
-    "ss_firepit": {
-      "x_ft": 117.8059,
-      "y_ft": 132.9116,
-      "rotation_deg": -104,
-      "z": 63
-    }
+    "a_yoga": { "x_ft": 184.1983, "y_ft": 214.321, "rotation_deg": 82, "z": 11 },
+    "st_portapotty": { "x_ft": 139.5, "y_ft": 282, "rotation_deg": -1, "z": 12 },
+    "ss_firepit": { "x_ft": 139, "y_ft": 229, "rotation_deg": -91, "z": 13 }
   },
-  "connected_passes": {
-    "jc": {
-      "x_ft": 141,
-      "y_ft": 76.75,
-      "rotation_deg": 0,
-      "z": 53
-    },
-    "ss_camper": {
-      "x_ft": 79.5,
-      "y_ft": 164.75,
-      "rotation_deg": -2,
-      "z": 52
-    },
-    "ss_shower": {
-      "x_ft": 91.5,
-      "y_ft": 117.75,
-      "rotation_deg": -104,
-      "z": 58
-    },
-    "me_camper": {
-      "x_ft": 157.25,
-      "y_ft": 187.75,
-      "rotation_deg": 10,
-      "z": 50
-    },
-    "me_support": {
-      "x_ft": 136.75,
-      "y_ft": 116.25,
-      "rotation_deg": 0,
-      "z": 52
-    },
-    "a": {
-      "x_ft": 94.25,
-      "y_ft": 202,
-      "rotation_deg": 103,
-      "z": 57
-    },
-    "cs": {
-      "x_ft": 121.25,
-      "y_ft": 178.25,
-      "rotation_deg": 133,
-      "z": 55
-    },
-    "bg_primary": {
-      "x_ft": 130.75,
-      "y_ft": 153.75,
-      "rotation_deg": 0,
-      "z": 50
-    },
-    "bg_community": {
-      "x_ft": 83.5,
-      "y_ft": 105.75,
-      "rotation_deg": -85,
-      "z": 60
-    },
-    "st": {
-      "x_ft": 177.5,
-      "y_ft": 121,
-      "rotation_deg": 158,
-      "z": 49
-    }
+  "connectors": {
+    "ss_walkway": { "x_ft": 147.1202, "y_ft": 238.0463, "rotation_deg": 0, "z": 0 },
+    "st_walkway": { "x_ft": 87.8361, "y_ft": 252.4505, "rotation_deg": 0, "z": 0 }
   }
 }

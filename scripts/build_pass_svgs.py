@@ -94,6 +94,9 @@ class Pass:
     walkway_reserve_sqft: float = 0.0
     setup_clearance_reserve_sqft: float = 0.0
     reserve_note: str = ""
+    connector_width_ft: float = 0.0
+    connector_length_ft: float = 0.0
+    show_boundary_label: bool = True
 
     def bbox(self) -> tuple[float, float]:
         if self.rect is not None:
@@ -878,6 +881,106 @@ def shifted_equipment(equipment: Equipment, origin_x: float, origin_y: float) ->
     )
 
 
+def polygon_area(points: list[tuple[float, float]]) -> float:
+    return abs(
+        sum(
+            x1 * y2 - x2 * y1
+            for (x1, y1), (x2, y2) in zip(points, [*points[1:], points[0]])
+        )
+        / 2
+    )
+
+
+def polyline_corridor(
+    centerline: list[tuple[float, float]], area_sqft: float
+) -> tuple[list[tuple[float, float]], tuple[float, float], float, float]:
+    """Return a constant-width, square-ended corridor with an exact area.
+
+    Centerline coordinates are accepted-layout world feet. The returned polygon
+    is translated to its own bounding-box origin for standalone SVG rendering;
+    the second return value is that world origin.
+    """
+
+    segment_lengths = [
+        math.dist(start, end) for start, end in zip(centerline, centerline[1:])
+    ]
+    length_ft = sum(segment_lengths)
+    width_ft = area_sqft / length_ft
+    half_width = width_ft / 2
+
+    directions = [
+        ((end[0] - start[0]) / length, (end[1] - start[1]) / length)
+        for start, end, length in zip(centerline, centerline[1:], segment_lengths)
+    ]
+    normals = [(-dy, dx) for dx, dy in directions]
+
+    def line_intersection(
+        point_a: tuple[float, float],
+        direction_a: tuple[float, float],
+        point_b: tuple[float, float],
+        direction_b: tuple[float, float],
+    ) -> tuple[float, float]:
+        cross = direction_a[0] * direction_b[1] - direction_a[1] * direction_b[0]
+        if abs(cross) < 1e-9:
+            return point_b
+        delta_x, delta_y = point_b[0] - point_a[0], point_b[1] - point_a[1]
+        distance = (delta_x * direction_b[1] - delta_y * direction_b[0]) / cross
+        return (
+            point_a[0] + distance * direction_a[0],
+            point_a[1] + distance * direction_a[1],
+        )
+
+    left = [
+        (
+            centerline[0][0] + normals[0][0] * half_width,
+            centerline[0][1] + normals[0][1] * half_width,
+        )
+    ]
+    right = [
+        (
+            centerline[0][0] - normals[0][0] * half_width,
+            centerline[0][1] - normals[0][1] * half_width,
+        )
+    ]
+    for index in range(1, len(centerline) - 1):
+        for sign, output in ((1, left), (-1, right)):
+            prior_offset = (
+                centerline[index][0] + sign * normals[index - 1][0] * half_width,
+                centerline[index][1] + sign * normals[index - 1][1] * half_width,
+            )
+            next_offset = (
+                centerline[index][0] + sign * normals[index][0] * half_width,
+                centerline[index][1] + sign * normals[index][1] * half_width,
+            )
+            output.append(
+                line_intersection(
+                    prior_offset,
+                    directions[index - 1],
+                    next_offset,
+                    directions[index],
+                )
+            )
+    left.append(
+        (
+            centerline[-1][0] + normals[-1][0] * half_width,
+            centerline[-1][1] + normals[-1][1] * half_width,
+        )
+    )
+    right.append(
+        (
+            centerline[-1][0] - normals[-1][0] * half_width,
+            centerline[-1][1] - normals[-1][1] * half_width,
+        )
+    )
+    world_polygon = [*left, *reversed(right)]
+    if not math.isclose(polygon_area(world_polygon), area_sqft, abs_tol=1e-7):
+        raise ValueError("Generated walkway polygon does not preserve its allocated area")
+    min_x = min(x for x, _y in world_polygon)
+    min_y = min(y for _x, y in world_polygon)
+    local_polygon = [(x - min_x, y - min_y) for x, y in world_polygon]
+    return local_polygon, (min_x, min_y), width_ft, length_ft
+
+
 _a_source = pass_by_id("a")
 _st_source = pass_by_id("st")
 _ss_shower_source = pass_by_id("ss_shower")
@@ -885,11 +988,35 @@ _ss_shower_source = pass_by_id("ss_shower")
 _st_yurt_area_sqft = round(math.pi * 10**2, 4)
 _st_setup_clearance_reserve_sqft = round(600 - _st_yurt_area_sqft - 100 - 100, 4)
 
-# The freeform tool intentionally stages three amenity sections separately so
-# households can arrange them before connector walkways are designed. The
-# connected PASSES definitions above remain unchanged for the current
-# georeferenced map. Visible piece area plus unplaced connector/setup reserve
-# still totals exactly 600 sq ft for every qualifying pass.
+_ss_walkway_polygon, _ss_walkway_origin, _ss_walkway_width, _ss_walkway_length = (
+    polyline_corridor(
+        [
+            (148.38347743, 239.13243222),
+            (155.5, 248.4),
+            (155.5, 269.4),
+            (156.22577158, 270.83412464),
+        ],
+        66,
+    )
+)
+_st_walkway_polygon, _st_walkway_origin, _st_walkway_width, _st_walkway_length = (
+    polyline_corridor(
+        [
+            (88.60535969, 253.63884869),
+            (91.612, 254.815),
+            (127.872, 271.725),
+            (133.45, 280.75),
+            (133.45, 287.5),
+            (140.499, 287.5),
+        ],
+        100,
+    )
+)
+
+# The accepted freeform layout keeps the amenity sections independently
+# movable, but adds exact-area connector pieces at the accepted positions.
+# Visible piece area plus remaining setup reserve totals exactly 600 sq ft for
+# every qualifying pass.
 _a_core = Pass(
     id="a",
     name="A. — Sleeping Camp",
@@ -919,9 +1046,8 @@ _st_core = Pass(
     label_anchor=(10, 10),
     kind="pass_section",
     parent_pass_id="st",
-    walkway_reserve_sqft=100,
     setup_clearance_reserve_sqft=_st_setup_clearance_reserve_sqft,
-    reserve_note="Up to 100 sq ft for a future connector plus 85.8407 sq ft for yurt entry, platform edge, anchors, ropes, or setup clearance",
+    reserve_note="85.8407 sq ft remains unplaced for yurt entry, platform edge, anchors, ropes, or setup clearance",
 )
 
 _ss_shower_core = Pass(
@@ -929,7 +1055,7 @@ _ss_shower_core = Pass(
     name="S. + S. — Shower Section",
     color=_ss_shower_source.color,
     area_sqft=432,
-    area_note="432 sq ft section; 66 sq ft reserved for a future walkway",
+    area_note="432 sq ft section; separate accepted walkway uses 66 sq ft",
     source=_ss_shower_source.source,
     rect=(24, 18),
     default_bbox_origin=_ss_shower_source.default_bbox_origin,
@@ -942,7 +1068,6 @@ _ss_shower_core = Pass(
     annotations=[(12, 8.2, "Water trailer T'd into shower trailer")],
     kind="pass_section",
     parent_pass_id="ss_shower",
-    walkway_reserve_sqft=66,
 )
 
 LAYOUT_PASSES: list[Pass] = [
@@ -1008,6 +1133,39 @@ DETACHED_PARTS: list[Pass] = [
     ),
 ]
 
+CONNECTOR_PARTS: list[Pass] = [
+    Pass(
+        id="ss_walkway",
+        name="S. + S. — Fire-pit Walkway",
+        color=_ss_shower_source.color,
+        area_sqft=66,
+        area_note="Accepted routed connector; planning-only width is not accessible",
+        source=_ss_shower_source.source,
+        polygon=_ss_walkway_polygon,
+        default_bbox_origin=_ss_walkway_origin,
+        kind="connector",
+        parent_pass_id="ss_shower",
+        connector_width_ft=_ss_walkway_width,
+        connector_length_ft=_ss_walkway_length,
+        show_boundary_label=False,
+    ),
+    Pass(
+        id="st_walkway",
+        name="S. + T. — Yurt-to-Portapotty Walkway",
+        color=_st_source.color,
+        area_sqft=100,
+        area_note="Accepted routed connector; planning-only width is not accessible",
+        source=_st_source.source,
+        polygon=_st_walkway_polygon,
+        default_bbox_origin=_st_walkway_origin,
+        kind="connector",
+        parent_pass_id="st",
+        connector_width_ft=_st_walkway_width,
+        connector_length_ft=_st_walkway_length,
+        show_boundary_label=False,
+    ),
+]
+
 STYLE = """
 text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .title{font-size:15px;font-weight:700}.sub{font-size:9px}
@@ -1019,6 +1177,7 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 """
 
 DETACHED_STYLE = ".detached{stroke:#0b5394;stroke-width:2;stroke-dasharray:8 5;fill-opacity:.22}"
+CONNECTOR_STYLE = ".connector{stroke:#6d4c1f;stroke-width:2;stroke-dasharray:5 3;fill:#d9c28f;fill-opacity:.72}"
 
 
 def esc(s: str) -> str:
@@ -1055,16 +1214,32 @@ def render_pass(p: Pass) -> str:
             "the public group-site planning overlay.</desc>"
         )
     else:
-        title_kind = "detached planning section" if p.kind == "detached_part" else "planning section"
+        title_kind = (
+            "detached planning section"
+            if p.kind == "detached_part"
+            else "accepted connector walkway"
+            if p.kind == "connector"
+            else "planning section"
+        )
         parts.append(f'<title id="title">{esc(p.name)} — {title_kind}</title>')
         parts.append(
             '<desc id="desc">Standalone provisional planning drawing for the '
             "freeform camp arrangement tool.</desc>"
         )
-    style = STYLE + (DETACHED_STYLE if p.kind == "detached_part" else "")
+    style = STYLE
+    if p.kind == "detached_part":
+        style += DETACHED_STYLE
+    elif p.kind == "connector":
+        style += CONNECTOR_STYLE
     parts.append(f"<defs><style>{style}</style></defs>")
     # Boundary
-    boundary_class = "detached" if p.kind == "detached_part" else "pass"
+    boundary_class = (
+        "detached"
+        if p.kind == "detached_part"
+        else "connector"
+        if p.kind == "connector"
+        else "pass"
+    )
     if p.polygon is not None:
         pts = " ".join(f"{X(x)},{Y(y)}" for x, y in p.polygon)
         parts.append(f'<polygon points="{pts}" class="{boundary_class}" fill="{p.color}"/>')
@@ -1180,7 +1355,9 @@ def render_pass(p: Pass) -> str:
         if p.label_rotation
         else ""
     )
-    if p.compact_label:
+    if not p.show_boundary_label:
+        pass
+    elif p.compact_label:
         parts.append(
             f'<text x="{label_x}" y="{Y(anchor_y)}" text-anchor="middle" '
             f'class="small">{esc(p.compact_label)}</text>'
@@ -1208,9 +1385,10 @@ def main() -> int:
         "generated_by": "scripts/build_pass_svgs.py",
         "note": (
             "Freeform local layout data for maps/viewer/pass-layout.html. Not "
-            "georeferenced. Three amenity sections are detached for staging; "
-            "their parent-pass connector or setup-clearance area remains "
-            "unplaced. default_x_ft/default_y_ft use each SVG viewBox top-left."
+            "georeferenced. Three amenity sections remain independently "
+            "movable; two accepted connector walkways reattach the separated "
+            "S.+S. and S.+T. sections. default_x_ft/default_y_ft use each SVG "
+            "viewBox top-left."
         ),
         "margin_ft": MARGIN_FT,
         "scale_px_per_ft_in_files": SCALE,
@@ -1219,7 +1397,12 @@ def main() -> int:
             "passes": len(PASSES),
             "total_planning_area_sqft": sum(pass_definition.area_sqft for pass_definition in PASSES),
             "detached_parts": len(DETACHED_PARTS),
-            "visible_piece_area_sqft": sum(piece.area_sqft for piece in [*LAYOUT_PASSES, *DETACHED_PARTS]),
+            "connector_parts": len(CONNECTOR_PARTS),
+            "visible_piece_area_sqft": sum(
+                piece.area_sqft
+                for piece in [*LAYOUT_PASSES, *DETACHED_PARTS, *CONNECTOR_PARTS]
+            ),
+            "walkway_area_sqft": sum(piece.area_sqft for piece in CONNECTOR_PARTS),
             "walkway_reserve_sqft": sum(piece.walkway_reserve_sqft for piece in LAYOUT_PASSES),
             "setup_clearance_reserve_sqft": sum(piece.setup_clearance_reserve_sqft for piece in LAYOUT_PASSES),
             "unplaced_reserve_sqft": sum(
@@ -1229,6 +1412,7 @@ def main() -> int:
         },
         "passes": [],
         "detached_parts": [],
+        "connectors": [],
     }
 
     def emit_piece(p: Pass, collection: str) -> None:
@@ -1265,19 +1449,26 @@ def main() -> int:
             piece_data["unplaced_reserve_sqft"] = unplaced_reserve
         if p.reserve_note:
             piece_data["reserve_note"] = p.reserve_note
+        if p.connector_width_ft:
+            piece_data["connector_width_ft"] = round(p.connector_width_ft, 4)
+        if p.connector_length_ft:
+            piece_data["connector_length_ft"] = round(p.connector_length_ft, 4)
         manifest[collection].append(piece_data)
 
     for p in LAYOUT_PASSES:
         emit_piece(p, "passes")
     for p in DETACHED_PARTS:
         emit_piece(p, "detached_parts")
+    for p in CONNECTOR_PARTS:
+        emit_piece(p, "connectors")
 
     manifest_path = OUT_DIR / "passes-manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
     print(
         f"Wrote {len(LAYOUT_PASSES)} pass SVGs, {len(DETACHED_PARTS)} detached "
-        f"piece SVGs, and {manifest_path.name} to {OUT_DIR}"
+        f"piece SVGs, {len(CONNECTOR_PARTS)} connector SVGs, and "
+        f"{manifest_path.name} to {OUT_DIR}"
     )
     return 0
 

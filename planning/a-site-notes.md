@@ -1,6 +1,6 @@
 # A. Site Planning Notes
 
-Last updated: **2026-08-11**
+Last updated: **2026-08-16**
 
 ## Planning area baseline
 
@@ -47,9 +47,11 @@ A.'s pass-unit is planned as **600 sq ft**. The selected T-shaped boundary consi
 
 The resulting boundary is 25 ft wide by 37 ft deep at its maximum extents while claiming exactly 600 sq ft.
 
-### Detached-layout staging
+### Accepted reattached layout
 
-For freeform arrangement, treat the 25 × 12 ft sleeping section and the 12 × 25 ft Yoga / smoking-tent section as two independently movable **300 sq ft** pieces. This is a staging layout, not an accepted disconnected submission. After the pieces are arranged, design and validate any walkway or connecting boundary needed for the final request.
+The freeform arrangement keeps the 25 × 12 ft sleeping section and the 12 × 25 ft Yoga / smoking-tent section as independently movable **300 sq ft** pieces. The Yoga section was shifted by about 2 ft and rotated from 84° to 82° so one 25 ft allocation edge directly shares the sleeping section's boundary. No additional walkway area is needed, and the two sections still total exactly **600 sq ft**.
+
+The shared allocation edge does not prove that tent doors, ropes, anchors, rainflies, drainage, or a field-usable path align. Those clearances remain subject to measurement and field adjustment.
 
 Confirmed nominal equipment area:
 
@@ -89,6 +91,6 @@ Before A.'s individual site plan is final, record:
 - Represent A.'s complete pass boundary as exactly **600 sq ft**.
 - Represent the sleeping tent as a **20 × 10 ft rotated rectangle across the top bar** labeled `SLEEPING TENT — CONFIRMED 10 × 20 FT`.
 - Represent the canopy as a **10 × 17 ft rectangle** labeled `YOGA TENT — COVERPRO 10 × 17 FT`.
-- Bottom-align the Yoga Tent lengthwise in the centered stem, separated from the sleeping tent by the current 8.5 ft nominal clear aisle.
+- In the accepted master arrangement, preserve the shared boundary between the two 300 sq ft sections unless field measurements require a revised connector.
 - Add a surrounding dashed zone for unverified ropes, anchors, rainfly, frame feet, or ballast.
 - Do not retain the old 10 × 10 ft tent, unknown-canopy, or 525 sq ft planning alternatives in revised maps.

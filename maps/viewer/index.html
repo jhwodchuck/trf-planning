@@ -62,14 +62,15 @@
       <li>A.: 10 &times; 20 sleeping tent and 10 &times; 17 Yoga Tent.</li>
       <li>C. and S.: exact 600 sq ft T-shaped pass with the reported approximately 20 &times; 20 ft tent-plus-add-on in the top and reported 10 &times; 13 ft canopy in the stem; buffered zones nearly fill the pass.</li>
       <li>B. and G.: primary and estimated closet tents in an offset two-lobe pass, with two generic 2 &times; 2 ft generator placeholders between them; these are not J. and C.'s P4500i units and are not approved to operate there.</li>
-      <li>S. and S.: KZ Connect SE camper pass plus an elongated shower pass with the 16 &times; 7 ft shower trailer sideways, the 5 &times; 8 ft IBC trailer T'd into it, and a 22 ft leg to a provisional fire-pit end.</li>
+      <li>S. and S.: KZ Connect SE camper pass plus separate shower/water and fire-pit sections reattached by a routed 66 sq ft allocation walkway. Its approximately 1.92 ft width is planning-only, not a confirmed pedestrian or accessible route.</li>
       <li>M. and E.: temporary horizontal mirror of S. and S.'s camper-pass concept; every camper feature remains unverified.</li>
       <li>J. and C.: current Wildcat deployed zone and 15 &times; 10 canopy.</li>
-      <li>S. and T.: user-reported 20 ft diameter yurt (approximately 314 sq ft) plus an assumed 6 &times; 6 ft handicap portapotty. The freeform tool has the corrected circular yurt piece; this geographic overlay still shows the pre-yurt connected reference until a replacement arrangement is accepted.</li>
+      <li>S. and T.: user-reported 20 ft diameter yurt (approximately 314 sq ft) plus an assumed 6 &times; 6 ft handicap portapotty in a 10 &times; 10 ft section, reattached by a routed 100 sq ft allocation walkway. Its approximately 1.48 ft width is planning-only, not accessible-route confirmation; 85.84 sq ft remains reserved for yurt setup clearance.</li>
     </ul>
   </details>
   <div class="legend">
     <span class="sw" style="background:#e6913860"></span><span>Pass polygon</span>
+    <span class="sw" style="background:#d9c28fb8;border-color:#6d4c1f;border-style:dashed"></span><span>Allocation connector</span>
     <span class="sw" style="background:#3d85c680"></span><span>Known equipment</span>
     <span class="sw" style="background:#aaa3;border-style:dashed"></span><span>Placeholder / dimensions TBD</span>
     <span class="ln" style="border-color:#f5d000"></span><span>Road edge reference</span>
@@ -177,6 +178,7 @@
   function styleGroupSiteFeature(f) {
     const p = f.properties || {}, r = p.role, id = p.id;
     if (r === 'pass') return { color: '#222', weight: 3, fillColor: p.color || '#888', fillOpacity: .26 };
+    if (r === 'connector') return { color: '#6d4c1f', weight: 3, dashArray: '5 3', fillColor: '#d9c28f', fillOpacity: .72 };
     if (r === 'road_edge') return { color: '#f5d000', weight: 7 };
     if (r === 'west_limit') return { color: '#00bcd4', weight: 5, dashArray: '12 8' };
     if (r === 'setback_10') return { color: '#d7263d', weight: 4, dashArray: '10 7' };
