@@ -783,9 +783,9 @@
         "id": "ss_shower",
         "name": "S. + S. \u2014 Shower Section",
         "role": "pass",
-        "area_sqft": 432,
+        "area_sqft": 393,
         "status": "Accepted saved layout; planning-grade georeferencing, not a survey.",
-        "layout_note": "432 sq ft section; separate accepted walkway uses 66 sq ft",
+        "layout_note": "393 sq ft notched section; separate accepted walkway uses 105 sq ft",
         "color": "#93c47d",
         "source": "equipment/ss-16ft-shower-trailer.md",
         "saved_x_ft": 151.5,
@@ -808,12 +808,28 @@
               30.255353510792
             ],
             [
-              -95.846186474985,
-              30.255352928703
+              -95.846221340873,
+              30.255353284424
             ],
             [
-              -95.846187373499,
-              30.25528721955
+              -95.84622140724,
+              30.255348430907
+            ],
+            [
+              -95.846186541353,
+              30.255348075186
+            ],
+            [
+              -95.846187307132,
+              30.255292073067
+            ],
+            [
+              -95.846222173019,
+              30.255292428788
+            ],
+            [
+              -95.846222239387,
+              30.255287575271
             ],
             [
               -95.84624442677,
@@ -3122,57 +3138,57 @@
         "id": "ss_walkway",
         "name": "S. + S. \u2014 Fire-pit Walkway",
         "role": "connector",
-        "area_sqft": 66,
+        "area_sqft": 105,
         "status": "Accepted allocation connector; width is planning-only and not confirmed accessible.",
         "layout_note": "Accepted routed connector; planning-only width is not accessible",
         "color": "#93c47d",
         "source": "equipment/ss-16ft-shower-trailer.md",
-        "saved_x_ft": 147.1202,
-        "saved_y_ft": 238.0463,
+        "saved_x_ft": 146.7479,
+        "saved_y_ft": 237.6379,
         "rotation_deg": 0,
         "z": 0,
-        "connector_width_ft": 1.9246,
-        "connector_length_ft": 34.292
+        "connector_width_ft": 3.019,
+        "connector_length_ft": 34.7794
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -95.846263405313,
-              30.255438081929
+              -95.846264622828,
+              30.255436993805
             ],
             [
-              -95.846242322957,
-              30.255412872842
+              -95.846240910492,
+              30.255412177663
             ],
             [
-              -95.84624426169,
-              30.255355664022
+              -95.846242792335,
+              30.255356647584
             ],
             [
-              -95.846241785565,
-              30.255351111741
+              -95.846243696097,
+              30.255353126829
             ],
             [
-              -95.846236263828,
-              30.255353352692
+              -95.846234353161,
+              30.255351337398
             ],
             [
-              -95.846238120873,
-              30.255356766814
+              -95.846233253113,
+              30.255355622815
             ],
             [
-              -95.846236164106,
-              30.255414507794
+              -95.846231239456,
+              30.255415042536
             ],
             [
-              -95.846258459877,
-              30.255441167814
+              -95.846257242228,
+              30.255442255733
             ],
             [
-              -95.846263405313,
-              30.255438081929
+              -95.846264622828,
+              30.255436993805
             ]
           ]
         ]

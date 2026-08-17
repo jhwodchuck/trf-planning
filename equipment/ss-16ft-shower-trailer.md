@@ -1,6 +1,6 @@
 # S. and S. — 16 ft Flatbed Shower Trailer
 
-Last updated: **2026-07-27**
+Last updated: **2026-08-16**
 
 ## Confirmed use
 
@@ -35,17 +35,19 @@ Place a second, small **8 ft utility trailer carrying an IBC water tote** perpen
 
 The water-trailer deck meets the side of the shower-trailer deck, with its tongue pointing away from the T. Confirm the tote's actual dimensions, capacity, loaded weight, restraint system, valve side, fill access, venting, hose route, axle rating, tongue load, stabilizers, and ground bearing before approval.
 
-## Long leg and fire pit
+## Accepted routed connector and fire pit
 
-Continue a centered **3 × 22 ft connector leg** from the water-trailer tongue to a **10.2 × 10 ft fire-pit end zone**. Show a provisional **3 × 3 ft fire-pit footprint** centered in that end zone.
+The accepted arrangement separates the shower/water section from the **10.2 × 10 ft fire-pit end zone** and reconnects them with a **105 sq ft routed allocation connector**. Its centerline is approximately **34.78 ft** and its nominal width is approximately **3.02 ft**. Show a provisional **3 × 3 ft fire-pit footprint** centered in the end zone.
 
-The leg is a claimed-area connector, not a verified pedestrian route or fire clearance. The fire-pit dimensions, fuel, spark protection, extinguisher, seating, overhead clearance, distance from tents/trailers/vegetation, and current festival approval remain unresolved.
+The connector is claimed-area geometry, not a verified pedestrian route or fire clearance. The fire-pit dimensions, fuel, spark protection, extinguisher, seating, overhead clearance, distance from tents/trailers/vegetation, and current festival approval remain unresolved.
 
 The selected pass is an exact **600 sq ft** irregular shape:
 
-- trailer head: **24 × 18 ft = 432 sq ft**;
-- connector leg: **3 × 22 ft = 66 sq ft**; and
+- notched shower/water section: **393 sq ft**, with maximum extents of 24 × 18 ft;
+- routed allocation connector: **105 sq ft**; and
 - fire-pit end: **10.2 × 10 ft = 102 sq ft**.
+
+The shower/water section removes 39 sq ft from otherwise unused lower-side areas. All currently drawn trailer, ramp, wheel/fender, tongue, IBC trailer, and tote placeholders remain within its irregular boundary.
 
 ## Site-planning role
 
@@ -107,4 +109,4 @@ Until field measurements are available, use a provisional symbol labeled:
 
 `S. & S. — ASSUMED 16 × 7 FT UTILITY-TRAILER DECK — FULL-WIDTH REAR RAMP — VERIFY ALL DIMENSIONS`
 
-Show the sideways shower deck, tongue allowance, deployed ramp, perpendicular water trailer and IBC tote, 22 ft connector leg, and fire-pit end zone. Do not draw a separate ramp landing. Use dashed styling throughout. Widths, tongue lengths, ramp depth, shower enclosure projection, steps, tanks, restraint, hoses, fire clearances, and operating clearances remain unknown.
+Show the sideways shower deck, tongue allowance, deployed ramp, perpendicular water trailer and IBC tote, accepted routed 105 sq ft connector, and fire-pit end zone. Do not draw a separate ramp landing. Use dashed styling throughout. Widths, tongue lengths, ramp depth, shower enclosure projection, steps, tanks, restraint, hoses, fire clearances, and operating clearances remain unknown.

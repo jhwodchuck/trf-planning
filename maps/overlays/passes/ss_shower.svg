@@ -10,7 +10,7 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 .placeholder{stroke-width:2;stroke-dasharray:6 4;fill-opacity:.2;stroke:#333}
 .clearance{fill:none;stroke:#555;stroke-width:2;stroke-dasharray:5 4}
 </style></defs>
-<polygon points="8.0,8.0 392.0,8.0 392.0,296.0 8.0,296.0" class="pass" fill="#93c47d"/>
+<polygon points="8.0,8.0 392.0,8.0 392.0,120.0 363.6,120.0 363.6,296.0 36.4,296.0 36.4,120.0 8.0,120.0" class="pass" fill="#93c47d"/>
 <polygon points="72.0,8.0 328.0,8.0 328.0,120.0 72.0,120.0" class="placeholder" fill="#245b24"/>
 <text x="200.0" y="59.0" text-anchor="middle" class="tiny">Assumed utility-trailer deck</text>
 <text x="200.0" y="72.0" text-anchor="middle" class="tiny">16 x 7 ft planning assumption</text>
@@ -31,6 +31,6 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <polygon points="240.0,168.0 256.0,168.0 256.0,200.0 240.0,200.0" class="placeholder" fill="#555555"/>
 <text x="200.0" y="139.2" text-anchor="middle" class="tiny">Water trailer T'd into shower trailer</text>
 <text x="200.0" y="253.2" text-anchor="middle" class="label">S. + S. — Shower Section</text>
-<text x="200.0" y="271.2" text-anchor="middle" class="small">432 sq ft</text>
-<text x="200.0" y="283.2" text-anchor="middle" class="tiny">432 sq ft section; separate accepted walkway uses 66 sq ft</text>
+<text x="200.0" y="271.2" text-anchor="middle" class="small">393 sq ft</text>
+<text x="200.0" y="283.2" text-anchor="middle" class="tiny">393 sq ft notched section; separate accepted walkway uses 105 sq ft</text>
 </svg>

@@ -66,7 +66,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <span>Area per pass</span><strong>600 sq ft</strong>
 <span>Total planning area</span><strong>6,000 sq ft</strong>
 <span>Detached pieces</span><strong>3</strong>
-<span>Connector walkways</span><strong>166 sq ft</strong>
+<span>Connector walkways</span><strong>205 sq ft</strong>
 <span>Unplaced reserve</span><strong>85.84 sq ft</strong>
 </div>
 
@@ -132,7 +132,7 @@ legend{font-size:.82rem;font-weight:700;padding:0 .3rem}
 <li><strong>Keyboard shortcuts:</strong> <kbd>0</kbd> fit plan · <kbd>9</kbd> fit aerial context · <kbd>1</kbd> 100% zoom · <kbd>+</kbd>/<kbd>−</kbd> zoom · <kbd>Esc</kbd> deselect.</li>
 <li>The badge in the lower-left corner shows the current zoom and the exact local-foot coordinate under your pointer.</li>
 <li>Positions are each SVG's own top-left corner, including its small drawing margin. The committed default comes from the accepted shared arrangement. A.'s Yoga / smoking section was shifted about 2 ft and rotated 2° so it shares a boundary with the sleeping section without changing the 600 sq ft allocation.</li>
-<li><strong>Narrow planning routes:</strong> S. + S.'s 66 sq ft walkway is approximately <strong>1.92 ft wide × 34.29 ft centerline</strong>. S. + T.'s 100 sq ft walkway is approximately <strong>1.48 ft wide × 67.65 ft centerline</strong>. Both are allocation connectors only—not confirmed accessible paths—and must be field-checked for width, surface, slope, obstructions, and door approaches.</li>
+<li><strong>Planning routes:</strong> S. + S.'s enlarged 105 sq ft walkway is approximately <strong>3.02 ft wide × 34.78 ft centerline</strong>. Its shower/water section was reduced from 432 to 393 sq ft with two lower-side notches that retain every drawn equipment placeholder. S. + T.'s 100 sq ft walkway remains approximately <strong>1.48 ft wide × 67.65 ft centerline</strong>. Both are allocation connectors—not confirmed accessible paths—and must be field-checked for surface, slope, obstructions, turns, and door approaches.</li>
 <li>S. + T.'s movable 20 ft yurt circle is <strong>314.16 sq ft</strong>, its portapotty end is 100 sq ft, its connector is 100 sq ft, and <strong>85.84 sq ft</strong> remains unplaced for entry, platform-edge, anchor, rope, or setup clearance. Visible pieces plus this reserve total exactly 6,000 sq ft across camp.</li>
 <li>The current arrangement autosaves to this browser's local storage as you drag. Use <strong>Your presets</strong> to save multiple named arrangements in this browser and switch between them. Use <strong>Copy share link</strong> to send an exact arrangement to someone else — no file, no repo commit, they just open the link. Use <strong>Download layout (.json)</strong> / <strong>Load from file</strong> for a portable backup, or to propose a new committed starting point (see below).</li>
 <li>Each pass-section, detached-piece, and connector file under <code>maps/overlays/passes/</code> is generated from <code>python scripts/build_pass_svgs.py</code>. Edit the source definitions and regenerate, then reload this page.</li>
@@ -158,7 +158,7 @@ const LAYOUT_OFFSET_X_FT = -VIEW_MIN_X_FT, LAYOUT_OFFSET_Y_FT = -VIEW_MIN_Y_FT;
 // Floor is low enough that "Fit aerial context" can actually show the whole
 // ~700 x 450 ft image on a narrow pane instead of clipping at the limit.
 const MIN_ZOOM = 0.06, MAX_ZOOM = 1.5, ZOOM_STEP = 0.1;
-const STORAGE_KEY = 'trf-pass-layout-v4';
+const STORAGE_KEY = 'trf-pass-layout-v5';
 const MANIFEST_URL = '../overlays/passes/passes-manifest.json';
 const STARTING_LAYOUT_URL = '../overlays/passes/saved-camp-v0.1.json';
 const PASS_DIR = '../overlays/passes/';

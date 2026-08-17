@@ -1,6 +1,6 @@
 {
   "saved_at_local": "Sun Aug 16 2026 (accepted reattached default)",
-  "accepted_source": "Shared pass-layout preset supplied by user; A. Yoga section minimally aligned to touch the sleeping section and exact-area S.+S./S.+T. connector walkways added.",
+  "accepted_source": "Shared pass-layout preset supplied by user; A. Yoga section aligned to touch the sleeping section, S.+T. reattached with a 100 sq ft connector, and S.+S. rebalanced to a 393 sq ft shower section plus 105 sq ft connector.",
   "scale_px_per_ft": 14,
   "passes": {
     "jc": { "x_ft": 99.25, "y_ft": 180.75, "rotation_deg": -103, "z": 1 },
@@ -20,7 +20,7 @@
     "ss_firepit": { "x_ft": 139, "y_ft": 229, "rotation_deg": -91, "z": 13 }
   },
   "connectors": {
-    "ss_walkway": { "x_ft": 147.1202, "y_ft": 238.0463, "rotation_deg": 0, "z": 0 },
+    "ss_walkway": { "x_ft": 146.7479, "y_ft": 237.6379, "rotation_deg": 0, "z": 0 },
     "st_walkway": { "x_ft": 87.8361, "y_ft": 252.4505, "rotation_deg": 0, "z": 0 }
   }
 }

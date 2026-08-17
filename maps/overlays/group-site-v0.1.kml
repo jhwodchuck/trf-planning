@@ -968,9 +968,9 @@ source_pass_id: ss_camper</description>
       <styleUrl>#role-pass</styleUrl>
       <description>id: ss_shower
 role: pass
-area_sqft: 432
+area_sqft: 393
 status: Accepted saved layout; planning-grade georeferencing, not a survey.
-layout_note: 432 sq ft section; separate accepted walkway uses 66 sq ft
+layout_note: 393 sq ft notched section; separate accepted walkway uses 105 sq ft
 color: #93c47d
 source: equipment/ss-16ft-shower-trailer.md
 saved_x_ft: 151.5
@@ -988,13 +988,13 @@ z: 3</description>
           <value>pass</value>
         </Data>
         <Data name="area_sqft">
-          <value>432</value>
+          <value>393</value>
         </Data>
         <Data name="status">
           <value>Accepted saved layout; planning-grade georeferencing, not a survey.</value>
         </Data>
         <Data name="layout_note">
-          <value>432 sq ft section; separate accepted walkway uses 66 sq ft</value>
+          <value>393 sq ft notched section; separate accepted walkway uses 105 sq ft</value>
         </Data>
         <Data name="color">
           <value>#93c47d</value>
@@ -1019,7 +1019,7 @@ z: 3</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846244427,30.255287802,0 -95.846243528,30.255353511,0 -95.846186475,30.255352929,0 -95.846187373,30.255287220,0 -95.846244427,30.255287802,0</coordinates>
+            <coordinates>-95.846244427,30.255287802,0 -95.846243528,30.255353511,0 -95.846221341,30.255353284,0 -95.846221407,30.255348431,0 -95.846186541,30.255348075,0 -95.846187307,30.255292073,0 -95.846222173,30.255292429,0 -95.846222239,30.255287575,0 -95.846244427,30.255287802,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3236,17 +3236,17 @@ source_pass_id: ss_firepit</description>
       <styleUrl>#role-connector</styleUrl>
       <description>id: ss_walkway
 role: connector
-area_sqft: 66
+area_sqft: 105
 status: Accepted allocation connector; width is planning-only and not confirmed accessible.
 layout_note: Accepted routed connector; planning-only width is not accessible
 color: #93c47d
 source: equipment/ss-16ft-shower-trailer.md
-saved_x_ft: 147.1202
-saved_y_ft: 238.0463
+saved_x_ft: 146.7479
+saved_y_ft: 237.6379
 rotation_deg: 0
 z: 0
-connector_width_ft: 1.9246
-connector_length_ft: 34.292</description>
+connector_width_ft: 3.019
+connector_length_ft: 34.7794</description>
       <ExtendedData>
         <Data name="id">
           <value>ss_walkway</value>
@@ -3258,7 +3258,7 @@ connector_length_ft: 34.292</description>
           <value>connector</value>
         </Data>
         <Data name="area_sqft">
-          <value>66</value>
+          <value>105</value>
         </Data>
         <Data name="status">
           <value>Accepted allocation connector; width is planning-only and not confirmed accessible.</value>
@@ -3273,10 +3273,10 @@ connector_length_ft: 34.292</description>
           <value>equipment/ss-16ft-shower-trailer.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>147.1202</value>
+          <value>146.7479</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>238.0463</value>
+          <value>237.6379</value>
         </Data>
         <Data name="rotation_deg">
           <value>0</value>
@@ -3285,17 +3285,17 @@ connector_length_ft: 34.292</description>
           <value>0</value>
         </Data>
         <Data name="connector_width_ft">
-          <value>1.9246</value>
+          <value>3.019</value>
         </Data>
         <Data name="connector_length_ft">
-          <value>34.292</value>
+          <value>34.7794</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846263405,30.255438082,0 -95.846242323,30.255412873,0 -95.846244262,30.255355664,0 -95.846241786,30.255351112,0 -95.846236264,30.255353353,0 -95.846238121,30.255356767,0 -95.846236164,30.255414508,0 -95.846258460,30.255441168,0 -95.846263405,30.255438082,0</coordinates>
+            <coordinates>-95.846264623,30.255436994,0 -95.846240910,30.255412178,0 -95.846242792,30.255356648,0 -95.846243696,30.255353127,0 -95.846234353,30.255351337,0 -95.846233253,30.255355623,0 -95.846231239,30.255415043,0 -95.846257242,30.255442256,0 -95.846264623,30.255436994,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>

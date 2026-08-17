@@ -31,12 +31,14 @@ Detailed camper record: [`equipment/ss-kz-connect-se-c312bhkse.md`](../../equipm
 - The stated 16 ft may describe the deck rather than overall bumper-to-coupler length.
 - Temporary planning geometry: the **16 × 7 ft assumed shower deck is turned sideways**, with a **4 ft assumed tongue** and **7 × 4 ft full-width deployed ramp**; no separate landing zone is claimed.
 - Water supply: a separate **8 ft utility trailer with an IBC tote** is T'd perpendicularly into the shower trailer, provisionally drawn as a 5 × 8 ft deck, 3 ft tongue allowance, and 4 × 4 ft tote footprint.
-- Fire area: a **3 × 22 ft connector leg** extends from the water-trailer tongue to a **10.2 × 10 ft fire-pit end zone**, containing a provisional 3 × 3 ft fire pit.
+- Fire area: a separate **10.2 × 10 ft fire-pit end zone**, containing a provisional 3 × 3 ft fire pit, is reattached by the accepted routed connector described below.
 - Only the full-width fold-down ramp arrangement is confirmed; width, tongue, ramp depth, enclosure, steps, tanks, stabilizers, hoses, cords, privacy screening, and operating clearances remain unverified.
 
 ### Accepted reattached layout
 
-The freeform arrangement keeps the **432 sq ft shower/water-trailer head** and **102 sq ft fire-pit end** independently movable, then reconnects them with a routed **66 sq ft allocation walkway**. The connector follows an approximately **34.29 ft centerline** at an approximately **1.92 ft width**, passing east of B. and G.'s community section. These three pieces total exactly **600 sq ft**.
+The freeform arrangement keeps the **393 sq ft shower/water-trailer section** and **102 sq ft fire-pit end** independently movable, then reconnects them with a routed **105 sq ft allocation walkway**. The connector follows an approximately **34.78 ft centerline** at an approximately **3.02 ft width**, passing east of B. and G.'s community section. These three pieces total exactly **600 sq ft**.
+
+The shower section retains its 24 × 18 ft maximum extents but removes two unused lower-side areas totaling 39 sq ft. Every drawn shower trailer, deployed ramp, trailer tongue, wheel/fender, IBC trailer, tote, and water-trailer tongue placeholder remains inside the revised irregular boundary.
 
 The displayed connector is allocation geometry, not a confirmed pedestrian or accessible route. Field-check its clear width, surface, slope, turns, obstructions, fire separation, and both endpoints before using it.
 
@@ -66,7 +68,7 @@ The preferred concepts to test are:
 
 Gaps between allocation polygons are acceptable and should remain outside the calculated area. Compactness is not a planning goal.
 
-The published camper length of 36 ft 9 in includes the coupler and should not be treated as a simple rectangular body footprint. Pass B is now an exact 600 sq ft elongated concept: a 24 × 18 ft trailer head, a 3 × 22 ft leg, and a 10.2 × 10 ft fire-pit end. The sideways shower trailer occupies the head, the IBC water trailer forms the perpendicular T, and its tongue aligns with the long leg. Final geometry and all fire/operating clearances still require field measurements and approval.
+The published camper length of 36 ft 9 in includes the coupler and should not be treated as a simple rectangular body footprint. Pass B is now an exact 600 sq ft reattached concept: a notched 393 sq ft shower/water section, a routed 105 sq ft connector, and a 102 sq ft fire-pit end. The sideways shower trailer and perpendicular IBC water trailer remain inside the shower section. Final geometry and all fire/operating clearances still require field measurements and approval.
 
 ## Information still needed
 
@@ -114,7 +116,7 @@ Test both contiguous and disconnected 600 sq ft pass allocations. Label every po
 Use separate provisional symbols for:
 
 - `S. & S. CAMPER — DEPLOYED DIMENSIONS REQUIRED`
-- Accepted georeferenced arrangement: separate 432 sq ft shower/water section and 102 sq ft fire-pit end, reattached by a routed 66 sq ft allocation walkway.
-- Connector warning: approximately 1.92 ft wide in the allocation drawing; verify a safe and usable field route and all fire clearances.
+- Accepted georeferenced arrangement: separate 393 sq ft shower/water section and 102 sq ft fire-pit end, reattached by a routed 105 sq ft allocation walkway.
+- Connector warning: approximately 3.02 ft wide in the allocation drawing; verify a safe and usable field route, turns, surface, and all fire clearances.
 
 Prefer the arrangement that maximizes usable claimed area while providing safe shower access, privacy, drainage control, utility servicing, and camper operation rather than compactness or symmetry.
