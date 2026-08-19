@@ -254,14 +254,14 @@
       "parent_pass_id": "ss_shower",
       "pass_allocation_sqft": 600.0,
       "walkway_reserve_sqft": 0.0,
-      "bbox_width_ft": 10.7616,
-      "bbox_height_ft": 32.9797,
-      "viewbox_width_ft": 11.7616,
-      "viewbox_height_ft": 33.9797,
-      "default_x_ft": 146.7479,
-      "default_y_ft": 237.6379,
-      "connector_width_ft": 3.019,
-      "connector_length_ft": 34.7794
+      "bbox_width_ft": 35,
+      "bbox_height_ft": 3,
+      "viewbox_width_ft": 36.0,
+      "viewbox_height_ft": 4.0,
+      "default_x_ft": 139.986,
+      "default_y_ft": 250.8505,
+      "connector_width_ft": 3,
+      "connector_length_ft": 35
     },
     {
       "id": "st_walkway",
@@ -273,14 +273,14 @@
       "parent_pass_id": "st",
       "pass_allocation_sqft": 600.0,
       "walkway_reserve_sqft": 0.0,
-      "bbox_width_ft": 52.1629,
-      "bbox_height_ft": 35.2886,
-      "viewbox_width_ft": 53.1629,
-      "viewbox_height_ft": 36.2886,
-      "default_x_ft": 87.8361,
-      "default_y_ft": 252.4505,
-      "connector_width_ft": 1.4783,
-      "connector_length_ft": 67.6463
+      "bbox_width_ft": 50,
+      "bbox_height_ft": 2,
+      "viewbox_width_ft": 51.0,
+      "viewbox_height_ft": 3.0,
+      "default_x_ft": 83.1703,
+      "default_y_ft": 269.0752,
+      "connector_width_ft": 2,
+      "connector_length_ft": 50
     }
   ]
 }

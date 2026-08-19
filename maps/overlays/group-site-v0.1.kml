@@ -2841,8 +2841,8 @@ status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note: 20 ft diameter circle; entry and anchor envelope unverified
 color: #b4a7d6
 source: planning/households/st.md
-saved_x_ft: 71.5
-saved_y_ft: 236.25
+saved_x_ft: 69.5
+saved_y_ft: 240
 rotation_deg: -180
 z: 10</description>
       <ExtendedData>
@@ -2871,10 +2871,10 @@ z: 10</description>
           <value>planning/households/st.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>71.5</value>
+          <value>69.5</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>236.25</value>
+          <value>240</value>
         </Data>
         <Data name="rotation_deg">
           <value>-180</value>
@@ -2887,7 +2887,7 @@ z: 10</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846503659,30.255424896,0 -95.846503458,30.255427278,0 -95.846503017,30.255429636,0 -95.846502340,30.255431952,0 -95.846501431,30.255434208,0 -95.846500299,30.255436387,0 -95.846498951,30.255438473,0 -95.846497397,30.255440449,0 -95.846495650,30.255442301,0 -95.846493723,30.255444014,0 -95.846491631,30.255445575,0 -95.846489388,30.255446974,0 -95.846487014,30.255448197,0 -95.846484524,30.255449238,0 -95.846481940,30.255450087,0 -95.846479279,30.255450738,0 -95.846476563,30.255451187,0 -95.846473812,30.255451429,0 -95.846471047,30.255451464,0 -95.846468289,30.255451290,0 -95.846465559,30.255450909,0 -95.846462878,30.255450324,0 -95.846460266,30.255449539,0 -95.846457743,30.255448561,0 -95.846455329,30.255447396,0 -95.846453041,30.255446054,0 -95.846450897,30.255444546,0 -95.846448914,30.255442881,0 -95.846447106,30.255441073,0 -95.846445488,30.255439137,0 -95.846444071,30.255437085,0 -95.846442866,30.255434935,0 -95.846441883,30.255432703,0 -95.846441129,30.255430404,0 -95.846440610,30.255428058,0 -95.846440329,30.255425682,0 -95.846440290,30.255423293,0 -95.846440491,30.255420911,0 -95.846440932,30.255418553,0 -95.846441609,30.255416237,0 -95.846442518,30.255413981,0 -95.846443650,30.255411802,0 -95.846444998,30.255409716,0 -95.846446552,30.255407740,0 -95.846448299,30.255405888,0 -95.846450226,30.255404175,0 -95.846452318,30.255402614,0 -95.846454560,30.255401216,0 -95.846456935,30.255399992,0 -95.846459424,30.255398951,0 -95.846462009,30.255398102,0 -95.846464670,30.255397451,0 -95.846467386,30.255397002,0 -95.846470137,30.255396760,0 -95.846472902,30.255396726,0 -95.846475660,30.255396900,0 -95.846478390,30.255397281,0 -95.846481071,30.255397866,0 -95.846483683,30.255398650,0 -95.846486206,30.255399628,0 -95.846488620,30.255400793,0 -95.846490908,30.255402135,0 -95.846493052,30.255403644,0 -95.846495035,30.255405308,0 -95.846496843,30.255407116,0 -95.846498461,30.255409053,0 -95.846499878,30.255411104,0 -95.846501083,30.255413254,0 -95.846502066,30.255415487,0 -95.846502820,30.255417785,0 -95.846503339,30.255420131,0 -95.846503620,30.255422507,0 -95.846503659,30.255424896,0</coordinates>
+            <coordinates>-95.846510344,30.255414793,0 -95.846510143,30.255417175,0 -95.846509702,30.255419533,0 -95.846509024,30.255421849,0 -95.846508116,30.255424105,0 -95.846506984,30.255426284,0 -95.846505635,30.255428370,0 -95.846504082,30.255430346,0 -95.846502335,30.255432198,0 -95.846500408,30.255433911,0 -95.846498315,30.255435472,0 -95.846496073,30.255436870,0 -95.846493698,30.255438094,0 -95.846491209,30.255439135,0 -95.846488625,30.255439984,0 -95.846485964,30.255440635,0 -95.846483248,30.255441084,0 -95.846480497,30.255441326,0 -95.846477732,30.255441360,0 -95.846474974,30.255441187,0 -95.846472244,30.255440806,0 -95.846469563,30.255440221,0 -95.846466951,30.255439436,0 -95.846464428,30.255438458,0 -95.846462014,30.255437293,0 -95.846459726,30.255435951,0 -95.846457582,30.255434442,0 -95.846455599,30.255432778,0 -95.846453791,30.255430970,0 -95.846452172,30.255429033,0 -95.846450756,30.255426982,0 -95.846449551,30.255424832,0 -95.846448568,30.255422599,0 -95.846447814,30.255420301,0 -95.846447295,30.255417955,0 -95.846447014,30.255415579,0 -95.846446974,30.255413190,0 -95.846447176,30.255410808,0 -95.846447617,30.255408450,0 -95.846448294,30.255406134,0 -95.846449202,30.255403878,0 -95.846450335,30.255401699,0 -95.846451683,30.255399613,0 -95.846453236,30.255397637,0 -95.846454983,30.255395785,0 -95.846456910,30.255394072,0 -95.846459003,30.255392511,0 -95.846461245,30.255391113,0 -95.846463620,30.255389889,0 -95.846466109,30.255388848,0 -95.846468694,30.255387999,0 -95.846471354,30.255387348,0 -95.846474071,30.255386899,0 -95.846476822,30.255386657,0 -95.846479587,30.255386622,0 -95.846482345,30.255386796,0 -95.846485075,30.255387177,0 -95.846487756,30.255387762,0 -95.846490368,30.255388547,0 -95.846492890,30.255389525,0 -95.846495305,30.255390690,0 -95.846497593,30.255392032,0 -95.846499736,30.255393541,0 -95.846501720,30.255395205,0 -95.846503527,30.255397013,0 -95.846505146,30.255398950,0 -95.846506563,30.255401001,0 -95.846507767,30.255403151,0 -95.846508751,30.255405384,0 -95.846509505,30.255407682,0 -95.846510024,30.255410028,0 -95.846510304,30.255412404,0 -95.846510344,30.255414793,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2902,8 +2902,8 @@ status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #76a5af
 source: planning/a-site-notes.md
-saved_x_ft: 184.1983
-saved_y_ft: 214.321
+saved_x_ft: 178.42007721
+saved_y_ft: 215.13321682
 rotation_deg: 82
 z: 11</description>
       <ExtendedData>
@@ -2932,10 +2932,10 @@ z: 11</description>
           <value>planning/a-site-notes.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>184.1983</value>
+          <value>178.42007721</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>214.321</value>
+          <value>215.13321682</value>
         </Data>
         <Data name="rotation_deg">
           <value>82</value>
@@ -2948,7 +2948,7 @@ z: 11</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846088476,30.255488659,0 -95.846084286,30.255456002,0 -95.846163050,30.255448463,0 -95.846167240,30.255481120,0 -95.846088476,30.255488659,0</coordinates>
+            <coordinates>-95.846106859,30.255486899,0 -95.846102670,30.255454242,0 -95.846181434,30.255446703,0 -95.846185623,30.255479360,0 -95.846106859,30.255486899,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -2981,7 +2981,7 @@ source_pass_id: a_yoga</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846110355,30.255485188,0 -95.846106515,30.255455252,0 -95.846163225,30.255449824,0 -95.846167065,30.255479760,0 -95.846110355,30.255485188,0</coordinates>
+            <coordinates>-95.846128739,30.255483428,0 -95.846124898,30.255453492,0 -95.846181608,30.255448064,0 -95.846185449,30.255478000,0 -95.846128739,30.255483428,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3022,7 +3022,7 @@ source_pass_id: a_yoga</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846111756,30.255483676,0 -95.846108264,30.255456462,0 -95.846161824,30.255451336,0 -95.846165315,30.255478550,0 -95.846111756,30.255483676,0</coordinates>
+            <coordinates>-95.846130139,30.255481916,0 -95.846126648,30.255454702,0 -95.846180208,30.255449575,0 -95.846183699,30.255476790,0 -95.846130139,30.255481916,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3037,9 +3037,9 @@ status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #b4a7d6
 source: planning/households/st.md
-saved_x_ft: 139.5
-saved_y_ft: 282
-rotation_deg: -1
+saved_x_ft: 127.74488288
+saved_y_ft: 282.28246836
+rotation_deg: 35
 z: 12</description>
       <ExtendedData>
         <Data name="id">
@@ -3067,13 +3067,13 @@ z: 12</description>
           <value>planning/households/st.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>139.5</value>
+          <value>127.74488288</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>282</value>
+          <value>282.28246836</value>
         </Data>
         <Data name="rotation_deg">
-          <value>-1</value>
+          <value>35</value>
         </Data>
         <Data name="z">
           <value>12</value>
@@ -3083,7 +3083,7 @@ z: 12</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846291800,30.255321370,0 -95.846260104,30.255321046,0 -95.846260478,30.255293668,0 -95.846292174,30.255293991,0 -95.846291800,30.255321370,0</coordinates>
+            <coordinates>-95.846316656,30.255326845,0 -95.846291233,30.255310490,0 -95.846310167,30.255288530,0 -95.846335589,30.255304885,0 -95.846316656,30.255326845,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3124,7 +3124,7 @@ source_pass_id: st_portapotty</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846285536,30.255315829,0 -95.846266518,30.255315635,0 -95.846266743,30.255299208,0 -95.846285760,30.255299402,0 -95.846285536,30.255315829,0</coordinates>
+            <coordinates>-95.846315358,30.255319182,0 -95.846300104,30.255309369,0 -95.846311465,30.255296193,0 -95.846326718,30.255306006,0 -95.846315358,30.255319182,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3139,8 +3139,8 @@ status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #93c47d
 source: equipment/ss-16ft-shower-trailer.md
-saved_x_ft: 139
-saved_y_ft: 229
+saved_x_ft: 151.9915673
+saved_y_ft: 224.75392332
 rotation_deg: -91
 z: 13</description>
       <ExtendedData>
@@ -3169,10 +3169,10 @@ z: 13</description>
           <value>equipment/ss-16ft-shower-trailer.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>139</value>
+          <value>151.9915673</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>229</value>
+          <value>224.75392332</value>
         </Data>
         <Data name="rotation_deg">
           <value>-91</value>
@@ -3185,7 +3185,7 @@ z: 13</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846288530,30.255438805,0 -95.846288148,30.255466731,0 -95.846256452,30.255466408,0 -95.846256834,30.255438482,0 -95.846288530,30.255438805,0</coordinates>
+            <coordinates>-95.846246972,30.255449385,0 -95.846246590,30.255477312,0 -95.846214894,30.255476988,0 -95.846215276,30.255449062,0 -95.846246972,30.255449385,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3226,7 +3226,7 @@ source_pass_id: ss_firepit</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846277301,30.255448548,0 -95.846277189,30.255456762,0 -95.846267680,30.255456665,0 -95.846267792,30.255448451,0 -95.846277301,30.255448548,0</coordinates>
+            <coordinates>-95.846235744,30.255459128,0 -95.846235632,30.255467342,0 -95.846226123,30.255467245,0 -95.846226235,30.255459031,0 -95.846235744,30.255459128,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3238,15 +3238,15 @@ source_pass_id: ss_firepit</description>
 role: connector
 area_sqft: 105
 status: Accepted allocation connector; width is planning-only and not confirmed accessible.
-layout_note: Accepted routed connector; planning-only width is not accessible
+layout_note: Straight 3 x 35 ft marking strip; field usability remains unverified
 color: #93c47d
 source: equipment/ss-16ft-shower-trailer.md
-saved_x_ft: 146.7479
-saved_y_ft: 237.6379
-rotation_deg: 0
+saved_x_ft: 139.98599169
+saved_y_ft: 250.85048123
+rotation_deg: -91
 z: 0
-connector_width_ft: 3.019
-connector_length_ft: 34.7794</description>
+connector_width_ft: 3
+connector_length_ft: 35</description>
       <ExtendedData>
         <Data name="id">
           <value>ss_walkway</value>
@@ -3264,7 +3264,7 @@ connector_length_ft: 34.7794</description>
           <value>Accepted allocation connector; width is planning-only and not confirmed accessible.</value>
         </Data>
         <Data name="layout_note">
-          <value>Accepted routed connector; planning-only width is not accessible</value>
+          <value>Straight 3 x 35 ft marking strip; field usability remains unverified</value>
         </Data>
         <Data name="color">
           <value>#93c47d</value>
@@ -3273,29 +3273,29 @@ connector_length_ft: 34.7794</description>
           <value>equipment/ss-16ft-shower-trailer.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>146.7479</value>
+          <value>139.98599169</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>237.6379</value>
+          <value>250.85048123</value>
         </Data>
         <Data name="rotation_deg">
-          <value>0</value>
+          <value>-91</value>
         </Data>
         <Data name="z">
           <value>0</value>
         </Data>
         <Data name="connector_width_ft">
-          <value>3.019</value>
+          <value>3</value>
         </Data>
         <Data name="connector_length_ft">
-          <value>34.7794</value>
+          <value>35</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846264623,30.255436994,0 -95.846240910,30.255412178,0 -95.846242792,30.255356648,0 -95.846243696,30.255353127,0 -95.846234353,30.255351337,0 -95.846233253,30.255355623,0 -95.846231239,30.255415043,0 -95.846257242,30.255442256,0 -95.846264623,30.255436994,0</coordinates>
+            <coordinates>-95.846237189,30.255353446,0 -95.846235879,30.255449272,0 -95.846226370,30.255449175,0 -95.846227680,30.255353349,0 -95.846237189,30.255353446,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3307,15 +3307,15 @@ connector_length_ft: 34.7794</description>
 role: connector
 area_sqft: 100
 status: Accepted allocation connector; width is planning-only and not confirmed accessible.
-layout_note: Accepted routed connector; planning-only width is not accessible
+layout_note: Straight 2 x 50 ft marking strip; accessibility remains unverified
 color: #b4a7d6
 source: planning/households/st.md
-saved_x_ft: 87.8361
-saved_y_ft: 252.4505
-rotation_deg: 0
+saved_x_ft: 83.17032155
+saved_y_ft: 269.07517527
+rotation_deg: 35
 z: 0
-connector_width_ft: 1.4783
-connector_length_ft: 67.6463</description>
+connector_width_ft: 2
+connector_length_ft: 50</description>
       <ExtendedData>
         <Data name="id">
           <value>st_walkway</value>
@@ -3333,7 +3333,7 @@ connector_length_ft: 67.6463</description>
           <value>Accepted allocation connector; width is planning-only and not confirmed accessible.</value>
         </Data>
         <Data name="layout_note">
-          <value>Accepted routed connector; planning-only width is not accessible</value>
+          <value>Straight 2 x 50 ft marking strip; accessibility remains unverified</value>
         </Data>
         <Data name="color">
           <value>#b4a7d6</value>
@@ -3342,29 +3342,29 @@ connector_length_ft: 67.6463</description>
           <value>planning/households/st.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>87.8361</value>
+          <value>83.17032155</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>252.4505</value>
+          <value>269.07517527</value>
         </Data>
         <Data name="rotation_deg">
-          <value>0</value>
+          <value>35</value>
         </Data>
         <Data name="z">
           <value>0</value>
         </Data>
         <Data name="connector_width_ft">
-          <value>1.4783</value>
+          <value>2</value>
         </Data>
         <Data name="connector_length_ft">
-          <value>67.6463</value>
+          <value>50</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846452601,30.255402849,0 -95.846443252,30.255399414,0 -95.846330624,30.255350529,0 -95.846314471,30.255326403,0 -95.846315146,30.255306480,0 -95.846290469,30.255305856,0 -95.846290332,30.255309902,0 -95.846310325,30.255310408,0 -95.846309748,30.255327434,0 -95.846327268,30.255353602,0 -95.846441281,30.255403089,0 -95.846450767,30.255406574,0 -95.846452601,30.255402849,0</coordinates>
+            <coordinates>-95.846451343,30.255399833,0 -95.846324229,30.255318061,0 -95.846328016,30.255313669,0 -95.846455130,30.255395441,0 -95.846451343,30.255399833,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>

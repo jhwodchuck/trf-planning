@@ -69,7 +69,7 @@ Planning documents and site-plan assets for Texas Renaissance Festival camping.
 - [Anker SOLIX S2000 power station inventory](equipment/anker-solix-s2000.md) — battery specifications, charging limits, and camper-use planning
 - [2012 Wildcat dimensional baseline](equipment/2012-wildcat-dimensional-baseline.md) — floor plan, requested rotation, model conflict, and measurements needed
 - [S. and S. camper floor plan](equipment/ss-kz-connect-se-c312bhkse.md) — KZ Connect SE C312BHKSE working identification, manufacturer floor plan, published dimensions, and measurements needed for site placement
-- [S. and S. shower trailer](equipment/ss-16ft-shower-trailer.md) — sideways shower trailer, perpendicular 8 ft IBC trailer, and a long connector leg to a provisional fire-pit end; dimensions and clearances pending
+- [S. and S. shower trailer](equipment/ss-16ft-shower-trailer.md) — sideways shower trailer, perpendicular 8 ft IBC trailer, and a straight 3 × 35 ft connector to a provisional fire-pit end; dimensions and clearances pending
 - [2018 Ford F-250 long-bed baseline](equipment/2018-ford-f250-long-bed.md) — cab-specific lengths and maneuvering inputs
 
 ## Critical blockers

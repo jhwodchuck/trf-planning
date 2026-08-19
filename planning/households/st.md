@@ -9,10 +9,10 @@ Last updated: **2026-08-16**
 - Accepted reattached-layout accounting:
   - 20 ft diameter circular yurt footprint: **314.1593 sq ft**.
   - 10 × 10 ft detached portapotty end: **100 sq ft**.
-  - Routed allocation walkway: **100 sq ft**.
+  - Straight 2 × 50 ft allocation walkway: **100 sq ft**.
   - Unplaced yurt entry and setup-clearance reserve: **85.8407 sq ft**.
   - Total: **600 sq ft**.
-- The walkway follows an approximately **67.65 ft centerline** at an approximately **1.48 ft allocation width**. It routes around C. and S. and B. and G. without consuming their allocations.
+- The walkway is a straight **2 × 50 ft** rectangle at one **35° bearing**, with no turns. The yurt moved about 4.3 ft and the portapotty section about 11.8 ft from the prior shared layout, keeping the portapotty much closer to its earlier position.
 - Sanitation facility: **6 × 6 ft Handicap Portapotty** (36 sq ft assumed ADA-accessible unit) inside the detached 10 × 10 ft end.
 
 ## Planning intent
@@ -21,9 +21,9 @@ The movable yurt piece is the yurt's actual **20 ft diameter circle**, not a 20 
 
 Pacific Yurts' typical platform plan calls for a **20 ft diameter platform before its drip edge**. Entry decks and site-specific construction are separate. The current circular piece therefore does not claim that the yurt's complete setup envelope is known: entry, stairs or ramp, drip edge, stakes, ropes, anchors, and working clearance may extend beyond the circle and must come from S. and T.'s exact model and setup.
 
-The accepted group arrangement keeps the yurt and portapotty sections independently movable and reconnects them with a separate routed allocation polygon. The route is deliberately narrow so the remaining **85.8407 sq ft** stays available for yurt entry, platform edge, anchors, ropes, or other setup clearance.
+The accepted group arrangement keeps the yurt and portapotty sections independently movable and reconnects them with a separate straight allocation rectangle. The 2 ft × 50 ft strip leaves **85.8407 sq ft** available for yurt entry, platform edge, anchors, ropes, or other setup clearance.
 
-The approximately 1.48 ft displayed width is accounting geometry, **not a confirmed accessible route**. Its finished clear width, surface, slope, turns, obstructions, entrance alignment, and connection to the portapotty door must be redesigned and verified before treating it as a usable or accessible walkway.
+The 2 ft displayed width is accounting geometry, **not a confirmed accessible route**. Its finished clear width, surface, slope, obstructions, entrance alignment, and connection to the portapotty door must be redesigned and verified before treating it as a usable or accessible walkway.
 
 ## Information still confirmed vs. needed
 
@@ -39,12 +39,12 @@ The approximately 1.48 ft displayed width is accounting geometry, **not a confir
 1. Yurt manufacturer/model and whether 20 ft describes the wall, platform, rainfly, or total anchored footprint.
 2. Platform/deck, drip edge, entry deck, stair/ramp, door position, anchors, ropes, and setup clearance.
 3. Portapotty door direction, turning space, and servicing access path (roadside vs. internal).
-4. Field viability of the accepted separation, orientation, and routed connector.
+4. Field viability of the accepted separation, 35° orientation, and straight connector.
 5. Canopy, vehicle, generator, cooking, storage, fencing, and utility needs.
 
 ## Drawing rule
 
-In the freeform tool, draw the yurt footprint as a **20 ft diameter circle**, the portapotty end as a separate **10 × 10 ft square**, and the accepted routed connector as a separate **100 sq ft polygon**. Keep the remaining **85.8407 sq ft** visibly accounted for but unplaced until the exact yurt setup envelope is known.
+In the freeform tool, draw the yurt footprint as a **20 ft diameter circle**, the portapotty end as a separate **10 × 10 ft square**, and the accepted straight connector as a separate **2 × 50 ft, 100 sq ft rectangle**. Keep the remaining **85.8407 sq ft** visibly accounted for but unplaced until the exact yurt setup envelope is known.
 
 The accepted freeform arrangement is now the geographic-map baseline. Do not treat the route's planning width or the affine geographic placement as field-survey evidence.
 

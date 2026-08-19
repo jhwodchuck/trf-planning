@@ -37,7 +37,7 @@ The line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W
 | J. and C. | Canopy | 15 × 10 ft |
 | A. | Sleeping tent | 10 × 20 ft confirmed |
 | A. | Yoga Tent | 10 × 17 ft confirmed |
-| A. | Allocation connection | Yoga and sleeping sections share a 25 ft boundary; no separate connector area |
+| A. | Allocation connection | Yoga and sleeping sections share a complete 25 ft boundary and form a 25 × 24 ft outer rectangle; no separate connector area |
 | C. and S. | Main tent + add-on room | 12 × 16 ft main tent with 8 × 8 ft room attached at one end; centered alignment is provisional |
 | C. and S. | Canopy | 10 × 13 ft, user reported; product and anchoring TBD |
 | B. and G. | Primary tent | 13 × 26 ft |
@@ -47,9 +47,9 @@ The line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W
 | S. and S. | Camper body | 36 ft 9 in × 8 ft published; KZ Connect SE C312BHKSE floorplan-informed, model/VIN unconfirmed |
 | S. and S. | Camper slide zones | ~3 ft 1 in and ~3 ft 9 in projections; scale-derived from floorplan artwork, unsuitable for approval |
 | S. and S. | Main-entry rug zone | provisional 8 × 12 ft working assumption |
-| S. and S. | Shower + water trailers + fire pit | Notched 393 sq ft shower/water section and 102 sq ft fire-pit section, reattached by a routed 105 sq ft allocation connector; approximately 3.02 ft width is planning-only |
+| S. and S. | Shower + water trailers + fire pit | Notched 393 sq ft shower/water section and 102 sq ft fire-pit section, reattached by a straight 3 × 35 ft, 105 sq ft allocation connector; width is planning-only |
 | M. and E. | Camper | temporary horizontal mirror of S./S. camper-pass concept; all equipment geometry unverified |
-| S. and T. | Yurt + handicap portapotty | 20 ft circular yurt plus an assumed 6 × 6 ft unit in a 10 × 10 ft end, reattached by a routed 100 sq ft allocation connector; 85.8407 sq ft remains unplaced for yurt setup clearance, and the approximately 1.48 ft route is not accessibility confirmation |
+| S. and T. | Yurt + handicap portapotty | 20 ft circular yurt plus an assumed 6 × 6 ft unit in a 10 × 10 ft end, reattached by a straight 2 × 50 ft, 100 sq ft allocation connector at one 35° bearing; the portapotty stays near its prior position, 85.8407 sq ft remains unplaced for yurt setup clearance, and the route is not accessibility confirmation |
 
 ## Layout strategy
 
@@ -59,9 +59,9 @@ The line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W
 4. Use a separate shower-trailer polygon for S. and S. in the initial concept.
 5. Use S. and S.'s irregular camper pass with slides on one side, both door/step locations on the other, a 3 × 8 ft rear service bay, and a provisional 8 × 12 ft main-entry rug bay.
 6. Use a horizontally mirrored copy of S. and S.'s camper-pass concept as M. and E.'s temporary Pass A placeholder; treat every internal feature as unverified.
-7. Use A.'s accepted two-piece 600 sq ft arrangement: the 25 × 12 ft sleeping section and 12 × 25 ft Yoga section each contribute 300 sq ft and share a 25 ft allocation boundary.
+7. Use A.'s accepted two-piece 600 sq ft arrangement: the 25 × 12 ft sleeping section and 12 × 25 ft Yoga section each contribute 300 sq ft, share a complete 25 ft allocation boundary, and form a 25 × 24 ft outer rectangle.
 8. Put B. and G.'s primary and closet tents together in one offset, connected two-lobe 600 sq ft pass; use their second 20 × 30 ft pass for the community tent.
-9. Use the accepted routed connectors: 105 sq ft from S. and S.'s notched shower section to its fire-pit end, and 100 sq ft from S. and T.'s 20 ft circular yurt to its 10 × 10 ft portapotty end. Keep S. and T.'s remaining 85.8407 sq ft unplaced for yurt setup clearance.
+9. Use the accepted straight connectors: 3 × 35 ft (105 sq ft) from S. and S.'s notched shower section to its fire-pit end, and 2 × 50 ft (100 sq ft) at one 35° bearing from S. and T.'s 20 ft circular yurt to its 10 × 10 ft portapotty end. Keep S. and T.'s remaining 85.8407 sq ft unplaced for yurt setup clearance.
 10. Leave gaps outside claimed polygons rather than reducing requested area.
 11. Retain a conceptual circulation and emergency-access band through the group.
 12. Prefer prior disturbed/occupied clearings visible in the 2025-10-20 imagery, subject to household identification and field verification.
@@ -74,7 +74,7 @@ The line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W
 - Terrain, trees, drainage, and utility constraints have not been applied household-by-household.
 - Several structures still use placeholders.
 - S. and T.'s 20 ft yurt circle is the reported wall/platform footprint only; entry, platform edge, anchors, ropes, and setup clearances still require the exact model and field measurements.
-- The two connector polygons are exact allocation accounting but too narrow to establish usable or accessible walkways; their routes and clearances require field redesign and verification.
+- The two connector rectangles are exact allocation accounting, but their usable width, endpoints, surface, slope, and clearances still require field verification. The 4 ft S. and T. connector is not accessibility confirmation.
 - The proposed positions may not match the final usable ground visible during field setup.
 - The road curve follows the visible campsite-side edge in the offline NAIP imagery and passes through both supplied controls, but it has not been field surveyed.
 - The 2025 imagery shows curved roads and irregular occupied clearings, but visible roofs have not yet been tied to specific households or measured control points.

@@ -992,30 +992,8 @@ _ss_shower_source = pass_by_id("ss_shower")
 _st_yurt_area_sqft = round(math.pi * 10**2, 4)
 _st_setup_clearance_reserve_sqft = round(600 - _st_yurt_area_sqft - 100 - 100, 4)
 
-_ss_walkway_polygon, _ss_walkway_origin, _ss_walkway_width, _ss_walkway_length = (
-    polyline_corridor(
-        [
-            (148.38347743, 239.13243222),
-            (156.5, 248.4),
-            (156.5, 269.4),
-            (156.22577158, 270.83412464),
-        ],
-        105,
-    )
-)
-_st_walkway_polygon, _st_walkway_origin, _st_walkway_width, _st_walkway_length = (
-    polyline_corridor(
-        [
-            (88.60535969, 253.63884869),
-            (91.612, 254.815),
-            (127.872, 271.725),
-            (133.45, 280.75),
-            (133.45, 287.5),
-            (140.499, 287.5),
-        ],
-        100,
-    )
-)
+_ss_walkway_width, _ss_walkway_length = 3, 35
+_st_walkway_width, _st_walkway_length = 2, 50
 
 # The accepted freeform layout keeps the amenity sections independently
 # movable, but adds exact-area connector pieces at the accepted positions.
@@ -1152,10 +1130,10 @@ CONNECTOR_PARTS: list[Pass] = [
         name="S. + S. — Fire-pit Walkway",
         color=_ss_shower_source.color,
         area_sqft=105,
-        area_note="Accepted routed connector; planning-only width is not accessible",
+        area_note="Straight 3 x 35 ft marking strip; field usability remains unverified",
         source=_ss_shower_source.source,
-        polygon=_ss_walkway_polygon,
-        default_bbox_origin=_ss_walkway_origin,
+        rect=(_ss_walkway_length, _ss_walkway_width),
+        default_bbox_origin=(140.48599169, 251.35048123),
         kind="connector",
         parent_pass_id="ss_shower",
         connector_width_ft=_ss_walkway_width,
@@ -1167,10 +1145,10 @@ CONNECTOR_PARTS: list[Pass] = [
         name="S. + T. — Yurt-to-Portapotty Walkway",
         color=_st_source.color,
         area_sqft=100,
-        area_note="Accepted routed connector; planning-only width is not accessible",
+        area_note="Straight 2 x 50 ft marking strip; accessibility remains unverified",
         source=_st_source.source,
-        polygon=_st_walkway_polygon,
-        default_bbox_origin=_st_walkway_origin,
+        rect=(_st_walkway_length, _st_walkway_width),
+        default_bbox_origin=(83.67032155, 269.57517527),
         kind="connector",
         parent_pass_id="st",
         connector_width_ft=_st_walkway_width,

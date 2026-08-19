@@ -28,7 +28,7 @@ The manufacturer's listed canopy footprint is nominal. The product includes nylo
 
 Place the **Yoga Tent on the far/outer edge of A.'s campsite**, rather than between A.'s site and the shared interior of the group camp.
 
-The selected working layout is **T-shaped**. The 10 × 20 ft sleeping tent is rotated across the 25 ft top bar, and the 10 × 17 ft Yoga Tent is bottom-aligned lengthwise in the centered stem. An **8.5 ft nominal clear aisle** separates the two nominal footprints. Dashed 6 in planning buffers surround both rectangles, leaving 7.5 ft between those provisional buffer zones. Field measurements of rainflies, ropes, anchors, feet, and ballast may require a larger separation.
+The equipment concept began as **T-shaped**, with the 10 × 20 ft sleeping tent across one 25 ft section and the 10 × 17 ft Yoga Tent lengthwise in the other. For the accepted field-marking default, the two 300 sq ft allocation sections now share their complete 25 ft edges and form one simple **25 × 24 ft outer rectangle**. Equipment, rainfly, rope, anchor, foot, ballast, entrance, and aisle clearances still require field measurement inside that allocation.
 
 Until the final group arrangement establishes compass directions, interpret **far/outer edge** as:
 
@@ -49,7 +49,7 @@ The resulting boundary is 25 ft wide by 37 ft deep at its maximum extents while 
 
 ### Accepted reattached layout
 
-The freeform arrangement keeps the 25 × 12 ft sleeping section and the 12 × 25 ft Yoga / smoking-tent section as independently movable **300 sq ft** pieces. The Yoga section was shifted by about 2 ft and rotated from 84° to 82° so one 25 ft allocation edge directly shares the sleeping section's boundary. No additional walkway area is needed, and the two sections still total exactly **600 sq ft**.
+The freeform arrangement keeps the 25 × 12 ft sleeping section and the 12 × 25 ft Yoga / smoking-tent section as independently movable **300 sq ft** pieces. The Yoga section remains at 82° but was shifted another 5.84 ft so its complete 25 ft allocation edge aligns with the sleeping section. Their outer boundary is now an exact **25 × 24 ft rectangle** with no additional walkway area, and the two sections still total exactly **600 sq ft**.
 
 The shared allocation edge does not prove that tent doors, ropes, anchors, rainflies, drainage, or a field-usable path align. Those clearances remain subject to measurement and field adjustment.
 

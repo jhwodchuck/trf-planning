@@ -21,7 +21,7 @@ Last updated: **2026-08-16**
 | M. and E. | Camper; temporary mirrored S./S. pass used until actual geometry is known | 2 | **1,200 sq ft** | [Planning notes](households/me.md) |
 | S. and S. | Camper and 16 ft flatbed shower trailer | 2 | **1,200 sq ft** | [Planning notes](households/ss.md) |
 | J. and C. | Camper | 1 | **600 sq ft** | [Planning notes](households/jc.md) |
-| S. and T. | 20 ft diameter yurt, routed allocation connector, and handicap portapotty | 1 | **600 sq ft** | [Planning notes](households/st.md) |
+| S. and T. | 20 ft diameter yurt, straight 2 × 50 ft allocation connector, and handicap portapotty | 1 | **600 sq ft** | [Planning notes](households/st.md) |
 | **Total** | 3 camper households, 3 tent-based households, 1 yurt-based household, and 1 shower trailer | **10** | **6,000 sq ft** |  |
 
 ## Current master map
@@ -33,7 +33,7 @@ Last updated: **2026-08-16**
 
 The v0.1 map preserves ten separate 600 sq ft pass polygons. Only J. and C.'s site is tied to the supplied road controls; all other positions remain conceptual.
 
-The accepted default preserves the user's thirteen-piece arrangement and reattaches the three detached amenities. A.'s Yoga / smoking-tent section now shares a boundary with her sleeping section. S. and S.'s fire-pit end is joined to its revised 393 sq ft shower/water section by a routed **105 sq ft** connector. S. and T.'s portapotty end is joined to the 20 ft circular yurt by a routed **100 sq ft** connector, leaving **85.8407 sq ft** reserved for yurt entry, platform edge, anchors, ropes, or setup clearance. The freeform default, GeoJSON, and KML now use this same accepted arrangement.
+The accepted default preserves independently movable amenity pieces while making the field boundary simple. A.'s Yoga / smoking-tent section and sleeping section form a 25 × 24 ft outer rectangle. S. and S.'s fire-pit end is joined to its revised 393 sq ft shower/water section by a straight **3 × 35 ft**, **105 sq ft** connector. S. and T.'s portapotty end is joined to the 20 ft circular yurt by a straight **2 × 50 ft**, **100 sq ft** connector at one 35° bearing, keeping the portapotty section near its prior position and leaving **85.8407 sq ft** reserved for yurt entry, platform edge, anchors, ropes, or setup clearance. The freeform default, GeoJSON, and KML use this same arrangement.
 
 ## Allocation summary
 
@@ -77,7 +77,7 @@ A layout is preferable when it:
 
 - Sleeping Tent: **10 × 20 ft**.
 - Yoga Tent: **10 × 17 ft** COVERPRO canopy.
-- Accepted allocation: two independently movable 300 sq ft sections sharing a boundary; no additional connector area.
+- Accepted allocation: two independently movable 300 sq ft sections sharing a full 25 ft boundary and forming one 25 × 24 ft outer rectangle; no additional connector area.
 
 ### C. and S.
 
@@ -94,13 +94,13 @@ A layout is preferable when it:
 ### S. and S.
 
 - KZ Connect SE C312BHKSE camper as the working identification; exact year and deployed dimensions still require verification.
-- **16 ft flatbed trailer** confirmed for use as a shower facility, with a **full-width fold-down rear ramp**, plus a separate **8 ft trailer carrying an IBC water tote**. Pass B turns the shower trailer sideways, T's the water trailer into it, omits a separate landing zone, and reconnects the notched shower/water section to a 10.2 × 10 ft fire-pit end with a routed 105 sq ft connector. All assumed dimensions and fire/utility clearances require measurement and approval.
-- Accepted allocation: 393 sq ft shower/water section + 102 sq ft fire-pit section + routed 105 sq ft connector = **600 sq ft**. The approximately 3.02 ft connector width is planning-only; all drawn shower/water equipment remains within the notched shower section.
+- **16 ft flatbed trailer** confirmed for use as a shower facility, with a **full-width fold-down rear ramp**, plus a separate **8 ft trailer carrying an IBC water tote**. Pass B turns the shower trailer sideways, T's the water trailer into it, omits a separate landing zone, and reconnects the notched shower/water section to a 10.2 × 10 ft fire-pit end with a straight 3 × 35 ft connector. All assumed dimensions and fire/utility clearances require measurement and approval.
+- Accepted allocation: 393 sq ft shower/water section + 102 sq ft fire-pit section + straight 3 × 35 ft, 105 sq ft connector = **600 sq ft**. The 3 ft connector width is planning-only; all drawn shower/water equipment remains within the notched shower section.
 
 ### S. and T.
 
-- Accepted allocation: **20 ft diameter circular yurt piece** (314.1593 sq ft) + 10 × 10 ft portapotty end (100 sq ft) + routed connector (100 sq ft) + unplaced setup reserve (85.8407 sq ft) = **600 sq ft**.
+- Accepted allocation: **20 ft diameter circular yurt piece** (314.1593 sq ft) + 10 × 10 ft portapotty end (100 sq ft) + straight 2 × 50 ft connector (100 sq ft) + unplaced setup reserve (85.8407 sq ft) = **600 sq ft**.
 - Yurt: user-reported **20 ft diameter**; exact model, platform, entry, anchor, and total setup envelope remain unverified.
-- Handicap Portapotty: **6 × 6 ft** (36 sq ft) ADA-accessible unit assumed inside the opposite end; door direction, turning space, and accessible approach remain unverified. The approximately 1.48 ft allocation connector is not a confirmed accessible route.
+- Handicap Portapotty: **6 × 6 ft** (36 sq ft) ADA-accessible unit assumed inside the opposite end; door direction, turning space, and accessible approach remain unverified. The 2 ft allocation connector is not a confirmed accessible route.
 
 J. and C.'s camper has a separate equipment and site-planning record. M. and E. still need exact structure dimensions, openings, anchoring footprints, vehicles, utilities, and orientation preferences.
