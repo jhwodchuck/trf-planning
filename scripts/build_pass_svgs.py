@@ -990,10 +990,12 @@ _st_source = pass_by_id("st")
 _ss_shower_source = pass_by_id("ss_shower")
 
 _st_yurt_area_sqft = round(math.pi * 10**2, 4)
-_st_setup_clearance_reserve_sqft = round(600 - _st_yurt_area_sqft - 100 - 100, 4)
-
 _ss_walkway_width, _ss_walkway_length = 3, 35
-_st_walkway_width, _st_walkway_length = 2, 50
+_st_walkway_width, _st_walkway_length = 1, 60
+_st_walkway_area_sqft = _st_walkway_width * _st_walkway_length
+_st_setup_clearance_reserve_sqft = round(
+    600 - _st_yurt_area_sqft - 100 - _st_walkway_area_sqft, 4
+)
 
 # The accepted freeform layout keeps the amenity sections independently
 # movable, but adds exact-area connector pieces at the accepted positions.
@@ -1029,7 +1031,7 @@ _st_core = Pass(
     kind="pass_section",
     parent_pass_id="st",
     setup_clearance_reserve_sqft=_st_setup_clearance_reserve_sqft,
-    reserve_note="85.8407 sq ft remains unplaced for yurt entry, platform edge, anchors, ropes, or setup clearance",
+    reserve_note="125.8407 sq ft remains unplaced for yurt entry, platform edge, anchors, ropes, or setup clearance",
 )
 
 _ss_shower_core = Pass(
@@ -1144,11 +1146,11 @@ CONNECTOR_PARTS: list[Pass] = [
         id="st_walkway",
         name="S. + T. — Yurt-to-Portapotty Walkway",
         color=_st_source.color,
-        area_sqft=100,
-        area_note="Straight 2 x 50 ft marking strip; accessibility remains unverified",
+        area_sqft=_st_walkway_area_sqft,
+        area_note="Straight 1 x 60 ft allocation strip; usable and accessible width remain unverified",
         source=_st_source.source,
         rect=(_st_walkway_length, _st_walkway_width),
-        default_bbox_origin=(83.67032155, 269.57517527),
+        default_bbox_origin=(84.20800345, 269.75),
         kind="connector",
         parent_pass_id="st",
         connector_width_ft=_st_walkway_width,

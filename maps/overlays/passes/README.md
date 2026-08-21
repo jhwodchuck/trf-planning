@@ -12,9 +12,9 @@ The accepted arrangement reconnects those pieces as follows:
 
 - A.'s Yoga section shares a 25 ft boundary with her sleeping section; together they form one **25 × 24 ft outer rectangle**, so no extra connector area is required.
 - S. and S.'s 393 sq ft notched shower/water section and 102 sq ft fire-pit section are joined by a straight **3 × 35 ft**, **105 sq ft** connector with no turns.
-- S. and T.'s 20 ft circular yurt and portapotty sections are joined by a straight **2 × 50 ft**, **100 sq ft** connector with no turns and one 35° field bearing, keeping the portapotty section near its prior position.
+- S. and T.'s 20 ft circular yurt and portapotty sections are joined by a straight **1 × 60 ft**, **60 sq ft** allocation strip with no turns and one 30° field bearing, returning the portapotty section to its earlier requested position.
 
-The two straight polygons are allocation connectors, not verified pedestrian or accessible walkways. S. and T. retains **85.8407 sq ft unplaced** for yurt entry, platform edge, anchors, ropes, or other setup clearance. The visible pieces total **5,914.1593 sq ft**; adding that reserve preserves the full **6,000 sq ft** allocation.
+The two straight polygons are allocation connectors, not verified pedestrian or accessible walkways. The 1 ft S. and T. strip is not a claimed usable width. S. and T. retains **125.8407 sq ft unplaced** for yurt entry, platform edge, anchors, ropes, or other setup clearance. The visible pieces total **5,874.1593 sq ft**; adding that reserve preserves the full **6,000 sq ft** allocation.
 
 ## Files
 

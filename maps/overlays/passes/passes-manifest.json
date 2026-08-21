@@ -9,11 +9,11 @@
     "total_planning_area_sqft": 6000,
     "detached_parts": 3,
     "connector_parts": 2,
-    "visible_piece_area_sqft": 5914.1593,
-    "walkway_area_sqft": 205,
+    "visible_piece_area_sqft": 5874.1593,
+    "walkway_area_sqft": 165,
     "walkway_reserve_sqft": 0.0,
-    "setup_clearance_reserve_sqft": 85.8407,
-    "unplaced_reserve_sqft": 85.8407
+    "setup_clearance_reserve_sqft": 125.8407,
+    "unplaced_reserve_sqft": 125.8407
   },
   "passes": [
     {
@@ -185,9 +185,9 @@
       "viewbox_height_ft": 21.0,
       "default_x_ft": 129.5,
       "default_y_ft": 119.5,
-      "setup_clearance_reserve_sqft": 85.8407,
-      "unplaced_reserve_sqft": 85.8407,
-      "reserve_note": "85.8407 sq ft remains unplaced for yurt entry, platform edge, anchors, ropes, or setup clearance"
+      "setup_clearance_reserve_sqft": 125.8407,
+      "unplaced_reserve_sqft": 125.8407,
+      "reserve_note": "125.8407 sq ft remains unplaced for yurt entry, platform edge, anchors, ropes, or setup clearance"
     }
   ],
   "detached_parts": [
@@ -268,19 +268,19 @@
       "name": "S. + T. \u2014 Yurt-to-Portapotty Walkway",
       "file": "st_walkway.svg",
       "color": "#b4a7d6",
-      "area_sqft": 100,
+      "area_sqft": 60,
       "kind": "connector",
       "parent_pass_id": "st",
       "pass_allocation_sqft": 600.0,
       "walkway_reserve_sqft": 0.0,
-      "bbox_width_ft": 50,
-      "bbox_height_ft": 2,
-      "viewbox_width_ft": 51.0,
-      "viewbox_height_ft": 3.0,
-      "default_x_ft": 83.1703,
-      "default_y_ft": 269.0752,
-      "connector_width_ft": 2,
-      "connector_length_ft": 50
+      "bbox_width_ft": 60,
+      "bbox_height_ft": 1,
+      "viewbox_width_ft": 61.0,
+      "viewbox_height_ft": 2.0,
+      "default_x_ft": 83.708,
+      "default_y_ft": 269.25,
+      "connector_width_ft": 1,
+      "connector_length_ft": 60
     }
   ]
 }

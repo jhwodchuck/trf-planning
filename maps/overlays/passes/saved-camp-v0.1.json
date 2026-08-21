@@ -1,7 +1,7 @@
 {
-  "saved_at_local": "Wed Aug 19 2026 (field-marking simplified default)",
-  "accepted_source": "User-directed field-marking simplification: A. forms a 25 x 24 ft outer rectangle, S.+S. uses a straight 3 x 35 ft connector, and S.+T. uses a straight 2 x 50 ft connector at one 35 degree bearing so the portapotty stays close to its prior position.",
-  "layout_revision": "2026-08-21-connected-walkways-v1",
+  "saved_at_local": "Fri Aug 21 2026 (narrower S.+T. connector default)",
+  "accepted_source": "User-directed field-marking simplification: A. forms a 25 x 24 ft outer rectangle, S.+S. uses a straight 3 x 35 ft connector, and S.+T. uses a straight 1 x 60 ft allocation strip at one 30 degree bearing so the portapotty returns to its earlier requested position.",
+  "layout_revision": "2026-08-21-connected-walkways-v2",
   "scale_px_per_ft": 14,
   "passes": {
     "jc": { "x_ft": 99.25, "y_ft": 180.75, "rotation_deg": -103, "z": 1 },
@@ -17,11 +17,11 @@
   },
   "detached_parts": {
     "a_yoga": { "x_ft": 178.42007721, "y_ft": 215.13321682, "rotation_deg": 82, "z": 11 },
-    "st_portapotty": { "x_ft": 127.74488288, "y_ft": 282.28246836, "rotation_deg": 35, "z": 12 },
+    "st_portapotty": { "x_ft": 139.5, "y_ft": 282, "rotation_deg": -1, "z": 12 },
     "ss_firepit": { "x_ft": 151.9915673, "y_ft": 224.75392332, "rotation_deg": -91, "z": 13 }
   },
   "connectors": {
     "ss_walkway": { "x_ft": 139.98599169, "y_ft": 250.85048123, "rotation_deg": -91, "z": 0 },
-    "st_walkway": { "x_ft": 83.17032155, "y_ft": 269.07517527, "rotation_deg": 35, "z": 0 }
+    "st_walkway": { "x_ft": 83.70800345, "y_ft": 269.25, "rotation_deg": 30, "z": 0 }
   }
 }

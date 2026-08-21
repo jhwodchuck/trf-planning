@@ -21,7 +21,7 @@ Last updated: **2026-08-16**
 | M. and E. | Camper; temporary mirrored S./S. pass used until actual geometry is known | 2 | **1,200 sq ft** | [Planning notes](households/me.md) |
 | S. and S. | Camper and 16 ft flatbed shower trailer | 2 | **1,200 sq ft** | [Planning notes](households/ss.md) |
 | J. and C. | Camper | 1 | **600 sq ft** | [Planning notes](households/jc.md) |
-| S. and T. | 20 ft diameter yurt, straight 2 × 50 ft allocation connector, and handicap portapotty | 1 | **600 sq ft** | [Planning notes](households/st.md) |
+| S. and T. | 20 ft diameter yurt, straight 1 × 60 ft allocation connector, and handicap portapotty | 1 | **600 sq ft** | [Planning notes](households/st.md) |
 | **Total** | 3 camper households, 3 tent-based households, 1 yurt-based household, and 1 shower trailer | **10** | **6,000 sq ft** |  |
 
 ## Current master map
@@ -33,7 +33,7 @@ Last updated: **2026-08-16**
 
 The v0.1 map preserves ten separate 600 sq ft pass polygons. Only J. and C.'s site is tied to the supplied road controls; all other positions remain conceptual.
 
-The accepted default preserves independently movable amenity pieces while making the field boundary simple. A.'s Yoga / smoking-tent section and sleeping section form a 25 × 24 ft outer rectangle. S. and S.'s fire-pit end is joined to its revised 393 sq ft shower/water section by a straight **3 × 35 ft**, **105 sq ft** connector. S. and T.'s portapotty end is joined to the 20 ft circular yurt by a straight **2 × 50 ft**, **100 sq ft** connector at one 35° bearing, keeping the portapotty section near its prior position and leaving **85.8407 sq ft** reserved for yurt entry, platform edge, anchors, ropes, or setup clearance. The freeform default, GeoJSON, and KML use this same arrangement.
+The accepted default preserves independently movable amenity pieces while making the field boundary simple. A.'s Yoga / smoking-tent section and sleeping section form a 25 × 24 ft outer rectangle. S. and S.'s fire-pit end is joined to its revised 393 sq ft shower/water section by a straight **3 × 35 ft**, **105 sq ft** connector. S. and T.'s portapotty end is joined to the 20 ft circular yurt by a straight **1 × 60 ft**, **60 sq ft** allocation strip at one 30° bearing, returning the portapotty to its earlier requested position and leaving **125.8407 sq ft** unplaced for yurt entry, platform edge, anchors, ropes, or setup clearance. The freeform default, GeoJSON, and KML use this same arrangement.
 
 ## Allocation summary
 
@@ -99,7 +99,7 @@ A layout is preferable when it:
 
 ### S. and T.
 
-- Accepted allocation: **20 ft diameter circular yurt piece** (314.1593 sq ft) + 10 × 10 ft portapotty end (100 sq ft) + straight 2 × 50 ft connector (100 sq ft) + unplaced setup reserve (85.8407 sq ft) = **600 sq ft**.
+- Accepted allocation: **20 ft diameter circular yurt piece** (314.1593 sq ft) + 10 × 10 ft portapotty end (100 sq ft) + straight 1 × 60 ft allocation strip (60 sq ft) + unplaced setup reserve (125.8407 sq ft) = **600 sq ft**.
 - Yurt: user-reported **20 ft diameter**; exact model, platform, entry, anchor, and total setup envelope remain unverified.
 - Handicap Portapotty: **6 × 6 ft** (36 sq ft) ADA-accessible unit assumed inside the opposite end; door direction, turning space, and accessible approach remain unverified. The 2 ft allocation connector is not a confirmed accessible route.
 

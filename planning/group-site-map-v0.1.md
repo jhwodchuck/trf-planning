@@ -49,7 +49,7 @@ The line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W
 | S. and S. | Main-entry rug zone | provisional 8 × 12 ft working assumption |
 | S. and S. | Shower + water trailers + fire pit | Notched 393 sq ft shower/water section and 102 sq ft fire-pit section, reattached by a straight 3 × 35 ft, 105 sq ft allocation connector; width is planning-only |
 | M. and E. | Camper | temporary horizontal mirror of S./S. camper-pass concept; all equipment geometry unverified |
-| S. and T. | Yurt + handicap portapotty | 20 ft circular yurt plus an assumed 6 × 6 ft unit in a 10 × 10 ft end, reattached by a straight 2 × 50 ft, 100 sq ft allocation connector at one 35° bearing; the portapotty stays near its prior position, 85.8407 sq ft remains unplaced for yurt setup clearance, and the route is not accessibility confirmation |
+| S. and T. | Yurt + handicap portapotty | 20 ft circular yurt plus an assumed 6 × 6 ft unit in a 10 × 10 ft end, reattached by a straight 1 × 60 ft, 60 sq ft allocation strip at one 30° bearing; the portapotty returns to its earlier requested position, 125.8407 sq ft remains unplaced for yurt setup clearance, and the strip is not usable- or accessible-route confirmation |
 
 ## Layout strategy
 
@@ -61,7 +61,7 @@ The line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W
 6. Use a horizontally mirrored copy of S. and S.'s camper-pass concept as M. and E.'s temporary Pass A placeholder; treat every internal feature as unverified.
 7. Use A.'s accepted two-piece 600 sq ft arrangement: the 25 × 12 ft sleeping section and 12 × 25 ft Yoga section each contribute 300 sq ft, share a complete 25 ft allocation boundary, and form a 25 × 24 ft outer rectangle.
 8. Put B. and G.'s primary and closet tents together in one offset, connected two-lobe 600 sq ft pass; use their second 20 × 30 ft pass for the community tent.
-9. Use the accepted straight connectors: 3 × 35 ft (105 sq ft) from S. and S.'s notched shower section to its fire-pit end, and 2 × 50 ft (100 sq ft) at one 35° bearing from S. and T.'s 20 ft circular yurt to its 10 × 10 ft portapotty end. Keep S. and T.'s remaining 85.8407 sq ft unplaced for yurt setup clearance.
+9. Use the accepted straight connectors: 3 × 35 ft (105 sq ft) from S. and S.'s notched shower section to its fire-pit end, and 1 × 60 ft (60 sq ft) at one 30° bearing from S. and T.'s 20 ft circular yurt to its 10 × 10 ft portapotty end. Keep S. and T.'s remaining 125.8407 sq ft unplaced for yurt setup clearance.
 10. Leave gaps outside claimed polygons rather than reducing requested area.
 11. Retain a conceptual circulation and emergency-access band through the group.
 12. Prefer prior disturbed/occupied clearings visible in the 2025-10-20 imagery, subject to household identification and field verification.

@@ -5,7 +5,7 @@
     "created_on": "2026-08-16",
     "status": "Generated from the accepted reattached freeform layout through the shared planning-grade local-foot/WGS84 affine transform.",
     "layout_source": "maps/overlays/passes/saved-camp-v0.1.json",
-    "saved_at_local": "Wed Aug 19 2026 (field-marking simplified default)",
+    "saved_at_local": "Fri Aug 21 2026 (narrower S.+T. connector default)",
     "planning_baseline": "600 sq ft per pass",
     "passes": 10,
     "households": 7,
@@ -2973,9 +2973,9 @@
         "layout_note": "",
         "color": "#b4a7d6",
         "source": "planning/households/st.md",
-        "saved_x_ft": 127.74488288,
-        "saved_y_ft": 282.28246836,
-        "rotation_deg": 35,
+        "saved_x_ft": 139.5,
+        "saved_y_ft": 282,
+        "rotation_deg": -1,
         "z": 12,
         "connector_width_ft": null,
         "connector_length_ft": null
@@ -2985,24 +2985,24 @@
         "coordinates": [
           [
             [
-              -95.846316655936,
-              30.255326844501
+              -95.846291800065,
+              30.255321369748
             ],
             [
-              -95.846291233178,
-              30.255310490016
+              -95.846260103804,
+              30.255321046365
             ],
             [
-              -95.846310166654,
-              30.25528853017
+              -95.846260478185,
+              30.255293667552
             ],
             [
-              -95.846335589412,
-              30.255304884655
+              -95.846292174446,
+              30.255293990935
             ],
             [
-              -95.846316655936,
-              30.255326844501
+              -95.846291800065,
+              30.255321369748
             ]
           ]
         ]
@@ -3024,24 +3024,24 @@
         "coordinates": [
           [
             [
-              -95.84631535808,
-              30.255319181635
+              -95.846285535689,
+              30.255315829309
             ],
             [
-              -95.846300104425,
-              30.255309368943
+              -95.846266517932,
+              30.255315635279
             ],
             [
-              -95.84631146451,
-              30.255296193036
+              -95.846266742561,
+              30.255299207991
             ],
             [
-              -95.846326718165,
-              30.255306005727
+              -95.846285760318,
+              30.255299402021
             ],
             [
-              -95.84631535808,
-              30.255319181635
+              -95.846285535689,
+              30.255315829309
             ]
           ]
         ]
@@ -3184,41 +3184,41 @@
         "id": "st_walkway",
         "name": "S. + T. \u2014 Yurt-to-Portapotty Walkway",
         "role": "connector",
-        "area_sqft": 100,
+        "area_sqft": 60,
         "status": "Accepted allocation connector; width is planning-only and not confirmed accessible.",
-        "layout_note": "Straight 2 x 50 ft marking strip; accessibility remains unverified",
+        "layout_note": "Straight 1 x 60 ft allocation strip; usable and accessible width remain unverified",
         "color": "#b4a7d6",
         "source": "planning/households/st.md",
-        "saved_x_ft": 83.17032155,
-        "saved_y_ft": 269.07517527,
-        "rotation_deg": 35,
+        "saved_x_ft": 83.70800345,
+        "saved_y_ft": 269.25,
+        "rotation_deg": 30,
         "z": 0,
-        "connector_width_ft": 2,
-        "connector_length_ft": 50
+        "connector_width_ft": 1,
+        "connector_length_ft": 60
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -95.846451343119,
-              30.255399832989
+              -95.846452199571,
+              30.255401497165
             ],
             [
-              -95.846324229327,
-              30.255318060563
+              -95.846290342501,
+              30.255315227215
             ],
             [
-              -95.846328016022,
-              30.255313668593
+              -95.84629200707,
+              30.255312897048
             ],
             [
-              -95.846455129814,
-              30.25539544102
+              -95.84645386414,
+              30.255399166998
             ],
             [
-              -95.846451343119,
-              30.255399832989
+              -95.846452199571,
+              30.255401497165
             ]
           ]
         ]

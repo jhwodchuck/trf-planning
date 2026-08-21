@@ -3037,9 +3037,9 @@ status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #b4a7d6
 source: planning/households/st.md
-saved_x_ft: 127.74488288
-saved_y_ft: 282.28246836
-rotation_deg: 35
+saved_x_ft: 139.5
+saved_y_ft: 282
+rotation_deg: -1
 z: 12</description>
       <ExtendedData>
         <Data name="id">
@@ -3067,13 +3067,13 @@ z: 12</description>
           <value>planning/households/st.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>127.74488288</value>
+          <value>139.5</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>282.28246836</value>
+          <value>282</value>
         </Data>
         <Data name="rotation_deg">
-          <value>35</value>
+          <value>-1</value>
         </Data>
         <Data name="z">
           <value>12</value>
@@ -3083,7 +3083,7 @@ z: 12</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846316656,30.255326845,0 -95.846291233,30.255310490,0 -95.846310167,30.255288530,0 -95.846335589,30.255304885,0 -95.846316656,30.255326845,0</coordinates>
+            <coordinates>-95.846291800,30.255321370,0 -95.846260104,30.255321046,0 -95.846260478,30.255293668,0 -95.846292174,30.255293991,0 -95.846291800,30.255321370,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3124,7 +3124,7 @@ source_pass_id: st_portapotty</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846315358,30.255319182,0 -95.846300104,30.255309369,0 -95.846311465,30.255296193,0 -95.846326718,30.255306006,0 -95.846315358,30.255319182,0</coordinates>
+            <coordinates>-95.846285536,30.255315829,0 -95.846266518,30.255315635,0 -95.846266743,30.255299208,0 -95.846285760,30.255299402,0 -95.846285536,30.255315829,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3305,17 +3305,17 @@ connector_length_ft: 35</description>
       <styleUrl>#role-connector</styleUrl>
       <description>id: st_walkway
 role: connector
-area_sqft: 100
+area_sqft: 60
 status: Accepted allocation connector; width is planning-only and not confirmed accessible.
-layout_note: Straight 2 x 50 ft marking strip; accessibility remains unverified
+layout_note: Straight 1 x 60 ft allocation strip; usable and accessible width remain unverified
 color: #b4a7d6
 source: planning/households/st.md
-saved_x_ft: 83.17032155
-saved_y_ft: 269.07517527
-rotation_deg: 35
+saved_x_ft: 83.70800345
+saved_y_ft: 269.25
+rotation_deg: 30
 z: 0
-connector_width_ft: 2
-connector_length_ft: 50</description>
+connector_width_ft: 1
+connector_length_ft: 60</description>
       <ExtendedData>
         <Data name="id">
           <value>st_walkway</value>
@@ -3327,13 +3327,13 @@ connector_length_ft: 50</description>
           <value>connector</value>
         </Data>
         <Data name="area_sqft">
-          <value>100</value>
+          <value>60</value>
         </Data>
         <Data name="status">
           <value>Accepted allocation connector; width is planning-only and not confirmed accessible.</value>
         </Data>
         <Data name="layout_note">
-          <value>Straight 2 x 50 ft marking strip; accessibility remains unverified</value>
+          <value>Straight 1 x 60 ft allocation strip; usable and accessible width remain unverified</value>
         </Data>
         <Data name="color">
           <value>#b4a7d6</value>
@@ -3342,29 +3342,29 @@ connector_length_ft: 50</description>
           <value>planning/households/st.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>83.17032155</value>
+          <value>83.70800345</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>269.07517527</value>
+          <value>269.25</value>
         </Data>
         <Data name="rotation_deg">
-          <value>35</value>
+          <value>30</value>
         </Data>
         <Data name="z">
           <value>0</value>
         </Data>
         <Data name="connector_width_ft">
-          <value>2</value>
+          <value>1</value>
         </Data>
         <Data name="connector_length_ft">
-          <value>50</value>
+          <value>60</value>
         </Data>
       </ExtendedData>
       <Polygon>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846451343,30.255399833,0 -95.846324229,30.255318061,0 -95.846328016,30.255313669,0 -95.846455130,30.255395441,0 -95.846451343,30.255399833,0</coordinates>
+            <coordinates>-95.846452200,30.255401497,0 -95.846290343,30.255315227,0 -95.846292007,30.255312897,0 -95.846453864,30.255399167,0 -95.846452200,30.255401497,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
