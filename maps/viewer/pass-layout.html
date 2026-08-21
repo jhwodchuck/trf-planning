@@ -159,8 +159,9 @@ const LAYOUT_OFFSET_X_FT = -VIEW_MIN_X_FT, LAYOUT_OFFSET_Y_FT = -VIEW_MIN_Y_FT;
 // ~700 x 450 ft image on a narrow pane instead of clipping at the limit.
 const MIN_ZOOM = 0.06, MAX_ZOOM = 1.5, ZOOM_STEP = 0.1;
 const STORAGE_KEY = 'trf-pass-layout-v5';
-const MANIFEST_URL = '../overlays/passes/passes-manifest.json';
-const STARTING_LAYOUT_URL = '../overlays/passes/saved-camp-v0.1.json';
+const ACCEPTED_LAYOUT_REVISION = '2026-08-21-connected-walkways-v1';
+const MANIFEST_URL = '../overlays/passes/passes-manifest.json?layout_revision=' + encodeURIComponent(ACCEPTED_LAYOUT_REVISION);
+const STARTING_LAYOUT_URL = '../overlays/passes/saved-camp-v0.1.json?layout_revision=' + encodeURIComponent(ACCEPTED_LAYOUT_REVISION);
 const PASS_DIR = '../overlays/passes/';
 const AERIAL_IMAGE_URL = '../assets/pass-layout-aerial-naip-2022-context-v2.jpg';
 const AERIAL_BBOX_WGS84 = {
@@ -209,6 +210,8 @@ const WEST_LIMIT_LOCAL = [
 
 let manifest = null;
 let startingLayout = null;
+let acceptedLayoutRevision = null;
+let ignoredStaleAutosave = false;
 let layout = {}; // id -> {x_ft, y_ft, rotation_deg, z}
 let selectedId = null;
 let showGrid = true;
@@ -756,6 +759,13 @@ function loadFromStorage() {
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (!parsed || !parsed.passes) return null;
+    if (
+      acceptedLayoutRevision &&
+      parsed.layout_revision !== acceptedLayoutRevision
+    ) {
+      ignoredStaleAutosave = true;
+      return null;
+    }
     return combinedLayout(parsed);
   } catch (e) { return null; }
 }
@@ -763,6 +773,7 @@ function loadFromStorage() {
 function saveToStorage() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({
     saved_at_local: new Date().toString(),
+    layout_revision: acceptedLayoutRevision,
     ...partitionLayout()
   }));
 }
@@ -1090,10 +1101,15 @@ function totalAreaLabel() {
   return `${passCount} passes loaded, ${total.toLocaleString()} sq ft total; ${detached} detached pieces reattached by ${connectors} walkways (${walkwayArea} sq ft), with ${reserveLabel} sq ft held as yurt setup reserve.`;
 }
 
-function init(manifestData, savedLayout, committedData) {
+function init(manifestData, committedData) {
   manifest = manifestData;
+  if (committedData.layout_revision !== ACCEPTED_LAYOUT_REVISION) {
+    throw new Error('Accepted layout revision mismatch; reload to fetch one coherent release.');
+  }
+  acceptedLayoutRevision = ACCEPTED_LAYOUT_REVISION;
   startingLayout = combinedLayout(committedData);
   const base = defaultLayout();
+  const savedLayout = loadFromStorage();
   const urlLayout = getUrlPresetLayout();
   const source = urlLayout || savedLayout;
   layout = {};
@@ -1112,6 +1128,8 @@ function init(manifestData, savedLayout, committedData) {
   if (urlLayout) {
     saveToStorage();
     setStatus('Loaded a shared layout from the URL link. ' + totalAreaLabel() + ' Save it under "Your presets" to keep a copy in this browser.');
+  } else if (ignoredStaleAutosave) {
+    setStatus('Loaded the new accepted camp default instead of this browser\'s older autosave. ' + totalAreaLabel());
   } else {
     setStatus(totalAreaLabel());
   }
@@ -1140,6 +1158,7 @@ document.getElementById('fitContextBtn').addEventListener('click', fitContext);
 document.getElementById('saveBtn').addEventListener('click', () => {
   const data = {
     saved_at_local: new Date().toString(),
+    layout_revision: acceptedLayoutRevision,
     scale_px_per_ft: SCALE,
     ...partitionLayout()
   };
@@ -1240,7 +1259,7 @@ Promise.all([MANIFEST_URL, STARTING_LAYOUT_URL].map(url => fetch(url).then(r => 
   if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
   return r.json();
 }))).then(([manifestData, committedData]) => {
-  init(manifestData, loadFromStorage(), committedData);
+  init(manifestData, committedData);
 }).catch(e => {
   setStatus('Could not load the pass manifest or saved-camp start: ' + e + '\nServe this repo over http(s) (e.g. "python -m http.server") rather than opening the file directly.');
 });

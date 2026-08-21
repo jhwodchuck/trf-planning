@@ -52,3 +52,5 @@ This tool remains **planning-grade, not survey-grade**. Positions stay in local 
 The cyan hard-west-limit line comes from the two user-supplied WGS84 coordinates recorded in `planning/site-control-road-setback.md`. The viewer extrapolates that alignment across the canvas and clamps each pass's rotated view box to its east side.
 
 `saved-camp-v0.1.json` is the accepted starting arrangement used on first load and by **Reset to accepted camp default**. Its ten `passes`, three `detached_parts`, and two `connectors` entries also drive the georeferenced GeoJSON and KML builders, keeping the freeform and geographic views on the same accepted baseline.
+
+The file's `layout_revision` also protects reloads from an obsolete browser autosave. When the committed accepted geometry changes, an autosave from a different revision is ignored; named presets, uploaded layouts, and share links remain explicit user-selected alternatives.
