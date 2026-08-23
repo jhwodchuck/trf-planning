@@ -425,7 +425,7 @@ PASSES: list[Pass] = [
                 label="IBC water trailer",
                 role="placeholder",
                 status="provisional 5 x 8 ft deck assumption for the stated small 8 ft trailer; actual deck, fenders, axle, load rating, and overall length TBD",
-                rect=(9.5, 7, 5, 8),
+                rect=(4.5, 7, 5, 8),
                 fill="#6fa8dc",
                 dims_label="assumed 5 x 8 ft deck",
                 show_label=False,
@@ -435,10 +435,10 @@ PASSES: list[Pass] = [
                 label="IBC water tote",
                 role="placeholder",
                 status="provisional 4 x 4 ft planning footprint on the water trailer; actual tote dimensions, capacity, restraint, fill, vent, valve, and loaded weight TBD",
-                rect=(10, 9, 4, 4),
+                rect=(5, 9, 4, 4),
                 fill="#3d85c6",
                 dims_label="assumed 4 x 4 ft",
-                label_anchor=(12, 11),
+                label_anchor=(7, 11),
                 label_rotation=90,
             ),
             Equipment(
@@ -446,10 +446,10 @@ PASSES: list[Pass] = [
                 label="Water-trailer tongue",
                 role="placeholder",
                 status="provisional 3 ft centerline allowance; actual coupler, A-frame, jack, and tow-clearance geometry unknown",
-                line=(12, 15, 12, 18),
+                line=(7, 15, 7, 18),
                 fill="#555555",
                 dims_label="3 ft assumed",
-                label_anchor=(12, 17),
+                label_anchor=(7, 17),
                 show_label=False,
             ),
             Equipment(
@@ -457,7 +457,7 @@ PASSES: list[Pass] = [
                 label="Water-trailer wheel/fender",
                 role="placeholder",
                 status="provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement",
-                rect=(8.5, 10, 1, 2),
+                rect=(3.5, 10, 1, 2),
                 fill="#555555",
                 show_label=False,
             ),
@@ -466,7 +466,7 @@ PASSES: list[Pass] = [
                 label="Water-trailer wheel/fender",
                 role="placeholder",
                 status="provisional only; axle, tires, fenders, stabilizers, and maximum trailer width require measurement",
-                rect=(14.5, 10, 1, 2),
+                rect=(9.5, 10, 1, 2),
                 fill="#555555",
                 show_label=False,
             ),
@@ -481,7 +481,7 @@ PASSES: list[Pass] = [
             ),
         ],
         annotations=[
-            (12, 8.2, "Water trailer T'd into shower trailer"),
+            (7, 8.2, "Water trailer T'd near shower tongue end"),
             (12, 29, "legacy straight 22 ft connector"),
             (12, 41.5, "10.2 x 10 ft fire-pit end zone"),
         ],
@@ -1058,7 +1058,10 @@ _ss_shower_core = Pass(
         for equipment in _ss_shower_source.equipment
         if equipment.id != "ss_fire_pit"
     ],
-    annotations=[(12, 8.2, "Water trailer T'd into shower trailer")],
+    annotations=[
+        (7, 8.2, "Water trailer T'd near shower tongue end"),
+        (16.35, 12.5, "Unassigned support / approach space"),
+    ],
     kind="pass_section",
     parent_pass_id="ss_shower",
 )

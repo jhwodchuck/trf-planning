@@ -22,14 +22,15 @@ text{font-family:Arial,Helvetica,sans-serif;fill:#151515}
 <text x="40.0" y="73.0" class="tiny">4 ft assumed</text>
 <polygon points="168.0,8.0 232.0,8.0 232.0,24.0 168.0,24.0" class="placeholder" fill="#555555"/>
 <polygon points="168.0,104.0 232.0,104.0 232.0,120.0 168.0,120.0" class="placeholder" fill="#555555"/>
-<polygon points="160.0,120.0 240.0,120.0 240.0,248.0 160.0,248.0" class="placeholder" fill="#6fa8dc"/>
-<polygon points="168.0,152.0 232.0,152.0 232.0,216.0 168.0,216.0" class="placeholder" fill="#3d85c6"/>
-<text x="200.0" y="179.0" text-anchor="middle" class="tiny" transform="rotate(90 200.0 184.0)">IBC water tote</text>
-<text x="200.0" y="192.0" text-anchor="middle" class="tiny" transform="rotate(90 200.0 184.0)">assumed 4 x 4 ft</text>
-<line x1="200.0" y1="248.0" x2="200.0" y2="296.0" stroke="#555555" stroke-width="6" stroke-linecap="round"/>
-<polygon points="144.0,168.0 160.0,168.0 160.0,200.0 144.0,200.0" class="placeholder" fill="#555555"/>
-<polygon points="240.0,168.0 256.0,168.0 256.0,200.0 240.0,200.0" class="placeholder" fill="#555555"/>
-<text x="200.0" y="139.2" text-anchor="middle" class="tiny">Water trailer T'd into shower trailer</text>
+<polygon points="80.0,120.0 160.0,120.0 160.0,248.0 80.0,248.0" class="placeholder" fill="#6fa8dc"/>
+<polygon points="88.0,152.0 152.0,152.0 152.0,216.0 88.0,216.0" class="placeholder" fill="#3d85c6"/>
+<text x="120.0" y="179.0" text-anchor="middle" class="tiny" transform="rotate(90 120.0 184.0)">IBC water tote</text>
+<text x="120.0" y="192.0" text-anchor="middle" class="tiny" transform="rotate(90 120.0 184.0)">assumed 4 x 4 ft</text>
+<line x1="120.0" y1="248.0" x2="120.0" y2="296.0" stroke="#555555" stroke-width="6" stroke-linecap="round"/>
+<polygon points="64.0,168.0 80.0,168.0 80.0,200.0 64.0,200.0" class="placeholder" fill="#555555"/>
+<polygon points="160.0,168.0 176.0,168.0 176.0,200.0 160.0,200.0" class="placeholder" fill="#555555"/>
+<text x="120.0" y="139.2" text-anchor="middle" class="tiny">Water trailer T'd near shower tongue end</text>
+<text x="269.6" y="208.0" text-anchor="middle" class="tiny">Unassigned support / approach space</text>
 <text x="200.0" y="253.2" text-anchor="middle" class="label">S. + S. — Shower Section</text>
 <text x="200.0" y="271.2" text-anchor="middle" class="small">393 sq ft</text>
 <text x="200.0" y="283.2" text-anchor="middle" class="tiny">393 sq ft notched section; separate accepted walkway uses 105 sq ft</text>

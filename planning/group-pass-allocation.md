@@ -94,7 +94,7 @@ A layout is preferable when it:
 ### S. and S.
 
 - KZ Connect SE C312BHKSE camper as the working identification; exact year and deployed dimensions still require verification.
-- **16 ft flatbed trailer** confirmed for use as a shower facility, with a **full-width fold-down rear ramp**, plus a separate **8 ft trailer carrying an IBC water tote**. Pass B turns the shower trailer sideways, T's the water trailer into it, omits a separate landing zone, and reconnects the notched shower/water section to a 10.2 × 10 ft fire-pit end with a straight 3 × 35 ft connector. All assumed dimensions and fire/utility clearances require measurement and approval.
+- **16 ft flatbed trailer** confirmed for use as a shower facility, with a **full-width fold-down rear ramp**, plus a separate **8 ft trailer carrying an IBC water tote**. Pass B turns the shower trailer sideways, T's the water trailer near its tongue end, shifts the IBC assembly 5 ft off center to consolidate one approximately 11.7 × 11 ft unassigned support/approach zone on the ramp side, omits a separate landing zone, and reconnects the notched shower/water section to a 10.2 × 10 ft fire-pit end with a straight 3 × 35 ft connector. All assumed dimensions and fire/utility clearances require measurement and approval.
 - Accepted allocation: 393 sq ft shower/water section + 102 sq ft fire-pit section + straight 3 × 35 ft, 105 sq ft connector = **600 sq ft**. The 3 ft connector width is planning-only; all drawn shower/water equipment remains within the notched shower section.
 
 ### S. and T.

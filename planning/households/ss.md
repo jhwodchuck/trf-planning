@@ -1,6 +1,6 @@
 # S. and S. Site Planning Notes
 
-Last updated: **2026-08-16**
+Last updated: **2026-08-23**
 
 ## Allocation
 
@@ -30,7 +30,7 @@ Detailed camper record: [`equipment/ss-kz-connect-se-c312bhkse.md`](../../equipm
 - Rear access: **full-width fold-down ramp**.
 - The stated 16 ft may describe the deck rather than overall bumper-to-coupler length.
 - Temporary planning geometry: the **16 × 7 ft assumed shower deck is turned sideways**, with a **4 ft assumed tongue** and **7 × 4 ft full-width deployed ramp**; no separate landing zone is claimed.
-- Water supply: a separate **8 ft utility trailer with an IBC tote** is T'd perpendicularly into the shower trailer, provisionally drawn as a 5 × 8 ft deck, 3 ft tongue allowance, and 4 × 4 ft tote footprint.
+- Water supply: a separate **8 ft utility trailer with an IBC tote** is T'd perpendicularly near the shower trailer's tongue end, provisionally drawn as a 5 × 8 ft deck, 3 ft tongue allowance, and 4 × 4 ft tote footprint.
 - Fire area: a separate **10.2 × 10 ft fire-pit end zone**, containing a provisional 3 × 3 ft fire pit, is reattached by the accepted straight connector described below.
 - Only the full-width fold-down ramp arrangement is confirmed; width, tongue, ramp depth, enclosure, steps, tanks, stabilizers, hoses, cords, privacy screening, and operating clearances remain unverified.
 
@@ -38,7 +38,7 @@ Detailed camper record: [`equipment/ss-kz-connect-se-c312bhkse.md`](../../equipm
 
 The freeform arrangement keeps the **393 sq ft shower/water-trailer section** and **102 sq ft fire-pit end** independently movable, then reconnects them with a straight **3 × 35 ft, 105 sq ft allocation walkway** attached to the shower section's side edge. The fire-pit end now sits **6 ft east of its earlier requested position**, about **7.7 ft closer** than the previous connected default. The connector keeps the same **−91° bearing** as both sections, has no bends, and retains about **1.17 ft** from B. and G.'s community section in the planning drawing. These three pieces total exactly **600 sq ft**.
 
-The shower section retains its 24 × 18 ft maximum extents but removes two unused lower-side areas totaling 39 sq ft. Every drawn shower trailer, deployed ramp, trailer tongue, wheel/fender, IBC trailer, tote, and water-trailer tongue placeholder remains inside the revised irregular boundary.
+The shower section retains its 24 × 18 ft maximum extents and exact 393 sq ft area. The provisional IBC trailer, tote, wheels, and tongue are shifted **5 ft toward the shower trailer's tongue end**. This retains about **1.7 ft** inside the near boundary and consolidates the opposite leftover area into one approximately **11.7 × 11 ft unassigned support/approach zone** on the ramp side instead of two pockets around the IBC assembly. Every drawn shower trailer, deployed ramp, trailer tongue, wheel/fender, IBC trailer, tote, and water-trailer tongue placeholder remains inside the irregular boundary. The open zone is not confirmed as an accessible route, drainage area, or operating clearance.
 
 The displayed connector is allocation geometry, not a confirmed pedestrian or accessible route. Field-check its clear width, surface, slope, obstructions, fire separation, and both endpoints before using it.
 

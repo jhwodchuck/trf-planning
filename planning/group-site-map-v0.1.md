@@ -47,7 +47,7 @@ The line through 30°15'20.86"N 95°50'47.36"W and 30°15'19.63"N 95°50'47.44"W
 | S. and S. | Camper body | 36 ft 9 in × 8 ft published; KZ Connect SE C312BHKSE floorplan-informed, model/VIN unconfirmed |
 | S. and S. | Camper slide zones | ~3 ft 1 in and ~3 ft 9 in projections; scale-derived from floorplan artwork, unsuitable for approval |
 | S. and S. | Main-entry rug zone | provisional 8 × 12 ft working assumption |
-| S. and S. | Shower + water trailers + fire pit | Notched 393 sq ft shower/water section and 102 sq ft fire-pit section, reattached by a straight 3 × 35 ft, 105 sq ft allocation connector on the shower-section side edge; the fire-pit end is 7.7 ft closer to its earlier requested position and the width and fire clearances remain planning-only |
+| S. and S. | Shower + water trailers + fire pit | Notched 393 sq ft shower/water section with the IBC assembly shifted 5 ft toward the shower tongue end to consolidate one approximately 11.7 × 11 ft unassigned support/approach zone, plus a 102 sq ft fire-pit section reattached by a straight 3 × 35 ft, 105 sq ft allocation connector on the shower-section side edge; route width, support-space use, and fire clearances remain planning-only |
 | M. and E. | Camper | temporary horizontal mirror of S./S. camper-pass concept; all equipment geometry unverified |
 | S. and T. | Yurt + handicap portapotty | 20 ft circular yurt plus an assumed 6 × 6 ft unit in a 10 × 10 ft end, reattached by a straight 1 × 60 ft, 60 sq ft allocation strip at one 30° bearing; the portapotty returns to its earlier requested position, 125.8407 sq ft remains unplaced for yurt setup clearance, and the strip is not usable- or accessible-route confirmation |
 

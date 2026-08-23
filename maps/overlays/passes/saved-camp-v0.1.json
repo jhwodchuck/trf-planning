@@ -1,7 +1,7 @@
 {
-  "saved_at_local": "Sun Aug 23 2026 (fire-pit edge-attachment default)",
-  "accepted_source": "User-directed field-marking simplification: A. forms a 25 x 24 ft outer rectangle; S.+S. uses a straight 3 x 35 ft connector on the shower-section edge and moves the fire-pit end 7.7 ft closer to its earlier requested position without crossing B.+G.; S.+T. uses a straight 1 x 60 ft allocation strip at one 30 degree bearing so the portapotty returns to its earlier requested position.",
-  "layout_revision": "2026-08-23-connected-walkways-v3",
+  "saved_at_local": "Sun Aug 23 2026 (consolidated IBC support-space default)",
+  "accepted_source": "User-directed field-marking simplification: A. forms a 25 x 24 ft outer rectangle; S.+S. uses a straight 3 x 35 ft connector on the shower-section edge, moves the fire-pit end 7.7 ft closer to its earlier requested position without crossing B.+G., and shifts the IBC trailer 5 ft toward the shower tongue end to consolidate the unused support area; S.+T. uses a straight 1 x 60 ft allocation strip at one 30 degree bearing so the portapotty returns to its earlier requested position.",
+  "layout_revision": "2026-08-23-ibc-support-v4",
   "scale_px_per_ft": 14,
   "passes": {
     "jc": { "x_ft": 99.25, "y_ft": 180.75, "rotation_deg": -103, "z": 1 },

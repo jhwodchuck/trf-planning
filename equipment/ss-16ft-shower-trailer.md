@@ -1,6 +1,6 @@
 # S. and S. — 16 ft Flatbed Shower Trailer
 
-Last updated: **2026-08-16**
+Last updated: **2026-08-23**
 
 ## Confirmed use
 
@@ -33,7 +33,7 @@ Place a second, small **8 ft utility trailer carrying an IBC water tote** perpen
 - a **4 × 4 ft IBC tote footprint** centered on the deck; and
 - provisional wheel/fender zones producing an assumed **7 ft maximum trailer width**.
 
-The water-trailer deck meets the side of the shower-trailer deck, with its tongue pointing away from the T. Confirm the tote's actual dimensions, capacity, loaded weight, restraint system, valve side, fill access, venting, hose route, axle rating, tongue load, stabilizers, and ground bearing before approval.
+The water-trailer deck meets the side of the shower-trailer deck near its tongue end, with the water-trailer tongue pointing away from the T. The accepted planning drawing shifts the complete water-trailer/tote assembly 5 ft off center so the remaining area becomes one contiguous approximately 11.7 × 11 ft unassigned support/approach zone on the shower-ramp side. Confirm the tote's actual dimensions, capacity, loaded weight, restraint system, valve side, fill access, venting, hose route, axle rating, tongue load, stabilizers, ground bearing, and usable approach before approval.
 
 ## Accepted straight connector and fire pit
 
@@ -47,7 +47,7 @@ The selected pass is an exact **600 sq ft** irregular shape:
 - straight 3 × 35 ft allocation connector: **105 sq ft**; and
 - fire-pit end: **10.2 × 10 ft = 102 sq ft**.
 
-The shower/water section removes 39 sq ft from otherwise unused lower-side areas. All currently drawn trailer, ramp, wheel/fender, tongue, IBC trailer, and tote placeholders remain within its irregular boundary.
+The shower/water section removes 39 sq ft from otherwise unused lower-side areas. The IBC assembly is offset toward the shower tongue end, leaving about 1.7 ft at the near boundary and consolidating the opposite leftover area into one approximately 11.7 × 11 ft unassigned zone. All currently drawn trailer, ramp, wheel/fender, tongue, IBC trailer, and tote placeholders remain within the irregular boundary.
 
 ## Site-planning role
 

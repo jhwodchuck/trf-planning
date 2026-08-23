@@ -1261,7 +1261,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846221884,30.255313585,0 -95.846221697,30.255327275,0 -95.846196340,30.255327016,0 -95.846196527,30.255313326,0 -95.846221884,30.255313585,0</coordinates>
+            <coordinates>-95.846222071,30.255299896,0 -95.846221884,30.255313585,0 -95.846196527,30.255313326,0 -95.846196714,30.255299637,0 -95.846222071,30.255299896,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1302,7 +1302,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846215526,30.255314889,0 -95.846215376,30.255325841,0 -95.846202697,30.255325712,0 -95.846202847,30.255314760,0 -95.846215526,30.255314889,0</coordinates>
+            <coordinates>-95.846215713,30.255301200,0 -95.846215563,30.255312152,0 -95.846202885,30.255312022,0 -95.846203034,30.255301071,0 -95.846215713,30.255301200,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1341,7 +1341,7 @@ source_pass_id: ss_shower</description>
       </ExtendedData>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-95.846196433,30.255320171,0 -95.846186924,30.255320074,0</coordinates>
+        <coordinates>-95.846196620,30.255306482,0 -95.846187111,30.255306385,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -1380,7 +1380,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846212412,30.255310750,0 -95.846212375,30.255313488,0 -95.846206036,30.255313423,0 -95.846206073,30.255310686,0 -95.846212412,30.255310750,0</coordinates>
+            <coordinates>-95.846212599,30.255297061,0 -95.846212562,30.255299799,0 -95.846206223,30.255299734,0 -95.846206260,30.255296996,0 -95.846212599,30.255297061,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -1421,7 +1421,7 @@ source_pass_id: ss_shower</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846212188,30.255327178,0 -95.846212150,30.255329915,0 -95.846205811,30.255329851,0 -95.846205848,30.255327113,0 -95.846212188,30.255327178,0</coordinates>
+            <coordinates>-95.846212375,30.255313488,0 -95.846212337,30.255316226,0 -95.846205998,30.255316161,0 -95.846206036,30.255313423,0 -95.846212375,30.255313488,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
