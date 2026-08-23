@@ -36,7 +36,7 @@ Detailed camper record: [`equipment/ss-kz-connect-se-c312bhkse.md`](../../equipm
 
 ### Accepted reattached layout
 
-The freeform arrangement keeps the **393 sq ft shower/water-trailer section** and **102 sq ft fire-pit end** independently movable, then reconnects them with a straight **3 × 35 ft, 105 sq ft allocation walkway**. The fire-pit end moved about 13.7 ft from the prior default so the connector has no bends and retains about 2.7 ft from B. and G.'s community section in the planning drawing. These three pieces total exactly **600 sq ft**.
+The freeform arrangement keeps the **393 sq ft shower/water-trailer section** and **102 sq ft fire-pit end** independently movable, then reconnects them with a straight **3 × 35 ft, 105 sq ft allocation walkway** attached to the shower section's side edge. The fire-pit end now sits **6 ft east of its earlier requested position**, about **7.7 ft closer** than the previous connected default. The connector keeps the same **−91° bearing** as both sections, has no bends, and retains about **1.17 ft** from B. and G.'s community section in the planning drawing. These three pieces total exactly **600 sq ft**.
 
 The shower section retains its 24 × 18 ft maximum extents but removes two unused lower-side areas totaling 39 sq ft. Every drawn shower trailer, deployed ramp, trailer tongue, wheel/fender, IBC trailer, tote, and water-trailer tongue placeholder remains inside the revised irregular boundary.
 

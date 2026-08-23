@@ -3139,8 +3139,8 @@ status: Accepted saved layout; planning-grade georeferencing, not a survey.
 layout_note:
 color: #93c47d
 source: equipment/ss-16ft-shower-trailer.md
-saved_x_ft: 151.9915673
-saved_y_ft: 224.75392332
+saved_x_ft: 145
+saved_y_ft: 229
 rotation_deg: -91
 z: 13</description>
       <ExtendedData>
@@ -3169,10 +3169,10 @@ z: 13</description>
           <value>equipment/ss-16ft-shower-trailer.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>151.9915673</value>
+          <value>145</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>224.75392332</value>
+          <value>229</value>
         </Data>
         <Data name="rotation_deg">
           <value>-91</value>
@@ -3185,7 +3185,7 @@ z: 13</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846246972,30.255449385,0 -95.846246590,30.255477312,0 -95.846214894,30.255476988,0 -95.846215276,30.255449062,0 -95.846246972,30.255449385,0</coordinates>
+            <coordinates>-95.846269519,30.255438324,0 -95.846269137,30.255466251,0 -95.846237441,30.255465927,0 -95.846237823,30.255438001,0 -95.846269519,30.255438324,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3226,7 +3226,7 @@ source_pass_id: ss_firepit</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846235744,30.255459128,0 -95.846235632,30.255467342,0 -95.846226123,30.255467245,0 -95.846226235,30.255459031,0 -95.846235744,30.255459128,0</coordinates>
+            <coordinates>-95.846258290,30.255448067,0 -95.846258178,30.255456281,0 -95.846248669,30.255456184,0 -95.846248782,30.255447970,0 -95.846258290,30.255448067,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
@@ -3241,8 +3241,8 @@ status: Accepted allocation connector; width is planning-only and not confirmed 
 layout_note: Straight 3 x 35 ft marking strip; field usability remains unverified
 color: #93c47d
 source: equipment/ss-16ft-shower-trailer.md
-saved_x_ft: 139.98599169
-saved_y_ft: 250.85048123
+saved_x_ft: 138.5
+saved_y_ft: 253
 rotation_deg: -91
 z: 0
 connector_width_ft: 3
@@ -3273,10 +3273,10 @@ connector_length_ft: 35</description>
           <value>equipment/ss-16ft-shower-trailer.md</value>
         </Data>
         <Data name="saved_x_ft">
-          <value>139.98599169</value>
+          <value>138.5</value>
         </Data>
         <Data name="saved_y_ft">
-          <value>250.85048123</value>
+          <value>253</value>
         </Data>
         <Data name="rotation_deg">
           <value>-91</value>
@@ -3295,7 +3295,7 @@ connector_length_ft: 35</description>
         <tessellate>1</tessellate>
         <outerBoundaryIs>
           <LinearRing>
-            <coordinates>-95.846237189,30.255353446,0 -95.846235879,30.255449272,0 -95.846226370,30.255449175,0 -95.846227680,30.255353349,0 -95.846237189,30.255353446,0</coordinates>
+            <coordinates>-95.846242097,30.255347682,0 -95.846240786,30.255443508,0 -95.846231278,30.255443411,0 -95.846232588,30.255347585,0 -95.846242097,30.255347682,0</coordinates>
           </LinearRing>
         </outerBoundaryIs>
       </Polygon>
