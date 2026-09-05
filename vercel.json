@@ -1,20 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/:path*",
-      "destination": "https://trf-private-map.jhwodchuck.workers.dev/:path*"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/:path*",
-      "headers": [
-        {
-          "key": "x-vercel-enable-rewrite-caching",
-          "value": "0"
-        }
-      ]
+      "src": "/(?<path>.*)",
+      "dest": "https://trf-private-map.jhwodchuck.workers.dev/$path",
+      "headers": {
+        "x-vercel-enable-rewrite-caching": "0"
+      }
     }
   ]
 }
